@@ -9455,12 +9455,6 @@ html.is-animating .scroll-progress-bar {
 .aplayer .aplayer-icon-lrc {
   display: none;
 }
-.aplayer .aplayer-icon-lrc {
-  pointer-events: none;
-}
-.aplayer .aplayer-icon-lrc svg {
-  opacity: 0.4;
-}
 .aplayer .aplayer-icon-lrc-inactivity svg {
   opacity: 0.4;
 }
