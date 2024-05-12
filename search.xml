@@ -232,4 +232,69 @@
         <category>Game</category>
       </categories>
   </entry>
+  <entry>
+    <title>让每个人都能够免费阅读/下载知网论文</title>
+    <url>/2024/05/13/%E7%9F%A5%E7%BD%91/</url>
+    <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
+<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
+<p>在应用商店搜索知网，会有以下结果。</p>
+<p>这四款都是同方知网的官方客户端。我们要使用的版本为第三个“全球学术快报”</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/6kpdGOIN.webp"
+                      alt="应用商店页面"
+                >  </p>
+<h3 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/M2Pll7vy.webp"
+                      alt="未登录"
+                ></p>
+<h3 id="登录后点击此处的“立即关联”。"><a href="#登录后点击此处的“立即关联”。" class="headerlink" title="登录后点击此处的“立即关联”。"></a>登录后点击此处的“立即关联”。</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/OiEkSecc.webp"
+                      alt="未关联"
+                ></p>
+<h3 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/UW8S4Atu.webp"
+                      alt="关联页面"
+                ></p>
+<h3 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/hi2G9ChF.webp"
+                      alt="已关联"
+                ></p>
+<h3 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a><strong>如果手机的物理位置并不在此范围内呢？</strong></h3><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
+<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
+<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
+<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
+<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
+<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
+<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
+<p>然后回到机构关联界面进行关联即可。</p>
+<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
+<p>（如果漫游过期了重新认证一遍即可）</p>
+<h3 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h3><p><strong>1.如下图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
+<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
+<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
+<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img2.imgtp.com/2024/05/12/plJ8EYlH.webp"
+                      alt="机构关联说明"
+                ></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>知网</tag>
+      </tags>
+  </entry>
 </search>
