@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>shuoshuo | 不可能虫鸣 —— 与其被定义，不如自定义</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="shuoshuo">
+<meta property="og:url" content="https://chengeeker.github.io/shuoshuo/index.html">
+<meta property="og:site_name" content="不可能虫鸣 —— 与其被定义，不如自定义">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://chengeeker.github.io/images/touxiang.webp">
+<meta property="article:published_time" content="2025-01-04T12:09:06.000Z">
+<meta property="article:modified_time" content="2025-01-04T12:09:52.359Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chengeeker.github.io/images/touxiang.webp"><link rel="shortcut icon" href="/images/web.webp"><link rel="canonical" href="https://chengeeker.github.io/shuoshuo/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'shuoshuo',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: true
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/touxiang.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-regular fa-comment"></i><span> shuoshuo</span></a></div></div></div></div><div class="page type-shuoshuo" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣 —— 与其被定义，不如自定义</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-regular fa-comment"></i><span> shuoshuo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">shuoshuo</h1></header><main class="layout" id="content-inner"><div class="nc" id="page"><div class="page-title">shuoshuo</div><div id="article-container"><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2025-01-04 20:12:39">2025-01-04 20:12:39</time></div></div><div class="shuoshuo-content"><p>因为原来的那套UIbug太多，不大清楚是什么问题<br>所以换了一套新的UI<br>删掉了很多图像界面，应该能提升一些浏览体验<br>重新适配的工程量挺大的，开发文档也比之前那个多好多，不过自由度貌似更高了<br>慢慢来吧</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-12-05 16:09:47">2024-12-05 16:09:47</time></div></div><div class="shuoshuo-content"><p>定位到了之前存在的问题，成功复活本网站，更新了底层UI版本<br>但所有包含图片的文章都无法恢复<br>（一上传就清空我的后台数据，属于是自己给自己写了个自动删库的bug）<br>目前只有封面图能正常使用<br>总体上属于待修复的状态，看看后面是想办法修好或者是把问题文章全部重写一遍，改成无图版本</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-09-01 12:02:28">2024-09-01 12:02:28</time></div></div><div class="shuoshuo-content"><p>优化了性能，修复了部分已知bug</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-06-01 20:58:23">2024-06-01 20:58:23</time></div></div><div class="shuoshuo-content"><p>太逆天了家人们图床崩了，我之前的博客图片全没了，还要我一个一个补回去<br>以后还是存本地吧，不放图床了QAQ</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-05-21 23:17:03">2024-05-21 23:17:03</time></div></div><div class="shuoshuo-content"><p>最近换了台新的一加12，拿来root了，过程很顺利。<br>不过root完之后我更新应用的频率可就没这么高了，因为更新不需要打包。<br>所以如果要新版应用的请在频道内艾特我。</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-05-14 00:17:40">2024-05-14 00:17:40</time></div></div><div class="shuoshuo-content"><p>网站的播放器里新增了几首歌，还挺好听的。<br>后续还会增加一些我平常爱听的歌曲作为网站的背景音乐<br>（当然，需要你手动点击播放）</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-05-12 21:00:14">2024-05-12 21:00:14</time></div></div><div class="shuoshuo-content"><p>歌词问题解决了，我真是天才<br>话说这个时间显示是什么鬼啊，我输入的是系统时间怎么就显示是tomorrow 5:00 AM 发布的<br>你也有8个小时时差是吧（😅）</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-05-12 17:37:23">2024-05-12 17:37:23</time></div></div><div class="shuoshuo-content"><p>网站基本完工，主题和hexo有的功能也基本上弄懂了，除了aplayer的lrc歌词弄不出来之外就没大问题了。凑活用吧。</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2024-05-12 00:28:21">2024-05-12 00:28:21</time></div></div><div class="shuoshuo-content"><p>试试今天的日期</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div><div class="shuoshuo-item"><div class="container"><div class="shuoshuo-item-header"><div class="shuoshuo-avatar"><img class="no-lightbox" src="/images/touxiang.webp"></div><div class="shuoshuo-info"><div class="shuoshuo-author">Chen</div><time class="shuoshuo-date" title="2019-01-04 10:00:00">2019-01-04 10:00:00</time></div></div><div class="shuoshuo-content"><p>说说测试，这是第四个，换行测试<br>说说测试，这是第四个，换行测试<br>说说测试，这是第四个，换行测试<br>说说测试，这是第四个，换行测试</p>
+</div><div class="shuoshuo-footer flex-end"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://pd.qq.com/s/6lr4vlseh"><i class="fa-duotone fa-solid fa-hashtag"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/18/airport/" title="机场推荐"><img src="https://cdn.elicht.com/cloud/article/2653494350/2/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机场推荐"/></a><div class="content"><a class="title" href="/2024/12/18/airport/" title="机场推荐">机场推荐</a><time datetime="2024-12-18T11:02:44.600Z" title="Created 2024-12-18 19:02:44">2024-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用"><img src="/images/works/Xposed.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免Root内置Xposed模块应用"/></a><div class="content"><a class="title" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用">免Root内置Xposed模块应用</a><time datetime="2024-12-05T16:08:23.446Z" title="Created 2024-12-06 00:08:23">2024-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由"><img src="https://t.tutu.to/img/aYzeP" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="运用浏览器功能实现抢课自由"/></a><div class="content"><a class="title" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由">运用浏览器功能实现抢课自由</a><time datetime="2024-12-05T15:27:05.910Z" title="Created 2024-12-05 23:27:05">2024-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Fuck%20CNKI/" title="让每个人都能够免费阅读/下载知网论文"><img src="/images/works/%E7%9F%A5%E7%BD%91.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让每个人都能够免费阅读/下载知网论文"/></a><div class="content"><a class="title" href="/2024/12/05/Fuck%20CNKI/" title="让每个人都能够免费阅读/下载知网论文">让每个人都能够免费阅读/下载知网论文</a><time datetime="2024-12-05T15:26:32.415Z" title="Created 2024-12-05 23:26:32">2024-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Ocean%20App/" title="海外应用"><img src="/images/works/tiktok.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="海外应用"/></a><div class="content"><a class="title" href="/2024/12/05/Ocean%20App/" title="海外应用">海外应用</a><time datetime="2024-12-05T15:25:58.083Z" title="Created 2024-12-05 23:25:58">2024-12-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Software/"><span class="card-category-list-name">Software</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tutorials/"><span class="card-category-list-name">Tutorials</span><span class="card-category-list-count">4</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/clash/" style="font-size: 1.5em; color: #99a9bf">clash</a> <a href="/tags/%E7%9F%A5%E7%BD%91/" style="font-size: 1.1em; color: #999">知网</a> <a href="/tags/Xposed/" style="font-size: 1.5em; color: #99a9bf">Xposed</a> <a href="/tags/%E6%8A%A2%E8%AF%BE/" style="font-size: 1.1em; color: #999">抢课</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/12/">
+          <span class="card-archive-list-date">December 2024</span>
+          <span class="card-archive-list-count">9</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-01-04T12:29:36.103Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Chen</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
