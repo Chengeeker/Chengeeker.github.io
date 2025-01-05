@@ -1,0 +1,422 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>手机运行PC应用 | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="内容来自极客湾Geekerwan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机运行PC应用">
+<meta property="og:url" content="https://chengeeker.github.io/2025/01/05/mobile%20PC/index.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="内容来自极客湾Geekerwan">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0">
+<meta property="article:published_time" content="2025-01-05T11:03:17.249Z">
+<meta property="article:modified_time" content="2025-01-05T11:03:07.838Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0"><link rel="shortcut icon" href="/images/web.webp"><link rel="canonical" href="https://chengeeker.github.io/2025/01/05/mobile%20PC/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '手机运行PC应用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/touxiang.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> shuoshuo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a><a class="nav-page-title" href="/"><span class="site-name">手机运行PC应用</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> shuoshuo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">手机运行PC应用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-05T11:03:17.249Z" title="Created 2025-01-05 19:03:17">2025-01-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-05T11:03:07.838Z" title="Updated 2025-01-05 19:03:07">2025-01-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tutorials/">Tutorials</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>8mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p><strong>注意⚠️：</strong></p>
+<p><strong><u>1.在教程开始前，*请确保操作的设备能够顺利连接到 GitHub</u></strong></p>
+<p><strong>2.设备的soc最好是高通骁龙，且GPU至少为Adreno600系</strong></p>
+<p><strong>（845+、710+，662+、480+）</strong></p>
+<p><strong>3.建议在WiFi环境下操作。</strong></p>
+<hr>
+<p>前年，我在酷安上看到一篇教程，跟着教程走顺利在手机和Vpad上跑Debian运行PC应用。如今，有了更好的解决方案，那就用新教程复刻老方案吧，上手起来更简单，门槛低，现有的教程也很清晰。期间查阅了一下其他用户在使用mobox时遇到的问题和解决方案，尽量做到一篇内容讲全，但问题会越用越多，讲是肯定讲不全的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640"></p>
+<p>先介绍一下以下内容涉及到的一些应用</p>
+<p><strong>Termux：</strong></p>
+<p>Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.</p>
+<p>Termux是一个Android终端模拟器和Linux环境应用程序，直接工作，无需root或设置。一个最小的基本系统是自动安装的-其他软件包可使用APT软件包管理器。</p>
+<p><strong>Termux:X11：</strong></p>
+<p>Termux:X11 is a fully fledged X server. It is built with Android NDK and optimized to be used with Termux.</p>
+<p>Termux：X11是一个完全成熟的X服务器。它使用Android NDK构建，并经过优化以与Termux一起使用，是Termux的一个图形化项目。</p>
+<p><strong>InputBridge：</strong></p>
+<p>虚拟键盘</p>
+<p>简单来说，Termux是一个 Android 终端仿真应用程序，用于在 Android 手机上搭建一个完整的 Linux 环境。不需要 root 权限 Termux 就可以正常运行。Termux 基本实现 Linux 下的许多基本操作。可以使用 Termux 安装 python，并实现 python 编程，可以用手机架设 Server，同样可以用于渗透测试等等。Termux:X11可以看作是一个虚拟的显示器，用于显示Termux上运行的内容。InputBridge就是给没有外接键盘的用户使用的虚拟键盘。</p>
+<p>本文涉及到的 App 下载链接🔗</p>
+<p><a target="_blank" rel="noopener" href="https://www.123pan.com/s/xEXZVv-2poU3.html">https://www.123pan.com/s/xEXZVv-2poU3.html</a></p>
+<hr>
+<p>下面来说一下手机转译PC应用的思路。（引用极客湾）</p>
+<p>只要构建一个Linux环境，用类似Box86的工具来翻译X86指令给ARM运行，再借助Wine来搭建一个Windows的运行环境，这样的话Windows的应用就能在手机上运行了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640.webp" alt="图片来自极客湾Geekerwan"></p>
+<p>我们用到的项目叫mobox。这是一个旨在使用 Box64 和 Wine 在 Termux 中运行 Windows x86 应用程序的项目，它集成了上面步骤需要用到的组件，我们只需要在Termux上安装好mobox，就可以正常使用了。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/olegos2/mobox?tab=readme-ov-file">查看mobox在GitHub上的官方文档，我们可以看到如何安装mobox。</a></p>
+<p>我们先打开Termux，粘贴我们复制的代码</p>
+<p><code>curl -s -o ~/x https://raw.githubusercontent.com/olegos2/mobox/main/install &amp;&amp; . ~/x</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(1).webp"></p>
+<p>在初次运行时，它会向我们索要存储权限，我们点击“允许”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%EF%BC%882%EF%BC%89.webp"></p>
+<p>继续运行，它会出现选择项，我们选择2</p>
+<p>（wow64版本可以同时运行32位和64位的程序，box86不行。）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(2).webp"></p>
+<p>经过漫长的等待，mobox已经部署完成了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(3).webp"></p>
+<p>此时我们在页面输入“mobox”，进入mobox的界面</p>
+<p>1.启动Wine</p>
+<p>2.设置</p>
+<p>3.管理软件包</p>
+<p>4.选择当前Wine容器</p>
+<p>5.更改box64内部版本</p>
+<p>6.补丁程序注释(自述文件)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(4).webp"></p>
+<p>进入 Settings，我们要根据自己的实际情况在这里进行一一设置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(5).webp"></p>
+<p><strong>1.Dynarec settings</strong></p>
+<p>这里有两个设置内容，我们把 presets 和 additional preset compatibility flags 都设置为“性能档”（即在最下方分别输入4和5，其实就是45）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(6).webp"></p>
+<p><strong>2.Wine prefix settings (+ESYNC)</strong></p>
+<p>选择2 Change wine esync mode</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(7).webp"></p>
+<p>这里，如果你的设备已经 root 了，就选择3，没有 root 的话，就选择2</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(8).webp"></p>
+<p><strong>3.DXVK settings</strong></p>
+<p>主要更改垂直同步，其他的不用管也行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(9).webp"></p>
+<p>选择2，把垂直同步关掉，不然有些游戏的帧数解不开<em><strong>（dxgi&#x3D;0 no vsync这个）</strong></em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(10).webp"></p>
+<p><strong>4.System settings</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(11).webp"></p>
+<p>先进1 Change fallback resolution，把分辨率改成1600x720，这样可以撑满手机的宽屏。不过这个只是回退分辨率，我们待会还要去 Termux:X11那里再设置一遍。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(12).webp"></p>
+<p>然后进入2 Change primary cores amount，这里是设置大核数量。具体设置多少要视你设备的 soc 来定。例如骁龙8 gen 3就是6大核的设计，那就选6。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(13).webp"></p>
+<p>接着进入3 Change locale 改变语言环境</p>
+<p>中文环境就是 zh_CN，默认是英文，不改也行。（一般来说英文比较好）</p>
+<p><strong>注意：要自行导入中文包（后文有）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(14).webp"></p>
+<p>Change HUD preset 的话是性能监控器，根据需要开启，全开的话就选3</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(15).webp"></p>
+<p><strong>5.Root settings</strong></p>
+<p>此时，我们回到设置页</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(16).webp"></p>
+<p>如果你的手机有 root 的话，那就进入6 Root settings，选择第二项和第四项，这样可以有效使 Termux 保活（因为运行时 Termux 是在后台运行，前台的是 Termux:X11）</p>
+<p>没有 root 的话要么听天由命，要么去电池设置里允许后台高耗电（忽略电池优化）、前台贴边小窗和锁后台抢救一下，有能力的话用 adb 命令也行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(17).webp"></p>
+<p><strong>6.Device compatibility settings</strong></p>
+<p>这是兼容性选项的页面，我们选择3 Switch services,.exe startup，关掉 services.exe 减少占用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(18).webp"></p>
+<p><strong>7.Manage packages</strong></p>
+<p>一些应用只能在特定的Wine 版本下运行，我们可以进入 Manage packages，选择2 Install wine</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(19).webp"></p>
+<p>选择想更换的 Wine 进行下载。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(20).webp"></p>
+<p>下载完之后还要回到主界面进行版本的更换</p>
+<p>选择4 Select current wine container</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(21).webp"></p>
+<p>输入要更换的wine包</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(22).webp"></p>
+<p>**8.VirGL settings（MTK&amp;Kirin SOC）<br>**</p>
+<p><strong>如果你使用的设备并非高通骁龙的soc，而是麒麟和联发科的，那么就需要用到这个设置去模拟一个GPU。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(23).webp"></p>
+<p><strong>我们进入VirGL settings，可以看到我们目前是没有安装VirGL的，我们需要在下面选一个版本进行安装。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(24).webp"></p>
+<p>或者进入 Wine 之后再切换</p>
+<p>（后文的切换步骤就不用做了）</p>
+<p>设置一：（start＞install＞dxvk＞wined3d-8.20）</p>
+<p>设置二：（start＞install＞turnip＞VirGL Mesa 24.0.0）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(25).webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(26).webp"></p>
+<hr>
+<p><strong>至此，Termux 的相关内容已经设置完毕了，现在要设置 Termux:X11</strong></p>
+<p>点击“PREFERENCES”进入设置页面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(27).webp"></p>
+<p>点击最上面的“Display resolution mode”，选择“custom”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(28).webp"></p>
+<p>然后在“Display resolution”把分辨率改成1600×720，也就是在 Termux 设置过的参数。（真正的分辨率）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(29).webp"></p>
+<p>为了让屏幕不留黑边全屏运行，我们可以把这几个开关打开。</p>
+<p>（如果是搓屏幕操作的话可以不开，这样软件键盘可以调出来）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(30).webp"></p>
+<p>如果你是外接鼠标的话，需要打开这个开关。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(31).webp"></p>
+<p>键盘的话，这个关掉。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(32).webp"></p>
+<p>至于其他设置就根据自己的需要再单独弄吧。</p>
+<p>至此，Termux:X11 的相关内容已经设置完毕了。至于 Inputbridge ，自己摸索一下就行了。可以把应用内语言改成中文，然后按需设置。</p>
+<p>（更推荐外接键鼠，舒适度高很多）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(33).webp"></p>
+<p>现在，我们回到 mobox 的界面，选择1 Start Wine，点击“OK”，启动 Wine。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(34).webp"></p>
+<p>进入到 Wine 的主界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(35).webp"></p>
+<p><strong>触屏手势操作：</strong></p>
+<p><strong>多选：长按空白处滑动</strong></p>
+<p><strong>右键：双指点击</strong></p>
+<p><strong>滑动：双指滑动</strong></p>
+<p>我们可以在菜单页面选择切换一下dxvk的版本，用dxvk-dev会比较好<strong>（骁龙用）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(36).webp"></p>
+<p>我们的手机文件是显示在D盘和Z盘，D盘的话打开就有，Z盘的话路径为</p>
+<p><code>Z &gt; home &gt; storage</code></p>
+<p>看到 storage 就熟悉起来了。</p>
+<p>不过要注意，因为我用的系统语言是英语，因此在显示中文时会有一堆“□□□□”，这是正常现象，平时我们也要养成用英文命名文件夹的好习惯噢🤓☝️</p>
+<p>接下来是中文包的安装</p>
+<p>下载好网盘里“zh_CN”的压缩包，解压。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(37).webp"></p>
+<p>全选里面所有的字体文件，复制</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(38).webp"></p>
+<p>粘贴到 C&#x2F;windows&#x2F;fonts，然后重启 Termux 和Termux: x11，中文字体包就安装完成了（但还是会有部分内容显示不了的情况，可以自己试着多加几个字体）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(39).webp"></p>
+<p>接下来我们可以打开C盘，Program Files，尝试运行IE浏览器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(40).webp"></p>
+<p>可以看到（.exe程序）是能够正常运行的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(41).webp"></p>
+<p>要装其他应用的话应该是把应用程序文件下载到手机本地然后复制到C盘启动。（个人感觉最好是把整个应用压缩包直接存手机上复制过去，里面的安装过程会很卡，比较折磨人）</p>
+<p>提前下载好应用程序，复制到 C 盘，然后正常安装启动就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(42).webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(43).webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(44).webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(45).webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/640%20(46).webp"></p>
+<p>当然如果你愿意，你可以在上面装一个安卓模拟器，然后无限套娃。</p>
+<p>因为手机转译PC应用的过程会损失较多性能，一般来说除非你用的soc是最新款的旗舰，不然可能跑大型游戏挺够呛的。最常用的场景貌似是玩GalGame？我用我的x90pp（8gen2）和vpad2（D9000）都试了一遍，基本上就是勉强能玩的水平，和PC还是比不了的。正经玩游戏的话还是用电脑吧。</p>
+<hr>
+<p><strong>关于各位可能遇到的一些问题：</strong></p>
+<p>**<br>**</p>
+<p><strong>第一，开始的时候一直卡在Storage permission denied？</strong></p>
+<p>因为资源在海外，试一试换个好一点的节点，保持网络通畅</p>
+<p><strong>第二，不知道设备soc的型号&#x2F;大核数量？</strong></p>
+<p>百度，必应，谷歌，搜狗，360，注意是大核数量不是整个soc的核心数量！</p>
+<p>（超大核也算大核）</p>
+<p><strong>第三，Wine只有C盘和Z盘？系统内无法更换dxvk版本？</strong></p>
+<p>换个Wine版本，上面教程有操作方法</p>
+<p><strong>第四，双击应用没反应？</strong></p>
+<p>和麒麟天玑一样改成其他的 DXVK 和 Turnip 驱动，直到成功为止</p>
+<p><strong>第五，人格……🤓☝️</strong></p>
+<hr>
+<p><strong>至此，全文结束。</strong></p>
+<p>剩下的部分就由各位自行去探索。</p>
+<p>让游戏能玩比玩游戏本身更具有乐趣。</p>
+<p>一起享受这种离经叛道的折腾过程吧！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://Chengeeker.github.io">Chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://chengeeker.github.io/2025/01/05/mobile%20PC/">https://chengeeker.github.io/2025/01/05/mobile%20PC/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/12/18/airport/" title="机场推荐"><img class="cover" src="https://cdn.elicht.com/cloud/article/2653494350/2/2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">机场推荐</div></div><div class="info-2"><div class="info-item-1">收录了一部分我自己用过的机场，性价比和体验都还行的</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker/Chengeeker.github.io"><i class="fa-brands fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://qm.qq.com/q/FzIFQuBnwG" target="_blank" title="QQ Group"><i class="fa-brands fa-qq" style="color: #74C0FC;"></i></a><a class="social-icon" href="https://pd.qq.com/s/6lr4vlseh" target="_blank" title="QQ Channel"><i class="fa-solid fa-house-chimney-user" style="color: #74C0FC;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/01/05/mobile%20PC/" title="手机运行PC应用"><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="手机运行PC应用"/></a><div class="content"><a class="title" href="/2025/01/05/mobile%20PC/" title="手机运行PC应用">手机运行PC应用</a><time datetime="2025-01-05T11:03:17.249Z" title="Created 2025-01-05 19:03:17">2025-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/18/airport/" title="机场推荐"><img src="https://cdn.elicht.com/cloud/article/2653494350/2/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机场推荐"/></a><div class="content"><a class="title" href="/2024/12/18/airport/" title="机场推荐">机场推荐</a><time datetime="2024-12-18T11:02:44.600Z" title="Created 2024-12-18 19:02:44">2024-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用"><img src="/images/works/Xposed.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免Root内置Xposed模块应用"/></a><div class="content"><a class="title" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用">免Root内置Xposed模块应用</a><time datetime="2024-12-05T16:08:23.446Z" title="Created 2024-12-06 00:08:23">2024-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由"><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYzeP" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="运用浏览器功能实现抢课自由"/></a><div class="content"><a class="title" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由">运用浏览器功能实现抢课自由</a><time datetime="2024-12-05T15:27:05.910Z" title="Created 2024-12-05 23:27:05">2024-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Fuck%20CNKI/" title="让每个人都能够免费阅读/下载知网论文"><img src="/images/works/%E7%9F%A5%E7%BD%91.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让每个人都能够免费阅读/下载知网论文"/></a><div class="content"><a class="title" href="/2024/12/05/Fuck%20CNKI/" title="让每个人都能够免费阅读/下载知网论文">让每个人都能够免费阅读/下载知网论文</a><time datetime="2024-12-05T15:26:32.415Z" title="Created 2024-12-05 23:26:32">2024-12-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By Chen</div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
