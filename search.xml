@@ -76,6 +76,58 @@
       </tags>
   </entry>
   <entry>
+    <title>lspatch及其类似物使用教程</title>
+    <url>/2024/12/05/How%20to%20use%20lspatch/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
+<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
+<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
+<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
+<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
+<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
+<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
+<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
+<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
+<hr>
+<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
+<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
+<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
+<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
+<hr>
+<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgzJ4" alt="-5c240139b35410ebdc35ee0c999d99ee.jpg"></p>
+<h5 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mggAj" alt="-98e0c47efc2333e2cb4893322ad18560.jpg"></p>
+<h5 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgXTm" alt="-ae06f2dd0daaed163c31e2a51f66d524.jpg"></p>
+<h5 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h5><h5 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgW5M"></p>
+<h5 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h5><h5 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgsJe"></p>
+<h5 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h5><h5 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h5><h5 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgSbR"></p>
+<h5 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h5><h5 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h5><h5 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgoCz"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgA3k"></p>
+<h5 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h5><h5 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgJDi"></p>
+<h5 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgyIP"></p>
+<h5 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h5><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg2Go"></p>
+<h5 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgFvI"></p>
+<h5 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgH0g"></p>
+<h5 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgTKK"></p>
+<h5 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg1bA"></p>
+<h5 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h5><h5 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgGvX"></p>
+<h5 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h5><hr>
+<h5 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h5><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123pan.com/s/xEXZVv-DWmU3.html">LSPatch 0.6（403）</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-RWmU3.html">NPatch 0.6.1</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-CWmU3.html">OPatch 0.0.7</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-NWmU3.html">ONPatch 0.0.7</a></p>
+<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
+<p><a href="https://www.coolapk.com/">酷安</a></p>
+<h5 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgbmq"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>I am back</title>
     <url>/2024/12/05/I%20am%20back/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
@@ -174,230 +226,6 @@
       </categories>
   </entry>
   <entry>
-    <title>lspatch及其类似物使用教程</title>
-    <url>/2024/12/05/How%20to%20use%20lspatch/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
-<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
-<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
-<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
-<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
-<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
-<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
-<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
-<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
-<hr>
-<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
-<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
-<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
-<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
-<hr>
-<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgzJ4" alt="-5c240139b35410ebdc35ee0c999d99ee.jpg"></p>
-<h5 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mggAj" alt="-98e0c47efc2333e2cb4893322ad18560.jpg"></p>
-<h5 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgXTm" alt="-ae06f2dd0daaed163c31e2a51f66d524.jpg"></p>
-<h5 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h5><h5 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgW5M"></p>
-<h5 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h5><h5 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgsJe"></p>
-<h5 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h5><h5 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h5><h5 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgSbR"></p>
-<h5 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h5><h5 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h5><h5 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgoCz"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgA3k"></p>
-<h5 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h5><h5 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgJDi"></p>
-<h5 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgyIP"></p>
-<h5 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h5><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg2Go"></p>
-<h5 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgFvI"></p>
-<h5 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgH0g"></p>
-<h5 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgTKK"></p>
-<h5 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg1bA"></p>
-<h5 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h5><h5 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgGvX"></p>
-<h5 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h5><hr>
-<h5 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h5><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123pan.com/s/xEXZVv-DWmU3.html">LSPatch 0.6（403）</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-RWmU3.html">NPatch 0.6.1</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-CWmU3.html">OPatch 0.0.7</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-NWmU3.html">ONPatch 0.0.7</a></p>
-<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
-<p><a href="https://www.coolapk.com/">酷安</a></p>
-<h5 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgbmq"></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>clash</title>
-    <url>/2024/12/05/clash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
-<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
-<li>Android 5.0+ (minimum)</li>
-<li>Android 7.0+ (recommend)</li>
-<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
-</ul>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
-<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
-<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
-<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
-<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
-<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
-<li>系统代理和守卫、<code>TUN</code> 模式。</li>
-</ul>
-<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
-<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
-<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
-<li>MacOS intel芯片: x64.dmg</li>
-<li>MacOS apple M芯片: aarch64.dmg</li>
-</ul>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
-<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
-<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
-<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
-<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
-</ul>
-<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
-<li>64位: x64-setup.exe</li>
-<li>32位: x86-setup.exe</li>
-<li>arm64架构: arm64-setup.exe</li>
-</ul>
-<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
-<li>64位: x64_portable.zip</li>
-<li>32位: x86_portable.zip</li>
-<li>arm64架构: arm64_portable.zip</li>
-</ul>
-<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
-<li>64位: x64_fixed_webview2-setup.exe</li>
-<li>32位: x86_fixed_webview2-setup.exe</li>
-<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免Root内置Xposed模块应用</title>
-    <url>/2024/12/06/noRoot%20Xposed/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
-<p><em>Q音助手主要功能</em></p>
-<ul>
-<li>自由复制</li>
-<li>自动签到</li>
-<li>净化页面</li>
-</ul>
-<p>详情可前往<a href="https://github.com/zjns/QMHelper">模块作者的GitHub</a>进行查看</p>
-<p> <a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
-<hr>
-<h3 id="哔哩哔哩bilibili-B站"><a href="#哔哩哔哩bilibili-B站" class="headerlink" title="哔哩哔哩bilibili (B站)"></a>哔哩哔哩bilibili (B站)</h3><p><strong><u>当前使用条件：大会员+用户等级4级</u></strong></p>
-<p><em>哔哩漫游X主要功能</em></p>
-<ul>
-<li>解除番剧区域限制</li>
-<li>自由移除页面组件</li>
-<li>自定义直播、视频默认清晰度</li>
-<li>自定义播放速度<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/BiliRoamingX/BiliRoamingX">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-G1EU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="微博weibo"><a href="#微博weibo" class="headerlink" title="微博weibo"></a>微博weibo</h3><p><em>微博猪手主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-w1EU3.html">123云盘下载链接</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-CWoU3.html">我自己用share比较多，也提供一个下载链接</a></p>
-<hr>
-<h3 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h3><p><em>红薯猪手主要功能</em></p>
-<ul>
-<li>净化广告  </li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-NWoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><h4 id="（后面的版本有企业加固，就不更新了，用老版本就行）"><a href="#（后面的版本有企业加固，就不更新了，用老版本就行）" class="headerlink" title="（后面的版本有企业加固，就不更新了，用老版本就行）"></a>（后面的版本有企业加固，就不更新了，用老版本就行）</h4><p><em>知了主要功能</em></p>
-<ul>
-<li>净化广告  </li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/shatyuka/Zhiliao">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-RWoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p><em>杜比大喇叭β &amp; 叼毛 主要功能</em></p>
-<ul>
-<li>净化广告  </li>
-<li>功能拓展  </li>
-<li>音源代理<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/nining377/dolby_beta">模块作者的GitHub</a>进行查看（杜比大喇叭β）</p>
-<p>详情可前往<a href="https://github.com/Xposed-Modules-Repo/com.blanke.diaomao163">模块作者的GitHub</a>进行查看（网易叼毛云）</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-RCoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="百度贴吧"><a href="#百度贴吧" class="headerlink" title="百度贴吧"></a>百度贴吧</h3><p><em>贴吧TS主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/GuhDoy/TiebaTS">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://t.me/TabSwitch">贴吧TS官方telegram频道</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-rCoU3.html">123云盘下载链接</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-8CoU3.html">我自己用 贴吧 lite 比较多，也提供一个下载链接</a></p>
-<hr>
-<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em>  </p>
-<ul>
-<li>去广告</li>
-<li>解锁本地会员</li>
-</ul>
-<p>不过番茄大概率会提示非官方然后用不了，建议root，网盘也基本不更新这个。</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-URoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em>  </p>
-<ul>
-<li>去广告</li>
-<li>解锁本地会员</li>
-</ul>
-<p>这个比番茄要稳定，基本上不会有大问题。  </p>
-<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a>  </p>
-<hr>
-<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em>  </p>
-<ul>
-<li>净化页面</li>
-<li>功能增强</li>
-</ul>
-<p>详情可前往<a href="https://github.com/xihan123/QDReadHook">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a>  </p>
-<p><a href="https://www.123pan.com/s/xEXZVv-lRoU3.html">123云盘下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/12/05/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>机场推荐</title>
     <url>/2024/12/18/airport/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Needay"><a href="#Needay" class="headerlink" title="Needay"></a>Needay</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
@@ -460,63 +288,112 @@
       </tags>
   </entry>
   <entry>
-    <title>点开的微信文件，都去哪了（含QQ）</title>
-    <url>/2025/01/05/where%20are%20my%20documents/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
-<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
-<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
-<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
+    <title>clash</title>
+    <url>/2024/12/05/clash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
+<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
+<li>Android 5.0+ (minimum)</li>
+<li>Android 7.0+ (recommend)</li>
+<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
+<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
+<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
+<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
+<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
+<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
+<li>系统代理和守卫、<code>TUN</code> 模式。</li>
+</ul>
+<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
+<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
+<li>MacOS intel芯片: x64.dmg</li>
+<li>MacOS apple M芯片: aarch64.dmg</li>
+</ul>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
+<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
+<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
+<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
+<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
+</ul>
+<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
+<li>64位: x64-setup.exe</li>
+<li>32位: x86-setup.exe</li>
+<li>arm64架构: arm64-setup.exe</li>
+</ul>
+<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
+<li>64位: x64_portable.zip</li>
+<li>32位: x86_portable.zip</li>
+<li>arm64架构: arm64_portable.zip</li>
+</ul>
+<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
+<li>64位: x64_fixed_webview2-setup.exe</li>
+<li>32位: x86_fixed_webview2-setup.exe</li>
+<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FPA食用指北</title>
+    <url>/2025/01/05/fpa/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
+<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
 <hr>
-<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
+<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123865.com/s/xEXZVv-1a4U3">FPA123云盘下载链接</a></p>
+<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
 <hr>
-<p>为了实现这一目标，我们要用到“mt管理器”</p>
-<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
-<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
-<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
-<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
-<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
-<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
-<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
-<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
-<p>我们打开“mt管理器”，点击右上角的三个点</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
-<p>选择“添加本地存储”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
-<p>点击左上角那三条杠</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
-<p>选择“微信”（com.tencent.mm）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
-<p>点击“使用此文件夹”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
-<p>现在在侧边栏里已经添加了微信的根目录了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
-<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
-<p>进入没区别了，也就是旧版地址）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
-<p>选择MicorMsg。</p>
-<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
-<p>进入后选择“attachment”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
-<p>这里就存放着我们在微信接收的所有文件</p>
-<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
-<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
-<p>最后，补一个QQ文件的保存路径</p>
-<p>QQ群文件（不需要上述操作）</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
-<p>QQ频道（需要上述操作）</p>
-<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
+<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
+<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
+<p>无论选择了哪一个，都会进入到图示的patch界面</p>
+<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
+<p>内置过签方案：按需选择，普通或者增强都行。</p>
+<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
+<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
+<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
+<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
+<hr>
+<p><strong><u>一些注意事项：</u></strong></p>
+<p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
+<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/12/05/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>手机运行PC应用</title>
@@ -699,41 +576,219 @@
       </categories>
   </entry>
   <entry>
-    <title>FPA食用指北</title>
-    <url>/2025/01/05/fpa/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</p>
-<p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
-<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+    <title>clash怎么用？</title>
+    <url>/2025/01/06/how%20to%20use%20clash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/airport/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
 <hr>
-<p>然后是FPA的下载地址</p>
-<p><a href="https://www.123865.com/s/xEXZVv-1a4U3">FPA123云盘下载链接</a></p>
-<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
+<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
+<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
+<p>配置名起一个自己能认得出来的名字就行</p>
+<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
+<p>自动更新随便填，1440或者30都行。</p>
+<p>填写完成之后点击右上角的保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
+<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
+<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
+<p>全局代理即全部都走海外网络。直连模式则相反。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
+<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
 <hr>
-<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
-<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
-<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
-<p>无论选择了哪一个，都会进入到图示的patch界面</p>
-<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
-<p>内置过签方案：按需选择，普通或者增强都行。</p>
-<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
-<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
-<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
-<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
+<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
+<p>可以先进设置页把语言改成中文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
+<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
+<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
+<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
+<p>默认模式同样是规则模式。</p>
+<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
 <hr>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
-<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
+<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
+<p>找到最下面的“访问控制模式”</p>
+<p>允许所有应用——默认规则</p>
+<p>仅允许已选择的应用——白名单模式。</p>
+<p>不允许已选择的应用——黑名单模式。</p>
+<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
+<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
+<p>完成后打开代理即可。</p>
+<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免Root内置Xposed模块应用</title>
+    <url>/2024/12/06/noRoot%20Xposed/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
+<p><em>Q音助手主要功能</em></p>
+<ul>
+<li>自由复制</li>
+<li>自动签到</li>
+<li>净化页面</li>
+</ul>
+<p>详情可前往<a href="https://github.com/zjns/QMHelper">模块作者的GitHub</a>进行查看</p>
+<p> <a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
+<hr>
+<h3 id="哔哩哔哩bilibili-B站"><a href="#哔哩哔哩bilibili-B站" class="headerlink" title="哔哩哔哩bilibili (B站)"></a>哔哩哔哩bilibili (B站)</h3><p><strong><u>当前使用条件：大会员+用户等级4级</u></strong></p>
+<p><em>哔哩漫游X主要功能</em></p>
+<ul>
+<li>解除番剧区域限制</li>
+<li>自由移除页面组件</li>
+<li>自定义直播、视频默认清晰度</li>
+<li>自定义播放速度<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/BiliRoamingX/BiliRoamingX">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-G1EU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="微博weibo"><a href="#微博weibo" class="headerlink" title="微博weibo"></a>微博weibo</h3><p><em>微博猪手主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-w1EU3.html">123云盘下载链接</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-CWoU3.html">我自己用share比较多，也提供一个下载链接</a></p>
+<hr>
+<h3 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h3><p><em>红薯猪手主要功能</em></p>
+<ul>
+<li>净化广告  </li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-NWoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><h4 id="（后面的版本有企业加固，就不更新了，用老版本就行）"><a href="#（后面的版本有企业加固，就不更新了，用老版本就行）" class="headerlink" title="（后面的版本有企业加固，就不更新了，用老版本就行）"></a>（后面的版本有企业加固，就不更新了，用老版本就行）</h4><p><em>知了主要功能</em></p>
+<ul>
+<li>净化广告  </li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/shatyuka/Zhiliao">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-RWoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p><em>杜比大喇叭β &amp; 叼毛 主要功能</em></p>
+<ul>
+<li>净化广告  </li>
+<li>功能拓展  </li>
+<li>音源代理<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/nining377/dolby_beta">模块作者的GitHub</a>进行查看（杜比大喇叭β）</p>
+<p>详情可前往<a href="https://github.com/Xposed-Modules-Repo/com.blanke.diaomao163">模块作者的GitHub</a>进行查看（网易叼毛云）</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-RCoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="百度贴吧"><a href="#百度贴吧" class="headerlink" title="百度贴吧"></a>百度贴吧</h3><p><em>贴吧TS主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/GuhDoy/TiebaTS">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://t.me/TabSwitch">贴吧TS官方telegram频道</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-rCoU3.html">123云盘下载链接</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-8CoU3.html">我自己用 贴吧 lite 比较多，也提供一个下载链接</a></p>
+<hr>
+<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em>  </p>
+<ul>
+<li>去广告</li>
+<li>解锁本地会员</li>
+</ul>
+<p>不过番茄大概率会提示非官方然后用不了，建议root，网盘也基本不更新这个。</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-URoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em>  </p>
+<ul>
+<li>去广告</li>
+<li>解锁本地会员</li>
+</ul>
+<p>这个比番茄要稳定，基本上不会有大问题。  </p>
+<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a>  </p>
+<hr>
+<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em>  </p>
+<ul>
+<li>净化页面</li>
+<li>功能增强</li>
+</ul>
+<p>详情可前往<a href="https://github.com/xihan123/QDReadHook">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a>  </p>
+<p><a href="https://www.123pan.com/s/xEXZVv-lRoU3.html">123云盘下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
         <tag>Xposed</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>点开的微信文件，都去哪了（含QQ）</title>
+    <url>/2025/01/05/where%20are%20my%20documents/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
+<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
+<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
+<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
+<hr>
+<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
+<hr>
+<p>为了实现这一目标，我们要用到“mt管理器”</p>
+<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
+<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
+<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
+<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
+<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
+<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
+<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
+<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
+<p>我们打开“mt管理器”，点击右上角的三个点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
+<p>选择“添加本地存储”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
+<p>点击左上角那三条杠</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
+<p>选择“微信”（com.tencent.mm）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
+<p>点击“使用此文件夹”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
+<p>现在在侧边栏里已经添加了微信的根目录了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
+<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
+<p>进入没区别了，也就是旧版地址）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
+<p>选择MicorMsg。</p>
+<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
+<p>进入后选择“attachment”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
+<p>这里就存放着我们在微信接收的所有文件</p>
+<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
+<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
+<p>最后，补一个QQ文件的保存路径</p>
+<p>QQ群文件（不需要上述操作）</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
+<p>QQ频道（需要上述操作）</p>
+<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
 </search>
