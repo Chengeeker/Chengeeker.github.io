@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>点开的微信文件，都去哪了（含QQ） | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="通过注入文件管理器或直接读取目录实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点开的微信文件，都去哪了（含QQ）">
+<meta property="og:url" content="https://chengeeker.github.io/2025/01/05/where%20are%20my%20documents/index.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="通过注入文件管理器或直接读取目录实现">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0.jpg">
+<meta property="article:published_time" content="2025-01-05T11:23:09.029Z">
+<meta property="article:modified_time" content="2025-01-05T11:23:00.707Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0.jpg"><link rel="shortcut icon" href="/images/web.webp"><link rel="canonical" href="https://chengeeker.github.io/2025/01/05/where%20are%20my%20documents/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '点开的微信文件，都去哪了（含QQ）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/touxiang.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> shuoshuo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a><a class="nav-page-title" href="/"><span class="site-name">点开的微信文件，都去哪了（含QQ）</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> shuoshuo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">点开的微信文件，都去哪了（含QQ）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-05T11:23:09.029Z" title="Created 2025-01-05 19:23:09">2025-01-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-05T11:23:00.707Z" title="Updated 2025-01-05 19:23:00">2025-01-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tutorials/">Tutorials</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>4mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
+<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
+<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
+<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
+<hr>
+<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
+<hr>
+<p>为了实现这一目标，我们要用到“mt管理器”</p>
+<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
+<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
+<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
+<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
+<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
+<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
+<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
+<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
+<p>我们打开“mt管理器”，点击右上角的三个点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
+<p>选择“添加本地存储”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
+<p>点击左上角那三条杠</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
+<p>选择“微信”（com.tencent.mm）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
+<p>点击“使用此文件夹”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
+<p>现在在侧边栏里已经添加了微信的根目录了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
+<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
+<p>进入没区别了，也就是旧版地址）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
+<p>选择MicorMsg。</p>
+<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
+<p>进入后选择“attachment”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
+<p>这里就存放着我们在微信接收的所有文件</p>
+<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
+<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
+<p>最后，补一个QQ文件的保存路径</p>
+<p>QQ群文件（不需要上述操作）</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
+<p>QQ频道（需要上述操作）</p>
+<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://Chengeeker.github.io">Chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://chengeeker.github.io/2025/01/05/where%20are%20my%20documents/">https://chengeeker.github.io/2025/01/05/where%20are%20my%20documents/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/01/05/mobile%20PC/" title="手机运行PC应用"><img class="cover" src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">手机运行PC应用</div></div><div class="info-2"><div class="info-item-1">内容来自极客湾Geekerwan</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker/Chengeeker.github.io"><i class="fa-brands fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://qm.qq.com/q/FzIFQuBnwG" target="_blank" title="QQ Group"><i class="fa-brands fa-qq" style="color: #74C0FC;"></i></a><a class="social-icon" href="https://pd.qq.com/s/6lr4vlseh" target="_blank" title="QQ Channel"><i class="fa-solid fa-house-chimney-user" style="color: #74C0FC;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/01/05/where%20are%20my%20documents/" title="点开的微信文件，都去哪了（含QQ）"><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="点开的微信文件，都去哪了（含QQ）"/></a><div class="content"><a class="title" href="/2025/01/05/where%20are%20my%20documents/" title="点开的微信文件，都去哪了（含QQ）">点开的微信文件，都去哪了（含QQ）</a><time datetime="2025-01-05T11:23:09.029Z" title="Created 2025-01-05 19:23:09">2025-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/05/mobile%20PC/" title="手机运行PC应用"><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="手机运行PC应用"/></a><div class="content"><a class="title" href="/2025/01/05/mobile%20PC/" title="手机运行PC应用">手机运行PC应用</a><time datetime="2025-01-05T11:03:17.249Z" title="Created 2025-01-05 19:03:17">2025-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/18/airport/" title="机场推荐"><img src="https://cdn.elicht.com/cloud/article/2653494350/2/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机场推荐"/></a><div class="content"><a class="title" href="/2024/12/18/airport/" title="机场推荐">机场推荐</a><time datetime="2024-12-18T11:02:44.600Z" title="Created 2024-12-18 19:02:44">2024-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用"><img src="/images/works/Xposed.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免Root内置Xposed模块应用"/></a><div class="content"><a class="title" href="/2024/12/06/noRoot%20Xposed/" title="免Root内置Xposed模块应用">免Root内置Xposed模块应用</a><time datetime="2024-12-05T16:08:23.446Z" title="Created 2024-12-06 00:08:23">2024-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由"><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYzeP" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="运用浏览器功能实现抢课自由"/></a><div class="content"><a class="title" href="/2024/12/05/Free%20to%20steal%20lessons/" title="运用浏览器功能实现抢课自由">运用浏览器功能实现抢课自由</a><time datetime="2024-12-05T15:27:05.910Z" title="Created 2024-12-05 23:27:05">2024-12-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By Chen</div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
