@@ -76,14 +76,6 @@
       </tags>
   </entry>
   <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>lspatch及其类似物使用教程</title>
     <url>/2024/12/05/How%20to%20use%20lspatch/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
@@ -134,6 +126,14 @@
       <tags>
         <tag>Xposed</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
   </entry>
   <entry>
     <title>海外应用</title>
@@ -288,6 +288,59 @@
       </tags>
   </entry>
   <entry>
+    <title>clash</title>
+    <url>/2024/12/05/clash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
+<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
+<li>Android 5.0+ (minimum)</li>
+<li>Android 7.0+ (recommend)</li>
+<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
+<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
+<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
+<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
+<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
+<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
+<li>系统代理和守卫、<code>TUN</code> 模式。</li>
+</ul>
+<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
+<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
+<li>MacOS intel芯片: x64.dmg</li>
+<li>MacOS apple M芯片: aarch64.dmg</li>
+</ul>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
+<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
+<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
+<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
+<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
+</ul>
+<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
+<li>64位: x64-setup.exe</li>
+<li>32位: x86-setup.exe</li>
+<li>arm64架构: arm64-setup.exe</li>
+</ul>
+<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
+<li>64位: x64_portable.zip</li>
+<li>32位: x86_portable.zip</li>
+<li>arm64架构: arm64_portable.zip</li>
+</ul>
+<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
+<li>64位: x64_fixed_webview2-setup.exe</li>
+<li>32位: x86_fixed_webview2-setup.exe</li>
+<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2024/12/05/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -304,11 +357,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>song</title>
-    <url>/2025/01/05/song/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>免Root内置Xposed模块应用</title>
@@ -412,56 +460,8 @@
       </tags>
   </entry>
   <entry>
-    <title>clash</title>
-    <url>/2024/12/05/clash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
-<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
-<li>Android 5.0+ (minimum)</li>
-<li>Android 7.0+ (recommend)</li>
-<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
-</ul>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
-<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
-<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
-<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
-<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
-<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
-<li>系统代理和守卫、<code>TUN</code> 模式。</li>
-</ul>
-<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
-<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
-<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
-<li>MacOS intel芯片: x64.dmg</li>
-<li>MacOS apple M芯片: aarch64.dmg</li>
-</ul>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
-<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
-<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
-<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
-<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
-</ul>
-<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
-<li>64位: x64-setup.exe</li>
-<li>32位: x86-setup.exe</li>
-<li>arm64架构: arm64-setup.exe</li>
-</ul>
-<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
-<li>64位: x64_portable.zip</li>
-<li>32位: x86_portable.zip</li>
-<li>arm64架构: arm64_portable.zip</li>
-</ul>
-<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
-<li>64位: x64_fixed_webview2-setup.exe</li>
-<li>32位: x86_fixed_webview2-setup.exe</li>
-<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
+    <title>song</title>
+    <url>/2025/01/05/song/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
 </search>
