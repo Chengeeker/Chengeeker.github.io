@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>clash</title>
     <url>/2024/12/05/clash/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
@@ -116,6 +108,14 @@
 ]]></content>
   </entry>
   <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>免Root内置Xposed模块应用</title>
     <url>/2024/12/06/%E5%85%8Droot%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
@@ -126,7 +126,7 @@
 <li>净化页面</li>
 </ul>
 <p>详情可前往<a href="https://github.com/zjns/QMHelper">模块作者的GitHub</a>进行查看</p>
-<p> <a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
 <hr>
 <h3 id="哔哩哔哩bilibili-B站"><a href="#哔哩哔哩bilibili-B站" class="headerlink" title="哔哩哔哩bilibili (B站)"></a>哔哩哔哩bilibili (B站)</h3><p><strong><u>当前使用条件：大会员+用户等级4级</u></strong></p>
 <p><em>哔哩漫游X主要功能</em></p>
@@ -150,15 +150,15 @@
 <hr>
 <h3 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h3><p><em>红薯猪手主要功能</em></p>
 <ul>
-<li>净化广告  </li>
+<li>净化广告</li>
 <li>功能拓展<br>……</li>
 </ul>
 <p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
 <p><a href="https://www.123pan.com/s/xEXZVv-NWoU3.html">123云盘下载链接</a></p>
 <hr>
-<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><h4 id="（后面的版本有企业加固，就不更新了，用老版本就行）"><a href="#（后面的版本有企业加固，就不更新了，用老版本就行）" class="headerlink" title="（后面的版本有企业加固，就不更新了，用老版本就行）"></a>（后面的版本有企业加固，就不更新了，用老版本就行）</h4><p><em>知了主要功能</em></p>
+<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><p><em>知了主要功能</em></p>
 <ul>
-<li>净化广告  </li>
+<li>净化广告</li>
 <li>功能拓展<br>……</li>
 </ul>
 <p>详情可前往<a href="https://github.com/shatyuka/Zhiliao">模块作者的GitHub</a>进行查看</p>
@@ -166,8 +166,8 @@
 <hr>
 <h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p><em>杜比大喇叭β &amp; 叼毛 主要功能</em></p>
 <ul>
-<li>净化广告  </li>
-<li>功能拓展  </li>
+<li>净化广告</li>
+<li>功能拓展</li>
 <li>音源代理<br>……</li>
 </ul>
 <p>详情可前往<a href="https://github.com/nining377/dolby_beta">模块作者的GitHub</a>进行查看（杜比大喇叭β）</p>
@@ -182,9 +182,8 @@
 <p>详情可前往<a href="https://github.com/GuhDoy/TiebaTS">模块作者的GitHub</a>进行查看</p>
 <p><a href="https://t.me/TabSwitch">贴吧TS官方telegram频道</a></p>
 <p><a href="https://www.123pan.com/s/xEXZVv-rCoU3.html">123云盘下载链接</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-8CoU3.html">我自己用 贴吧 lite 比较多，也提供一个下载链接</a></p>
 <hr>
-<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em>  </p>
+<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em></p>
 <ul>
 <li>去广告</li>
 <li>解锁本地会员</li>
@@ -192,21 +191,21 @@
 <p>不过番茄大概率会提示非官方然后用不了，建议root，网盘也基本不更新这个。</p>
 <p><a href="https://www.123pan.com/s/xEXZVv-URoU3.html">123云盘下载链接</a></p>
 <hr>
-<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em>  </p>
+<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em></p>
 <ul>
 <li>去广告</li>
 <li>解锁本地会员</li>
 </ul>
-<p>这个比番茄要稳定，基本上不会有大问题。  </p>
-<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a>  </p>
+<p>这个比番茄要稳定，基本上不会有大问题。</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a></p>
 <hr>
-<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em>  </p>
+<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em></p>
 <ul>
 <li>净化页面</li>
 <li>功能增强</li>
 </ul>
 <p>详情可前往<a href="https://github.com/xihan123/QDReadHook">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a>  </p>
+<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a></p>
 <p><a href="https://www.123pan.com/s/xEXZVv-lRoU3.html">123云盘下载链接</a></p>
 ]]></content>
       <categories>
@@ -215,6 +214,65 @@
       <tags>
         <tag>Xposed</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>点开的微信文件，都去哪了（含QQ）</title>
+    <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
+<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
+<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
+<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
+<hr>
+<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
+<hr>
+<p>为了实现这一目标，我们要用到“mt管理器”</p>
+<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
+<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
+<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
+<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
+<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
+<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
+<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
+<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
+<p>我们打开“mt管理器”，点击右上角的三个点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
+<p>选择“添加本地存储”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
+<p>点击左上角那三条杠</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
+<p>选择“微信”（com.tencent.mm）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
+<p>点击“使用此文件夹”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
+<p>现在在侧边栏里已经添加了微信的根目录了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
+<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
+<p>进入没区别了，也就是旧版地址）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
+<p>选择MicorMsg。</p>
+<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
+<p>进入后选择“attachment”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
+<p>这里就存放着我们在微信接收的所有文件</p>
+<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
+<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
+<p>最后，补一个QQ文件的保存路径</p>
+<p>QQ群文件（不需要上述操作）</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
+<p>QQ频道（需要上述操作）</p>
+<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
   <entry>
     <title>让每个人都能够免费阅读/下载知网论文</title>
@@ -364,65 +422,6 @@
       <tags>
         <tag>Xposed</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>点开的微信文件，都去哪了（含QQ）</title>
-    <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
-<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
-<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
-<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
-<hr>
-<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
-<hr>
-<p>为了实现这一目标，我们要用到“mt管理器”</p>
-<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
-<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
-<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
-<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
-<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
-<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
-<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
-<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
-<p>我们打开“mt管理器”，点击右上角的三个点</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
-<p>选择“添加本地存储”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
-<p>点击左上角那三条杠</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
-<p>选择“微信”（com.tencent.mm）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
-<p>点击“使用此文件夹”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
-<p>现在在侧边栏里已经添加了微信的根目录了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
-<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
-<p>进入没区别了，也就是旧版地址）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
-<p>选择MicorMsg。</p>
-<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
-<p>进入后选择“attachment”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
-<p>这里就存放着我们在微信接收的所有文件</p>
-<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
-<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
-<p>最后，补一个QQ文件的保存路径</p>
-<p>QQ群文件（不需要上述操作）</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
-<p>QQ频道（需要上述操作）</p>
-<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
   </entry>
   <entry>
     <title>手机运行PC应用</title>
@@ -603,41 +602,6 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
   </entry>
   <entry>
     <title>机场推荐</title>
@@ -825,6 +789,41 @@
       </categories>
       <tags>
         <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
       </tags>
   </entry>
 </search>
