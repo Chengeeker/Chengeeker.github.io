@@ -62,6 +62,60 @@
       </tags>
   </entry>
   <entry>
+    <title>FPA食用指北</title>
+    <url>/2025/01/05/fpa/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
+<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+<hr>
+<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123865.com/s/xEXZVv-1a4U3">FPA123云盘下载链接</a></p>
+<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<hr>
+<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
+<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
+<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
+<p>无论选择了哪一个，都会进入到图示的patch界面</p>
+<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
+<p>内置过签方案：按需选择，普通或者增强都行。</p>
+<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
+<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
+<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
+<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
+<hr>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
+<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/12/05/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>免Root内置Xposed模块应用</title>
     <url>/2024/12/06/%E5%85%8Droot%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
@@ -156,42 +210,6 @@
 ]]></content>
       <categories>
         <category>Software</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FPA食用指北</title>
-    <url>/2025/01/05/fpa/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
-<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
-<hr>
-<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123865.com/s/xEXZVv-1a4U3">FPA123云盘下载链接</a></p>
-<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
-<hr>
-<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
-<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
-<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
-<p>无论选择了哪一个，都会进入到图示的patch界面</p>
-<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
-<p>内置过签方案：按需选择，普通或者增强都行。</p>
-<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
-<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
-<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
-<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
-<hr>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
-<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
       </categories>
       <tags>
         <tag>Xposed</tag>
@@ -295,24 +313,6 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/12/05/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>clash怎么用？</title>
@@ -421,6 +421,41 @@
       </categories>
       <tags>
         <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
       </tags>
   </entry>
   <entry>
@@ -604,76 +639,6 @@
       </categories>
   </entry>
   <entry>
-    <title>机场推荐</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ Hysteria2协议节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>原介绍：</p>
-<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
-<p>更新介绍：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<p>写于2025-02-04 19:07:24</p>
-<hr>
-<h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
-<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
-<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
-<p>✨节点地区 : 港 台 新 日 美 德</p>
-<p>✨多种流媒体服务访问解锁</p>
-<p>✨仅限日常使用，禁止BT下载</p>
-<p>✨不保证速率</p>
-<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>海外应用</title>
     <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
@@ -764,62 +729,6 @@
       </categories>
   </entry>
   <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
-<hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>音乐解锁</title>
     <url>/2025/04/24/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm)</p>
@@ -860,20 +769,27 @@
 <p>访问 &#x2F;data&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;databases&#x2F; 目录。</p>
 <p>将文件 player_process_db 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
 <p>提交该数据库文件。</p>
-<h3 id="酷我音乐"><a href="#酷我音乐" class="headerlink" title="酷我音乐"></a>酷我音乐</h3><p>日前，仅手机客户端下载的至臻全景声及至臻母带音质的音乐文件采用新版加密。</p>
+<h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><p>除了使用音乐解锁之外，网易云音乐还可以使用无损解析的网站。</p>
+<p><a href="https://www.kanxizai.cn/163_music/">网易云音乐无损解析</a></p>
+<p><a href="https://t.me/Music163bot">telegram网易云音乐下载机器人</a></p>
+<p>使用方式：</p>
+<p>1.输入歌曲名称或歌曲ID或分享链接，点击搜索或直接解析</p>
+<p>2.选择音质，点击解析</p>
+<p>3.等待解析完毕，点击下载歌曲</p>
+<h2 id="酷我音乐"><a href="#酷我音乐" class="headerlink" title="酷我音乐"></a>酷我音乐</h2><p>日前，仅手机客户端下载的至臻全景声及至臻母带音质的音乐文件采用新版加密。</p>
 <p>其他音质目前不需要提取密钥。</p>
 <p>PC平台暂未推出使用新版加密的音质。</p>
-<h4 id="安卓（Android）-1"><a href="#安卓（Android）-1" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h4><p>启动具有 root 特权的文件浏览器</p>
+<h3 id="安卓（Android）-1"><a href="#安卓（Android）-1" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
 <p>访问 &#x2F;data&#x2F;data&#x2F;cn.kuwo.player&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
 <p>将文件 cn.kuwo.player.mmkv.defaultconfig 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
 <p>提交该数据库文件。</p>
-<h3 id="酷狗音乐"><a href="#酷狗音乐" class="headerlink" title="酷狗音乐"></a>酷狗音乐</h3><p>酷狗现在对部分用户推送了 kgg 加密格式（安卓、Windows 客户端）。</p>
+<h2 id="酷狗音乐"><a href="#酷狗音乐" class="headerlink" title="酷狗音乐"></a>酷狗音乐</h2><p>酷狗现在对部分用户推送了 kgg 加密格式（安卓、Windows 客户端）。</p>
 <p>根据平台不同，你需要提取密钥数据库。</p>
-<h4 id="安卓（Android）-2"><a href="#安卓（Android）-2" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h4><p>启动具有 root 特权的文件浏览器</p>
+<h3 id="安卓（Android）-2"><a href="#安卓（Android）-2" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
 <p>访问 &#x2F;data&#x2F;data&#x2F;com.kugou.android&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
 <p>将文件 mggkey_multi_process 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
 <p>提交该数据库文件。</p>
-<h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><p>酷狗的 Windows 客户端使用 SQLite 数据库储存密钥。</p>
+<h3 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h3><p>酷狗的 Windows 客户端使用 SQLite 数据库储存密钥。</p>
 <p>该密钥文件通常存储在下述路径：</p>
 <p>%APPDATA%\KuGou8\KGMusicV3.db</p>
 <h2 id="下载限额用完了"><a href="#下载限额用完了" class="headerlink" title="下载限额用完了"></a>下载限额用完了</h2><p>小妙招解决大问题，就是有（亿点点麻烦）如下：<br>QQ音乐缓存试听路径（下载限额用完，用这个）：<br>Android&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;cache&#x2F;DataTransport&#x2F;2810304&#x2F;data&#x2F;tp2p&#x2F;.tpfs&#x2F;duty&#x2F;F0M0003fqwIn2Gqrci.mflac</p>
@@ -883,5 +799,96 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机场推荐</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ Hysteria2协议节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>原介绍：</p>
+<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
+<p>更新介绍：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<p>写于2025-02-04 19:07:24</p>
+<hr>
+<h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
+<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
+<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
+<p>✨节点地区 : 港 台 新 日 美 德</p>
+<p>✨多种流媒体服务访问解锁</p>
+<p>✨仅限日常使用，禁止BT下载</p>
+<p>✨不保证速率</p>
+<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
   </entry>
 </search>
