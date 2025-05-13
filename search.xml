@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>clash</title>
     <url>/2024/12/05/clash/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
@@ -54,12 +62,30 @@
       </tags>
   </entry>
   <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
 ]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
   </entry>
   <entry>
     <title>FPA食用指北</title>
@@ -256,6 +282,46 @@
       </tags>
   </entry>
   <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
     <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
@@ -369,46 +435,6 @@
       <tags>
         <tag>clash</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
   </entry>
   <entry>
     <title>lspatch及其类似物使用教程</title>
@@ -644,6 +670,41 @@
       </categories>
   </entry>
   <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机场推荐</title>
     <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
@@ -712,140 +773,6 @@
       <tags>
         <tag>clash</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
-<hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>音乐解锁</title>
-    <url>/2025/04/24/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="建议使用非中国大陆ip进行访问。"><a href="#建议使用非中国大陆ip进行访问。" class="headerlink" title="建议使用非中国大陆ip进行访问。"></a><strong><em>建议使用非中国大陆ip进行访问。</em></strong></h3><p>目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm)</p>
-<p>Demo: <a href="https://demo.unlock-music.dev/">https://demo.unlock-music.dev/</a></p>
-<p>React Demo: <a href="https://um-react.netlify.app/">https://um-react.netlify.app/</a></p>
-<p>代码仓库: <a href="https://git.unlock-music.dev/um/">https://git.unlock-music.dev/um/</a></p>
-<h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2><p>重复下载同一首的歌曲不重复扣下载配额，但是同一首歌的两个版本会重复扣下载配额，请仔细分辨。</p>
-<p>部分平台获取的加密文件未包含密钥。选择你下载文件时使用的客户端来查看说明。</p>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>目前 Windows 客户端 19.51 或更低版本下载的歌曲文件无需密钥，其余平台的官方正式版本均需要提取密钥。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-p2xU3">QQ音乐1943.exe安装包</a></p>
-<p>QQ音乐屏蔽更新，桌面建个记事本，记事本重命“QQMusicUp.exe”</p>
-<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>Mac 需要降级到 8.8.0 或以下版本。</p>
-<p>导入密钥可以参考下面的步骤：</p>
-<p>点击顶部的设置</p>
-<p>设定区域选择QMCv2 密钥</p>
-<p>按下 添加一条密钥 按钮 右侧 的 v</p>
-<p>选择 从文件导入密钥…</p>
-<p>查看密钥提取说明：</p>
-<p>Mac 客户端使用 mmkv 数据库储存密钥。</p>
-<p>此外，你需要降级到 2023.09.03 版本的客户端。新版本对 mmkv 数据库进行了加密处理。</p>
-<p>该密钥文件通常存储在下述路径：</p>
-<p>~&#x2F;Library&#x2F;Containers&#x2F;com.tencent.QQMusicMac&#x2F;Data&#x2F;Library&#x2F;Application Support&#x2F;QQMusicMac&#x2F;mmkv&#x2F;MMKVStreamEncryptId</p>
-<p>导入密钥<br>选中并复制上述的 MMKVStreamEncryptId 文件路径</p>
-<p>点击上方的「文件选择区域」，打开「文件选择框」</p>
-<p>按下「shift + command + G」组合键打开「路径输入框」</p>
-<p>粘贴之前复制的 MMKVStreamEncryptId 文件路径</p>
-<p>按下「回车键」确认。</p>
-<h3 id="安卓（Android）"><a href="#安卓（Android）" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><h4 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h4><p>安卓提取密钥需要 root 特权，建议用电脑操作。</p>
-<p>QQ 音乐官方版本需要提取密钥才能解密。</p>
-<p>你也可以尝试使用【QQ 音乐简洁版】或 OEM 定制版（如小米、魅族定制版）。简洁、定制版本目前不需要提取密钥。</p>
-<p>导入密钥可以参考下面的步骤：</p>
-<p>点击顶部的设置</p>
-<p>设定区域选择QMCv2 密钥</p>
-<p>按下 添加一条密钥 按钮 右侧 的 v</p>
-<p>选择 从文件导入密钥…</p>
-<p>查看密钥提取说明：</p>
-<p>启动具有 root 特权的文件浏览器</p>
-<p>访问 &#x2F;data&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;databases&#x2F; 目录。</p>
-<p>将文件 player_process_db 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
-<p>提交该数据库文件。</p>
-<h4 id="vivo手机做法"><a href="#vivo手机做法" class="headerlink" title="vivo手机做法"></a>vivo手机做法</h4><p>提供一种在vivo手机上提出qq音乐密钥的方法：</p>
-<p>vivo手机可以用电脑版互传（网页版不行）单独把qq音乐(连带数据)备份出来。</p>
-<p>记住备份文件的位置方便找到</p>
-<p>然后用压缩软件打开。里面就有这个文件。</p>
-<p><img src="https://git.unlock-music.dev/um/um-react/attachments/38fffeae-7d08-4e9a-b6e0-6758c0b4646b"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-04-29_23-17-52.png"></p>
-<h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><p>除了使用音乐解锁之外，网易云音乐还可以使用无损解析的网站。</p>
-<p><a href="https://www.kanxizai.cn/163_music/">网易云音乐无损解析</a></p>
-<p><a href="https://t.me/Music163bot">telegram网易云音乐下载机器人</a></p>
-<p>使用方式：</p>
-<p>1.输入歌曲名称或歌曲ID或分享链接，点击搜索或直接解析</p>
-<p>2.选择音质，点击解析</p>
-<p>3.等待解析完毕，点击下载歌曲</p>
-<h2 id="酷我音乐"><a href="#酷我音乐" class="headerlink" title="酷我音乐"></a>酷我音乐</h2><p>日前，仅手机客户端下载的至臻全景声及至臻母带音质的音乐文件采用新版加密。</p>
-<p>其他音质目前不需要提取密钥。</p>
-<p>PC平台暂未推出使用新版加密的音质。</p>
-<h3 id="安卓（Android）-1"><a href="#安卓（Android）-1" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
-<p>访问 &#x2F;data&#x2F;data&#x2F;cn.kuwo.player&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
-<p>将文件 cn.kuwo.player.mmkv.defaultconfig 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
-<p>提交该数据库文件。</p>
-<h2 id="酷狗音乐"><a href="#酷狗音乐" class="headerlink" title="酷狗音乐"></a>酷狗音乐</h2><p>酷狗现在对部分用户推送了 kgg 加密格式（安卓、Windows 客户端）。</p>
-<p>根据平台不同，你需要提取密钥数据库。</p>
-<h3 id="安卓（Android）-2"><a href="#安卓（Android）-2" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
-<p>访问 &#x2F;data&#x2F;data&#x2F;com.kugou.android&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
-<p>将文件 mggkey_multi_process 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
-<p>提交该数据库文件。</p>
-<h3 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h3><p>酷狗的 Windows 客户端使用 SQLite 数据库储存密钥。</p>
-<p>该密钥文件通常存储在下述路径：</p>
-<p>%APPDATA%\KuGou8\KGMusicV3.db</p>
-<h2 id="下载限额用完了"><a href="#下载限额用完了" class="headerlink" title="下载限额用完了"></a>下载限额用完了</h2><p>小妙招解决大问题，就是有（亿点点麻烦）如下：<br>QQ音乐缓存试听路径（下载限额用完，用这个）：<br>Android&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;cache&#x2F;DataTransport&#x2F;2810304&#x2F;data&#x2F;tp2p&#x2F;.tpfs&#x2F;duty&#x2F;F0M0003fqwIn2Gqrci.mflac</p>
-<p>密钥路径在root权限 试听文件名必须与密钥对应：<br>&#x2F;data&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;databases&#x2F;player_process_db</p>
-<p>小妙招解决大问题（没难度）如下：<br>酷狗音乐试听路径下载限额用完（用这个）<br>Android&#x2F;data&#x2F;com.kugou.android&#x2F;filse&#x2F;kugou&#x2F;down_c&#x2F;default&#x2F;0bb56882ffab74d88c86741b4a0ad8d2-2-630243241_HQ_force.kge（选择什么音质就缓存什么音质。）可能播放会跳转时间，但是不影响听。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
   </entry>
   <entry>
     <title>海外应用</title>
@@ -939,5 +866,104 @@
       <categories>
         <category>Software</category>
       </categories>
+  </entry>
+  <entry>
+    <title>音乐解锁</title>
+    <url>/2025/04/24/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="建议使用非中国大陆ip进行访问。"><a href="#建议使用非中国大陆ip进行访问。" class="headerlink" title="建议使用非中国大陆ip进行访问。"></a><strong><em>建议使用非中国大陆ip进行访问。</em></strong></h3><p>目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm)</p>
+<p>Demo: <a href="https://demo.unlock-music.dev/">https://demo.unlock-music.dev/</a></p>
+<p>React Demo: <a href="https://um-react.netlify.app/">https://um-react.netlify.app/</a></p>
+<p>代码仓库: <a href="https://git.unlock-music.dev/um/">https://git.unlock-music.dev/um/</a></p>
+<h2 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2><p>重复下载同一首的歌曲不重复扣下载配额，但是同一首歌的两个版本会重复扣下载配额，请仔细分辨。</p>
+<p>部分平台获取的加密文件未包含密钥。选择你下载文件时使用的客户端来查看说明。</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>目前 Windows 客户端 19.51 或更低版本下载的歌曲文件无需密钥，其余平台的官方正式版本均需要提取密钥。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-p2xU3">QQ音乐1943.exe安装包</a></p>
+<p>QQ音乐屏蔽更新，桌面建个记事本，记事本重命“QQMusicUp.exe”</p>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>Mac 需要降级到 8.8.0 或以下版本。</p>
+<p>导入密钥可以参考下面的步骤：</p>
+<p>点击顶部的设置</p>
+<p>设定区域选择QMCv2 密钥</p>
+<p>按下 添加一条密钥 按钮 右侧 的 v</p>
+<p>选择 从文件导入密钥…</p>
+<p>查看密钥提取说明：</p>
+<p>Mac 客户端使用 mmkv 数据库储存密钥。</p>
+<p>此外，你需要降级到 2023.09.03 版本的客户端。新版本对 mmkv 数据库进行了加密处理。</p>
+<p>该密钥文件通常存储在下述路径：</p>
+<p>~&#x2F;Library&#x2F;Containers&#x2F;com.tencent.QQMusicMac&#x2F;Data&#x2F;Library&#x2F;Application Support&#x2F;QQMusicMac&#x2F;mmkv&#x2F;MMKVStreamEncryptId</p>
+<p>导入密钥<br>选中并复制上述的 MMKVStreamEncryptId 文件路径</p>
+<p>点击上方的「文件选择区域」，打开「文件选择框」</p>
+<p>按下「shift + command + G」组合键打开「路径输入框」</p>
+<p>粘贴之前复制的 MMKVStreamEncryptId 文件路径</p>
+<p>按下「回车键」确认。</p>
+<h3 id="安卓（Android）"><a href="#安卓（Android）" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><h4 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h4><p>安卓提取密钥需要 root 特权，建议用电脑操作。</p>
+<p>QQ 音乐官方版本需要提取密钥才能解密。</p>
+<p>你也可以尝试使用【QQ 音乐简洁版】或 OEM 定制版（如小米、魅族定制版）。简洁、定制版本目前不需要提取密钥。</p>
+<p>导入密钥可以参考下面的步骤：</p>
+<p>点击顶部的设置</p>
+<p>设定区域选择QMCv2 密钥</p>
+<p>按下 添加一条密钥 按钮 右侧 的 v</p>
+<p>选择 从文件导入密钥…</p>
+<p>查看密钥提取说明：</p>
+<p>启动具有 root 特权的文件浏览器</p>
+<p>访问 &#x2F;data&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;databases&#x2F; 目录。</p>
+<p>将文件 player_process_db 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
+<p>提交该数据库文件。</p>
+<h4 id="vivo手机做法"><a href="#vivo手机做法" class="headerlink" title="vivo手机做法"></a>vivo手机做法</h4><p>提供一种在vivo手机上提出qq音乐密钥的方法：</p>
+<p>vivo手机可以用电脑版互传（网页版不行）单独把qq音乐(连带数据)备份出来。</p>
+<p>记住备份文件的位置方便找到</p>
+<p>然后用压缩软件打开。里面就有这个文件。</p>
+<p><img src="https://git.unlock-music.dev/um/um-react/attachments/38fffeae-7d08-4e9a-b6e0-6758c0b4646b"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-04-29_23-17-52.png"></p>
+<h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><p>除了使用音乐解锁之外，网易云音乐还可以使用无损解析的网站。</p>
+<p><a href="https://www.kanxizai.cn/163_music/">网易云音乐无损解析</a></p>
+<p><a href="https://t.me/Music163bot">telegram网易云音乐下载机器人</a></p>
+<p>使用方式：</p>
+<p>1.输入歌曲名称或歌曲ID或分享链接，点击搜索或直接解析</p>
+<p>2.选择音质，点击解析</p>
+<p>3.等待解析完毕，点击下载歌曲</p>
+<h2 id="酷我音乐"><a href="#酷我音乐" class="headerlink" title="酷我音乐"></a>酷我音乐</h2><p>日前，仅手机客户端下载的至臻全景声及至臻母带音质的音乐文件采用新版加密。</p>
+<p>其他音质目前不需要提取密钥。</p>
+<p>PC平台暂未推出使用新版加密的音质。</p>
+<h3 id="安卓（Android）-1"><a href="#安卓（Android）-1" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
+<p>访问 &#x2F;data&#x2F;data&#x2F;cn.kuwo.player&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
+<p>将文件 cn.kuwo.player.mmkv.defaultconfig 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
+<p>提交该数据库文件。</p>
+<h2 id="酷狗音乐"><a href="#酷狗音乐" class="headerlink" title="酷狗音乐"></a>酷狗音乐</h2><p>酷狗现在对部分用户推送了 kgg 加密格式（安卓、Windows 客户端）。</p>
+<p>根据平台不同，你需要提取密钥数据库。</p>
+<h3 id="安卓（Android）-2"><a href="#安卓（Android）-2" class="headerlink" title="安卓（Android）"></a>安卓（Android）</h3><p>启动具有 root 特权的文件浏览器</p>
+<p>访问 &#x2F;data&#x2F;data&#x2F;com.kugou.android&#x2F;files&#x2F;mmkv&#x2F; 目录。</p>
+<p>将文件 mggkey_multi_process 复制到浏览器可访问的目录。<br>（例如下载目录）</p>
+<p>提交该数据库文件。</p>
+<h3 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h3><p>酷狗的 Windows 客户端使用 SQLite 数据库储存密钥。</p>
+<p>该密钥文件通常存储在下述路径：</p>
+<p>%APPDATA%\KuGou8\KGMusicV3.db</p>
+<h2 id="下载限额用完了"><a href="#下载限额用完了" class="headerlink" title="下载限额用完了"></a>下载限额用完了</h2><p>小妙招解决大问题，就是有（亿点点麻烦）如下：<br>QQ音乐缓存试听路径（下载限额用完，用这个）：<br>Android&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;cache&#x2F;DataTransport&#x2F;2810304&#x2F;data&#x2F;tp2p&#x2F;.tpfs&#x2F;duty&#x2F;F0M0003fqwIn2Gqrci.mflac</p>
+<p>密钥路径在root权限 试听文件名必须与密钥对应：<br>&#x2F;data&#x2F;data&#x2F;com.tencent.qqmusic&#x2F;databases&#x2F;player_process_db</p>
+<p>小妙招解决大问题（没难度）如下：<br>酷狗音乐试听路径下载限额用完（用这个）<br>Android&#x2F;data&#x2F;com.kugou.android&#x2F;filse&#x2F;kugou&#x2F;down_c&#x2F;default&#x2F;0bb56882ffab74d88c86741b4a0ad8d2-2-630243241_HQ_force.kge（选择什么音质就缓存什么音质。）可能播放会跳转时间，但是不影响听。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
   </entry>
 </search>
