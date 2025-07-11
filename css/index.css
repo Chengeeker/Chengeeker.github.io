@@ -3888,6 +3888,52 @@ figure.highlight pre .javascript .function {
 #nav .site-page:not(.child):hover:after {
   width: 100%;
 }
+#nav .nav-page-title {
+  position: relative;
+  overflow: hidden;
+}
+#nav .nav-page-title > :first-child,
+#nav .nav-page-title > :last-child {
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#nav .nav-page-title > :last-child {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transform: translateY(-50%) translateY(-10px);
+  -moz-transform: translateY(-50%) translateY(-10px);
+  -o-transform: translateY(-50%) translateY(-10px);
+  -ms-transform: translateY(-50%) translateY(-10px);
+  transform: translateY(-50%) translateY(-10px);
+}
+#nav .nav-page-title:hover > :last-child {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transform: translateY(-50%) translateY(0);
+  -moz-transform: translateY(-50%) translateY(0);
+  -o-transform: translateY(-50%) translateY(0);
+  -ms-transform: translateY(-50%) translateY(0);
+  transform: translateY(-50%) translateY(0);
+}
+#nav .nav-page-title:hover > :first-child {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  transform: translateY(10px);
+}
 #pagination .pagination {
   margin-top: 20px;
   text-align: center;
