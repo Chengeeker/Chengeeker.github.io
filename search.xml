@@ -9,32 +9,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>clash</title>
     <url>/2024/12/05/clash/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
@@ -80,6 +54,32 @@
 <li>arm64架构: arm64_fixed_webview2-setup.exe</li>
 </ul>
 <h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
 ]]></content>
       <categories>
         <category>Software</category>
@@ -141,6 +141,46 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>让每个人都能够免费阅读/下载知网论文</title>
+    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
+<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
+<p>在应用商店搜索知网，会有以下结果。</p>
+<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
+<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
+<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
+<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
+<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
+<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
+<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
+<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
+<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
+<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
+<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
+<p>然后回到机构关联界面进行关联即可。</p>
+<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
+<p>（如果漫游过期了重新认证一遍即可）</p>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
+<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
+<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
+<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
+<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
+<hr>
+<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
+<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
+<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
+<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
+<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>知网</tag>
+      </tags>
   </entry>
   <entry>
     <title>免Root内置Xposed模块应用</title>
@@ -243,44 +283,44 @@
       </tags>
   </entry>
   <entry>
-    <title>让每个人都能够免费阅读/下载知网论文</title>
-    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
-<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
-<p>在应用商店搜索知网，会有以下结果。</p>
-<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
-<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
-<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
-<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
-<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
-<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
-<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
-<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
-<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
-<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
-<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
-<p>然后回到机构关联界面进行关联即可。</p>
-<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
-<p>（如果漫游过期了重新认证一遍即可）</p>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
-<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
-<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
-<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
-<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
-<hr>
-<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
-<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
-<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
-<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
-<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
-      <tags>
-        <tag>知网</tag>
-      </tags>
   </entry>
   <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
@@ -336,46 +376,6 @@
 <p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
 <p>QQ频道（需要上述操作）</p>
 <p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -553,6 +553,112 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>机场推荐</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
+<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
+<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
+<p>✨节点地区 : 港 台 新 日 美 德</p>
+<p>✨多种流媒体服务访问解锁</p>
+<p>✨仅限日常使用，禁止BT下载</p>
+<p>✨不保证速率</p>
+<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+<hr>
+<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ Hysteria2协议节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>原介绍：</p>
+<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
+<p>更新介绍：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<p>写于2025-02-04 19:07:24</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
   </entry>
   <entry>
     <title>手机运行PC应用</title>
@@ -826,112 +932,6 @@
       <categories>
         <category>Software</category>
       </categories>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机场推荐</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
-<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
-<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
-<p>✨节点地区 : 港 台 新 日 美 德</p>
-<p>✨多种流媒体服务访问解锁</p>
-<p>✨仅限日常使用，禁止BT下载</p>
-<p>✨不保证速率</p>
-<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-<hr>
-<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ Hysteria2协议节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>原介绍：</p>
-<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
-<p>更新介绍：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<p>写于2025-02-04 19:07:24</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
   <entry>
     <title>阅读legado</title>
