@@ -81,68 +81,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>FPA食用指北</title>
-    <url>/2025/01/05/fpa/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
-<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
-<hr>
-<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
-<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
-<hr>
-<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
-<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
-<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
-<p>无论选择了哪一个，都会进入到图示的patch界面</p>
-<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
-<p>内置过签方案：按需选择，普通或者增强都行。</p>
-<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
-<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
-<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
-<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
-<hr>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
-<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>让每个人都能够免费阅读/下载知网论文</title>
     <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
@@ -181,6 +119,72 @@
       <tags>
         <tag>知网</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，截至2025年7月15日，flclash并不支持-hysteria2-的节点，相同机场的情况下会比clash-meta天生少一批节点"><a href="#注意，截至2025年7月15日，flclash并不支持-hysteria2-的节点，相同机场的情况下会比clash-meta天生少一批节点" class="headerlink" title="注意，截至2025年7月15日，flclash并不支持 hysteria2 的节点，相同机场的情况下会比clash meta天生少一批节点"></a>注意，截至2025年7月15日，flclash并不支持 hysteria2 的节点，相同机场的情况下会比clash meta天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
   <entry>
     <title>免Root内置Xposed模块应用</title>
@@ -283,44 +287,96 @@
       </tags>
   </entry>
   <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+    <title>clash怎么用？</title>
+    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/airport/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
+<hr>
+<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
+<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
+<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
+<p>配置名起一个自己能认得出来的名字就行</p>
+<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
+<p>自动更新随便填，1440或者30都行。</p>
+<p>填写完成之后点击右上角的保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
+<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
+<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
+<p>全局代理即全部都走海外网络。直连模式则相反。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
+<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
+<hr>
+<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
+<p>可以先进设置页把语言改成中文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
+<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
+<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
+<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
+<p>默认模式同样是规则模式。</p>
+<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
+<hr>
+<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
+<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
+<p>找到最下面的“访问控制模式”</p>
+<p>允许所有应用——默认规则</p>
+<p>仅允许已选择的应用——白名单模式。</p>
+<p>不允许已选择的应用——黑名单模式。</p>
+<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
+<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
+<p>完成后打开代理即可。</p>
+<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FPA食用指北</title>
+    <url>/2025/01/05/fpa/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
+<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+<hr>
+<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
+<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<hr>
+<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
+<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
+<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
+<p>无论选择了哪一个，都会进入到图示的patch界面</p>
+<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
+<p>内置过签方案：按需选择，普通或者增强都行。</p>
+<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
+<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
+<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
+<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
+<hr>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
+<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
   </entry>
   <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
@@ -382,62 +438,6 @@
       </categories>
   </entry>
   <entry>
-    <title>clash怎么用？</title>
-    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/airport/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
-<hr>
-<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
-<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
-<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
-<p>配置名起一个自己能认得出来的名字就行</p>
-<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
-<p>自动更新随便填，1440或者30都行。</p>
-<p>填写完成之后点击右上角的保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
-<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
-<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
-<p>全局代理即全部都走海外网络。直连模式则相反。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
-<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
-<hr>
-<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
-<p>可以先进设置页把语言改成中文。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
-<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
-<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
-<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
-<p>默认模式同样是规则模式。</p>
-<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
-<hr>
-<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
-<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
-<p>找到最下面的“访问控制模式”</p>
-<p>允许所有应用——默认规则</p>
-<p>仅允许已选择的应用——白名单模式。</p>
-<p>不允许已选择的应用——黑名单模式。</p>
-<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
-<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
-<p>完成后打开代理即可。</p>
-<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>lspatch及其类似物使用教程</title>
     <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
@@ -484,145 +484,6 @@
       </categories>
       <tags>
         <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手机应用平替思路</title>
-    <url>/2025/05/28/%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8%E5%B9%B3%E6%9B%BF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="微信→play"><a href="#微信→play" class="headerlink" title="微信→play"></a>微信→play</h3><p>微信其实没啥好说的，腾讯系的应用对Xposed的打击力度越来越大，官方版的话广告又挺多，play版就是个不错的选择。虽然可能会有一点心理作用在里面。但如果不是很追求更新频次的话，play版用起来还是挺舒服的。</p>
-<h3 id="QQ→new-Tim"><a href="#QQ→new-Tim" class="headerlink" title="QQ→new&#x2F;Tim"></a>QQ→new&#x2F;Tim</h3><p>虽然大家都在骂，但不可否认QQ的官方最新版的体验是最好的，除了广告多，流畅不卡顿。</p>
-<p>Tim目前的版本还是太残血了点，如果只考虑简单使用的话可以考虑。</p>
-<p>目前 QQ play 版有复活的迹象，我将持续关注。</p>
-<h3 id="QQ音乐→new（OS特性）-简洁版"><a href="#QQ音乐→new（OS特性）-简洁版" class="headerlink" title="QQ音乐→new（OS特性）&#x2F;简洁版"></a>QQ音乐→new（OS特性）&#x2F;简洁版</h3><p>QQ音乐有很多定制版，但用下来感觉都差不多，体积也比较大。如果是追求可用且流畅的话可以用回简洁版。</p>
-<p>如果要体验完整的功能特性的话就用回主站吧。主站还有一些好用的旧版，例如91304,9704等。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-tzxU3">提供一个下载链接</a></p>
-<h3 id="哔哩哔哩→piliplus"><a href="#哔哩哔哩→piliplus" class="headerlink" title="哔哩哔哩→piliplus"></a>哔哩哔哩→piliplus</h3><p>抛开漫游不谈，b站的第三方客户端还是非常好用的。</p>
-<p>pilipala ➡️ pilipala X ➡️ piliplus 。</p>
-<p>我觉得反正都用第三方了，稳不稳定就已经很玄学了，不如直接选一个更新最勤快的fork版本。</p>
-<p><a href="https://github.com/bggRGjQaUbCoE/PiliPlus">piliplus的GitHub地址</a></p>
-<h3 id="抖音→抖音精选"><a href="#抖音→抖音精选" class="headerlink" title="抖音→抖音精选"></a>抖音→抖音精选</h3><p>为什么选择抖音精选？</p>
-<p> 首先，它的体积是抖音系里倒数第二小的一个，倒数第一是抖音极速版。如果极速版体验很好的话我也不会推荐抖音精选。</p>
-<p> 第二点，它默认是双列显示，加上无声进入抖音，能够更加有效避免社死。</p>
-<p> 第三点，它的播放界面是流媒体样式的，没有特别强的白色，烧屏的概率会小一些。</p>
-<p> 第四点，它真的已经算简洁了。除去一个没用的长视频，残血的二维码扫码，抖音的核心功能它基本都有，而且体验下来性能特别流畅。只要不挂梯子（一挂就无网络），可以说完胜抖音主站。</p>
-<h3 id="微博→See"><a href="#微博→See" class="headerlink" title="微博→See"></a>微博→See</h3><p>虽然说这里不讨论修改版，但是要用See就必须借助Xposed。See应该是目前可破解的第三方微博里体验最好的一个。</p>
-<p>下载一个See（Pro版是4.X），再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
-<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
-<p>See官方版下载地址：caij.xyz&#x2F;s</p>
-<h3 id="Twitter（X）→-Flyy"><a href="#Twitter（X）→-Flyy" class="headerlink" title="Twitter（X）→ Flyy"></a>Twitter（X）→ Flyy</h3><p>和See一个作者</p>
-<p>下载一个Flyy，再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
-<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
-<p><a href="https://github.com/funcenter/flyy">Flyy官方版GitHub下载地址</a></p>
-<h3 id="Telegram→-Ayugram-PC、Android-Nagram-Android"><a href="#Telegram→-Ayugram-PC、Android-Nagram-Android" class="headerlink" title="Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)"></a>Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)</h3><p>适用于 Windows 和 Android 的 Telegram 客户端，配备幽灵模式和改进的防召回功能。支持本地会员，无需Xposed，高度可定制。</p>
-<p><a href="https://t.me/ayugramchat">Ayugram官方频道&#x2F;下载地址</a></p>
-<p>NagramX这个软件包括了 Nagram + ayugram的特色功能。比如：消息过滤、防撤回、幽灵模式、强制原画质、本地大会员、下载上传加速、隐藏广告、强制保存私有频道视频……是新一代的全能第三方TG。</p>
-<p><a href="https://github.com/risin42/NagramX">NagramX的GitHub地址</a></p>
-<p><a href="https://t.me/NagramX">NagramX的Telegram频道</a></p>
-<h3 id="小红书-支付宝-购物-外卖-地图→play"><a href="#小红书-支付宝-购物-外卖-地图→play" class="headerlink" title="小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play"></a>小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play</h3><p>更低的更新频率和更流畅的使用体验，让play版应用一直是平替应用的首选。</p>
-<h3 id="浏览器→via"><a href="#浏览器→via" class="headerlink" title="浏览器→via"></a>浏览器→via</h3><p>伟大无需多言。还有一个我自己常用的嗅觉浏览器也挺不错，内置的播放器比很多第三方播放器好用，用来看视频体验很好。</p>
-<h3 id="蓝奏云→蓝云"><a href="#蓝奏云→蓝云" class="headerlink" title="蓝奏云→蓝云"></a>蓝奏云→蓝云</h3><p>蓝奏云貌似是没有官方app的，第三方里UI界面还不错，功能也挺齐全的，用的人多的，也就蓝云了。</p>
-<h3 id="百度贴吧→贴吧lite"><a href="#百度贴吧→贴吧lite" class="headerlink" title="百度贴吧→贴吧lite"></a>百度贴吧→贴吧lite</h3><p>比修改版更舒服的版本。简洁流畅体积小。不过原作者不维护了，目前是分支接手。</p>
-<p><a href="https://github.com/zzc10086/TiebaLite">新版 贴吧Lite 的 GitHub 地址</a></p>
-<h3 id="小说-动漫→阅读legedo-kazumi"><a href="#小说-动漫→阅读legedo-kazumi" class="headerlink" title="小说&#x2F;动漫→阅读legedo + kazumi"></a>小说&#x2F;动漫→阅读legedo + kazumi</h3><p>阅读legedo无需多言，应该是目前最受欢迎的阅读app。最近兴起的“轻阅读”感觉还是差点火候，除了UI确实好看一些。</p>
-<p><a href="https://github.com/gedoor/legado">Github地址</a></p>
-<p>kazumi算是老牌的动漫app了吧，基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。支持的平台多，UI是我最喜欢的 material you 3。</p>
-<p><a href="https://github.com/Predidit/Kazumi">GitHub地址</a></p>
-<h3 id="文件管理→mt管理器"><a href="#文件管理→mt管理器" class="headerlink" title="文件管理→mt管理器"></a>文件管理→mt管理器</h3><p>无需多言，如果有会员的话就是最强大的文件管理器。玩机必备且首选。</p>
-<h3 id="播放器→-Next-player-Salt-player"><a href="#播放器→-Next-player-Salt-player" class="headerlink" title="播放器→ Next player+ Salt player"></a>播放器→ Next player+ Salt player</h3><p>Next player 主要是因为用了 material you 3 的设计，功能也还行，满足我的需求，不然的话 MXplayer 会更好。</p>
-<p><a href="https://github.com/anilbeesetti/nextplayer">GitHub地址</a></p>
-<p>Salt player 则是目前最好用，好评率最高的本地音乐播放器。也算是伟大无需多言。</p>
-<p><a href="https://github.com/Moriafly/SaltPlayerSource">GitHub地址</a></p>
-<h3 id="豆包→-Cici"><a href="#豆包→-Cici" class="headerlink" title="豆包→ Cici"></a>豆包→ Cici</h3><p>相较于国内版的豆包，国际版的Cici在功能上会少一些，但核心体验还是在的。而且因为是国际服，所以有些敏感话题在Cici上是可以搜到的。这对学习的帮助挺大。</p>
-<p>不过要挂梯，而且对节点的要求还挺高。如果图省事的话可以用回豆包或者ChatGPT、Gemini之类的模型。（用美国和新加坡节点算是所有应用的通杀）</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.larus.wolf">Google play store 地址</a></p>
-<h3 id="tiktok→tiktok-lite"><a href="#tiktok→tiktok-lite" class="headerlink" title="tiktok→tiktok lite"></a>tiktok→tiktok lite</h3><p>一般情况下，tiktok对地区的限制是很严格的。考虑到有些用户不想用修改版，tiktok lite + shizuku + nrfr是个不错的选择。</p>
-<p><a href="https://chengeeker.github.io/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/index.html">详情可跳转推文</a></p>
-<h3 id="Wikipedia→WikiReader"><a href="#Wikipedia→WikiReader" class="headerlink" title="Wikipedia→WikiReader"></a>Wikipedia→WikiReader</h3><p>这个纯粹是喜欢 md3 的设计，而且官方的wiki又登录不了，用第三方也不是不行。在阅读词条上可能会有些不便（因为是跳转而非窗口打开）</p>
-<p><a href="https://github.com/nsh07/WikiReader">GitHub地址</a></p>
-<h3 id="pixiv→-Pixiv-MultiPlatform"><a href="#pixiv→-Pixiv-MultiPlatform" class="headerlink" title="pixiv→ Pixiv-MultiPlatform"></a>pixiv→ Pixiv-MultiPlatform</h3><p>这个纯粹是喜欢 md3 的设计，而且功能上比起shaft这些也不相上下。看看自己喜欢哪一套UI吧。像 shaft 之类的 md2 风格也是挺不错的。</p>
-<p><a href="https://github.com/kagg886/Pixiv-MultiPlatform">GitHub地址</a></p>
-<h3 id="GitHub→-Obtainium"><a href="#GitHub→-Obtainium" class="headerlink" title="GitHub→ Obtainium"></a>GitHub→ Obtainium</h3><p>严格意义上来说这玩意并不是GitHub的第三方。</p>
-<p>它算是一个仓库的收藏夹。把自己在GitHub上关注的那些开源软件添加到 Obtainium 里面，就可以实现订阅的操作。</p>
-<p>在用新版本的时候可以直接在 Obtainium 里面下载，看日志，不需要跳转到 release 那里一页页找。</p>
-<p>或者说这应该是：GitHub（应用商店版）</p>
-<p><a href="https://github.com/ImranR98/Obtainium">GitHub地址</a></p>
-<h3 id="clash-meta-for-Android-→-flclash"><a href="#clash-meta-for-Android-→-flclash" class="headerlink" title="clash meta for Android → flclash"></a>clash meta for Android → flclash</h3><p>这俩都是经典，只是我更喜欢后者 md3 的UI设计，仅此而已。</p>
-<p>不过flclash的开机启动在vivo上是残血的，每次重启都要自己手动点开。</p>
-<p><a href="https://github.com/chen08209/FlClash">GitHub地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>机场推荐</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
-<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
-<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
-<p>✨节点地区 : 港 台 新 日 美 德</p>
-<p>✨多种流媒体服务访问解锁</p>
-<p>✨仅限日常使用，禁止BT下载</p>
-<p>✨不保证速率</p>
-<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-<hr>
-<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ Hysteria2协议节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>原介绍：</p>
-<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
-<p>更新介绍：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<p>写于2025-02-04 19:07:24</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -806,41 +667,6 @@
       </categories>
   </entry>
   <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>海外应用</title>
     <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
@@ -934,24 +760,142 @@
       </categories>
   </entry>
   <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+    <title>手机应用平替思路</title>
+    <url>/2025/05/28/%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8%E5%B9%B3%E6%9B%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="微信→play"><a href="#微信→play" class="headerlink" title="微信→play"></a>微信→play</h3><p>微信其实没啥好说的，腾讯系的应用对Xposed的打击力度越来越大，官方版的话广告又挺多，play版就是个不错的选择。虽然可能会有一点心理作用在里面。但如果不是很追求更新频次的话，play版用起来还是挺舒服的。</p>
+<h3 id="QQ→new-Tim"><a href="#QQ→new-Tim" class="headerlink" title="QQ→new&#x2F;Tim"></a>QQ→new&#x2F;Tim</h3><p>虽然大家都在骂，但不可否认QQ的官方最新版的体验是最好的，除了广告多，流畅不卡顿。</p>
+<p>Tim目前的版本还是太残血了点，如果只考虑简单使用的话可以考虑。</p>
+<p>目前 QQ play 版有复活的迹象，我将持续关注。</p>
+<h3 id="QQ音乐→new（OS特性）-简洁版"><a href="#QQ音乐→new（OS特性）-简洁版" class="headerlink" title="QQ音乐→new（OS特性）&#x2F;简洁版"></a>QQ音乐→new（OS特性）&#x2F;简洁版</h3><p>QQ音乐有很多定制版，但用下来感觉都差不多，体积也比较大。如果是追求可用且流畅的话可以用回简洁版。</p>
+<p>如果要体验完整的功能特性的话就用回主站吧。主站还有一些好用的旧版，例如91304,9704等。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-tzxU3">提供一个下载链接</a></p>
+<h3 id="哔哩哔哩→piliplus"><a href="#哔哩哔哩→piliplus" class="headerlink" title="哔哩哔哩→piliplus"></a>哔哩哔哩→piliplus</h3><p>抛开漫游不谈，b站的第三方客户端还是非常好用的。</p>
+<p>pilipala ➡️ pilipala X ➡️ piliplus 。</p>
+<p>我觉得反正都用第三方了，稳不稳定就已经很玄学了，不如直接选一个更新最勤快的fork版本。</p>
+<p><a href="https://github.com/bggRGjQaUbCoE/PiliPlus">piliplus的GitHub地址</a></p>
+<h3 id="抖音→抖音精选"><a href="#抖音→抖音精选" class="headerlink" title="抖音→抖音精选"></a>抖音→抖音精选</h3><p>为什么选择抖音精选？</p>
+<p> 首先，它的体积是抖音系里倒数第二小的一个，倒数第一是抖音极速版。如果极速版体验很好的话我也不会推荐抖音精选。</p>
+<p> 第二点，它默认是双列显示，加上无声进入抖音，能够更加有效避免社死。</p>
+<p> 第三点，它的播放界面是流媒体样式的，没有特别强的白色，烧屏的概率会小一些。</p>
+<p> 第四点，它真的已经算简洁了。除去一个没用的长视频，残血的二维码扫码，抖音的核心功能它基本都有，而且体验下来性能特别流畅。只要不挂梯子（一挂就无网络），可以说完胜抖音主站。</p>
+<h3 id="微博→See"><a href="#微博→See" class="headerlink" title="微博→See"></a>微博→See</h3><p>虽然说这里不讨论修改版，但是要用See就必须借助Xposed。See应该是目前可破解的第三方微博里体验最好的一个。</p>
+<p>下载一个See（Pro版是4.X），再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
+<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
+<p>See官方版下载地址：caij.xyz&#x2F;s</p>
+<h3 id="Twitter（X）→-Flyy"><a href="#Twitter（X）→-Flyy" class="headerlink" title="Twitter（X）→ Flyy"></a>Twitter（X）→ Flyy</h3><p>和See一个作者</p>
+<p>下载一个Flyy，再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
+<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
+<p><a href="https://github.com/funcenter/flyy">Flyy官方版GitHub下载地址</a></p>
+<h3 id="Telegram→-Ayugram-PC、Android-Nagram-Android"><a href="#Telegram→-Ayugram-PC、Android-Nagram-Android" class="headerlink" title="Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)"></a>Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)</h3><p>适用于 Windows 和 Android 的 Telegram 客户端，配备幽灵模式和改进的防召回功能。支持本地会员，无需Xposed，高度可定制。</p>
+<p><a href="https://t.me/ayugramchat">Ayugram官方频道&#x2F;下载地址</a></p>
+<p>NagramX这个软件包括了 Nagram + ayugram的特色功能。比如：消息过滤、防撤回、幽灵模式、强制原画质、本地大会员、下载上传加速、隐藏广告、强制保存私有频道视频……是新一代的全能第三方TG。</p>
+<p><a href="https://github.com/risin42/NagramX">NagramX的GitHub地址</a></p>
+<p><a href="https://t.me/NagramX">NagramX的Telegram频道</a></p>
+<h3 id="小红书-支付宝-购物-外卖-地图→play"><a href="#小红书-支付宝-购物-外卖-地图→play" class="headerlink" title="小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play"></a>小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play</h3><p>更低的更新频率和更流畅的使用体验，让play版应用一直是平替应用的首选。</p>
+<h3 id="浏览器→via"><a href="#浏览器→via" class="headerlink" title="浏览器→via"></a>浏览器→via</h3><p>伟大无需多言。还有一个我自己常用的嗅觉浏览器也挺不错，内置的播放器比很多第三方播放器好用，用来看视频体验很好。</p>
+<h3 id="蓝奏云→蓝云"><a href="#蓝奏云→蓝云" class="headerlink" title="蓝奏云→蓝云"></a>蓝奏云→蓝云</h3><p>蓝奏云貌似是没有官方app的，第三方里UI界面还不错，功能也挺齐全的，用的人多的，也就蓝云了。</p>
+<h3 id="百度贴吧→贴吧lite"><a href="#百度贴吧→贴吧lite" class="headerlink" title="百度贴吧→贴吧lite"></a>百度贴吧→贴吧lite</h3><p>比修改版更舒服的版本。简洁流畅体积小。不过原作者不维护了，目前是分支接手。</p>
+<p><a href="https://github.com/zzc10086/TiebaLite">新版 贴吧Lite 的 GitHub 地址</a></p>
+<h3 id="小说-动漫→阅读legedo-kazumi"><a href="#小说-动漫→阅读legedo-kazumi" class="headerlink" title="小说&#x2F;动漫→阅读legedo + kazumi"></a>小说&#x2F;动漫→阅读legedo + kazumi</h3><p>阅读legedo无需多言，应该是目前最受欢迎的阅读app。最近兴起的“轻阅读”感觉还是差点火候，除了UI确实好看一些。</p>
+<p><a href="https://github.com/gedoor/legado">Github地址</a></p>
+<p>kazumi算是老牌的动漫app了吧，基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。支持的平台多，UI是我最喜欢的 material you 3。</p>
+<p><a href="https://github.com/Predidit/Kazumi">GitHub地址</a></p>
+<h3 id="文件管理→mt管理器"><a href="#文件管理→mt管理器" class="headerlink" title="文件管理→mt管理器"></a>文件管理→mt管理器</h3><p>无需多言，如果有会员的话就是最强大的文件管理器。玩机必备且首选。</p>
+<h3 id="播放器→-Next-player-Salt-player"><a href="#播放器→-Next-player-Salt-player" class="headerlink" title="播放器→ Next player+ Salt player"></a>播放器→ Next player+ Salt player</h3><p>Next player 主要是因为用了 material you 3 的设计，功能也还行，满足我的需求，不然的话 MXplayer 会更好。</p>
+<p><a href="https://github.com/anilbeesetti/nextplayer">GitHub地址</a></p>
+<p>Salt player 则是目前最好用，好评率最高的本地音乐播放器。也算是伟大无需多言。</p>
+<p><a href="https://github.com/Moriafly/SaltPlayerSource">GitHub地址</a></p>
+<h3 id="豆包→-Cici"><a href="#豆包→-Cici" class="headerlink" title="豆包→ Cici"></a>豆包→ Cici</h3><p>相较于国内版的豆包，国际版的Cici在功能上会少一些，但核心体验还是在的。而且因为是国际服，所以有些敏感话题在Cici上是可以搜到的。这对学习的帮助挺大。</p>
+<p>不过要挂梯，而且对节点的要求还挺高。如果图省事的话可以用回豆包或者ChatGPT、Gemini之类的模型。（用美国和新加坡节点算是所有应用的通杀）</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.larus.wolf">Google play store 地址</a></p>
+<h3 id="tiktok→tiktok-lite"><a href="#tiktok→tiktok-lite" class="headerlink" title="tiktok→tiktok lite"></a>tiktok→tiktok lite</h3><p>一般情况下，tiktok对地区的限制是很严格的。考虑到有些用户不想用修改版，tiktok lite + shizuku + nrfr是个不错的选择。</p>
+<p><a href="https://chengeeker.github.io/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/index.html">详情可跳转推文</a></p>
+<h3 id="Wikipedia→WikiReader"><a href="#Wikipedia→WikiReader" class="headerlink" title="Wikipedia→WikiReader"></a>Wikipedia→WikiReader</h3><p>这个纯粹是喜欢 md3 的设计，而且官方的wiki又登录不了，用第三方也不是不行。在阅读词条上可能会有些不便（因为是跳转而非窗口打开）</p>
+<p><a href="https://github.com/nsh07/WikiReader">GitHub地址</a></p>
+<h3 id="pixiv→-Pixiv-MultiPlatform"><a href="#pixiv→-Pixiv-MultiPlatform" class="headerlink" title="pixiv→ Pixiv-MultiPlatform"></a>pixiv→ Pixiv-MultiPlatform</h3><p>这个纯粹是喜欢 md3 的设计，而且功能上比起shaft这些也不相上下。看看自己喜欢哪一套UI吧。像 shaft 之类的 md2 风格也是挺不错的。</p>
+<p><a href="https://github.com/kagg886/Pixiv-MultiPlatform">GitHub地址</a></p>
+<h3 id="GitHub→-Obtainium"><a href="#GitHub→-Obtainium" class="headerlink" title="GitHub→ Obtainium"></a>GitHub→ Obtainium</h3><p>严格意义上来说这玩意并不是GitHub的第三方。</p>
+<p>它算是一个仓库的收藏夹。把自己在GitHub上关注的那些开源软件添加到 Obtainium 里面，就可以实现订阅的操作。</p>
+<p>在用新版本的时候可以直接在 Obtainium 里面下载，看日志，不需要跳转到 release 那里一页页找。</p>
+<p>或者说这应该是：GitHub（应用商店版）</p>
+<p><a href="https://github.com/ImranR98/Obtainium">GitHub地址</a></p>
+<h3 id="clash-meta-for-Android-→-flclash"><a href="#clash-meta-for-Android-→-flclash" class="headerlink" title="clash meta for Android → flclash"></a>clash meta for Android → flclash</h3><p>这俩都是经典，只是我更喜欢后者 md3 的UI设计，仅此而已。</p>
+<p>不过flclash的开机启动在vivo上是残血的，每次重启都要自己手动点开。</p>
+<p><a href="https://github.com/chen08209/FlClash">GitHub地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>机场推荐</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
 <hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
+<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
+<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
+<p>✨节点地区 : 港 台 新 日 美 德</p>
+<p>✨多种流媒体服务访问解锁</p>
+<p>✨仅限日常使用，禁止BT下载</p>
+<p>✨不保证速率</p>
+<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+<hr>
+<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ Hysteria2协议节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>原介绍：</p>
+<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
+<p>更新介绍：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<p>写于2025-02-04 19:07:24</p>
+<hr>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>阅读</tag>
+        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -1040,5 +984,61 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
   </entry>
 </search>
