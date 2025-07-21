@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>clash</title>
     <url>/2024/12/05/clash/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
@@ -46,6 +54,32 @@
 <li>arm64架构: arm64_fixed_webview2-setup.exe</li>
 </ul>
 <h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
 ]]></content>
       <categories>
         <category>Software</category>
@@ -173,14 +207,6 @@
       </tags>
   </entry>
   <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>让每个人都能够免费阅读/下载知网论文</title>
     <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
@@ -221,32 +247,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客食用指北</title>
     <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
@@ -254,6 +254,46 @@
 <h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code><br><code>fpa</code><br><code>lspatch</code><br><code>元萝卜（免root核心破解）</code><br>这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
 <h3 id="本站已支持RSS订阅"><a href="#本站已支持RSS订阅" class="headerlink" title="本站已支持RSS订阅"></a>本站已支持RSS订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
   <entry>
     <title>FPA食用指北</title>
@@ -345,46 +385,6 @@
 <p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
 <p>QQ频道（需要上述操作）</p>
 <p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -872,6 +872,98 @@
       </categories>
   </entry>
   <entry>
+    <title>机场推荐</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
+<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
+<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
+<p>✨节点地区 : 港 台 新 日 美 德</p>
+<p>✨多种流媒体服务访问解锁</p>
+<p>✨仅限日常使用，禁止BT下载</p>
+<p>✨不保证速率</p>
+<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+<hr>
+<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ Hysteria2协议节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>原介绍：</p>
+<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
+<p>更新介绍：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<p>写于2025-02-04 19:07:24</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>音乐解锁</title>
     <url>/2025/04/24/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="建议使用非中国大陆ip进行访问。"><a href="#建议使用非中国大陆ip进行访问。" class="headerlink" title="建议使用非中国大陆ip进行访问。"></a><strong><em>建议使用非中国大陆ip进行访问。</em></strong></h3><p>目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm)</p>
@@ -957,97 +1049,5 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
-<hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-lXxU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机场推荐</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<h4 id="1-年付套餐：21-9元"><a href="#1-年付套餐：21-9元" class="headerlink" title="1.年付套餐：21.9元"></a><strong>1.年付套餐：21.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
-<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
-<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
-<p>✨节点地区 : 港 台 新 日 美 德</p>
-<p>✨多种流媒体服务访问解锁</p>
-<p>✨仅限日常使用，禁止BT下载</p>
-<p>✨不保证速率</p>
-<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-<hr>
-<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ Hysteria2协议节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>原介绍：</p>
-<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
-<p>更新介绍：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<p>写于2025-02-04 19:07:24</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
 </search>
