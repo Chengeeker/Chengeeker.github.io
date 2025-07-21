@@ -1,0 +1,52 @@
+/* 深色模式 APlayer 样式增强 */
+[data-theme='dark'] .aplayer {
+    background: rgba(30,30,30,0.6) !important; /* 使用带透明度的背景 */
+    color: #FFFFFF !important;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(12px); /* 统一模糊度 */
+    border: 1px solid rgba(255,255,255,0.08); /* 添加边框增加质感 */
+}
+
+/* 歌词颜色 */
+[data-theme='dark'] .aplayer .aplayer-lrc {
+    color: #ffffff !important;
+}
+
+/* 隐藏 APlayer 歌词 */
+.aplayer .aplayer-lrc {
+    display: none !important;
+}
+
+/* 歌名、歌手、时间颜色统一 */
+[data-theme='dark'] .aplayer .aplayer-title,
+[data-theme='dark'] .aplayer .aplayer-author,
+[data-theme='dark'] .aplayer .aplayer-time {
+    color: #ffffff !important;
+}
+
+/* 歌手名 hover 时也变亮 */
+[data-theme='dark'] .aplayer .aplayer-author:hover {
+    color: #0d0d0d !important;
+}
+
+/* --- 歌曲列表高亮选中效果修复及优化 --- */
+[data-theme='dark'] .aplayer .aplayer-list-light .aplayer-list-cur {
+    background: #0d0d0d !important; /* 选中项的背景色调整为深一点的灰色 */
+    color: #0d0d0d !important; /* 将选中行的默认文字颜色（包括歌曲名）设置为浅灰色 */
+}
+
+/* 当前选中项的歌手名颜色（保持为更浅的灰色，或与主色调一致） */
+[data-theme='dark'] .aplayer .aplayer-list-light .aplayer-list-cur .aplayer-author {
+    color: #0d0d0d !important; /* 歌手名可以更浅一点，或保持原样 */
+}
+
+/* 播放进度条颜色 */
+[data-theme='dark'] .aplayer .aplayer-bar-wrap .aplayer-played {
+    background-color: #ffffff !important; /* 保持白色进度条 */
+}
+
+/* 鼠标 hover 时的按钮颜色 */
+[data-theme='dark'] .aplayer .aplayer-icon:hover {
+    color: #54534d !important;
+}
