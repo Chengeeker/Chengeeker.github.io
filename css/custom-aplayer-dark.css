@@ -18,6 +18,7 @@
     display: none !important;
 }
 
+
 /* 歌名、歌手、时间颜色统一 */
 [data-theme='dark'] .aplayer .aplayer-title,
 [data-theme='dark'] .aplayer .aplayer-author,
@@ -49,4 +50,52 @@
 /* 鼠标 hover 时的按钮颜色 */
 [data-theme='dark'] .aplayer .aplayer-icon:hover {
     color: #54534d !important;
+}
+
+
+
+
+
+
+
+/* 通用深色背景优化（适用于吸底播放器） */
+html[data-theme="dark"] .aplayer.aplayer-fixed,
+body[data-theme="dark"] .aplayer.aplayer-fixed {
+    background-color: rgba(24, 24, 24, 0.95) !important;
+    color: #fff !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-title,
+body[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-title {
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-author,
+body[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-author {
+    color: #bbb !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-lrc {
+    color: #aaa !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon path,
+body[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon path {
+    fill: #ccc !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon:hover path,
+body[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon:hover path {
+    fill: #fff !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-bar-wrap {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-played {
+    background-color: #1db954 !important;
 }
