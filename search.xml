@@ -89,6 +89,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2024/12/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>FPA食用指北</title>
     <url>/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
@@ -122,160 +140,6 @@
       </categories>
       <tags>
         <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/12/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>让每个人都能够免费阅读/下载知网论文</title>
-    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
-    <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
-<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
-<p>在应用商店搜索知网，会有以下结果。</p>
-<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
-<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
-<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
-<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
-<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
-<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
-<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
-<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
-<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
-<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
-<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
-<p>然后回到机构关联界面进行关联即可。</p>
-<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
-<p>（如果漫游过期了重新认证一遍即可）</p>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
-<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
-<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
-<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
-<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
-<hr>
-<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
-<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
-<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
-<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
-<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>知网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>clash怎么用？</title>
-    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
-    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/airport/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
-<hr>
-<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
-<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
-<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
-<p>配置名起一个自己能认得出来的名字就行</p>
-<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
-<p>自动更新随便填，1440或者30都行。</p>
-<p>填写完成之后点击右上角的保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
-<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
-<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
-<p>全局代理即全部都走海外网络。直连模式则相反。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
-<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
-<hr>
-<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
-<p>可以先进设置页把语言改成中文。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
-<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
-<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
-<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
-<p>默认模式同样是规则模式。</p>
-<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
-<hr>
-<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
-<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
-<p>找到最下面的“访问控制模式”</p>
-<p>允许所有应用——默认规则</p>
-<p>仅允许已选择的应用——白名单模式。</p>
-<p>不允许已选择的应用——黑名单模式。</p>
-<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
-<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
-<p>完成后打开代理即可。</p>
-<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -379,53 +243,94 @@
       </tags>
   </entry>
   <entry>
-    <title>lspatch及其类似物使用教程</title>
-    <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
-    <content><![CDATA[<h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
-<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
-<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
-<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
-<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
-<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
-<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
-<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
-<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
+    <title>让每个人都能够免费阅读/下载知网论文</title>
+    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
+    <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
+<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
+<p>在应用商店搜索知网，会有以下结果。</p>
+<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
+<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
+<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
+<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
+<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
+<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
+<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
+<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
+<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
+<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
+<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
+<p>然后回到机构关联界面进行关联即可。</p>
+<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
+<p>（如果漫游过期了重新认证一遍即可）</p>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
+<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
+<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
+<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
+<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
 <hr>
-<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
-<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
-<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
-<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
-<hr>
-<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgzJ4" alt="-5c240139b35410ebdc35ee0c999d99ee.jpg"></p>
-<h5 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mggAj" alt="-98e0c47efc2333e2cb4893322ad18560.jpg"></p>
-<h5 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgXTm" alt="-ae06f2dd0daaed163c31e2a51f66d524.jpg"></p>
-<h5 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h5><h5 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgW5M"></p>
-<h5 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h5><h5 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgsJe"></p>
-<h5 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h5><h5 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h5><h5 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgSbR"></p>
-<h5 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h5><h5 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h5><h5 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgoCz"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgA3k"></p>
-<h5 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h5><h5 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgJDi"></p>
-<h5 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgyIP"></p>
-<h5 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h5><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg2Go"></p>
-<h5 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgFvI"></p>
-<h5 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgH0g"></p>
-<h5 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgTKK"></p>
-<h5 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg1bA"></p>
-<h5 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h5><h5 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgGvX"></p>
-<h5 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h5><hr>
-<h5 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h5><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">lsp加载器下载链接</a></p>
-<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
-<p><a href="https://www.coolapk.com/">酷安</a></p>
-<h5 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgbmq"></p>
+<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
+<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
+<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
+<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
+<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>Xposed</tag>
+        <tag>知网</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>博客食用指北</title>
+    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
+<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
+<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
+<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
+<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
+]]></content>
   </entry>
   <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
@@ -487,14 +392,109 @@
       </categories>
   </entry>
   <entry>
-    <title>博客食用指北</title>
-    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
-<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
-<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
-<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
-<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
+    <title>clash怎么用？</title>
+    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
+    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/airport/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
+<hr>
+<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
+<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
+<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
+<p>配置名起一个自己能认得出来的名字就行</p>
+<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
+<p>自动更新随便填，1440或者30都行。</p>
+<p>填写完成之后点击右上角的保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
+<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
+<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
+<p>全局代理即全部都走海外网络。直连模式则相反。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
+<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
+<hr>
+<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
+<p>可以先进设置页把语言改成中文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
+<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
+<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
+<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
+<p>默认模式同样是规则模式。</p>
+<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
+<hr>
+<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
+<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
+<p>找到最下面的“访问控制模式”</p>
+<p>允许所有应用——默认规则</p>
+<p>仅允许已选择的应用——白名单模式。</p>
+<p>不允许已选择的应用——黑名单模式。</p>
+<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
+<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
+<p>完成后打开代理即可。</p>
+<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
 ]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lspatch及其类似物使用教程</title>
+    <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
+    <content><![CDATA[<h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
+<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
+<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
+<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
+<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
+<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
+<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
+<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
+<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
+<hr>
+<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
+<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
+<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
+<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
+<hr>
+<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgzJ4" alt="-5c240139b35410ebdc35ee0c999d99ee.jpg"></p>
+<h5 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mggAj" alt="-98e0c47efc2333e2cb4893322ad18560.jpg"></p>
+<h5 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgXTm" alt="-ae06f2dd0daaed163c31e2a51f66d524.jpg"></p>
+<h5 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h5><h5 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgW5M"></p>
+<h5 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h5><h5 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgsJe"></p>
+<h5 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h5><h5 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h5><h5 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgSbR"></p>
+<h5 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h5><h5 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h5><h5 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgoCz"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgA3k"></p>
+<h5 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h5><h5 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgJDi"></p>
+<h5 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgyIP"></p>
+<h5 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h5><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg2Go"></p>
+<h5 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgFvI"></p>
+<h5 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgH0g"></p>
+<h5 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgTKK"></p>
+<h5 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mg1bA"></p>
+<h5 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h5><h5 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgGvX"></p>
+<h5 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h5><hr>
+<h5 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h5><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">lsp加载器下载链接</a></p>
+<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
+<p><a href="https://www.coolapk.com/">酷安</a></p>
+<h5 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h5><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/mgbmq"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
   </entry>
   <entry>
     <title>手机应用平替思路</title>
@@ -565,38 +565,96 @@
       </categories>
   </entry>
   <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
+    <title>机场推荐（实时更新）</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线20台设备使用</p>
+<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<h4 id="1-年付套餐：23-9元"><a href="#1-年付套餐：23-9元" class="headerlink" title="1.年付套餐：23.9元"></a><strong>1.年付套餐：23.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
+<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
+<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
+<p>✨节点地区 : 港 台 新 日 美 德</p>
+<p>✨多种流媒体服务访问解锁</p>
+<p>✨仅限日常使用，禁止BT下载</p>
+<p>✨不保证速率</p>
+<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+<hr>
+<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ Hysteria2协议节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>原介绍：</p>
+<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
+<p>更新介绍：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<p>写于2025-02-04 19:07:24</p>
+<hr>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>抢课</tag>
+        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -778,6 +836,41 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
   </entry>
   <entry>
     <title>海外应用</title>
@@ -980,98 +1073,5 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>机场推荐（实时更新）</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线20台设备使用</p>
-<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h2 id="牛逼机场"><a href="#牛逼机场" class="headerlink" title="牛逼机场"></a>牛逼机场</h2><p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6666b.idsduf.com/#/login?code=eN5Pbqfs">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<h4 id="1-年付套餐：23-9元"><a href="#1-年付套餐：23-9元" class="headerlink" title="1.年付套餐：23.9元"></a><strong>1.年付套餐：23.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：6-9元"><a href="#2-月付套餐：6-9元" class="headerlink" title="2.月付套餐：6.9元"></a><strong>2.月付套餐：6.9元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：12-9元"><a href="#3-不限时200G：12-9元" class="headerlink" title="3.不限时200G：12.9元"></a><strong>3.不限时200G：12.9元</strong></h4><h4 id="4-不限时2000G：33-9元"><a href="#4-不限时2000G：33-9元" class="headerlink" title="4.不限时2000G：33.9元"></a><strong>4.不限时2000G：33.9元</strong></h4><h4 id="5-不限时6000G：69-9元"><a href="#5-不限时6000G：69-9元" class="headerlink" title="5.不限时6000G：69.9元"></a><strong>5.不限时6000G：69.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-特惠6元年付-直连（年付：6元）"><a href="#1-特惠6元年付-直连（年付：6元）" class="headerlink" title="1.特惠6元年付-直连（年付：6元）"></a>1.特惠6元年付-直连（年付：6元）</h4><p>✨全直连节点，满足日常使用，建议作为备用</p>
-<p>✨含Hysteria 2节点，如不能使用请用机场推荐软件（使用文档可下载软件），iOS用户不能使用请更新小火箭到新版本</p>
-<p>✨每月流量100GB，节点0.5x消耗，实际使用200g，购买日免费重置</p>
-<p>✨节点地区 : 港 台 新 日 美 德</p>
-<p>✨多种流媒体服务访问解锁</p>
-<p>✨仅限日常使用，禁止BT下载</p>
-<p>✨不保证速率</p>
-<h4 id="2-泰迪🐶🐶Plus（季付：9元）"><a href="#2-泰迪🐶🐶Plus（季付：9元）" class="headerlink" title="2.泰迪🐶🐶Plus（季付：9元）"></a>2.泰迪🐶🐶Plus（季付：9元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="3-不限时200G：6元"><a href="#3-不限时200G：6元" class="headerlink" title="3.不限时200G：6元"></a>3.不限时200G：6元</h4><h4 id="4-不限时500G：12-99元"><a href="#4-不限时500G：12-99元" class="headerlink" title="4.不限时500G：12.99元"></a>4.不限时500G：12.99元</h4><h4 id="5-不限时1000G：25元"><a href="#5-不限时1000G：25元" class="headerlink" title="5.不限时1000G：25元"></a>5.不限时1000G：25元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-<hr>
-<h2 id="Needay（价格涨了）"><a href="#Needay（价格涨了）" class="headerlink" title="Needay（价格涨了）"></a>Needay（价格涨了）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<h4 id="1-年付套餐：40元（原15元，涨价了）"><a href="#1-年付套餐：40元（原15元，涨价了）" class="headerlink" title="1.年付套餐：40元（原15元，涨价了）"></a><strong>1.年付套餐：40元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ Hysteria2协议节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：10元（原4-99元，涨价了）"><a href="#2-月付套餐：10元（原4-99元，涨价了）" class="headerlink" title="2.月付套餐：10元（原4.99元，涨价了）"></a><strong>2.月付套餐：10元（原4.99元，涨价了）</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时1000G套餐：30元（原13元，涨价了）"><a href="#3-不限时1000G套餐：30元（原13元，涨价了）" class="headerlink" title="3.不限时1000G套餐：30元（原13元，涨价了）"></a><strong>3.不限时1000G套餐：30元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>原介绍：</p>
-<p>这个机场最近问题频发（被攻击导致订阅链接无法更新，偶的用户。<br>尔error），测速不知道为啥stairspeedtest一测就不行。建议作为备用。推荐这个最主要是因为足够便宜</p>
-<p>更新介绍：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<p>写于2025-02-04 19:07:24</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
 </search>
