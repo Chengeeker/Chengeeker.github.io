@@ -6,7 +6,7 @@
   <link href="https://chengeeker.github.io/atom.xml" rel="self"/>
   
   <link href="https://chengeeker.github.io/"/>
-  <updated>2025-12-11T02:54:17.434Z</updated>
+  <updated>2025-12-22T10:21:56.032Z</updated>
   <id>https://chengeeker.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>游戏站上线啦</title>
+    <link href="https://chengeeker.github.io/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/"/>
+    <id>https://chengeeker.github.io/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</id>
+    <published>2025-12-22T10:16:45.608Z</published>
+    <updated>2025-12-22T10:21:56.032Z</updated>
+    
+    <content type="html"><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p><p><a href="https://mygame123.pages.dev/">游戏站链接：https://mygame123.pages.dev/</a></p><p>大家可以按需自取，如果有错误的&#x2F;想收录但游戏站里没收录的都可以在QQ群里说，有条件的话我会一起加进去。</p>]]></content>
+    
+    
+    <summary type="html">123云盘游戏资源聚合地</summary>
+    
+    
+    
+    <category term="Tutorials" scheme="https://chengeeker.github.io/categories/Tutorials/"/>
+    
+    
+    <category term="game" scheme="https://chengeeker.github.io/tags/game/"/>
+    
+  </entry>
   
   <entry>
     <title>博客食用指北</title>
