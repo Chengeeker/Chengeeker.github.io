@@ -6,7 +6,7 @@
   <link href="https://chengeeker.github.io/atom.xml" rel="self"/>
   
   <link href="https://chengeeker.github.io/"/>
-  <updated>2026-01-10T03:50:51.812Z</updated>
+  <updated>2026-02-07T14:09:48.947Z</updated>
   <id>https://chengeeker.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无需Root将Steam令牌(2FA)导入到Bitwarden教程</title>
+    <link href="https://chengeeker.github.io/2026/02/07/bitwarden-steam/"/>
+    <id>https://chengeeker.github.io/2026/02/07/bitwarden-steam/</id>
+    <published>2026-02-07T13:53:19.890Z</published>
+    <updated>2026-02-07T14:09:48.947Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li><li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li><li>支持2FA的Bitwarden账号</li></ol><h2 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h2><h3 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h3><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220355907.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220409500.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220433822.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220452262.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220506308.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220518355.png"></p><h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p><p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p><h3 id="导入到Bitwarden中"><a href="#导入到Bitwarden中" class="headerlink" title="导入到Bitwarden中"></a>导入到Bitwarden中</h3><p>在bitwarden的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220843594.png"></p>]]></content>
+    
+    
+    <summary type="html">教程来源：https://www.nodeseek.com/post-234528-1</summary>
+    
+    
+    
+    <category term="Tutorials" scheme="https://chengeeker.github.io/categories/Tutorials/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>123资源社区</title>
