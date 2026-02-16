@@ -6,7 +6,7 @@
   <link href="https://chengeeker.github.io/atom.xml" rel="self"/>
   
   <link href="https://chengeeker.github.io/"/>
-  <updated>2026-02-09T04:29:10.663Z</updated>
+  <updated>2026-02-16T15:54:30.869Z</updated>
   <id>https://chengeeker.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
+    <link href="https://chengeeker.github.io/2026/02/16/bitwarden-Microsoft/"/>
+    <id>https://chengeeker.github.io/2026/02/16/bitwarden-Microsoft/</id>
+    <published>2026-02-16T14:29:24.916Z</published>
+    <updated>2026-02-16T15:54:30.869Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>安卓手机（无需Root，有root更好）</li><li>mt管理器</li><li>Microsoft Authenticator安装包</li><li>电脑：DB Browser for SQLite（<a href="https://sqlitebrowser.org/dl/">下载地址：https://sqlitebrowser.org/dl/</a>）</li><li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li></ol><h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="访问-Authenticator-私有目录"><a href="#访问-Authenticator-私有目录" class="headerlink" title="访问 Authenticator 私有目录"></a>访问 Authenticator 私有目录</h3><h4 id="无root的额外操作（有root的可以直接跳过）"><a href="#无root的额外操作（有root的可以直接跳过）" class="headerlink" title="无root的额外操作（有root的可以直接跳过）"></a>无root的额外操作（有root的可以直接跳过）</h4><ol><li>打开<code>MT管理器</code></li><li>找到Microsoft Authenticator的安装包</li><li>点击安装包→ 选择<code>功能</code>→ <code>注入文件提供器</code>→ 确定</li><li>注入完成后，mt管理器就能像 Root 一样直接访问</li><li>安装已注入文件提供器的安装包，并登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li><li>打开<code>MT管理器</code></li><li>点击左上角的图标，展开侧边栏，再点击侧边栏右上角的三个点，选择<code>添加本地存储</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230106071.jpg"></li><li>点击左上角的图标，在侧边栏选择<code>com.azure.authenticator</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230257594.jpg"></li><li>点击屏幕下方的<code>使用此文件夹</code></li><li>然后我们就可以在mt管理器的侧边栏访问Authenticator的私有目录了，然后进入名字叫<code>data</code>的文件夹（注意不是进android-data），在文件夹内找到名为<code>databases</code>的文件夹，打开<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230558046.jpg"></li></ol><h4 id="访问-Authenticator-私有目录（已root）"><a href="#访问-Authenticator-私有目录（已root）" class="headerlink" title="访问 Authenticator 私有目录（已root）"></a>访问 Authenticator 私有目录（已root）</h4><ol><li>在应用内登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li><li>打开mt管理器，直接在mt管理器内跳转到<code>/data/data/com.azure.authenticator/databases/</code></li></ol><h3 id="提取密钥文件"><a href="#提取密钥文件" class="headerlink" title="提取密钥文件"></a>提取密钥文件</h3><ol><li>我们在<code>databases</code>内复制以下3个文件到手机存储，再传到电脑：<code>PhoneFactor</code>、<code>PhoneFactor-shm</code>、<code>PhoneFactor-wal</code>，<strong>必须三个一起复制，缺一不可</strong>。将这3个文件放在同一个文件夹里，<strong>不要分开</strong>。</li><li>电脑打开 DB Browser for SQLite</li><li>点击左上角 <code>打开数据库</code> → 选择你复制的<code>PhoneFactor</code>文件（记得把查找的文件名后缀改成<code>*所有文件</code>不然搜不到）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232642916.png"></li><li>打开数据库后点击<code>浏览数据</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232943965.png"></li><li>你会看到这些关键字段： name &#x2F; username：账户名（如 <code>Microsoft/xxx@qq.com</code>）、oath_secret_key：<code>真正的 TOTP 密钥（Base64 格式）</code>。大部分微软账户是8位验证码，30秒刷新。保存好这些数据对应的值。</li></ol><h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><ol><li>我们把<code>oath_secret_key</code>对应的值复制,访问这个转换网站将其转换成Base32，保存好转换后的值。</li></ol><p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p><h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol><li>在第三方密码管理器的<code>验证器密钥(TOTP)</code>中输入otpauth:&#x2F;&#x2F;totp&#x2F;<code>name名称</code>:<code>username账号</code>?secret&#x3D;<code>转换后的Base32密钥</code>&amp;issuer&#x3D;Microsoft&amp;digits&#x3D;8&amp;period&#x3D;30，缺失的部分需要用刚刚保存的值一一补充。保存后即可看到8位数的密码</li><li>核对第三方密码管理器显示的密码是否与Microsoft Authenticator显示的密码一致</li></ol>]]></content>
+    
+    
+    <summary type="html">有点麻烦，但还是成功了</summary>
+    
+    
+    
+    <category term="Tutorials" scheme="https://chengeeker.github.io/categories/Tutorials/"/>
+    
+    
+    <category term="bitwarden" scheme="https://chengeeker.github.io/tags/bitwarden/"/>
+    
+  </entry>
   
   <entry>
     <title>联系方式</title>
@@ -38,13 +59,13 @@
   </entry>
   
   <entry>
-    <title>无需Root将Steam令牌(2FA)导入到Bitwarden教程</title>
+    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
     <link href="https://chengeeker.github.io/2026/02/07/bitwarden-steam/"/>
     <id>https://chengeeker.github.io/2026/02/07/bitwarden-steam/</id>
     <published>2026-02-07T13:53:19.890Z</published>
-    <updated>2026-02-07T14:09:48.947Z</updated>
+    <updated>2026-02-16T15:53:49.018Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li><li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li><li>支持2FA的Bitwarden账号</li></ol><h2 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h2><h3 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h3><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220355907.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220409500.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220433822.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220452262.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220506308.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220518355.png"></p><h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p><p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p><h3 id="导入到Bitwarden中"><a href="#导入到Bitwarden中" class="headerlink" title="导入到Bitwarden中"></a>导入到Bitwarden中</h3><p>在bitwarden的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220843594.png"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li><li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li><li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>客户端）</li></ol><h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220355907.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220409500.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220433822.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220452262.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220506308.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220518355.png"></p><h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p><p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p><h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol><li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li><li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li></ol><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220843594.png"></p>]]></content>
     
     
     <summary type="html">教程来源：https://www.nodeseek.com/post-234528-1</summary>
@@ -53,6 +74,8 @@
     
     <category term="Tutorials" scheme="https://chengeeker.github.io/categories/Tutorials/"/>
     
+    
+    <category term="bitwarden" scheme="https://chengeeker.github.io/tags/bitwarden/"/>
     
   </entry>
   

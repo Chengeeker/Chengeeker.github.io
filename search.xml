@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>无需Root将Steam令牌(2FA)导入到Bitwarden教程</title>
-    <url>/2026/02/07/bitwarden-steam/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
-<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
-<li>支持2FA的Bitwarden账号</li>
-</ol>
-<h2 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h2><h3 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h3><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220355907.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220409500.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220433822.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220452262.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220506308.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220518355.png"></p>
-<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
-<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p>
-<h3 id="导入到Bitwarden中"><a href="#导入到Bitwarden中" class="headerlink" title="导入到Bitwarden中"></a>导入到Bitwarden中</h3><p>在bitwarden的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220843594.png"></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>123资源社区</title>
     <url>/2026/01/10/123%E8%B5%84%E6%BA%90%E7%A4%BE%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="123资源社区"><a href="#123资源社区" class="headerlink" title="123资源社区"></a>123资源社区</h1><p>123分享是一个非官方的站点，主要分享123云盘的资源下载。本站不储存、复制、传播、控制编辑任何网盘文件，也不提供下载服务，其链接跳转至各大网盘，文件的有效性和安全性需要您自行判断，如有侵权内容请联系我们。</p>
@@ -116,6 +84,148 @@
       </categories>
   </entry>
   <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
+    <url>/2026/02/16/bitwarden-Microsoft/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安卓手机（无需Root，有root更好）</li>
+<li>mt管理器</li>
+<li>Microsoft Authenticator安装包</li>
+<li>电脑：DB Browser for SQLite（<a href="https://sqlitebrowser.org/dl/">下载地址：https://sqlitebrowser.org/dl/</a>）</li>
+<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="访问-Authenticator-私有目录"><a href="#访问-Authenticator-私有目录" class="headerlink" title="访问 Authenticator 私有目录"></a>访问 Authenticator 私有目录</h3><h4 id="无root的额外操作（有root的可以直接跳过）"><a href="#无root的额外操作（有root的可以直接跳过）" class="headerlink" title="无root的额外操作（有root的可以直接跳过）"></a>无root的额外操作（有root的可以直接跳过）</h4><ol>
+<li>打开<code>MT管理器</code></li>
+<li>找到Microsoft Authenticator的安装包</li>
+<li>点击安装包→ 选择<code>功能</code>→ <code>注入文件提供器</code>→ 确定</li>
+<li>注入完成后，mt管理器就能像 Root 一样直接访问</li>
+<li>安装已注入文件提供器的安装包，并登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
+<li>打开<code>MT管理器</code></li>
+<li>点击左上角的图标，展开侧边栏，再点击侧边栏右上角的三个点，选择<code>添加本地存储</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230106071.jpg"></li>
+<li>点击左上角的图标，在侧边栏选择<code>com.azure.authenticator</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230257594.jpg"></li>
+<li>点击屏幕下方的<code>使用此文件夹</code></li>
+<li>然后我们就可以在mt管理器的侧边栏访问Authenticator的私有目录了，然后进入名字叫<code>data</code>的文件夹（注意不是进android-data），在文件夹内找到名为<code>databases</code>的文件夹，打开<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230558046.jpg"></li>
+</ol>
+<h4 id="访问-Authenticator-私有目录（已root）"><a href="#访问-Authenticator-私有目录（已root）" class="headerlink" title="访问 Authenticator 私有目录（已root）"></a>访问 Authenticator 私有目录（已root）</h4><ol>
+<li>在应用内登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
+<li>打开mt管理器，直接在mt管理器内跳转到<code>/data/data/com.azure.authenticator/databases/</code></li>
+</ol>
+<h3 id="提取密钥文件"><a href="#提取密钥文件" class="headerlink" title="提取密钥文件"></a>提取密钥文件</h3><ol>
+<li>我们在<code>databases</code>内复制以下3个文件到手机存储，再传到电脑：<code>PhoneFactor</code>、<code>PhoneFactor-shm</code>、<code>PhoneFactor-wal</code>，<strong>必须三个一起复制，缺一不可</strong>。将这3个文件放在同一个文件夹里，<strong>不要分开</strong>。</li>
+<li>电脑打开 DB Browser for SQLite</li>
+<li>点击左上角 <code>打开数据库</code> → 选择你复制的<code>PhoneFactor</code>文件（记得把查找的文件名后缀改成<code>*所有文件</code>不然搜不到）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232642916.png"></li>
+<li>打开数据库后点击<code>浏览数据</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232943965.png"></li>
+<li>你会看到这些关键字段： name &#x2F; username：账户名（如 <code>Microsoft/xxx@qq.com</code>）、oath_secret_key：<code>真正的 TOTP 密钥（Base64 格式）</code>。大部分微软账户是8位验证码，30秒刷新。保存好这些数据对应的值。</li>
+</ol>
+<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><ol>
+<li>我们把<code>oath_secret_key</code>对应的值复制,访问这个转换网站将其转换成Base32，保存好转换后的值。</li>
+</ol>
+<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p>
+<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
+<li>在第三方密码管理器的<code>验证器密钥(TOTP)</code>中输入otpauth:&#x2F;&#x2F;totp&#x2F;<code>name名称</code>:<code>username账号</code>?secret&#x3D;<code>转换后的Base32密钥</code>&amp;issuer&#x3D;Microsoft&amp;digits&#x3D;8&amp;period&#x3D;30，缺失的部分需要用刚刚保存的值一一补充。保存后即可看到8位数的密码</li>
+<li>核对第三方密码管理器显示的密码是否与Microsoft Authenticator显示的密码一致</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
+    <url>/2026/02/07/bitwarden-steam/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
+<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
+<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>客户端）</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220355907.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220409500.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220433822.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220452262.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220506308.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220518355.png"></p>
+<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
+<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p>
+<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
+<li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li>
+<li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220843594.png"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>clash</title>
+    <url>/2024/12/05/clash/</url>
+    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
+<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
+<li>Android 5.0+ (minimum)</li>
+<li>Android 7.0+ (recommend)</li>
+<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
+<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
+<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
+<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
+<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
+<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
+<li>系统代理和守卫、<code>TUN</code> 模式。</li>
+</ul>
+<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
+<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
+<li>MacOS intel芯片: x64.dmg</li>
+<li>MacOS apple M芯片: aarch64.dmg</li>
+</ul>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
+<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
+<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
+<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
+<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
+</ul>
+<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
+<li>64位: x64-setup.exe</li>
+<li>32位: x86-setup.exe</li>
+<li>arm64架构: arm64-setup.exe</li>
+</ul>
+<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
+<li>64位: x64_portable.zip</li>
+<li>32位: x86_portable.zip</li>
+<li>arm64架构: arm64_portable.zip</li>
+</ul>
+<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
+<li>64位: x64_fixed_webview2-setup.exe</li>
+<li>32位: x86_fixed_webview2-setup.exe</li>
+<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
+</ul>
+<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2024/12/05/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -132,32 +242,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
   <entry>
     <title>FPA食用指北</title>
@@ -336,98 +420,17 @@
       </tags>
   </entry>
   <entry>
-    <title>clash</title>
-    <url>/2024/12/05/clash/</url>
-    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
-<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
-<li>Android 5.0+ (minimum)</li>
-<li>Android 7.0+ (recommend)</li>
-<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
-</ul>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
-<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
-<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
-<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
-<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
-<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
-<li>系统代理和守卫、<code>TUN</code> 模式。</li>
-</ul>
-<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
-<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
-<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
-<li>MacOS intel芯片: x64.dmg</li>
-<li>MacOS apple M芯片: aarch64.dmg</li>
-</ul>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
-<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
-<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
-<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
-<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
-</ul>
-<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
-<li>64位: x64-setup.exe</li>
-<li>32位: x86-setup.exe</li>
-<li>arm64架构: arm64-setup.exe</li>
-</ul>
-<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
-<li>64位: x64_portable.zip</li>
-<li>32位: x86_portable.zip</li>
-<li>arm64架构: arm64_portable.zip</li>
-</ul>
-<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
-<li>64位: x64_fixed_webview2-setup.exe</li>
-<li>32位: x86_fixed_webview2-setup.exe</li>
-<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
-</ul>
-<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+    <title>博客食用指北</title>
+    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
+<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
+<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
+<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
+<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
+<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
+<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
+<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
 ]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
   </entry>
   <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
@@ -483,6 +486,46 @@
 <p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
 <p>QQ频道（需要上述操作）</p>
 <p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -594,6 +637,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>手机应用平替思路</title>
     <url>/2025/05/28/%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8%E5%B9%B3%E6%9B%BF/</url>
     <content><![CDATA[<h3 id="微信→play"><a href="#微信→play" class="headerlink" title="微信→play"></a>微信→play</h3><p>微信其实没啥好说的，腾讯系的应用对Xposed的打击力度越来越大，官方版的话广告又挺多，play版就是个不错的选择。虽然可能会有一点心理作用在里面。但如果不是很追求更新频次的话，play版用起来还是挺舒服的。</p>
@@ -660,96 +729,6 @@
 ]]></content>
       <categories>
         <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>海外应用（精力有限不再更新）</title>
-    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
-<ul>
-<li><p>莫奈 M 和非莫奈N 版本　　</p>
-</li>
-<li><p>删除广告　　</p>
-</li>
-<li><p>显示敏感媒体　　</p>
-</li>
-<li><p>没有t.Co缩短链接　　</p>
-</li>
-<li><p>删除分享链接时跟踪参数　　</p>
-</li>
-<li><p>使用户名和简介文本可选　　</p>
-</li>
-<li><p>解锁Premium功能　　</p>
-</li>
-<li><p>添加模组设置　　</p>
-</li>
-<li><p>应用图标和导航栏自定义设置：</p>
-</li>
-<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
-</li>
-<li><p>解锁下载视频，长按预览即可下载：　　</p>
-</li>
-<li><p>Gif 可以以视频的形式下载。　　</p>
-</li>
-<li><p>添加模组设置更多语言支持：　　</p>
-</li>
-<li><p>英文、中文、…</p>
-</li>
-</ul>
-<p>　　</p>
-<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
-<ul>
-<li>允许使用 Google 帐户登录</li>
-<li>不会强制登录</li>
-<li>从 TikTok 中删除广告</li>
-<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
-<li>删除下载限制并支持更改默认下载路径 </li>
-<li>移除水印(默认开启)</li>
-<li>为所有视频启用播放速度选项 (并使其保持)</li>
-<li>显示所有视频的进度条</li>
-<li>添加 TikTok settings</li>
-<li>绕过区域限制模拟SIM卡信息</li>
-<li>隐藏视频页底部导航栏上的5个Logo </li>
-<li>支持保持清屏 (隐藏视频控件)</li>
-</ul>
-<p>注意：</p>
-<ol>
-<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
-<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
-<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
-</ol>
-<p>　　</p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
-<ul>
-<li>Advertisment Removed　　</li>
-<li>Enable background play　　</li>
-<li>去除广告　　</li>
-<li>功能拓展</li>
-</ul>
-<p>　　</p>
-<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
-<hr>
-<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
-<ul>
-<li>解锁Telegram Premium本地会员　　</li>
-<li>去除应用内部分使用限制</li>
-</ul>
-<p>　　</p>
-<p>在这里推荐一个自用的NagramX</p>
-<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
-<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
-<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
-]]></content>
-      <categories>
-        <category>Software</category>
       </categories>
   </entry>
   <entry>
@@ -933,19 +912,6 @@
       </categories>
   </entry>
   <entry>
-    <title>博客食用指北</title>
-    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
-<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
-<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
-<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
-<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
-<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
-<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
-<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
-]]></content>
-  </entry>
-  <entry>
     <title>机场推荐（实时更新）</title>
     <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
@@ -1033,18 +999,129 @@
       </tags>
   </entry>
   <entry>
-    <title>游戏站上线啦</title>
-    <url>/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</url>
-    <content><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p>
-<p><a href="https://mygame123.pages.dev/">游戏站链接：https://mygame123.pages.dev/</a></p>
-<p>大家可以按需自取，如果有错误的&#x2F;想收录但游戏站里没收录的都可以在QQ群里说，有条件的话我会一起加进去。</p>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>game</tag>
+        <tag>抢课</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>海外应用（精力有限不再更新）</title>
+    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
+<ul>
+<li><p>莫奈 M 和非莫奈N 版本　　</p>
+</li>
+<li><p>删除广告　　</p>
+</li>
+<li><p>显示敏感媒体　　</p>
+</li>
+<li><p>没有t.Co缩短链接　　</p>
+</li>
+<li><p>删除分享链接时跟踪参数　　</p>
+</li>
+<li><p>使用户名和简介文本可选　　</p>
+</li>
+<li><p>解锁Premium功能　　</p>
+</li>
+<li><p>添加模组设置　　</p>
+</li>
+<li><p>应用图标和导航栏自定义设置：</p>
+</li>
+<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
+</li>
+<li><p>解锁下载视频，长按预览即可下载：　　</p>
+</li>
+<li><p>Gif 可以以视频的形式下载。　　</p>
+</li>
+<li><p>添加模组设置更多语言支持：　　</p>
+</li>
+<li><p>英文、中文、…</p>
+</li>
+</ul>
+<p>　　</p>
+<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
+<ul>
+<li>允许使用 Google 帐户登录</li>
+<li>不会强制登录</li>
+<li>从 TikTok 中删除广告</li>
+<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
+<li>删除下载限制并支持更改默认下载路径 </li>
+<li>移除水印(默认开启)</li>
+<li>为所有视频启用播放速度选项 (并使其保持)</li>
+<li>显示所有视频的进度条</li>
+<li>添加 TikTok settings</li>
+<li>绕过区域限制模拟SIM卡信息</li>
+<li>隐藏视频页底部导航栏上的5个Logo </li>
+<li>支持保持清屏 (隐藏视频控件)</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
+<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
+<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
+</ol>
+<p>　　</p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
+<ul>
+<li>Advertisment Removed　　</li>
+<li>Enable background play　　</li>
+<li>去除广告　　</li>
+<li>功能拓展</li>
+</ul>
+<p>　　</p>
+<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
+<hr>
+<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
+<ul>
+<li>解锁Telegram Premium本地会员　　</li>
+<li>去除应用内部分使用限制</li>
+</ul>
+<p>　　</p>
+<p>在这里推荐一个自用的NagramX</p>
+<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
+<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
+<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
   </entry>
   <entry>
     <title>联系方式</title>
@@ -1111,6 +1188,41 @@
       </categories>
       <tags>
         <tag>公告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏站上线啦</title>
+    <url>/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</url>
+    <content><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p>
+<p><a href="https://mygame123.pages.dev/">游戏站链接：https://mygame123.pages.dev/</a></p>
+<p>大家可以按需自取，如果有错误的&#x2F;想收录但游戏站里没收录的都可以在QQ群里说，有条件的话我会一起加进去。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123865.com/s/xEXZVv-IBfU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -1200,61 +1312,5 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
-<hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123865.com/s/xEXZVv-IBfU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
   </entry>
 </search>
