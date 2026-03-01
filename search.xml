@@ -1,62 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
-    <url>/2026/02/16/bitwarden-Microsoft/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>安卓手机（无需Root，有root更好）</li>
-<li>mt管理器</li>
-<li>Microsoft Authenticator安装包</li>
-<li>电脑：DB Browser for SQLite（<a href="https://sqlitebrowser.org/dl/">下载地址：https://sqlitebrowser.org/dl/</a>）</li>
-<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
-</ol>
-<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="访问-Authenticator-私有目录"><a href="#访问-Authenticator-私有目录" class="headerlink" title="访问 Authenticator 私有目录"></a>访问 Authenticator 私有目录</h3><h4 id="无root的额外操作（有root的可以直接跳过）"><a href="#无root的额外操作（有root的可以直接跳过）" class="headerlink" title="无root的额外操作（有root的可以直接跳过）"></a>无root的额外操作（有root的可以直接跳过）</h4><ol>
-<li>打开<code>MT管理器</code></li>
-<li>找到Microsoft Authenticator的安装包</li>
-<li>点击安装包→ 选择<code>功能</code>→ <code>注入文件提供器</code>→ 确定</li>
-<li>注入完成后，mt管理器就能像 Root 一样直接访问</li>
-<li>安装已注入文件提供器的安装包，并登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
-<li>打开<code>MT管理器</code></li>
-<li>点击左上角的图标，展开侧边栏，再点击侧边栏右上角的三个点，选择<code>添加本地存储</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230106071.jpg"></li>
-<li>点击左上角的图标，在侧边栏选择<code>com.azure.authenticator</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230257594.jpg"></li>
-<li>点击屏幕下方的<code>使用此文件夹</code></li>
-<li>然后我们就可以在mt管理器的侧边栏访问Authenticator的私有目录了，然后进入名字叫<code>data</code>的文件夹（注意不是进android-data），在文件夹内找到名为<code>databases</code>的文件夹，打开<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230558046.jpg"></li>
-</ol>
-<h4 id="访问-Authenticator-私有目录（已root）"><a href="#访问-Authenticator-私有目录（已root）" class="headerlink" title="访问 Authenticator 私有目录（已root）"></a>访问 Authenticator 私有目录（已root）</h4><ol>
-<li>在应用内登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
-<li>打开mt管理器，直接在mt管理器内跳转到<code>/data/data/com.azure.authenticator/databases/</code></li>
-</ol>
-<h3 id="提取密钥文件"><a href="#提取密钥文件" class="headerlink" title="提取密钥文件"></a>提取密钥文件</h3><ol>
-<li>我们在<code>databases</code>内复制以下3个文件到手机存储，再传到电脑：<code>PhoneFactor</code>、<code>PhoneFactor-shm</code>、<code>PhoneFactor-wal</code>，<strong>必须三个一起复制，缺一不可</strong>。将这3个文件放在同一个文件夹里，<strong>不要分开</strong>。</li>
-<li>电脑打开 DB Browser for SQLite</li>
-<li>点击左上角 <code>打开数据库</code> → 选择你复制的<code>PhoneFactor</code>文件（记得把查找的文件名后缀改成<code>*所有文件</code>不然搜不到）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232642916.png"></li>
-<li>打开数据库后点击<code>浏览数据</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232943965.png"></li>
-<li>你会看到这些关键字段： name &#x2F; username：账户名（如 <code>Microsoft/xxx@qq.com</code>）、oath_secret_key：<code>真正的 TOTP 密钥（Base64 格式）</code>。大部分微软账户是8位验证码，30秒刷新。保存好这些数据对应的值。</li>
-</ol>
-<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><ol>
-<li>我们把<code>oath_secret_key</code>对应的值复制,访问这个转换网站将其转换成Base32，保存好转换后的值。</li>
-</ol>
-<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p>
-<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
-<li>在第三方密码管理器的<code>验证器密钥(TOTP)</code>中输入otpauth:&#x2F;&#x2F;totp&#x2F;<code>name名称</code>:<code>username账号</code>?secret&#x3D;<code>转换后的Base32密钥</code>&amp;issuer&#x3D;Microsoft&amp;digits&#x3D;8&amp;period&#x3D;30，缺失的部分需要用刚刚保存的值一一补充。保存后即可看到8位数的密码</li>
-<li>核对第三方密码管理器显示的密码是否与Microsoft Authenticator显示的密码一致</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>bitwarden</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>I am back</title>
     <url>/2024/12/05/I%20am%20back/</url>
     <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
 <p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
 <p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>123资源社区</title>
+    <url>/2026/01/10/123%E8%B5%84%E6%BA%90%E7%A4%BE%E5%8C%BA/</url>
+    <content><![CDATA[<h1 id="123资源社区"><a href="#123资源社区" class="headerlink" title="123资源社区"></a>123资源社区</h1><p>123分享是一个非官方的站点，主要分享123云盘的资源下载。本站不储存、复制、传播、控制编辑任何网盘文件，也不提供下载服务，其链接跳转至各大网盘，文件的有效性和安全性需要您自行判断，如有侵权内容请联系我们。</p>
+<p><a href="https://pan1.me/">官方链接1：https://pan1.me/</a></p>
+<p><a href="https://www.123panfx.com/">官方链接2：https://www.123panfx.com/</a></p>
+<p>这两个都是一样的，有时候其中一个进不去了就可以用另一个进去，数据互通。</p>
+<h1 id="123资源社区油猴脚本"><a href="#123资源社区油猴脚本" class="headerlink" title="123资源社区油猴脚本"></a>123资源社区油猴脚本</h1><h2 id="【123-网盘党必装】链接检测助手-：自动检测链接是否有效-自动填提取码，告别手动试失效！"><a href="#【123-网盘党必装】链接检测助手-：自动检测链接是否有效-自动填提取码，告别手动试失效！" class="headerlink" title="【123 网盘党必装】链接检测助手 ：自动检测链接是否有效 + 自动填提取码，告别手动试失效！"></a>【123 网盘党必装】链接检测助手 ：自动检测链接是否有效 + 自动填提取码，告别手动试失效！</h2><p>★ 123网盘链接检测助手脚本分享（极速版+自动填充）★</p>
+<p>给经常在123云盘社区逛帖、存资源的伙伴们，推荐一款超实用的油猴脚本！能自动检测123网盘链接是否有效，还能自动填充提取码、实时监控页面状态，甚至支持自动回复解锁隐藏内容，彻底告别手动查失效、输密码的麻烦，亲测适配PC和手机浏览器（需支持扩展），批量处理链接也不卡顿～</p>
+<p>不管是整理资源链接、检查失效链接，还是打开加密资源、解锁需回复的内容，用它都能省超多时间，尤其适合经常囤资源、发链接的小伙伴，再也不用逐个点链接试有效性！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110110101616.png" alt="图片1"></p>
+<h3 id="一、脚本核心功能：网盘用户必备神器"><a href="#一、脚本核心功能：网盘用户必备神器" class="headerlink" title="一、脚本核心功能：网盘用户必备神器"></a>一、脚本核心功能：网盘用户必备神器</h3><p><a href="https://greasyfork.org/zh-CN/scripts/550954-123">网盘链接检测助手脚本地址：</a></p>
+<p><a href="https://greasyfork.org/zh-CN/scripts/550954-123">https://greasyfork.org/zh-CN/scripts/550954-123</a></p>
+<ul>
+<li>「无限并发检测」：批量检测多个123网盘链接，无并发限制，秒出有效&#x2F;失效结果，不用逐个等待；</li>
+<li>「自动提取码填充」：从页面文本或URL中识别提取码，自动填入密码框，还能一键点击确认按钮，不用手动复制粘贴；</li>
+<li>「实时页面监控」：在123网盘页面实时显示链接状态（有效&#x2F;失效），状态标记持久化，刷新页面不消失；</li>
+<li>「自动回复解锁」：遇到“需回复才能查看”的帖子，自动生成回复文案并提交，不用手动打字刷回复；</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110110807970.gif" alt="图片演示"></p>
+<h3 id="脚本使用教程"><a href="#脚本使用教程" class="headerlink" title="脚本使用教程"></a>脚本使用教程</h3><h4 id="一、前期准备：安装脚本管理插件（三选一）"><a href="#一、前期准备：安装脚本管理插件（三选一）" class="headerlink" title="一、前期准备：安装脚本管理插件（三选一）"></a>一、前期准备：安装脚本管理插件（三选一）</h4><p>在Chrome、Edge或支持扩展的手机浏览器中，先安装脚本管理工具，推荐这三款，新手优先选油猴：</p>
+<ul>
+<li>打开浏览器，点击右上角「三个点」→ 选择「扩展程序」→ 进入「扩展管理页面」；</li>
+<li>前往浏览器应用商店，搜索以下插件并安装：</li>
+<li>首选：Tampermonkey（油猴）（兼容性最强，脚本适配度高，新手友好）；</li>
+<li>备选：脚本猫（界面简单，操作直观）、暴力猴（轻量流畅，占用资源少）。</li>
+</ul>
+<h4 id="二、关键步骤：开启「开发者模式」（必做）"><a href="#二、关键步骤：开启「开发者模式」（必做）" class="headerlink" title="二、关键步骤：开启「开发者模式」（必做）"></a>二、关键步骤：开启「开发者模式」（必做）</h4><p>  安装插件后，必须开启开发者模式才能加载脚本，分浏览器操作，步骤很简单：</p>
+<p>▶ Chrome&#x2F;Edge 浏览器：</p>
+<ul>
+<li>进入「扩展管理页面」（路径：右上角「三个点」→「更多工具」→「扩展程序」）；</li>
+<li>勾选页面右上角「开发者模式」（开启后会显示蓝色开关，确保开关是「打开」状态）；</li>
+<li>开启后不用额外操作，保持页面即可，接下来安装脚本。</li>
+</ul>
+<p>▶ 手机浏览器（如Kiwi、X浏览器）：</p>
+<ul>
+<li>打开浏览器设置，找到「扩展程序」选项并点击；</li>
+<li>开启「开发者模式」，再手动安装脚本管理插件（部分浏览器需先下载插件APK，导入后安装）；</li>
+<li>安装完成后，在浏览器工具栏找到插件图标，点击就能管理脚本。</li>
+</ul>
+<h4 id="三、安装脚本：3步搞定"><a href="#三、安装脚本：3步搞定" class="headerlink" title="三、安装脚本：3步搞定"></a>三、安装脚本：3步搞定</h4><ul>
+<li>打开上文的「脚本链接」（Greasyfork地址），脚本管理工具会自动跳转至「安装页」；</li>
+<li>页面会显示脚本功能说明，确认是“123网盘链接检测助手”后，点击「安装此脚本」（油猴是绿色按钮，脚本猫是「添加脚本」）；</li>
+<li>安装完成后，打开123云盘或pan1.me页面，脚本会自动后台启动，不用手动设置控制面板。</li>
+</ul>
+<h4 id="四、使用脚本：4步轻松用"><a href="#四、使用脚本：4步轻松用" class="headerlink" title="四、使用脚本：4步轻松用"></a>四、使用脚本：4步轻松用</h4><ul>
+<li>打开123云盘社区帖子或含有123网盘链接的页面，脚本会自动扫描链接；</li>
+<li>检测完成后，链接前方会显示状态标记：「✔ 有效」「✖ 失效」一目了然；</li>
+<li>若打开加密链接，脚本会自动识别提取码并填入输入框；</li>
+<li>遇到“需回复才能查看”的帖子，脚本会自动生成回复文案并提交，解锁隐藏内容后直接检测链接。</li>
+</ul>
+<h4 id="五、小技巧：这些设置更顺手"><a href="#五、小技巧：这些设置更顺手" class="headerlink" title="五、小技巧：这些设置更顺手"></a>五、小技巧：这些设置更顺手</h4><ul>
+<li>清理缓存：脚本会自动清理24小时前的检测结果，若想手动清理，可在浏览器扩展中找到脚本，点击「选项」→「清理缓存」；</li>
+<li>手机使用：在Kiwi浏览器中安装后，打开123云盘页面，脚本会自动适配移动端，检测速度和PC端一样快；</li>
+<li>关闭功能：若暂时不用，可在扩展工具中暂停脚本，需要时再开启，不影响浏览器其他功能。</li>
+</ul>
+<h2 id="夸克天翼123秒传工具"><a href="#夸克天翼123秒传工具" class="headerlink" title="夸克天翼123秒传工具"></a>夸克天翼123秒传工具</h2><p>在支持插件的浏览器中安装篡改猴推荐edge</p>
+<p>123云盘秒传（123FastLink）</p>
+<p><a href="https://update.greasyfork.org/scripts/525210/123FastLink.user.js">https://update.greasyfork.org/scripts/525210/123FastLink.user.js</a></p>
+<p>123秒传json生成（天翼云盘夸克网盘）</p>
+<p><a href="https://update.greasyfork.org/scripts/555404/123%E4%BA%91%E7%9B%98%E7%A7%92%E4%BC%A0JSON%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%EF%BC%89.user.js">https://update.greasyfork.org/scripts/555404/123%E4%BA%91%E7%9B%98%E7%A7%92%E4%BC%A0JSON%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%EF%BC%89.user.js</a></p>
+<h3 id="脚本使用教程-1"><a href="#脚本使用教程-1" class="headerlink" title="脚本使用教程"></a>脚本使用教程</h3><p>部分网盘需要先输入自己账号的cookie。</p>
+<p>cookie获取方式（如有）：</p>
+<ul>
+<li>在网盘页点击F12，选择网络，并刷新&#x2F;重载一次页面</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110112550028.png" alt="演示1"></p>
+<ul>
+<li>在左侧栏的找到最上面的文件，在右侧下滑找到完整的cookie，复制完整后填入脚本弹窗内</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110112735749.png" alt="演示2"></p>
+<h4 id="1-一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）"><a href="#1-一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）" class="headerlink" title="1. 一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）"></a>1. 一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113106146.png" alt="演示3"></p>
+<p>如果脚本无运行，或者不小心关掉了弹出，刷新一次网页或者点击下方的生成json即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113242881.png" alt="演示4"></p>
+<h4 id="2-打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）"><a href="#2-打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）" class="headerlink" title="2. 打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）"></a>2. 打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113520252.png" alt="演示5"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113646257.png" alt="演示6"></p>
+<h4 id="3-完成"><a href="#3-完成" class="headerlink" title="3. 完成"></a>3. 完成</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110114747785.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110114759362.png"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
   <entry>
     <title>clash</title>
@@ -113,39 +146,29 @@
       </tags>
   </entry>
   <entry>
-    <title>FPA食用指北</title>
-    <url>/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
-<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
-<hr>
-<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
-<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
-<hr>
-<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
-<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
-<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
-<p>无论选择了哪一个，都会进入到图示的patch界面</p>
-<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
-<p>内置过签方案：按需选择，普通或者增强都行。</p>
-<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
-<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
-<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
-<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
-<hr>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
-<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
 ]]></content>
       <categories>
-        <category>Tutorials</category>
+        <category>Software</category>
       </categories>
       <tags>
-        <tag>Xposed</tag>
+        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -190,7 +213,7 @@
 </tr>
 <tr>
 <td></td>
-<td>（例：<a href="mailto:&#121;&#x6f;&#x75;&#x72;&#45;&#110;&#97;&#x6d;&#101;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;">&#121;&#x6f;&#x75;&#x72;&#45;&#110;&#97;&#x6d;&#101;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a>,*@xxx.com）</td>
+<td>（例：<a href="mailto:&#121;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#x6d;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;">&#121;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#x6d;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;</a>,*@xxx.com）</td>
 </tr>
 <tr>
 <td>JWT_SECRET</td>
@@ -330,6 +353,92 @@
       </tags>
   </entry>
   <entry>
+    <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
+    <url>/2026/02/16/bitwarden-Microsoft/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安卓手机（无需Root，有root更好）</li>
+<li>mt管理器</li>
+<li>Microsoft Authenticator安装包</li>
+<li>电脑：DB Browser for SQLite（<a href="https://sqlitebrowser.org/dl/">下载地址：https://sqlitebrowser.org/dl/</a>）</li>
+<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="访问-Authenticator-私有目录"><a href="#访问-Authenticator-私有目录" class="headerlink" title="访问 Authenticator 私有目录"></a>访问 Authenticator 私有目录</h3><h4 id="无root的额外操作（有root的可以直接跳过）"><a href="#无root的额外操作（有root的可以直接跳过）" class="headerlink" title="无root的额外操作（有root的可以直接跳过）"></a>无root的额外操作（有root的可以直接跳过）</h4><ol>
+<li>打开<code>MT管理器</code></li>
+<li>找到Microsoft Authenticator的安装包</li>
+<li>点击安装包→ 选择<code>功能</code>→ <code>注入文件提供器</code>→ 确定</li>
+<li>注入完成后，mt管理器就能像 Root 一样直接访问</li>
+<li>安装已注入文件提供器的安装包，并登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
+<li>打开<code>MT管理器</code></li>
+<li>点击左上角的图标，展开侧边栏，再点击侧边栏右上角的三个点，选择<code>添加本地存储</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230106071.jpg"></li>
+<li>点击左上角的图标，在侧边栏选择<code>com.azure.authenticator</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230257594.jpg"></li>
+<li>点击屏幕下方的<code>使用此文件夹</code></li>
+<li>然后我们就可以在mt管理器的侧边栏访问Authenticator的私有目录了，然后进入名字叫<code>data</code>的文件夹（注意不是进android-data），在文件夹内找到名为<code>databases</code>的文件夹，打开<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216230558046.jpg"></li>
+</ol>
+<h4 id="访问-Authenticator-私有目录（已root）"><a href="#访问-Authenticator-私有目录（已root）" class="headerlink" title="访问 Authenticator 私有目录（已root）"></a>访问 Authenticator 私有目录（已root）</h4><ol>
+<li>在应用内登录Microsoft账号（在此应用内登录Microsoft会自动开启两步验证）</li>
+<li>打开mt管理器，直接在mt管理器内跳转到<code>/data/data/com.azure.authenticator/databases/</code></li>
+</ol>
+<h3 id="提取密钥文件"><a href="#提取密钥文件" class="headerlink" title="提取密钥文件"></a>提取密钥文件</h3><ol>
+<li>我们在<code>databases</code>内复制以下3个文件到手机存储，再传到电脑：<code>PhoneFactor</code>、<code>PhoneFactor-shm</code>、<code>PhoneFactor-wal</code>，<strong>必须三个一起复制，缺一不可</strong>。将这3个文件放在同一个文件夹里，<strong>不要分开</strong>。</li>
+<li>电脑打开 DB Browser for SQLite</li>
+<li>点击左上角 <code>打开数据库</code> → 选择你复制的<code>PhoneFactor</code>文件（记得把查找的文件名后缀改成<code>*所有文件</code>不然搜不到）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232642916.png"></li>
+<li>打开数据库后点击<code>浏览数据</code><br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260216232943965.png"></li>
+<li>你会看到这些关键字段： name &#x2F; username：账户名（如 <code>Microsoft/xxx@qq.com</code>）、oath_secret_key：<code>真正的 TOTP 密钥（Base64 格式）</code>。大部分微软账户是8位验证码，30秒刷新。保存好这些数据对应的值。</li>
+</ol>
+<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><ol>
+<li>我们把<code>oath_secret_key</code>对应的值复制,访问这个转换网站将其转换成Base32，保存好转换后的值。</li>
+</ol>
+<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260207220746725.png"></p>
+<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
+<li>在第三方密码管理器的<code>验证器密钥(TOTP)</code>中输入otpauth:&#x2F;&#x2F;totp&#x2F;<code>name名称</code>:<code>username账号</code>?secret&#x3D;<code>转换后的Base32密钥</code>&amp;issuer&#x3D;Microsoft&amp;digits&#x3D;8&amp;period&#x3D;30，缺失的部分需要用刚刚保存的值一一补充。保存后即可看到8位数的密码</li>
+<li>核对第三方密码管理器显示的密码是否与Microsoft Authenticator显示的密码一致</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FPA食用指北</title>
+    <url>/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
+<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+<hr>
+<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
+<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<hr>
+<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222759.jpg"></p>
+<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222812.jpg"></p>
+<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222804.jpg"></p>
+<p>无论选择了哪一个，都会进入到图示的patch界面</p>
+<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
+<p>内置过签方案：按需选择，普通或者增强都行。</p>
+<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
+<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_225353.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_230428.jpg"></p>
+<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
+<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_222828.jpg"></p>
+<hr>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
+<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
     <url>/2026/02/07/bitwarden-steam/</url>
     <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
@@ -357,6 +466,192 @@
       </categories>
       <tags>
         <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/12/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>让每个人都能够免费阅读/下载知网论文</title>
+    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
+    <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
+<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
+<p>在应用商店搜索知网，会有以下结果。</p>
+<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
+<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
+<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
+<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
+<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
+<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
+<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
+<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
+<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
+<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
+<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
+<p>然后回到机构关联界面进行关联即可。</p>
+<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
+<p>（如果漫游过期了重新认证一遍即可）</p>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
+<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
+<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
+<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
+<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
+<hr>
+<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
+<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
+<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
+<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
+<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>知网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客食用指北</title>
+    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
+<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
+<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
+<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
+<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
+<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
+<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
+<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>点开的微信文件，都去哪了（含QQ）</title>
+    <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
+<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
+<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
+<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
+<hr>
+<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
+<hr>
+<p>为了实现这一目标，我们要用到“mt管理器”</p>
+<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
+<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
+<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
+<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
+<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
+<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
+<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
+<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
+<p>我们打开“mt管理器”，点击右上角的三个点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
+<p>选择“添加本地存储”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
+<p>点击左上角那三条杠</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
+<p>选择“微信”（com.tencent.mm）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
+<p>点击“使用此文件夹”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
+<p>现在在侧边栏里已经添加了微信的根目录了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
+<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
+<p>进入没区别了，也就是旧版地址）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
+<p>选择MicorMsg。</p>
+<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
+<p>进入后选择“attachment”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
+<p>这里就存放着我们在微信接收的所有文件</p>
+<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
+<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
+<p>最后，补一个QQ文件的保存路径</p>
+<p>QQ群文件（不需要上述操作）</p>
+<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
+<p>QQ频道（需要上述操作）</p>
+<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>clash怎么用？</title>
+    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
+    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
+<hr>
+<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
+<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
+<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
+<p>配置名起一个自己能认得出来的名字就行</p>
+<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
+<p>自动更新随便填，1440或者30都行。</p>
+<p>填写完成之后点击右上角的保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
+<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
+<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
+<p>全局代理即全部都走海外网络。直连模式则相反。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
+<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
+<hr>
+<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
+<p>可以先进设置页把语言改成中文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
+<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
+<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
+<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
+<p>默认模式同样是规则模式。</p>
+<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
+<hr>
+<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
+<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
+<p>找到最下面的“访问控制模式”</p>
+<p>允许所有应用——默认规则</p>
+<p>仅允许已选择的应用——白名单模式。</p>
+<p>不允许已选择的应用——黑名单模式。</p>
+<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
+<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
+<p>完成后打开代理即可。</p>
+<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -460,323 +755,6 @@
       </tags>
   </entry>
   <entry>
-    <title>123资源社区</title>
-    <url>/2026/01/10/123%E8%B5%84%E6%BA%90%E7%A4%BE%E5%8C%BA/</url>
-    <content><![CDATA[<h1 id="123资源社区"><a href="#123资源社区" class="headerlink" title="123资源社区"></a>123资源社区</h1><p>123分享是一个非官方的站点，主要分享123云盘的资源下载。本站不储存、复制、传播、控制编辑任何网盘文件，也不提供下载服务，其链接跳转至各大网盘，文件的有效性和安全性需要您自行判断，如有侵权内容请联系我们。</p>
-<p><a href="https://pan1.me/">官方链接1：https://pan1.me/</a></p>
-<p><a href="https://www.123panfx.com/">官方链接2：https://www.123panfx.com/</a></p>
-<p>这两个都是一样的，有时候其中一个进不去了就可以用另一个进去，数据互通。</p>
-<h1 id="123资源社区油猴脚本"><a href="#123资源社区油猴脚本" class="headerlink" title="123资源社区油猴脚本"></a>123资源社区油猴脚本</h1><h2 id="【123-网盘党必装】链接检测助手-：自动检测链接是否有效-自动填提取码，告别手动试失效！"><a href="#【123-网盘党必装】链接检测助手-：自动检测链接是否有效-自动填提取码，告别手动试失效！" class="headerlink" title="【123 网盘党必装】链接检测助手 ：自动检测链接是否有效 + 自动填提取码，告别手动试失效！"></a>【123 网盘党必装】链接检测助手 ：自动检测链接是否有效 + 自动填提取码，告别手动试失效！</h2><p>★ 123网盘链接检测助手脚本分享（极速版+自动填充）★</p>
-<p>给经常在123云盘社区逛帖、存资源的伙伴们，推荐一款超实用的油猴脚本！能自动检测123网盘链接是否有效，还能自动填充提取码、实时监控页面状态，甚至支持自动回复解锁隐藏内容，彻底告别手动查失效、输密码的麻烦，亲测适配PC和手机浏览器（需支持扩展），批量处理链接也不卡顿～</p>
-<p>不管是整理资源链接、检查失效链接，还是打开加密资源、解锁需回复的内容，用它都能省超多时间，尤其适合经常囤资源、发链接的小伙伴，再也不用逐个点链接试有效性！</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110110101616.png" alt="图片1"></p>
-<h3 id="一、脚本核心功能：网盘用户必备神器"><a href="#一、脚本核心功能：网盘用户必备神器" class="headerlink" title="一、脚本核心功能：网盘用户必备神器"></a>一、脚本核心功能：网盘用户必备神器</h3><p><a href="https://greasyfork.org/zh-CN/scripts/550954-123">网盘链接检测助手脚本地址：</a></p>
-<p><a href="https://greasyfork.org/zh-CN/scripts/550954-123">https://greasyfork.org/zh-CN/scripts/550954-123</a></p>
-<ul>
-<li>「无限并发检测」：批量检测多个123网盘链接，无并发限制，秒出有效&#x2F;失效结果，不用逐个等待；</li>
-<li>「自动提取码填充」：从页面文本或URL中识别提取码，自动填入密码框，还能一键点击确认按钮，不用手动复制粘贴；</li>
-<li>「实时页面监控」：在123网盘页面实时显示链接状态（有效&#x2F;失效），状态标记持久化，刷新页面不消失；</li>
-<li>「自动回复解锁」：遇到“需回复才能查看”的帖子，自动生成回复文案并提交，不用手动打字刷回复；</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110110807970.gif" alt="图片演示"></p>
-<h3 id="脚本使用教程"><a href="#脚本使用教程" class="headerlink" title="脚本使用教程"></a>脚本使用教程</h3><h4 id="一、前期准备：安装脚本管理插件（三选一）"><a href="#一、前期准备：安装脚本管理插件（三选一）" class="headerlink" title="一、前期准备：安装脚本管理插件（三选一）"></a>一、前期准备：安装脚本管理插件（三选一）</h4><p>在Chrome、Edge或支持扩展的手机浏览器中，先安装脚本管理工具，推荐这三款，新手优先选油猴：</p>
-<ul>
-<li>打开浏览器，点击右上角「三个点」→ 选择「扩展程序」→ 进入「扩展管理页面」；</li>
-<li>前往浏览器应用商店，搜索以下插件并安装：</li>
-<li>首选：Tampermonkey（油猴）（兼容性最强，脚本适配度高，新手友好）；</li>
-<li>备选：脚本猫（界面简单，操作直观）、暴力猴（轻量流畅，占用资源少）。</li>
-</ul>
-<h4 id="二、关键步骤：开启「开发者模式」（必做）"><a href="#二、关键步骤：开启「开发者模式」（必做）" class="headerlink" title="二、关键步骤：开启「开发者模式」（必做）"></a>二、关键步骤：开启「开发者模式」（必做）</h4><p>  安装插件后，必须开启开发者模式才能加载脚本，分浏览器操作，步骤很简单：</p>
-<p>▶ Chrome&#x2F;Edge 浏览器：</p>
-<ul>
-<li>进入「扩展管理页面」（路径：右上角「三个点」→「更多工具」→「扩展程序」）；</li>
-<li>勾选页面右上角「开发者模式」（开启后会显示蓝色开关，确保开关是「打开」状态）；</li>
-<li>开启后不用额外操作，保持页面即可，接下来安装脚本。</li>
-</ul>
-<p>▶ 手机浏览器（如Kiwi、X浏览器）：</p>
-<ul>
-<li>打开浏览器设置，找到「扩展程序」选项并点击；</li>
-<li>开启「开发者模式」，再手动安装脚本管理插件（部分浏览器需先下载插件APK，导入后安装）；</li>
-<li>安装完成后，在浏览器工具栏找到插件图标，点击就能管理脚本。</li>
-</ul>
-<h4 id="三、安装脚本：3步搞定"><a href="#三、安装脚本：3步搞定" class="headerlink" title="三、安装脚本：3步搞定"></a>三、安装脚本：3步搞定</h4><ul>
-<li>打开上文的「脚本链接」（Greasyfork地址），脚本管理工具会自动跳转至「安装页」；</li>
-<li>页面会显示脚本功能说明，确认是“123网盘链接检测助手”后，点击「安装此脚本」（油猴是绿色按钮，脚本猫是「添加脚本」）；</li>
-<li>安装完成后，打开123云盘或pan1.me页面，脚本会自动后台启动，不用手动设置控制面板。</li>
-</ul>
-<h4 id="四、使用脚本：4步轻松用"><a href="#四、使用脚本：4步轻松用" class="headerlink" title="四、使用脚本：4步轻松用"></a>四、使用脚本：4步轻松用</h4><ul>
-<li>打开123云盘社区帖子或含有123网盘链接的页面，脚本会自动扫描链接；</li>
-<li>检测完成后，链接前方会显示状态标记：「✔ 有效」「✖ 失效」一目了然；</li>
-<li>若打开加密链接，脚本会自动识别提取码并填入输入框；</li>
-<li>遇到“需回复才能查看”的帖子，脚本会自动生成回复文案并提交，解锁隐藏内容后直接检测链接。</li>
-</ul>
-<h4 id="五、小技巧：这些设置更顺手"><a href="#五、小技巧：这些设置更顺手" class="headerlink" title="五、小技巧：这些设置更顺手"></a>五、小技巧：这些设置更顺手</h4><ul>
-<li>清理缓存：脚本会自动清理24小时前的检测结果，若想手动清理，可在浏览器扩展中找到脚本，点击「选项」→「清理缓存」；</li>
-<li>手机使用：在Kiwi浏览器中安装后，打开123云盘页面，脚本会自动适配移动端，检测速度和PC端一样快；</li>
-<li>关闭功能：若暂时不用，可在扩展工具中暂停脚本，需要时再开启，不影响浏览器其他功能。</li>
-</ul>
-<h2 id="夸克天翼123秒传工具"><a href="#夸克天翼123秒传工具" class="headerlink" title="夸克天翼123秒传工具"></a>夸克天翼123秒传工具</h2><p>在支持插件的浏览器中安装篡改猴推荐edge</p>
-<p>123云盘秒传（123FastLink）</p>
-<p><a href="https://update.greasyfork.org/scripts/525210/123FastLink.user.js">https://update.greasyfork.org/scripts/525210/123FastLink.user.js</a></p>
-<p>123秒传json生成（天翼云盘夸克网盘）</p>
-<p><a href="https://update.greasyfork.org/scripts/555404/123%E4%BA%91%E7%9B%98%E7%A7%92%E4%BC%A0JSON%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%EF%BC%89.user.js">https://update.greasyfork.org/scripts/555404/123%E4%BA%91%E7%9B%98%E7%A7%92%E4%BC%A0JSON%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%EF%BC%89.user.js</a></p>
-<h3 id="脚本使用教程-1"><a href="#脚本使用教程-1" class="headerlink" title="脚本使用教程"></a>脚本使用教程</h3><p>部分网盘需要先输入自己账号的cookie。</p>
-<p>cookie获取方式（如有）：</p>
-<ul>
-<li>在网盘页点击F12，选择网络，并刷新&#x2F;重载一次页面</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110112550028.png" alt="演示1"></p>
-<ul>
-<li>在左侧栏的找到最上面的文件，在右侧下滑找到完整的cookie，复制完整后填入脚本弹窗内</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110112735749.png" alt="演示2"></p>
-<h4 id="1-一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）"><a href="#1-一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）" class="headerlink" title="1. 一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）"></a>1. 一般来说在点击网盘的分享链接之后，脚本会自动运行，点击复制json即可（下载也行，但一般复制更方便）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113106146.png" alt="演示3"></p>
-<p>如果脚本无运行，或者不小心关掉了弹出，刷新一次网页或者点击下方的生成json即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113242881.png" alt="演示4"></p>
-<h4 id="2-打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）"><a href="#2-打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）" class="headerlink" title="2. 打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）"></a>2. 打开你的123云盘，在你想要存放的文件夹里点击秒传，选择保存秒传链接，把复制的json粘贴到文本框内，点击保存即可。（如果是下载了json文件的话最后一步就选择“选择文件”即可，或者直接把文件拖进去）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113520252.png" alt="演示5"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110113646257.png" alt="演示6"></p>
-<h4 id="3-完成"><a href="#3-完成" class="headerlink" title="3. 完成"></a>3. 完成</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110114747785.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260110114759362.png"></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>点开的微信文件，都去哪了（含QQ）</title>
-    <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
-<p>但这并不意味着微信在文件存储上就没有问题了。在8.0.30版本前，用户保存的文件一般都会在</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/download</code></p>
-<p>即便是用户选择自行保存，也会默认保存在download文件夹内。这两个目录无论是用户还是应用都可以直接访问到。从8.0.30版本开始，文件的默认保存位置会直接改变成应用最底层的data目录。根据Android的目录规则，根目录下的data目录属于每个应用的专属目录，只有应用本身才能正常访问，把没有获取超级用户（root）权限的用户以及其他第三方软件直接拒之门外。这就导致我们在微信保存到本地的文件，依然占据了两倍的文件空间。</p>
-<p>   注意：微信的保存是要以“成功接收文件到本地”为判断标准，仅收到文件信息是不会保存到本地的。这一点在文末也会有所体现。保存的是“记录”而非“文件本身”（个人理解）</p>
-<hr>
-<p>   我们以微信在8.0.4x版本上线的存储空间为例（入口：设置-通用-存储空间）。得益于“得天独厚”的data目录，目前用户清理微信文件的唯一方式就是进入存储空间内删除文件。对于一般用户来说，这种方式已经能够满足文件清理的需求了。但作为一名极客用户，我更希望能够把所有的微信文件罗列出来，与手机系统的文件进行良好的联动，更方便把文件进行分类保存整理。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we0.webp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we1.webp"></p>
-<hr>
-<p>为了实现这一目标，我们要用到“mt管理器”</p>
-<p>首先点击微信的安装包本体（没有的话可以用mt管理器提取一下），选择“注入文件提供器”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we2.webp"></p>
-<p>点击“确定”，生成新的微信安装包并安装。（后缀为dp.apk）</p>
-<p>注意⚠️：签名改变，与原版微信无法共存，需卸载安装。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we3.webp"></p>
-<p>当然，如果你本来就是免root的lsp及其类似物的用户，你可以选择把加载器换成Opatch，在修补应用时顺手勾选注入文件提供者，也可以达到类似的效果。（如下图）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we4.webp"></p>
-<p> 但无论是以上哪种方法都会有一个致命缺陷（因为需要走这些步骤的99.9%都是没有root的用户），因为任何对安装包的修改行为都会改变应用的签名，我们普通用户并没有腾讯官方的签名密钥，那就导致一些对微信签名校验非常严格的应用，可能就无法识别到你的微信了，或者提示“应用签名与开放平台的不符，请从应用商店重新下载正版应用”等，如下图。（常见的有系统应用、游戏app、银行app等，无法<strong>调用</strong>微信登录以及微信支付）</p>
-<p>   因此请各位三思后而行，是否需要为了达成目的付出这样的代价。</p>
-<p>   当然，如果你本身就已经是lsp生态的老用户了，那可以直接无视，毕竟还有手机&#x2F;扫码登录和支付宝兜底（比如我）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we5.webp"></p>
-<p>（提示“请安装微信”和下面的“打开”互相冲突，这就是应用签名与开放平台不符的结果，也就是能识别但无法调用。）</p>
-<p>我们打开“mt管理器”，点击右上角的三个点</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we6.webp"></p>
-<p>选择“添加本地存储”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we7.webp"></p>
-<p>点击左上角那三条杠</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we8.webp"></p>
-<p>选择“微信”（com.tencent.mm）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we9.webp"></p>
-<p>点击“使用此文件夹”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we10.webp"></p>
-<p>现在在侧边栏里已经添加了微信的根目录了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we11.webp"></p>
-<p>我们选择“data”目录。（如果选择“android_data”的话那就和从</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mm</code></p>
-<p>进入没区别了，也就是旧版地址）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we12.webp"></p>
-<p>选择MicorMsg。</p>
-<p>在“MicroMsg”的目录下有很多文件夹，我们找到夹杂着字母和数字的那个文件夹（这个类似用户的识别码，不同的账号是不一样的）</p>
-<p>进入后选择“attachment”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/we13.webp"></p>
-<p>这里就存放着我们在微信接收的所有文件</p>
-<p>带有“⌖”结尾的文件已经打不开了，文件体积也只有几十b，大概率是所谓的过期了（只有记录）</p>
-<p>你可以把右侧目录切换为download文件夹（或者你存文件的文件夹），然后长按文件把它复制过去，便于系统地管理你的微信文件。（删除文件还是推荐用微信去删）</p>
-<p>最后，补一个QQ文件的保存路径</p>
-<p>QQ群文件（不需要上述操作）</p>
-<p><code>/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/QQfile_recv/</code></p>
-<p>QQ频道（需要上述操作）</p>
-<p><code>/android_data/Tencent/QQfile_recv/nt_qq_xxx（用户识别码）/File/Ori/</code></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>博客食用指北</title>
-    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
-<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
-<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
-<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
-<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
-<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
-<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
-<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>让每个人都能够免费阅读/下载知网论文</title>
-    <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
-    <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
-<p>上文谈到了，本文是基于安卓平台的，所使用的客户端肯定也是安卓平台的。</p>
-<p>在应用商店搜索知网，会有以下结果。</p>
-<p>这四款都是同方知网的官方客户端。我们要使用的版本是 <u><strong>“全球学术快报”</strong></u></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aY4Y6"></p>
-<h4 id="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"><a href="#下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）" class="headerlink" title="下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）"></a>下载后打开应用，来到登录页面进行登录。（使用微信、QQ、微博、邮箱、手机号登录均可，此处不做限制）</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYwPq"></p>
-<h4 id="登录后点击“立即关联”。"><a href="#登录后点击“立即关联”。" class="headerlink" title="登录后点击“立即关联”。"></a>登录后点击“立即关联”。</h4><h4 id="选择“位置关联”。"><a href="#选择“位置关联”。" class="headerlink" title="选择“位置关联”。"></a>选择“位置关联”。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/aYYSr"></p>
-<h4 id="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"><a href="#如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。" class="headerlink" title="如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。"></a>如果你身处认证高校，那么它便会自动弹出认证，点击认证即可。</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajdRB"></p>
-<h4 id="如果手机的物理位置并不在此范围内呢？"><a href="#如果手机的物理位置并不在此范围内呢？" class="headerlink" title="如果手机的物理位置并不在此范围内呢？"></a>如果手机的物理位置并不在此范围内呢？</h4><p>这个简单，等哪天去旅游路过高校的时候顺便认证一下就行了🤗</p>
-<p>如果各位不方便前往目的地呢，就要化身安卓开发者，来场“云旅行”吧！</p>
-<p>打开系统界面，连续点击软件版本号，进入手机的开发者模式。</p>
-<p>在“开发者选项”中的位置——“位置”——“选择模拟位置的应用”，然后勾选你要用来改变定位的应用。  </p>
-<p>返回模拟定位的应用，并在应用界面输入你想要修改的地址，启动虚拟定位。  </p>
-<p>注意：此处的应用不是指全球学术快报。常见的软件如fake location等。  </p>
-<p>（因为虚拟定位的应用我还没系统整理过，因此本文暂时不提供，等收录完了会直接更新在本文）</p>
-<p>然后回到机构关联界面进行关联即可。</p>
-<p>至此，你的<strong>手机</strong>便可**<u>不依赖于校园网络环境以及学生身份</u>**，直接使用知网服务了。在线阅读和下载功能都能够正常使用</p>
-<p>（如果漫游过期了重新认证一遍即可）</p>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h4><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/ajveG"></p>
-<p><strong>1.如图所示，账号貌似只能在全球学术快报中使用，漫游无法知网全平台通用，这也是选择使用全球学术快报的原因。</strong></p>
-<p><strong>（有购买校园网的建议直接用校园网）。</strong></p>
-<p><strong>- 识别的定位一般是学校的校级图书馆，教学楼和宿舍区一般是不行的。比如华农的认证识别区是在校图书馆附近。</strong></p>
-<p><strong>（高校的在校生用户更推荐线下识别这种方式，比上面用到的开发者模拟定位的操作简单很多，且属于合理合法的范畴）</strong></p>
-<hr>
-<p>一、什么是机构关联<br>机构关联，即在手机知网注册个人账号，通过关联到机构账号，获取到该机构账号下载文献的权限。</p>
-<p>二、关联有效期<br>成功关联机构账号后，拥有14天的关联有效期，过期需要再次关联使用。</p>
-<p>三、关于漫游<br>成功关联机构账号后，如该子账号开通了漫游功能，则在漫游时间期限内，即使不在关联的机构账号ip范围内，也可以下载文献。</p>
-<p>四、如何关联机构账号<br>手机知网提供了两种关联方式:<br>1、使用账号密码关联<br>用户通过输入机构账号和密码，进行关联。<br>2、使用IP关联<br>当用户手机接入机构所在IP段时，手机会自动获取到机构信息，此时用户可以选择该方式进行关联。</p>
-<p>五、如何进行校外访问<br>用户在校外通过登录学校的一卡通账号，即可合法访问图书馆已经订购的知网数据库的校外访问系统。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>知网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>clash怎么用？</title>
-    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
-    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
-<hr>
-<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233502.jpg"></p>
-<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233509.jpg"></p>
-<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233512.jpg"></p>
-<p>配置名起一个自己能认得出来的名字就行</p>
-<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
-<p>自动更新随便填，1440或者30都行。</p>
-<p>填写完成之后点击右上角的保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233522.jpg"></p>
-<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
-<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
-<p>全局代理即全部都走海外网络。直连模式则相反。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233529.jpg"></p>
-<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_233539.jpg"></p>
-<hr>
-<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
-<p>可以先进设置页把语言改成中文。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-48-03.png"></p>
-<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-49-48.png"></p>
-<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-51-09.png"></p>
-<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
-<p>默认模式同样是规则模式。</p>
-<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/PixPin_2025-01-05_23-53-05.png"></p>
-<hr>
-<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
-<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235644.jpg"></p>
-<p>找到最下面的“访问控制模式”</p>
-<p>允许所有应用——默认规则</p>
-<p>仅允许已选择的应用——白名单模式。</p>
-<p>不允许已选择的应用——黑名单模式。</p>
-<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235647.jpg"></p>
-<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Screenshot_20250105_235655.jpg"></p>
-<p>完成后打开代理即可。</p>
-<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>lspatch及其类似物使用教程</title>
     <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
     <content><![CDATA[<h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
@@ -823,215 +801,6 @@
       </categories>
       <tags>
         <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手机应用平替思路</title>
-    <url>/2025/05/28/%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8%E5%B9%B3%E6%9B%BF/</url>
-    <content><![CDATA[<h3 id="微信→play"><a href="#微信→play" class="headerlink" title="微信→play"></a>微信→play</h3><p>微信其实没啥好说的，腾讯系的应用对Xposed的打击力度越来越大，官方版的话广告又挺多，play版就是个不错的选择。虽然可能会有一点心理作用在里面。但如果不是很追求更新频次的话，play版用起来还是挺舒服的。</p>
-<h3 id="QQ→new-Tim"><a href="#QQ→new-Tim" class="headerlink" title="QQ→new&#x2F;Tim"></a>QQ→new&#x2F;Tim</h3><p>虽然大家都在骂，但不可否认QQ的官方最新版的体验是最好的，除了广告多，流畅不卡顿。</p>
-<p>Tim目前的版本还是太残血了点，如果只考虑简单使用的话可以考虑。</p>
-<p>目前 QQ play 版有复活的迹象，我将持续关注。</p>
-<h3 id="QQ音乐→new（OS特性）-简洁版"><a href="#QQ音乐→new（OS特性）-简洁版" class="headerlink" title="QQ音乐→new（OS特性）&#x2F;简洁版"></a>QQ音乐→new（OS特性）&#x2F;简洁版</h3><p>QQ音乐有很多定制版，但用下来感觉都差不多，体积也比较大。如果是追求可用且流畅的话可以用回简洁版。</p>
-<p>如果要体验完整的功能特性的话就用回主站吧。主站还有一些好用的旧版，例如91304,9704等。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-tzxU3">提供一个下载链接</a></p>
-<h3 id="哔哩哔哩→piliplus"><a href="#哔哩哔哩→piliplus" class="headerlink" title="哔哩哔哩→piliplus"></a>哔哩哔哩→piliplus</h3><p>抛开漫游不谈，b站的第三方客户端还是非常好用的。</p>
-<p>pilipala ➡️ pilipala X ➡️ piliplus 。</p>
-<p>我觉得反正都用第三方了，稳不稳定就已经很玄学了，不如直接选一个更新最勤快的fork版本。</p>
-<p><a href="https://github.com/bggRGjQaUbCoE/PiliPlus">piliplus的GitHub地址</a></p>
-<h3 id="抖音→抖音精选"><a href="#抖音→抖音精选" class="headerlink" title="抖音→抖音精选"></a>抖音→抖音精选</h3><p>为什么选择抖音精选？</p>
-<p> 首先，它的体积是抖音系里倒数第二小的一个，倒数第一是抖音极速版。如果极速版体验很好的话我也不会推荐抖音精选。</p>
-<p> 第二点，它默认是双列显示，加上无声进入抖音，能够更加有效避免社死。</p>
-<p> 第三点，它的播放界面是流媒体样式的，没有特别强的白色，烧屏的概率会小一些。</p>
-<p> 第四点，它真的已经算简洁了。除去一个没用的长视频，残血的二维码扫码，抖音的核心功能它基本都有，而且体验下来性能特别流畅。只要不挂梯子（一挂就无网络），可以说完胜抖音主站。</p>
-<h3 id="微博→See"><a href="#微博→See" class="headerlink" title="微博→See"></a>微博→See</h3><p>虽然说这里不讨论修改版，但是要用See就必须借助Xposed。See应该是目前可破解的第三方微博里体验最好的一个。</p>
-<p>下载一个See（Pro版是4.X），再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
-<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
-<p>See官方版下载地址：caij.xyz&#x2F;s</p>
-<h3 id="Twitter（X）→-Flyy"><a href="#Twitter（X）→-Flyy" class="headerlink" title="Twitter（X）→ Flyy"></a>Twitter（X）→ Flyy</h3><p>和See一个作者</p>
-<p>下载一个Flyy，再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
-<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
-<p><a href="https://github.com/funcenter/flyy">Flyy官方版GitHub下载地址</a></p>
-<h3 id="Telegram→-Ayugram-PC、Android-Nagram-Android"><a href="#Telegram→-Ayugram-PC、Android-Nagram-Android" class="headerlink" title="Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)"></a>Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)</h3><p>适用于 Windows 和 Android 的 Telegram 客户端，配备幽灵模式和改进的防召回功能。支持本地会员，无需Xposed，高度可定制。</p>
-<p><a href="https://t.me/ayugramchat">Ayugram官方频道&#x2F;下载地址</a></p>
-<p>NagramX这个软件包括了 Nagram + ayugram的特色功能。比如：消息过滤、防撤回、幽灵模式、强制原画质、本地大会员、下载上传加速、隐藏广告、强制保存私有频道视频……是新一代的全能第三方TG。</p>
-<p><a href="https://github.com/risin42/NagramX">NagramX的GitHub地址</a></p>
-<p><a href="https://t.me/NagramX">NagramX的Telegram频道</a></p>
-<h3 id="小红书-支付宝-购物-外卖-地图→play"><a href="#小红书-支付宝-购物-外卖-地图→play" class="headerlink" title="小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play"></a>小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play</h3><p>更低的更新频率和更流畅的使用体验，让play版应用一直是平替应用的首选。</p>
-<h3 id="浏览器→via"><a href="#浏览器→via" class="headerlink" title="浏览器→via"></a>浏览器→via</h3><p>伟大无需多言。还有一个我自己常用的嗅觉浏览器也挺不错，内置的播放器比很多第三方播放器好用，用来看视频体验很好。</p>
-<h3 id="蓝奏云→蓝云"><a href="#蓝奏云→蓝云" class="headerlink" title="蓝奏云→蓝云"></a>蓝奏云→蓝云</h3><p>蓝奏云貌似是没有官方app的，第三方里UI界面还不错，功能也挺齐全的，用的人多的，也就蓝云了。</p>
-<h3 id="百度贴吧→贴吧lite"><a href="#百度贴吧→贴吧lite" class="headerlink" title="百度贴吧→贴吧lite"></a>百度贴吧→贴吧lite</h3><p>比修改版更舒服的版本。简洁流畅体积小。不过原作者不维护了，目前是分支接手。</p>
-<p><a href="https://github.com/zzc10086/TiebaLite">新版 贴吧Lite 的 GitHub 地址</a></p>
-<h3 id="小说-动漫→阅读legedo-kazumi"><a href="#小说-动漫→阅读legedo-kazumi" class="headerlink" title="小说&#x2F;动漫→阅读legedo + kazumi"></a>小说&#x2F;动漫→阅读legedo + kazumi</h3><p>阅读legedo无需多言，应该是目前最受欢迎的阅读app。最近兴起的“轻阅读”感觉还是差点火候，除了UI确实好看一些。</p>
-<p><a href="https://github.com/gedoor/legado">Github地址</a></p>
-<p>kazumi算是老牌的动漫app了吧，基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。支持的平台多，UI是我最喜欢的 material you 3。</p>
-<p><a href="https://github.com/Predidit/Kazumi">GitHub地址</a></p>
-<h3 id="文件管理→mt管理器"><a href="#文件管理→mt管理器" class="headerlink" title="文件管理→mt管理器"></a>文件管理→mt管理器</h3><p>无需多言，如果有会员的话就是最强大的文件管理器。玩机必备且首选。</p>
-<h3 id="播放器→-Next-player-Salt-player-Outertune"><a href="#播放器→-Next-player-Salt-player-Outertune" class="headerlink" title="播放器→ Next player+ Salt player &#x2F; Outertune"></a>播放器→ Next player+ Salt player &#x2F; Outertune</h3><p>Next player 主要是因为用了 material you 3 的设计，功能也还行，满足我的需求，不然的话 MXplayer 会更好。</p>
-<p><a href="https://github.com/anilbeesetti/nextplayer">GitHub地址</a></p>
-<p>Salt player 则是目前最好用，好评率最高的本地音乐播放器。也算是伟大无需多言。</p>
-<p><a href="https://github.com/Moriafly/SaltPlayerSource">GitHub地址</a></p>
-<p>Outertune 是一款支持本地文件和YouTube音乐的Android Material 3的音乐播放器。体积小，同时具备本地播放器和流媒体的优点，但依赖youtube music，使用在线功能时需要具备良好的网络环境。</p>
-<h3 id="豆包→-Cici"><a href="#豆包→-Cici" class="headerlink" title="豆包→ Cici"></a>豆包→ Cici</h3><p>相较于国内版的豆包，国际版的Cici在功能上会少一些，但核心体验还是在的。而且因为是国际服，所以有些敏感话题在Cici上是可以搜到的。这对学习的帮助挺大。</p>
-<p>不过要挂梯，而且对节点的要求还挺高。如果图省事的话可以用回豆包或者ChatGPT、Gemini之类的模型。（用美国和新加坡节点算是所有应用的通杀）</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.larus.wolf">Google play store 地址</a></p>
-<h3 id="tiktok→tiktok-lite"><a href="#tiktok→tiktok-lite" class="headerlink" title="tiktok→tiktok lite"></a>tiktok→tiktok lite</h3><p>一般情况下，tiktok对地区的限制是很严格的。考虑到有些用户不想用修改版，tiktok lite + shizuku + nrfr是个不错的选择。</p>
-<p><a href="https://chengeeker.github.io/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/index.html">详情可跳转推文</a></p>
-<h3 id="Wikipedia→WikiReader"><a href="#Wikipedia→WikiReader" class="headerlink" title="Wikipedia→WikiReader"></a>Wikipedia→WikiReader</h3><p>这个纯粹是喜欢 md3 的设计，而且官方的wiki又登录不了，用第三方也不是不行。在阅读词条上可能会有些不便（因为是跳转而非窗口打开）</p>
-<p><a href="https://github.com/nsh07/WikiReader">GitHub地址</a></p>
-<h3 id="pixiv→-Pixiv-MultiPlatform"><a href="#pixiv→-Pixiv-MultiPlatform" class="headerlink" title="pixiv→ Pixiv-MultiPlatform"></a>pixiv→ Pixiv-MultiPlatform</h3><p>这个纯粹是喜欢 md3 的设计，而且功能上比起shaft这些也不相上下。看看自己喜欢哪一套UI吧。像 shaft 之类的 md2 风格也是挺不错的。</p>
-<p><a href="https://github.com/kagg886/Pixiv-MultiPlatform">GitHub地址</a></p>
-<h3 id="GitHub→-Obtainium"><a href="#GitHub→-Obtainium" class="headerlink" title="GitHub→ Obtainium"></a>GitHub→ Obtainium</h3><p>严格意义上来说这玩意并不是GitHub的第三方。</p>
-<p>它算是一个仓库的收藏夹。把自己在GitHub上关注的那些开源软件添加到 Obtainium 里面，就可以实现订阅的操作。</p>
-<p>在用新版本的时候可以直接在 Obtainium 里面下载，看日志，不需要跳转到 release 那里一页页找。</p>
-<p>或者说这应该是：GitHub（应用商店版）</p>
-<p><a href="https://github.com/ImranR98/Obtainium">GitHub地址</a></p>
-<h3 id="clash-meta-for-Android-→-flclash"><a href="#clash-meta-for-Android-→-flclash" class="headerlink" title="clash meta for Android → flclash"></a>clash meta for Android → flclash</h3><p>这俩都是经典，只是我更喜欢后者 md3 的UI设计，仅此而已。</p>
-<p>不过flclash的开机启动在vivo上是残血的，每次重启都要自己手动点开。</p>
-<p><a href="https://github.com/chen08209/FlClash">GitHub地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/12/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>机场推荐（实时更新）</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线20台设备使用</p>
-<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
-<h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
-<h4 id="1-泰迪🐶🐶Plus（季付：6元）"><a href="#1-泰迪🐶🐶Plus（季付：6元）" class="headerlink" title="1.泰迪🐶🐶Plus（季付：6元）"></a>1.泰迪🐶🐶Plus（季付：6元）</h4><p>✨中转节点，速度更快</p>
-<p>✨每月流量200GB，购买日免费重置</p>
-<p>✨其他同上</p>
-<h4 id="2-不限时200G：7元"><a href="#2-不限时200G：7元" class="headerlink" title="2.不限时200G：7元"></a>2.不限时200G：7元</h4><h4 id="3-不限时500G：14元"><a href="#3-不限时500G：14元" class="headerlink" title="3.不限时500G：14元"></a>3.不限时500G：14元</h4><h4 id="4-不限时1000G：28元"><a href="#4-不限时1000G：28元" class="headerlink" title="4.不限时1000G：28元"></a>4.不限时1000G：28元</h4><p>✨中转节点，速度更快</p>
-<p>✨一次性流量</p>
-<p>✨其他同上</p>
-<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
-<hr>
-<h2 id="Needay（价格涨了，现不推荐）"><a href="#Needay（价格涨了，现不推荐）" class="headerlink" title="Needay（价格涨了，现不推荐）"></a>Needay（价格涨了，现不推荐）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
-<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
-<p>缺点：贵，像新加坡之类的部分热门节点经常连接超时。但ip相对纯净，过一些严格检测的网站&#x2F;应用绰绰有余。</p>
-<h4 id="1-年付套餐：35元（原15元，涨价了）"><a href="#1-年付套餐：35元（原15元，涨价了）" class="headerlink" title="1.年付套餐：35元（原15元，涨价了）"></a><strong>1.年付套餐：35元（原15元，涨价了）</strong></h4><ul>
-<li>✅ 每月300G 流量</li>
-<li>✅ 全球多个国家接入</li>
-<li>✅ 50+中转高度节点</li>
-<li>✅ 安卓下载FLClash客户端</li>
-<li>✅ PC端下载clash verge客户端</li>
-<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
-<li>✅ 节点0.1X-8X倍率</li>
-<li>✅部分电信CN2线路</li>
-<li>✅ 部分联通AS9929线路</li>
-<li>✅部分移动CMI线路</li>
-<li>✅不支持退款！</li>
-<li>✅ 解锁流媒体和ChatGPT</li>
-</ul>
-<h4 id="2-月付套餐：7元"><a href="#2-月付套餐：7元" class="headerlink" title="2.月付套餐：7元"></a><strong>2.月付套餐：7元</strong></h4><p>每月480G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时400G套餐：16元"><a href="#3-不限时400G套餐：16元" class="headerlink" title="3.不限时400G套餐：16元"></a><strong>3.不限时400G套餐：16元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<h4 id="4-不限时1000G套餐：40元（原13元，涨价了）"><a href="#4-不限时1000G套餐：40元（原13元，涨价了）" class="headerlink" title="4.不限时1000G套餐：40元（原13元，涨价了）"></a><strong>4.不限时1000G套餐：40元（原13元，涨价了）</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p>一些ps：</p>
-<p>机场主因为成本运营问题涨价了，性价比大幅降低，同时题频发（被攻击导致订阅链接无法更新，偶尔timeout），如果没买的可以考虑换一家机场，买了的当作备用吧</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -1213,6 +982,197 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>手机应用平替思路</title>
+    <url>/2025/05/28/%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8%E5%B9%B3%E6%9B%BF/</url>
+    <content><![CDATA[<h3 id="微信→play"><a href="#微信→play" class="headerlink" title="微信→play"></a>微信→play</h3><p>微信其实没啥好说的，腾讯系的应用对Xposed的打击力度越来越大，官方版的话广告又挺多，play版就是个不错的选择。虽然可能会有一点心理作用在里面。但如果不是很追求更新频次的话，play版用起来还是挺舒服的。</p>
+<h3 id="QQ→new-Tim"><a href="#QQ→new-Tim" class="headerlink" title="QQ→new&#x2F;Tim"></a>QQ→new&#x2F;Tim</h3><p>虽然大家都在骂，但不可否认QQ的官方最新版的体验是最好的，除了广告多，流畅不卡顿。</p>
+<p>Tim目前的版本还是太残血了点，如果只考虑简单使用的话可以考虑。</p>
+<p>目前 QQ play 版有复活的迹象，我将持续关注。</p>
+<h3 id="QQ音乐→new（OS特性）-简洁版"><a href="#QQ音乐→new（OS特性）-简洁版" class="headerlink" title="QQ音乐→new（OS特性）&#x2F;简洁版"></a>QQ音乐→new（OS特性）&#x2F;简洁版</h3><p>QQ音乐有很多定制版，但用下来感觉都差不多，体积也比较大。如果是追求可用且流畅的话可以用回简洁版。</p>
+<p>如果要体验完整的功能特性的话就用回主站吧。主站还有一些好用的旧版，例如91304,9704等。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-tzxU3">提供一个下载链接</a></p>
+<h3 id="哔哩哔哩→piliplus"><a href="#哔哩哔哩→piliplus" class="headerlink" title="哔哩哔哩→piliplus"></a>哔哩哔哩→piliplus</h3><p>抛开漫游不谈，b站的第三方客户端还是非常好用的。</p>
+<p>pilipala ➡️ pilipala X ➡️ piliplus 。</p>
+<p>我觉得反正都用第三方了，稳不稳定就已经很玄学了，不如直接选一个更新最勤快的fork版本。</p>
+<p><a href="https://github.com/bggRGjQaUbCoE/PiliPlus">piliplus的GitHub地址</a></p>
+<h3 id="抖音→抖音精选"><a href="#抖音→抖音精选" class="headerlink" title="抖音→抖音精选"></a>抖音→抖音精选</h3><p>为什么选择抖音精选？</p>
+<p> 首先，它的体积是抖音系里倒数第二小的一个，倒数第一是抖音极速版。如果极速版体验很好的话我也不会推荐抖音精选。</p>
+<p> 第二点，它默认是双列显示，加上无声进入抖音，能够更加有效避免社死。</p>
+<p> 第三点，它的播放界面是流媒体样式的，没有特别强的白色，烧屏的概率会小一些。</p>
+<p> 第四点，它真的已经算简洁了。除去一个没用的长视频，残血的二维码扫码，抖音的核心功能它基本都有，而且体验下来性能特别流畅。只要不挂梯子（一挂就无网络），可以说完胜抖音主站。</p>
+<h3 id="微博→See"><a href="#微博→See" class="headerlink" title="微博→See"></a>微博→See</h3><p>虽然说这里不讨论修改版，但是要用See就必须借助Xposed。See应该是目前可破解的第三方微博里体验最好的一个。</p>
+<p>下载一个See（Pro版是4.X），再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
+<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
+<p>See官方版下载地址：caij.xyz&#x2F;s</p>
+<h3 id="Twitter（X）→-Flyy"><a href="#Twitter（X）→-Flyy" class="headerlink" title="Twitter（X）→ Flyy"></a>Twitter（X）→ Flyy</h3><p>和See一个作者</p>
+<p>下载一个Flyy，再下载一个能hook的Xposed插件（例如我自己用的hookvip），配合上fpa，体验就很不错。</p>
+<p><strong><em>（tips：过签方案要用增强模式不然http：404）</em></strong></p>
+<p><a href="https://github.com/funcenter/flyy">Flyy官方版GitHub下载地址</a></p>
+<h3 id="Telegram→-Ayugram-PC、Android-Nagram-Android"><a href="#Telegram→-Ayugram-PC、Android-Nagram-Android" class="headerlink" title="Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)"></a>Telegram→ Ayugram(PC、Android) &#x2F; Nagram(Android)</h3><p>适用于 Windows 和 Android 的 Telegram 客户端，配备幽灵模式和改进的防召回功能。支持本地会员，无需Xposed，高度可定制。</p>
+<p><a href="https://t.me/ayugramchat">Ayugram官方频道&#x2F;下载地址</a></p>
+<p>NagramX这个软件包括了 Nagram + ayugram的特色功能。比如：消息过滤、防撤回、幽灵模式、强制原画质、本地大会员、下载上传加速、隐藏广告、强制保存私有频道视频……是新一代的全能第三方TG。</p>
+<p><a href="https://github.com/risin42/NagramX">NagramX的GitHub地址</a></p>
+<p><a href="https://t.me/NagramX">NagramX的Telegram频道</a></p>
+<h3 id="小红书-支付宝-购物-外卖-地图→play"><a href="#小红书-支付宝-购物-外卖-地图→play" class="headerlink" title="小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play"></a>小红书&#x2F;支付宝&#x2F;购物&#x2F;外卖&#x2F;地图→play</h3><p>更低的更新频率和更流畅的使用体验，让play版应用一直是平替应用的首选。</p>
+<h3 id="浏览器→via"><a href="#浏览器→via" class="headerlink" title="浏览器→via"></a>浏览器→via</h3><p>伟大无需多言。还有一个我自己常用的嗅觉浏览器也挺不错，内置的播放器比很多第三方播放器好用，用来看视频体验很好。</p>
+<h3 id="蓝奏云→蓝云"><a href="#蓝奏云→蓝云" class="headerlink" title="蓝奏云→蓝云"></a>蓝奏云→蓝云</h3><p>蓝奏云貌似是没有官方app的，第三方里UI界面还不错，功能也挺齐全的，用的人多的，也就蓝云了。</p>
+<h3 id="百度贴吧→贴吧lite"><a href="#百度贴吧→贴吧lite" class="headerlink" title="百度贴吧→贴吧lite"></a>百度贴吧→贴吧lite</h3><p>比修改版更舒服的版本。简洁流畅体积小。不过原作者不维护了，目前是分支接手。</p>
+<p><a href="https://github.com/zzc10086/TiebaLite">新版 贴吧Lite 的 GitHub 地址</a></p>
+<h3 id="小说-动漫→阅读legedo-kazumi"><a href="#小说-动漫→阅读legedo-kazumi" class="headerlink" title="小说&#x2F;动漫→阅读legedo + kazumi"></a>小说&#x2F;动漫→阅读legedo + kazumi</h3><p>阅读legedo无需多言，应该是目前最受欢迎的阅读app。最近兴起的“轻阅读”感觉还是差点火候，除了UI确实好看一些。</p>
+<p><a href="https://github.com/gedoor/legado">Github地址</a></p>
+<p>kazumi算是老牌的动漫app了吧，基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。支持的平台多，UI是我最喜欢的 material you 3。</p>
+<p><a href="https://github.com/Predidit/Kazumi">GitHub地址</a></p>
+<h3 id="文件管理→mt管理器"><a href="#文件管理→mt管理器" class="headerlink" title="文件管理→mt管理器"></a>文件管理→mt管理器</h3><p>无需多言，如果有会员的话就是最强大的文件管理器。玩机必备且首选。</p>
+<h3 id="播放器→-Next-player-Salt-player-Outertune"><a href="#播放器→-Next-player-Salt-player-Outertune" class="headerlink" title="播放器→ Next player+ Salt player &#x2F; Outertune"></a>播放器→ Next player+ Salt player &#x2F; Outertune</h3><p>Next player 主要是因为用了 material you 3 的设计，功能也还行，满足我的需求，不然的话 MXplayer 会更好。</p>
+<p><a href="https://github.com/anilbeesetti/nextplayer">GitHub地址</a></p>
+<p>Salt player 则是目前最好用，好评率最高的本地音乐播放器。也算是伟大无需多言。</p>
+<p><a href="https://github.com/Moriafly/SaltPlayerSource">GitHub地址</a></p>
+<p>Outertune 是一款支持本地文件和YouTube音乐的Android Material 3的音乐播放器。体积小，同时具备本地播放器和流媒体的优点，但依赖youtube music，使用在线功能时需要具备良好的网络环境。</p>
+<h3 id="豆包→-Cici"><a href="#豆包→-Cici" class="headerlink" title="豆包→ Cici"></a>豆包→ Cici</h3><p>相较于国内版的豆包，国际版的Cici在功能上会少一些，但核心体验还是在的。而且因为是国际服，所以有些敏感话题在Cici上是可以搜到的。这对学习的帮助挺大。</p>
+<p>不过要挂梯，而且对节点的要求还挺高。如果图省事的话可以用回豆包或者ChatGPT、Gemini之类的模型。（用美国和新加坡节点算是所有应用的通杀）</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.larus.wolf">Google play store 地址</a></p>
+<h3 id="tiktok→tiktok-lite"><a href="#tiktok→tiktok-lite" class="headerlink" title="tiktok→tiktok lite"></a>tiktok→tiktok lite</h3><p>一般情况下，tiktok对地区的限制是很严格的。考虑到有些用户不想用修改版，tiktok lite + shizuku + nrfr是个不错的选择。</p>
+<p><a href="https://chengeeker.github.io/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/index.html">详情可跳转推文</a></p>
+<h3 id="Wikipedia→WikiReader"><a href="#Wikipedia→WikiReader" class="headerlink" title="Wikipedia→WikiReader"></a>Wikipedia→WikiReader</h3><p>这个纯粹是喜欢 md3 的设计，而且官方的wiki又登录不了，用第三方也不是不行。在阅读词条上可能会有些不便（因为是跳转而非窗口打开）</p>
+<p><a href="https://github.com/nsh07/WikiReader">GitHub地址</a></p>
+<h3 id="pixiv→-Pixiv-MultiPlatform"><a href="#pixiv→-Pixiv-MultiPlatform" class="headerlink" title="pixiv→ Pixiv-MultiPlatform"></a>pixiv→ Pixiv-MultiPlatform</h3><p>这个纯粹是喜欢 md3 的设计，而且功能上比起shaft这些也不相上下。看看自己喜欢哪一套UI吧。像 shaft 之类的 md2 风格也是挺不错的。</p>
+<p><a href="https://github.com/kagg886/Pixiv-MultiPlatform">GitHub地址</a></p>
+<h3 id="GitHub→-Obtainium"><a href="#GitHub→-Obtainium" class="headerlink" title="GitHub→ Obtainium"></a>GitHub→ Obtainium</h3><p>严格意义上来说这玩意并不是GitHub的第三方。</p>
+<p>它算是一个仓库的收藏夹。把自己在GitHub上关注的那些开源软件添加到 Obtainium 里面，就可以实现订阅的操作。</p>
+<p>在用新版本的时候可以直接在 Obtainium 里面下载，看日志，不需要跳转到 release 那里一页页找。</p>
+<p>或者说这应该是：GitHub（应用商店版）</p>
+<p><a href="https://github.com/ImranR98/Obtainium">GitHub地址</a></p>
+<h3 id="clash-meta-for-Android-→-flclash"><a href="#clash-meta-for-Android-→-flclash" class="headerlink" title="clash meta for Android → flclash"></a>clash meta for Android → flclash</h3><p>这俩都是经典，只是我更喜欢后者 md3 的UI设计，仅此而已。</p>
+<p>不过flclash的开机启动在vivo上是残血的，每次重启都要自己手动点开。</p>
+<p><a href="https://github.com/chen08209/FlClash">GitHub地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbKvm"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb7GM"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbfDX"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbnAK"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rbp4j"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/RbuCA"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/Rb5JP"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机场推荐（实时更新）</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线20台设备使用</p>
+<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
+<h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="飞狗机场"><a href="#飞狗机场" class="headerlink" title="飞狗机场"></a>飞狗机场</h2><p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<p><em><strong><a href="http://feigou.idsduf.com/#/register?code=y8H8xlOY">点击跳转飞狗机场</a></strong></em></p>
+<h4 id="1-泰迪🐶🐶Plus（季付：6元）"><a href="#1-泰迪🐶🐶Plus（季付：6元）" class="headerlink" title="1.泰迪🐶🐶Plus（季付：6元）"></a>1.泰迪🐶🐶Plus（季付：6元）</h4><p>✨中转节点，速度更快</p>
+<p>✨每月流量200GB，购买日免费重置</p>
+<p>✨其他同上</p>
+<h4 id="2-不限时200G：7元"><a href="#2-不限时200G：7元" class="headerlink" title="2.不限时200G：7元"></a>2.不限时200G：7元</h4><h4 id="3-不限时500G：14元"><a href="#3-不限时500G：14元" class="headerlink" title="3.不限时500G：14元"></a>3.不限时500G：14元</h4><h4 id="4-不限时1000G：28元"><a href="#4-不限时1000G：28元" class="headerlink" title="4.不限时1000G：28元"></a>4.不限时1000G：28元</h4><p>✨中转节点，速度更快</p>
+<p>✨一次性流量</p>
+<p>✨其他同上</p>
+<p>这个机场我没买，也没有看到官方的 tg 群组，因此没测速图。推荐这个是因为价格还行，看 tg 里有些用过的用户也推荐过这个。</p>
+<hr>
+<h2 id="Needay（价格涨了，现不推荐）"><a href="#Needay（价格涨了，现不推荐）" class="headerlink" title="Needay（价格涨了，现不推荐）"></a>Needay（价格涨了，现不推荐）</h2><p><em><strong><a href="https://needaycloud.xyz/#/register?code=uDEklQ99">点击跳转Needay机场</a></strong></em></p>
+<p><em><strong><a href="https://needaycloud.xyz/#/register?code=2qmw7IQh">点击跳转Needay机场</a></strong></em></p>
+<p>缺点：贵，像新加坡之类的部分热门节点经常连接超时。但ip相对纯净，过一些严格检测的网站&#x2F;应用绰绰有余。</p>
+<h4 id="1-年付套餐：35元（原15元，涨价了）"><a href="#1-年付套餐：35元（原15元，涨价了）" class="headerlink" title="1.年付套餐：35元（原15元，涨价了）"></a><strong>1.年付套餐：35元（原15元，涨价了）</strong></h4><ul>
+<li>✅ 每月300G 流量</li>
+<li>✅ 全球多个国家接入</li>
+<li>✅ 50+中转高度节点</li>
+<li>✅ 安卓下载FLClash客户端</li>
+<li>✅ PC端下载clash verge客户端</li>
+<li>✅ 热门 美国 日本 香港 台湾 新加坡节点等</li>
+<li>✅ 节点0.1X-8X倍率</li>
+<li>✅部分电信CN2线路</li>
+<li>✅ 部分联通AS9929线路</li>
+<li>✅部分移动CMI线路</li>
+<li>✅不支持退款！</li>
+<li>✅ 解锁流媒体和ChatGPT</li>
+</ul>
+<h4 id="2-月付套餐：7元"><a href="#2-月付套餐：7元" class="headerlink" title="2.月付套餐：7元"></a><strong>2.月付套餐：7元</strong></h4><p>每月480G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时400G套餐：16元"><a href="#3-不限时400G套餐：16元" class="headerlink" title="3.不限时400G套餐：16元"></a><strong>3.不限时400G套餐：16元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<h4 id="4-不限时1000G套餐：40元（原13元，涨价了）"><a href="#4-不限时1000G套餐：40元（原13元，涨价了）" class="headerlink" title="4.不限时1000G套餐：40元（原13元，涨价了）"></a><strong>4.不限时1000G套餐：40元（原13元，涨价了）</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p>一些ps：</p>
+<p>机场主因为成本运营问题涨价了，性价比大幅降低，同时题频发（被攻击导致订阅链接无法更新，偶尔timeout），如果没买的可以考虑换一家机场，买了的当作备用吧</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
   </entry>
   <entry>
     <title>海外应用（精力有限不再更新）</title>
@@ -1407,75 +1367,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用cloudfare搭建自己的免费机场</title>
-    <url>/2026/02/28/%E7%94%A8cloudfare%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%8D%E8%B4%B9%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<h4 id="项目地址：https-github-com-byJoey-cfnew"><a href="#项目地址：https-github-com-byJoey-cfnew" class="headerlink" title="项目地址：https://github.com/byJoey/cfnew"></a>项目地址：<a href="https://github.com/byJoey/cfnew">https://github.com/byJoey/cfnew</a></h4><h4 id="视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s"><a href="#视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s"></a>视频教程：<a href="https://www.youtube.com/watch?v=yg0jTNMUFRY&t=686s">https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s</a></h4><h2 id="第一步，搭建-cloudfare-workers-pages-项目"><a href="#第一步，搭建-cloudfare-workers-pages-项目" class="headerlink" title="第一步，搭建 cloudfare workers&#x2F;pages 项目"></a>第一步，搭建 cloudfare workers&#x2F;pages 项目</h2><h3 id="Pages-教程（可不用自定义域名）"><a href="#Pages-教程（可不用自定义域名）" class="headerlink" title="Pages 教程（可不用自定义域名）"></a>Pages 教程（可不用自定义域名）</h3><ol>
-<li>进入 cloudfare <code>创建 Pages</code> ，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中，点击<code>保存并部署</code>。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228123622866.png"></p>
-<ol start="2">
-<li>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124126781.png"></p>
-<ol start="3">
-<li>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124704040.png"></p>
-<ol start="4">
-<li>回到刚刚创建的 Pages 项目， 进入该项目，<code>设置</code>-<code>绑定</code>-<code>添加</code>-<code>KV命名空间</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>保存</code>。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228125036625.png"></p>
-<ol start="5">
-<li>设置已完成。现在点击在页面右上角点击<code>创建部署</code>，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中（即第一步），点击<code>保存并部署</code>。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228123622866.png"></p>
-<ol start="6">
-<li>点击生成的Pages链接（即项目名.pages.dev），在终端内输入我们第二步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228132414100.png"></p>
-<h3 id="Workers-教程（需要自定义域名）"><a href="#Workers-教程（需要自定义域名）" class="headerlink" title="Workers 教程（需要自定义域名）"></a>Workers 教程（需要自定义域名）</h3><ol>
-<li><p>进入 cloudfare <code>创建 Workers</code> ，选择<code>从Hello World开始</code>，点击<code>部署</code></p>
-</li>
-<li><p>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124704040.png"></p>
-<ol start="3">
-<li>回到刚刚创建的 Workers 项目， 进入该项目，<code>绑定</code>-<code>KV命名空间</code>-<code>添加绑定</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>添加绑定</code>。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130259589.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130314547.png"></p>
-<ol start="4">
-<li>在<code>设置</code>-<code>域和路由</code>禁用自带域</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130527416.png"></p>
-<ol start="5">
-<li><p>在<code>设置</code>-<code>域和路由</code>添加自定义域</p>
-</li>
-<li><p>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></p>
-</li>
-<li><p>点击页面右上角的<code>编辑代码</code>，清空原有的内容。打开 <a href="https://github.com/byJoey/cfnew">GitHub 项目</a>，找到<code>少年你相信光吗</code>文件，复制其内容，填入cloudfare项目的<code>编辑代码</code>内，点击<code>部署</code>。</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228131405869.png"></p>
-<ol start="8">
-<li>使用我们添加的域名进入终端，在终端内输入我们第六步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228132414100.png"></p>
-<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>Pages项目无法启用xhttp协议，但不刚需自定义域名。</p>
-<h3 id="设置建议"><a href="#设置建议" class="headerlink" title="设置建议"></a>设置建议</h3><p>不建议修改<code>配置管理</code>的<code>指定地区</code>，按需启用协议，可开启ECH，其他设置不动。</p>
-<h2 id="导入代理客户端"><a href="#导入代理客户端" class="headerlink" title="导入代理客户端"></a>导入代理客户端</h2><p>在订阅中心页面的上面有选择客户端，点击自己使用的客户端后，在<code>选择客户端</code>这个大框底部会出现订阅链接，复制后通过url导入代理软件即可。（手机点击后可一键跳转导入）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228125630040.png"></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>bitwarden</tag>
-        <tag>cloudfare</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>音乐解锁</title>
     <url>/2025/04/24/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/</url>
     <content><![CDATA[<h3 id="建议使用非中国大陆ip进行访问。"><a href="#建议使用非中国大陆ip进行访问。" class="headerlink" title="建议使用非中国大陆ip进行访问。"></a><strong><em>建议使用非中国大陆ip进行访问。</em></strong></h3><p>目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm)</p>
@@ -1562,5 +1453,114 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>用cloudfare搭建自己的免费机场</title>
+    <url>/2026/02/28/%E7%94%A8cloudfare%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%8D%E8%B4%B9%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<h4 id="项目地址：https-github-com-byJoey-cfnew"><a href="#项目地址：https-github-com-byJoey-cfnew" class="headerlink" title="项目地址：https://github.com/byJoey/cfnew"></a>项目地址：<a href="https://github.com/byJoey/cfnew">https://github.com/byJoey/cfnew</a></h4><h4 id="视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s"><a href="#视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s"></a>视频教程：<a href="https://www.youtube.com/watch?v=yg0jTNMUFRY&t=686s">https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s</a></h4><h2 id="第一步，搭建-cloudfare-workers-pages-项目"><a href="#第一步，搭建-cloudfare-workers-pages-项目" class="headerlink" title="第一步，搭建 cloudfare workers&#x2F;pages 项目"></a>第一步，搭建 cloudfare workers&#x2F;pages 项目</h2><h3 id="Pages-教程（可不用自定义域名）"><a href="#Pages-教程（可不用自定义域名）" class="headerlink" title="Pages 教程（可不用自定义域名）"></a>Pages 教程（可不用自定义域名）</h3><ol>
+<li>进入 cloudfare <code>创建 Pages</code> ，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中，点击<code>保存并部署</code>。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228123622866.png"></p>
+<ol start="2">
+<li>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124126781.png"></p>
+<ol start="3">
+<li>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124704040.png"></p>
+<ol start="4">
+<li>回到刚刚创建的 Pages 项目， 进入该项目，<code>设置</code>-<code>绑定</code>-<code>添加</code>-<code>KV命名空间</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>保存</code>。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228125036625.png"></p>
+<ol start="5">
+<li>设置已完成。现在点击在页面右上角点击<code>创建部署</code>，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中（即第一步），点击<code>保存并部署</code>。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228123622866.png"></p>
+<ol start="6">
+<li>点击生成的Pages链接（即项目名.pages.dev），在终端内输入我们第二步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228132414100.png"></p>
+<h3 id="Workers-教程（需要自定义域名）"><a href="#Workers-教程（需要自定义域名）" class="headerlink" title="Workers 教程（需要自定义域名）"></a>Workers 教程（需要自定义域名）</h3><ol>
+<li><p>进入 cloudfare <code>创建 Workers</code> ，选择<code>从Hello World开始</code>，点击<code>部署</code></p>
+</li>
+<li><p>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228124704040.png"></p>
+<ol start="3">
+<li>回到刚刚创建的 Workers 项目， 进入该项目，<code>绑定</code>-<code>KV命名空间</code>-<code>添加绑定</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>添加绑定</code>。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130259589.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130314547.png"></p>
+<ol start="4">
+<li>在<code>设置</code>-<code>域和路由</code>禁用自带域</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228130527416.png"></p>
+<ol start="5">
+<li><p>在<code>设置</code>-<code>域和路由</code>添加自定义域</p>
+</li>
+<li><p>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></p>
+</li>
+<li><p>点击页面右上角的<code>编辑代码</code>，清空原有的内容。打开 <a href="https://github.com/byJoey/cfnew">GitHub 项目</a>，找到<code>少年你相信光吗</code>文件，复制其内容，填入cloudfare项目的<code>编辑代码</code>内，点击<code>部署</code>。</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228131405869.png"></p>
+<ol start="8">
+<li>使用我们添加的域名进入终端，在终端内输入我们第六步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228132414100.png"></p>
+<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>Pages项目无法启用xhttp协议，但不刚需自定义域名。</p>
+<h3 id="设置建议"><a href="#设置建议" class="headerlink" title="设置建议"></a>设置建议</h3><p>不建议修改<code>配置管理</code>的<code>指定地区</code>，按需启用协议，可开启ECH，其他设置不动。</p>
+<h2 id="导入代理客户端"><a href="#导入代理客户端" class="headerlink" title="导入代理客户端"></a>导入代理客户端</h2><p>在订阅中心页面的上面有选择客户端，点击自己使用的客户端后，在<code>选择客户端</code>这个大框底部会出现订阅链接，复制后通过url导入代理软件即可。（手机点击后可一键跳转导入）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260228125630040.png"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+        <tag>cloudfare</tag>
+      </tags>
   </entry>
 </search>
