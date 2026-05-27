@@ -2636,7 +2636,7 @@ figure.highlight pre .javascript .function {
 }
 @media screen and (min-width: 2000px) {
   #recent-posts .recent-post-item {
-    width: calc(100% / 3 - 8px);
+    width: calc(100% / 2 - 8px);
   }
 }
 #recent-posts .recent-post-item:hover .post-bg {
