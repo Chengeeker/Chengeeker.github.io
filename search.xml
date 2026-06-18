@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bettbox</title>
+    <url>/2026/06/18/Bettbox/</url>
+    <content><![CDATA[<h2 id="Bettbox"><a href="#Bettbox" class="headerlink" title="Bettbox"></a>Bettbox</h2><p>flclash的另一个分支版本，感觉比原版更好用一些。</p>
+<p><a href="https://github.com/appshubcc/Bettbox">Github开源地址</a></p>
+<p><a href="https://github.com/appshubcc/Bettbox/releases">Release下载</a></p>
+<p><a href="https://t.me/appshub_chat">telegram群组</a></p>
+<p>Bettbox 是一款使用Mihomo(Clash Meta)内核、基于FlClash早期版本进行重构的多平台代理客户端</p>
+<p>秉承“Better Experience更优体验”的原则，Bettbox在继承原版优秀界面的基础上，深度优化了诸多细节与实用功能&#x2F;逻辑。前台流畅丝滑、后台省电无感，致力于成为体验更好且可长期稳定运行的 Mihomo 客户端</p>
+<hr>
+<h2 id="🛠️-安装与下载"><a href="#🛠️-安装与下载" class="headerlink" title="🛠️ 安装与下载"></a>🛠️ 安装与下载</h2><ul>
+<li><strong>桌面端</strong>: Windows (x64&#x2F;arm64), macOS (Intel&#x2F;Apple Silicon), Linux (x64&#x2F;arm64)</li>
+<li><strong>安卓端</strong>: Android (ARMv8&#x2F; ARMv7&#x2F; x86_64&#x2F; Universal)</li>
+<li><strong>Android TV</strong>: 已支持,可选ARMv7 32位</li>
+<li><strong>Windows7</strong>: 请配合 <a href="https://github.com/i486/VxKex/releases">[VxKex]</a> 使用</li>
+<li><strong>鸿蒙NEXT</strong>: 请配合 <a href="https://harmonyos.cool/android-app">[卓易通]</a> 使用</li>
+</ul>
+<hr>
+<h2 id="🚀-核心特性"><a href="#🚀-核心特性" class="headerlink" title="🚀 核心特性"></a>🚀 核心特性</h2><h3 id="深度体验优化"><a href="#深度体验优化" class="headerlink" title="深度体验优化"></a>深度体验优化</h3><ul>
+<li><strong>开箱即用</strong>：自动化的权限处理与舒适稳定的TUN&amp;VPN体验，预置更加适合中国大陆用户的内核配置，减少繁琐的手动调试&#x2F;配置多为可选项</li>
+<li><strong>精雕细琢</strong>：重新审视打磨每一处功能细节，稳定无感的轻量模式，移动端更加省电、桌面端更低占用、旨在提供更好的Mihomo客户端体验</li>
+</ul>
+<h3 id="安全与稳定性"><a href="#安全与稳定性" class="headerlink" title="安全与稳定性"></a>安全与稳定性</h3><ul>
+<li><strong>安全校验</strong>：遵循Mihomo官方安全建议&#x2F;内核升级紧跟主线版本，桌面端拥有严格的安全校验以及权限控制，有效防范潜在的TOCTOU或非法访问，同时针对常见配置错误增加了优雅的回退机制</li>
+<li><strong>高稳定性</strong>：通过了作者自身和群友长期以来高强度的压力测试与后台使用测试，优化了多处极端场景下的使用稳定性问题</li>
+</ul>
+<h3 id="自由可定制化"><a href="#自由可定制化" class="headerlink" title="自由可定制化"></a>自由可定制化</h3><ul>
+<li><strong>可视化管理</strong>：更加全面且易用的功能配置界面，支持更多参数的可视化操作调整和实时生效</li>
+<li><strong>实用小组件</strong>：提供多种美观实用风格的 Widgets，在首页可以掌控全局流量和当前运行状态</li>
+<li><strong>个性化定制</strong>：丰富的预置色彩主题、自定义图标&#x2F;首页标题，多个界面布局调整，甚至连Urltest都有10种精美动画可供选择，每个人都可以拥有自己独一无二的Bettbox</li>
+</ul>
+<h3 id="多个平台支持"><a href="#多个平台支持" class="headerlink" title="多个平台支持"></a>多个平台支持</h3><ul>
+<li><strong>性能优先级</strong>：支持主流架构，为现代设备额外优化的CPU性能(例如桌面端分级和Android 16K对齐)，针对多平台桌面端 ARM64 设备同样提供了原生适配</li>
+<li><strong>社区包容性</strong>：我们倾听社区用户的想法并且会认真评估，你的声音不会无故被淹没和被无视(认真的ISSUE会被优先对待)</li>
+<li><strong>旧设备关怀</strong>：尽力而为提供针对旧版本系统和硬件的兼容性版本，确保长周期的使用寿命</li>
+</ul>
+<h3 id="开源纯净透明"><a href="#开源纯净透明" class="headerlink" title="开源纯净透明"></a>开源纯净透明</h3><ul>
+<li><strong>全自动 CI&#x2F;CD</strong>：基于 GitHub Actions 的透明构建流程，代码即产物，所见即所得</li>
+<li><strong>纯净无广告</strong>：免费，且完全开源，代码接受全方位审计，无需担心额外的隐私问题</li>
+</ul>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p>安装后无法启动？</p>
+<ul>
+<li>安卓端旧设备，请检查是否支持Bettbox的最低系统要求:Android 8.0+</li>
+<li>桌面端旧设备，请检查是否需要下载特定CPU等级的Compatible兼容版本</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+<li><p>Windows常见问题</p>
+<ul>
+<li>管理员权限：Bettbox在安装时已提前处理，无需手动再次授权</li>
+<li>无法开启虚拟网卡：请确保没有冲突的代理软件或服务正在运行</li>
+<li>无法同时开启系统代理和虚拟网卡：预期行为（如果明确自己的需求，则可以通过系统托盘区同时开启）</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+<li><p>无法导入订阅链接</p>
+<ul>
+<li>请务必先尝试重置链接，确保链接正常后再导入</li>
+<li>确保导入的是Clash（Mihomo）格式的订阅链接</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>123资源社区</title>
     <url>/2026/01/10/123%E8%B5%84%E6%BA%90%E7%A4%BE%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="123资源社区"><a href="#123资源社区" class="headerlink" title="123资源社区"></a>123资源社区</h1><p>123分享是一个非官方的站点，主要分享123云盘的资源下载。本站不储存、复制、传播、控制编辑任何网盘文件，也不提供下载服务，其链接跳转至各大网盘，文件的有效性和安全性需要您自行判断，如有侵权内容请联系我们。</p>
@@ -82,88 +164,6 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Bettbox</title>
-    <url>/2026/06/18/Bettbox/</url>
-    <content><![CDATA[<h2 id="Bettbox"><a href="#Bettbox" class="headerlink" title="Bettbox"></a>Bettbox</h2><p>flclash的另一个分支版本，感觉比原版更好用一些。</p>
-<p><a href="https://github.com/appshubcc/Bettbox">Github开源地址</a></p>
-<p><a href="https://github.com/appshubcc/Bettbox/releases">Release下载</a></p>
-<p><a href="https://t.me/appshub_chat">telegram群组</a></p>
-<p>Bettbox 是一款使用Mihomo(Clash Meta)内核、基于FlClash早期版本进行重构的多平台代理客户端</p>
-<p>秉承“Better Experience更优体验”的原则，Bettbox在继承原版优秀界面的基础上，深度优化了诸多细节与实用功能&#x2F;逻辑。前台流畅丝滑、后台省电无感，致力于成为体验更好且可长期稳定运行的 Mihomo 客户端</p>
-<hr>
-<h2 id="🛠️-安装与下载"><a href="#🛠️-安装与下载" class="headerlink" title="🛠️ 安装与下载"></a>🛠️ 安装与下载</h2><ul>
-<li><strong>桌面端</strong>: Windows (x64&#x2F;arm64), macOS (Intel&#x2F;Apple Silicon), Linux (x64&#x2F;arm64)</li>
-<li><strong>安卓端</strong>: Android (ARMv8&#x2F; ARMv7&#x2F; x86_64&#x2F; Universal)</li>
-<li><strong>Android TV</strong>: 已支持,可选ARMv7 32位</li>
-<li><strong>Windows7</strong>: 请配合 <a href="https://github.com/i486/VxKex/releases">[VxKex]</a> 使用</li>
-<li><strong>鸿蒙NEXT</strong>: 请配合 <a href="https://harmonyos.cool/android-app">[卓易通]</a> 使用</li>
-</ul>
-<hr>
-<h2 id="🚀-核心特性"><a href="#🚀-核心特性" class="headerlink" title="🚀 核心特性"></a>🚀 核心特性</h2><h3 id="深度体验优化"><a href="#深度体验优化" class="headerlink" title="深度体验优化"></a>深度体验优化</h3><ul>
-<li><strong>开箱即用</strong>：自动化的权限处理与舒适稳定的TUN&amp;VPN体验，预置更加适合中国大陆用户的内核配置，减少繁琐的手动调试&#x2F;配置多为可选项</li>
-<li><strong>精雕细琢</strong>：重新审视打磨每一处功能细节，稳定无感的轻量模式，移动端更加省电、桌面端更低占用、旨在提供更好的Mihomo客户端体验</li>
-</ul>
-<h3 id="安全与稳定性"><a href="#安全与稳定性" class="headerlink" title="安全与稳定性"></a>安全与稳定性</h3><ul>
-<li><strong>安全校验</strong>：遵循Mihomo官方安全建议&#x2F;内核升级紧跟主线版本，桌面端拥有严格的安全校验以及权限控制，有效防范潜在的TOCTOU或非法访问，同时针对常见配置错误增加了优雅的回退机制</li>
-<li><strong>高稳定性</strong>：通过了作者自身和群友长期以来高强度的压力测试与后台使用测试，优化了多处极端场景下的使用稳定性问题</li>
-</ul>
-<h3 id="自由可定制化"><a href="#自由可定制化" class="headerlink" title="自由可定制化"></a>自由可定制化</h3><ul>
-<li><strong>可视化管理</strong>：更加全面且易用的功能配置界面，支持更多参数的可视化操作调整和实时生效</li>
-<li><strong>实用小组件</strong>：提供多种美观实用风格的 Widgets，在首页可以掌控全局流量和当前运行状态</li>
-<li><strong>个性化定制</strong>：丰富的预置色彩主题、自定义图标&#x2F;首页标题，多个界面布局调整，甚至连Urltest都有10种精美动画可供选择，每个人都可以拥有自己独一无二的Bettbox</li>
-</ul>
-<h3 id="多个平台支持"><a href="#多个平台支持" class="headerlink" title="多个平台支持"></a>多个平台支持</h3><ul>
-<li><strong>性能优先级</strong>：支持主流架构，为现代设备额外优化的CPU性能(例如桌面端分级和Android 16K对齐)，针对多平台桌面端 ARM64 设备同样提供了原生适配</li>
-<li><strong>社区包容性</strong>：我们倾听社区用户的想法并且会认真评估，你的声音不会无故被淹没和被无视(认真的ISSUE会被优先对待)</li>
-<li><strong>旧设备关怀</strong>：尽力而为提供针对旧版本系统和硬件的兼容性版本，确保长周期的使用寿命</li>
-</ul>
-<h3 id="开源纯净透明"><a href="#开源纯净透明" class="headerlink" title="开源纯净透明"></a>开源纯净透明</h3><ul>
-<li><strong>全自动 CI&#x2F;CD</strong>：基于 GitHub Actions 的透明构建流程，代码即产物，所见即所得</li>
-<li><strong>纯净无广告</strong>：免费，且完全开源，代码接受全方位审计，无需担心额外的隐私问题</li>
-</ul>
-<hr>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li><p>安装后无法启动？</p>
-<ul>
-<li>安卓端旧设备，请检查是否支持Bettbox的最低系统要求:Android 8.0+</li>
-<li>桌面端旧设备，请检查是否需要下载特定CPU等级的Compatible兼容版本</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-<li><p>Windows常见问题</p>
-<ul>
-<li>管理员权限：Bettbox在安装时已提前处理，无需手动再次授权</li>
-<li>无法开启虚拟网卡：请确保没有冲突的代理软件或服务正在运行</li>
-<li>无法同时开启系统代理和虚拟网卡：预期行为（如果明确自己的需求，则可以通过系统托盘区同时开启）</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-<li><p>无法导入订阅链接</p>
-<ul>
-<li>请务必先尝试重置链接，确保链接正常后再导入</li>
-<li>确保导入的是Clash（Mihomo）格式的订阅链接</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
   <entry>
     <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
@@ -257,57 +257,184 @@
       </tags>
   </entry>
   <entry>
-    <title>clash</title>
-    <url>/2024/12/05/clash/</url>
-    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
-<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
-<li>Android 5.0+ (minimum)</li>
-<li>Android 7.0+ (recommend)</li>
-<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+    <title>cloudfare-bitwarden （qaz741wsd856）</title>
+    <url>/2026/02/24/bitwarden-qaz741wsd856/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>一个 Cloudflare 账户</li>
+<li>一个 Github 账户</li>
+<li>一个没有被阻断的域名</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p>
+<p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p>
+<p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114100245.png"></p>
+<p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p>
+<p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p>
+<p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114316902.webp"></p>
+<p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114347224.png"></p>
+<p>回到github，添加为<code>D1_DATABASE_ID</code>。</p>
+<h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p>
+<p>KV完全免费不绑卡，单个附件限25MB；</p>
+<p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p>
+<p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p>
+<p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p>
+<p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p>
+<p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p>
+<p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p>
+<h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p>
+<h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALLOWED_EMAILS</td>
+<td>允许注册的完整邮箱（支持通配符），用,分隔</td>
+</tr>
+<tr>
+<td></td>
+<td>（例：<a href="mailto:&#121;&#111;&#117;&#x72;&#45;&#x6e;&#97;&#109;&#x65;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#121;&#111;&#117;&#x72;&#45;&#x6e;&#97;&#109;&#x65;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;</a>,*@xxx.com）</td>
+</tr>
+<tr>
+<td>JWT_SECRET</td>
+<td>随机长字符串（32字节以上）</td>
+</tr>
+<tr>
+<td>JWT_REFRESH_SECRET</td>
+<td>随机长字符串（32字节以上）</td>
+</tr>
+</tbody></table>
+<h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul>
+<li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li>
+<li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li>
+<li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li>
+<li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li>
+<li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li>
+<li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li>
+<li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li>
+<li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li>
 </ul>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
-<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
-<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
-<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
-<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
-<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
-<li>系统代理和守卫、<code>TUN</code> 模式。</li>
-</ul>
-<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
-<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
-<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
-<li>MacOS intel芯片: x64.dmg</li>
-<li>MacOS apple M芯片: aarch64.dmg</li>
-</ul>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
-<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
-<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
-<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
-<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
-</ul>
-<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
-<li>64位: x64-setup.exe</li>
-<li>32位: x86-setup.exe</li>
-<li>arm64架构: arm64-setup.exe</li>
-</ul>
-<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
-<li>64位: x64_portable.zip</li>
-<li>32位: x86_portable.zip</li>
-<li>arm64架构: arm64_portable.zip</li>
-</ul>
-<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
-<li>64位: x64_fixed_webview2-setup.exe</li>
-<li>32位: x86_fixed_webview2-setup.exe</li>
-<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
-</ul>
-<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+<p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p>
+<p>最后别忘记去给这个子域名添加一条dns记录。</p>
+<p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p>
+<p>要是不想优选，那就打开小黄云，目标随便填。</p>
+<blockquote>
+<p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p>
+</blockquote>
+<h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p>
+<p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p>
+<p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p>
+<h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p>
+<p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p>
+<h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必需</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>S3_ACCESS_KEY_ID</code></td>
+<td>yes (for S3)</td>
+<td>您的 S3 访问密钥 ID</td>
+</tr>
+<tr>
+<td><code>S3_SECRET_ACCESS_KEY</code></td>
+<td>yes (for S3)</td>
+<td>您的 S3 密钥访问密钥</td>
+</tr>
+<tr>
+<td><code>S3_BUCKET</code></td>
+<td>yes (for S3)</td>
+<td>用于存储备份的 S3 存储桶名称</td>
+</tr>
+<tr>
+<td><code>S3_REGION</code></td>
+<td>yes (for S3)</td>
+<td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td>
+</tr>
+<tr>
+<td><code>S3_ENDPOINT</code></td>
+<td>no</td>
+<td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td>
+</tr>
+</tbody></table>
+<h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WEBDAV_URL</code></td>
+<td>yes (for WebDAV)</td>
+<td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td>
+</tr>
+<tr>
+<td><code>WEBDAV_USER</code></td>
+<td>yes (for WebDAV)</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td><code>WEBDAV_PASSWORD</code></td>
+<td>yes (for WebDAV)</td>
+<td>WebDAV 密码</td>
+</tr>
+<tr>
+<td><code>WEBDAV_VENDOR</code></td>
+<td>no</td>
+<td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td>
+</tr>
+<tr>
+<td><code>WEBDAV_BASE_PATH</code></td>
+<td>no</td>
+<td>远程备份的基本路径。默认为 warden-worker</td>
+</tr>
+</tbody></table>
+<h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>BACKUP_ENCRYPTION_KEY</code></td>
+<td>no</td>
+<td>备份的加密密钥，不填就不加密，填了要记住</td>
+</tr>
+<tr>
+<td><code>BACKUP_RETENTION_DAYS</code></td>
+<td>no</td>
+<td>保留备份的天数。默认为30天</td>
+</tr>
+</tbody></table>
+<p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p>
+<p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p>
+<h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p>
+<blockquote>
+<p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p>
+<p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p>
+<p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p>
+</blockquote>
+<p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p>
+<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>
 ]]></content>
       <categories>
-        <category>Software</category>
+        <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>clash</tag>
+        <tag>bitwarden</tag>
+        <tag>cloudfare</tag>
       </tags>
   </entry>
   <entry>
@@ -785,23 +912,51 @@
       </tags>
   </entry>
   <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
+    <title>clash</title>
+    <url>/2024/12/05/clash/</url>
+    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
+<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
+<li>Android 5.0+ (minimum)</li>
+<li>Android 7.0+ (recommend)</li>
+<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
+<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
+<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
+<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
+<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
+<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
+<li>系统代理和守卫、<code>TUN</code> 模式。</li>
+</ul>
+<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
+<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
+<li>MacOS intel芯片: x64.dmg</li>
+<li>MacOS apple M芯片: aarch64.dmg</li>
+</ul>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
+<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
+<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
+<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
+<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
+</ul>
+<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
+<li>64位: x64-setup.exe</li>
+<li>32位: x86-setup.exe</li>
+<li>arm64架构: arm64-setup.exe</li>
+</ul>
+<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
+<li>64位: x64_portable.zip</li>
+<li>32位: x86_portable.zip</li>
+<li>arm64架构: arm64_portable.zip</li>
+</ul>
+<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
+<li>64位: x64_fixed_webview2-setup.exe</li>
+<li>32位: x86_fixed_webview2-setup.exe</li>
+<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
+</ul>
+<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
 ]]></content>
       <categories>
         <category>Software</category>
@@ -841,287 +996,6 @@
 ]]></content>
       <categories>
         <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cloudfare-bitwarden （qaz741wsd856）</title>
-    <url>/2026/02/24/bitwarden-qaz741wsd856/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>一个 Cloudflare 账户</li>
-<li>一个 Github 账户</li>
-<li>一个没有被阻断的域名</li>
-</ol>
-<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p>
-<p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p>
-<p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114100245.png"></p>
-<p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p>
-<p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p>
-<p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114316902.webp"></p>
-<p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260224114347224.png"></p>
-<p>回到github，添加为<code>D1_DATABASE_ID</code>。</p>
-<h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p>
-<p>KV完全免费不绑卡，单个附件限25MB；</p>
-<p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p>
-<p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p>
-<p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p>
-<p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p>
-<p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p>
-<p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p>
-<h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p>
-<h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ALLOWED_EMAILS</td>
-<td>允许注册的完整邮箱（支持通配符），用,分隔</td>
-</tr>
-<tr>
-<td></td>
-<td>（例：<a href="mailto:&#121;&#x6f;&#x75;&#x72;&#45;&#110;&#97;&#109;&#x65;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#121;&#x6f;&#x75;&#x72;&#45;&#110;&#97;&#109;&#x65;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;</a>,*@xxx.com）</td>
-</tr>
-<tr>
-<td>JWT_SECRET</td>
-<td>随机长字符串（32字节以上）</td>
-</tr>
-<tr>
-<td>JWT_REFRESH_SECRET</td>
-<td>随机长字符串（32字节以上）</td>
-</tr>
-</tbody></table>
-<h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul>
-<li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li>
-<li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li>
-<li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li>
-<li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li>
-<li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li>
-<li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li>
-<li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li>
-<li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li>
-</ul>
-<p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p>
-<p>最后别忘记去给这个子域名添加一条dns记录。</p>
-<p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p>
-<p>要是不想优选，那就打开小黄云，目标随便填。</p>
-<blockquote>
-<p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p>
-</blockquote>
-<h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p>
-<p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p>
-<p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p>
-<h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p>
-<p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p>
-<h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必需</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>S3_ACCESS_KEY_ID</code></td>
-<td>yes (for S3)</td>
-<td>您的 S3 访问密钥 ID</td>
-</tr>
-<tr>
-<td><code>S3_SECRET_ACCESS_KEY</code></td>
-<td>yes (for S3)</td>
-<td>您的 S3 密钥访问密钥</td>
-</tr>
-<tr>
-<td><code>S3_BUCKET</code></td>
-<td>yes (for S3)</td>
-<td>用于存储备份的 S3 存储桶名称</td>
-</tr>
-<tr>
-<td><code>S3_REGION</code></td>
-<td>yes (for S3)</td>
-<td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td>
-</tr>
-<tr>
-<td><code>S3_ENDPOINT</code></td>
-<td>no</td>
-<td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td>
-</tr>
-</tbody></table>
-<h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必须</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>WEBDAV_URL</code></td>
-<td>yes (for WebDAV)</td>
-<td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td>
-</tr>
-<tr>
-<td><code>WEBDAV_USER</code></td>
-<td>yes (for WebDAV)</td>
-<td>用户名</td>
-</tr>
-<tr>
-<td><code>WEBDAV_PASSWORD</code></td>
-<td>yes (for WebDAV)</td>
-<td>WebDAV 密码</td>
-</tr>
-<tr>
-<td><code>WEBDAV_VENDOR</code></td>
-<td>no</td>
-<td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td>
-</tr>
-<tr>
-<td><code>WEBDAV_BASE_PATH</code></td>
-<td>no</td>
-<td>远程备份的基本路径。默认为 warden-worker</td>
-</tr>
-</tbody></table>
-<h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必须</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>BACKUP_ENCRYPTION_KEY</code></td>
-<td>no</td>
-<td>备份的加密密钥，不填就不加密，填了要记住</td>
-</tr>
-<tr>
-<td><code>BACKUP_RETENTION_DAYS</code></td>
-<td>no</td>
-<td>保留备份的天数。默认为30天</td>
-</tr>
-</tbody></table>
-<p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p>
-<p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p>
-<h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p>
-<blockquote>
-<p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p>
-<p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p>
-<p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p>
-</blockquote>
-<p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p>
-<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>bitwarden</tag>
-        <tag>cloudfare</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免Root内置Xposed模块应用（精力有限不再更新）</title>
-    <url>/2024/12/06/%E5%85%8Droot%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
-<p><em>Q音助手主要功能</em></p>
-<ul>
-<li>自由复制</li>
-<li>自动签到</li>
-<li>净化页面</li>
-</ul>
-<p>详情可前往<a href="https://github.com/zjns/QMHelper">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
-<hr>
-<h3 id="哔哩哔哩bilibili-B站"><a href="#哔哩哔哩bilibili-B站" class="headerlink" title="哔哩哔哩bilibili (B站)"></a>哔哩哔哩bilibili (B站)</h3><p><strong><u>当前使用条件：大会员+用户等级4级</u></strong></p>
-<p><em>哔哩漫游X主要功能</em></p>
-<ul>
-<li>解除番剧区域限制</li>
-<li>自由移除页面组件</li>
-<li>自定义直播、视频默认清晰度</li>
-<li>自定义播放速度<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/BiliRoamingX/BiliRoamingX">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-G1EU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="微博weibo"><a href="#微博weibo" class="headerlink" title="微博weibo"></a>微博weibo</h3><p><em>微博猪手主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-w1EU3.html">123云盘下载链接</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-CWoU3.html">我自己用share比较多，也提供一个下载链接</a></p>
-<hr>
-<h3 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h3><p><em>红薯猪手主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-NWoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><p><em>知了主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/shatyuka/Zhiliao">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-RWoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p><em>杜比大喇叭β &amp; 叼毛 主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展</li>
-<li>音源代理<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/nining377/dolby_beta">模块作者的GitHub</a>进行查看（杜比大喇叭β）</p>
-<p>详情可前往<a href="https://github.com/Xposed-Modules-Repo/com.blanke.diaomao163">模块作者的GitHub</a>进行查看（网易叼毛云）</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-RCoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="百度贴吧"><a href="#百度贴吧" class="headerlink" title="百度贴吧"></a>百度贴吧</h3><p><em>贴吧TS主要功能</em></p>
-<ul>
-<li>净化广告</li>
-<li>功能拓展<br>……</li>
-</ul>
-<p>详情可前往<a href="https://github.com/GuhDoy/TiebaTS">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://t.me/TabSwitch">贴吧TS官方telegram频道</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-rCoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em></p>
-<ul>
-<li>去广告</li>
-<li>解锁本地会员</li>
-</ul>
-<p>不过番茄大概率会提示非官方然后用不了，建议root，网盘也基本不更新这个。</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-URoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em></p>
-<ul>
-<li>去广告</li>
-<li>解锁本地会员</li>
-</ul>
-<p>这个比番茄要稳定，基本上不会有大问题。</p>
-<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a></p>
-<hr>
-<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em></p>
-<ul>
-<li>净化页面</li>
-<li>功能增强</li>
-</ul>
-<p>详情可前往<a href="https://github.com/xihan123/QDReadHook">模块作者的GitHub</a>进行查看</p>
-<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a></p>
-<p><a href="https://www.123pan.com/s/xEXZVv-lRoU3.html">123云盘下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Software</category>
       </categories>
       <tags>
         <tag>Xposed</tag>
@@ -1322,6 +1196,106 @@
       </tags>
   </entry>
   <entry>
+    <title>免Root内置Xposed模块应用（精力有限不再更新）</title>
+    <url>/2024/12/06/%E5%85%8Droot%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
+<p><em>Q音助手主要功能</em></p>
+<ul>
+<li>自由复制</li>
+<li>自动签到</li>
+<li>净化页面</li>
+</ul>
+<p>详情可前往<a href="https://github.com/zjns/QMHelper">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-g1EU3.html" title="QQ音乐内置助手">123云盘下载链接</a></p>
+<hr>
+<h3 id="哔哩哔哩bilibili-B站"><a href="#哔哩哔哩bilibili-B站" class="headerlink" title="哔哩哔哩bilibili (B站)"></a>哔哩哔哩bilibili (B站)</h3><p><strong><u>当前使用条件：大会员+用户等级4级</u></strong></p>
+<p><em>哔哩漫游X主要功能</em></p>
+<ul>
+<li>解除番剧区域限制</li>
+<li>自由移除页面组件</li>
+<li>自定义直播、视频默认清晰度</li>
+<li>自定义播放速度<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/BiliRoamingX/BiliRoamingX">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-G1EU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="微博weibo"><a href="#微博weibo" class="headerlink" title="微博weibo"></a>微博weibo</h3><p><em>微博猪手主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-w1EU3.html">123云盘下载链接</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-CWoU3.html">我自己用share比较多，也提供一个下载链接</a></p>
+<hr>
+<h3 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h3><p><em>红薯猪手主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情请前往微信公众号  <em><strong>Skyhand的猪手圈</strong></em>  进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-NWoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><p><em>知了主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/shatyuka/Zhiliao">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-RWoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p><em>杜比大喇叭β &amp; 叼毛 主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展</li>
+<li>音源代理<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/nining377/dolby_beta">模块作者的GitHub</a>进行查看（杜比大喇叭β）</p>
+<p>详情可前往<a href="https://github.com/Xposed-Modules-Repo/com.blanke.diaomao163">模块作者的GitHub</a>进行查看（网易叼毛云）</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-RCoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="百度贴吧"><a href="#百度贴吧" class="headerlink" title="百度贴吧"></a>百度贴吧</h3><p><em>贴吧TS主要功能</em></p>
+<ul>
+<li>净化广告</li>
+<li>功能拓展<br>……</li>
+</ul>
+<p>详情可前往<a href="https://github.com/GuhDoy/TiebaTS">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://t.me/TabSwitch">贴吧TS官方telegram频道</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-rCoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="番茄免费小说"><a href="#番茄免费小说" class="headerlink" title="番茄免费小说"></a>番茄免费小说</h3><p><em>主要功能</em></p>
+<ul>
+<li>去广告</li>
+<li>解锁本地会员</li>
+</ul>
+<p>不过番茄大概率会提示非官方然后用不了，建议root，网盘也基本不更新这个。</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-URoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="七猫免费小说"><a href="#七猫免费小说" class="headerlink" title="七猫免费小说"></a>七猫免费小说</h3><p><em>主要功能</em></p>
+<ul>
+<li>去广告</li>
+<li>解锁本地会员</li>
+</ul>
+<p>这个比番茄要稳定，基本上不会有大问题。</p>
+<p><a href="https://www.123pan.com/s/xEXZVv-SRoU3.html">123云盘下载链接</a></p>
+<hr>
+<h3 id="起点读书"><a href="#起点读书" class="headerlink" title="起点读书"></a>起点读书</h3><p><em>QDReadHook主要功能</em></p>
+<ul>
+<li>净化页面</li>
+<li>功能增强</li>
+</ul>
+<p>详情可前往<a href="https://github.com/xihan123/QDReadHook">模块作者的GitHub</a>进行查看</p>
+<p><a href="https://t.me/+tHAFB7FQKHdiYjU9">QD模块telegram交流群</a></p>
+<p><a href="https://www.123pan.com/s/xEXZVv-lRoU3.html">123云盘下载链接</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>让每个人都能够免费阅读/下载知网论文</title>
     <url>/2024/12/05/%E5%85%8D%E8%B4%B9%E7%9F%A5%E7%BD%91/</url>
     <content><![CDATA[<p>我们知道，要获取知网的使用权限，就必须使用带有认证的 ip 或者账号进行登录，否则无法使用在线阅读以及下载的功能。那么是否有一种方法，能够让每一个人，甚至是非高校学生的普通人，能够使用这样一个优质平台呢？</p>
@@ -1373,6 +1347,32 @@
 <h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
 <h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
   </entry>
   <entry>
     <title>如何使用官版TikTok</title>
@@ -1683,6 +1683,234 @@
       </tags>
   </entry>
   <entry>
+    <title>海外应用（精力有限不再更新）</title>
+    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
+<ul>
+<li><p>莫奈 M 和非莫奈N 版本　　</p>
+</li>
+<li><p>删除广告　　</p>
+</li>
+<li><p>显示敏感媒体　　</p>
+</li>
+<li><p>没有t.Co缩短链接　　</p>
+</li>
+<li><p>删除分享链接时跟踪参数　　</p>
+</li>
+<li><p>使用户名和简介文本可选　　</p>
+</li>
+<li><p>解锁Premium功能　　</p>
+</li>
+<li><p>添加模组设置　　</p>
+</li>
+<li><p>应用图标和导航栏自定义设置：</p>
+</li>
+<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
+</li>
+<li><p>解锁下载视频，长按预览即可下载：　　</p>
+</li>
+<li><p>Gif 可以以视频的形式下载。　　</p>
+</li>
+<li><p>添加模组设置更多语言支持：　　</p>
+</li>
+<li><p>英文、中文、…</p>
+</li>
+</ul>
+<p>　　</p>
+<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
+<ul>
+<li>允许使用 Google 帐户登录</li>
+<li>不会强制登录</li>
+<li>从 TikTok 中删除广告</li>
+<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
+<li>删除下载限制并支持更改默认下载路径 </li>
+<li>移除水印(默认开启)</li>
+<li>为所有视频启用播放速度选项 (并使其保持)</li>
+<li>显示所有视频的进度条</li>
+<li>添加 TikTok settings</li>
+<li>绕过区域限制模拟SIM卡信息</li>
+<li>隐藏视频页底部导航栏上的5个Logo </li>
+<li>支持保持清屏 (隐藏视频控件)</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
+<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
+<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
+</ol>
+<p>　　</p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
+<ul>
+<li>Advertisment Removed　　</li>
+<li>Enable background play　　</li>
+<li>去除广告　　</li>
+<li>功能拓展</li>
+</ul>
+<p>　　</p>
+<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
+<hr>
+<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
+<ul>
+<li>解锁Telegram Premium本地会员　　</li>
+<li>去除应用内部分使用限制</li>
+</ul>
+<p>　　</p>
+<p>在这里推荐一个自用的NagramX</p>
+<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
+<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
+<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>机场推荐（实时更新）</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<p><a href="https://t.me/liangxinyun_chat">Telegram群组链接</a></p>
+<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线20台设备使用</p>
+<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p><a href="https://t.me/niubicloud1">Telegram群组链接</a></p>
+<p>优惠券码：牛逼机场666</p>
+<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
+<h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="Kitty-Network"><a href="#Kitty-Network" class="headerlink" title="Kitty Network"></a>Kitty Network</h2><p><em><strong><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></strong></em></p>
+<p><em><strong><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></strong></em></p>
+<p><a href="https://t.me/kittythenight">Telegram群组链接</a></p>
+<h4 id="1-年付套餐：24元（两年36元）"><a href="#1-年付套餐：24元（两年36元）" class="headerlink" title="1.年付套餐：24元（两年36元）"></a><strong>1.年付套餐：24元（两年36元）</strong></h4><p>⏰每月 128G 流量</p>
+<p>地区：US&#x2F;JP&#x2F;SG&#x2F;KR&#x2F;HK……</p>
+<p>解锁 Netflix，Disney+，ChatGPT等</p>
+<p>不限速，不限在线设备数量</p>
+<p>购买后请务必查看教程！！</p>
+<p>年付24元，2元&#x2F;月</p>
+<p>两年付36元，1.5元&#x2F;月</p>
+<h4 id="2-月付套餐：9元"><a href="#2-月付套餐：9元" class="headerlink" title="2.月付套餐：9元"></a><strong>2.月付套餐：9元</strong></h4><p>每月1024G流量</p>
+<p>月付9元</p>
+<p>年付90元，7元&#x2F;月</p>
+<p>其余同上</p>
+<h4 id="2-季付套餐：15元"><a href="#2-季付套餐：15元" class="headerlink" title="2.季付套餐：15元"></a><strong>2.季付套餐：15元</strong></h4><p>每月512G流量</p>
+<p>季付15元，5元&#x2F;月</p>
+<p>年付50元，4元&#x2F;月</p>
+<p>其余同上</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>机场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
+    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
+<ol>
+<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
+</li>
+<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
+</li>
+<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
+</li>
+</ol>
+<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
+<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
+<p>如何查看GitHub注册天数？</p>
+<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
+<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
+<p>用这个日期与今天日期计算天数差即可</p>
+</blockquote>
+<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
+<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260322223109079.png"></p>
+<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
+</ol>
+<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
+<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
+<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
+<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>机场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏站上线啦</title>
+    <url>/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</url>
+    <content><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p>
+<p><a href="https://game.infinitycm.top/">游戏站链接：https://game.infinitycm.top</a></p>
+<p>大家可以按需自取，如果有错误的&#x2F;想收录但游戏站里没收录的都可以在QQ群里说，有条件的话我会一起加进去。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>手机运行PC应用</title>
     <url>/2025/01/05/%E6%89%8B%E6%9C%BA%E7%94%A8pc%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<p><strong>注意⚠️：</strong></p>
@@ -1863,169 +2091,6 @@
       </categories>
   </entry>
   <entry>
-    <title>机场推荐（实时更新）</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<p><a href="https://t.me/liangxinyun_chat">Telegram群组链接</a></p>
-<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线20台设备使用</p>
-<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p><a href="https://t.me/niubicloud1">Telegram群组链接</a></p>
-<p>优惠券码：牛逼机场666</p>
-<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
-<h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20250107-172240.png"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="Kitty-Network"><a href="#Kitty-Network" class="headerlink" title="Kitty Network"></a>Kitty Network</h2><p><em><strong><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></strong></em></p>
-<p><em><strong><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></strong></em></p>
-<p><a href="https://t.me/kittythenight">Telegram群组链接</a></p>
-<h4 id="1-年付套餐：24元（两年36元）"><a href="#1-年付套餐：24元（两年36元）" class="headerlink" title="1.年付套餐：24元（两年36元）"></a><strong>1.年付套餐：24元（两年36元）</strong></h4><p>⏰每月 128G 流量</p>
-<p>地区：US&#x2F;JP&#x2F;SG&#x2F;KR&#x2F;HK……</p>
-<p>解锁 Netflix，Disney+，ChatGPT等</p>
-<p>不限速，不限在线设备数量</p>
-<p>购买后请务必查看教程！！</p>
-<p>年付24元，2元&#x2F;月</p>
-<p>两年付36元，1.5元&#x2F;月</p>
-<h4 id="2-月付套餐：9元"><a href="#2-月付套餐：9元" class="headerlink" title="2.月付套餐：9元"></a><strong>2.月付套餐：9元</strong></h4><p>每月1024G流量</p>
-<p>月付9元</p>
-<p>年付90元，7元&#x2F;月</p>
-<p>其余同上</p>
-<h4 id="2-季付套餐：15元"><a href="#2-季付套餐：15元" class="headerlink" title="2.季付套餐：15元"></a><strong>2.季付套餐：15元</strong></h4><p>每月512G流量</p>
-<p>季付15元，5元&#x2F;月</p>
-<p>年付50元，4元&#x2F;月</p>
-<p>其余同上</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-        <tag>机场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>海外应用（精力有限不再更新）</title>
-    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
-<ul>
-<li><p>莫奈 M 和非莫奈N 版本　　</p>
-</li>
-<li><p>删除广告　　</p>
-</li>
-<li><p>显示敏感媒体　　</p>
-</li>
-<li><p>没有t.Co缩短链接　　</p>
-</li>
-<li><p>删除分享链接时跟踪参数　　</p>
-</li>
-<li><p>使用户名和简介文本可选　　</p>
-</li>
-<li><p>解锁Premium功能　　</p>
-</li>
-<li><p>添加模组设置　　</p>
-</li>
-<li><p>应用图标和导航栏自定义设置：</p>
-</li>
-<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
-</li>
-<li><p>解锁下载视频，长按预览即可下载：　　</p>
-</li>
-<li><p>Gif 可以以视频的形式下载。　　</p>
-</li>
-<li><p>添加模组设置更多语言支持：　　</p>
-</li>
-<li><p>英文、中文、…</p>
-</li>
-</ul>
-<p>　　</p>
-<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
-<ul>
-<li>允许使用 Google 帐户登录</li>
-<li>不会强制登录</li>
-<li>从 TikTok 中删除广告</li>
-<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
-<li>删除下载限制并支持更改默认下载路径 </li>
-<li>移除水印(默认开启)</li>
-<li>为所有视频启用播放速度选项 (并使其保持)</li>
-<li>显示所有视频的进度条</li>
-<li>添加 TikTok settings</li>
-<li>绕过区域限制模拟SIM卡信息</li>
-<li>隐藏视频页底部导航栏上的5个Logo </li>
-<li>支持保持清屏 (隐藏视频控件)</li>
-</ul>
-<p>注意：</p>
-<ol>
-<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
-<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
-<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
-</ol>
-<p>　　</p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
-<ul>
-<li>Advertisment Removed　　</li>
-<li>Enable background play　　</li>
-<li>去除广告　　</li>
-<li>功能拓展</li>
-</ul>
-<p>　　</p>
-<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
-<hr>
-<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
-<ul>
-<li>解锁Telegram Premium本地会员　　</li>
-<li>去除应用内部分使用限制</li>
-</ul>
-<p>　　</p>
-<p>在这里推荐一个自用的NagramX</p>
-<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
-<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
-<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-  </entry>
-  <entry>
     <title>联系方式</title>
     <url>/2026/02/08/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<div class="flink"><div class="flink-name">友情链接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
@@ -2090,92 +2155,6 @@
       </categories>
       <tags>
         <tag>公告</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
-    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
-<ol>
-<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
-</li>
-<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
-</li>
-<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
-</li>
-</ol>
-<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
-<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
-<p>如何查看GitHub注册天数？</p>
-<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
-<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
-<p>用这个日期与今天日期计算天数差即可</p>
-</blockquote>
-<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
-<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260322223109079.png"></p>
-<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
-</ol>
-<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
-<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
-<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
-<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>机场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏站上线啦</title>
-    <url>/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</url>
-    <content><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p>
-<p><a href="https://game.infinitycm.top/">游戏站链接：https://game.infinitycm.top</a></p>
-<p>大家可以按需自取，如果有错误的&#x2F;想收录但游戏站里没收录的都可以在QQ群里说，有条件的话我会一起加进去。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>game</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阅读legado</title>
-    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
-    <content><![CDATA[<p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
-<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
-<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
-<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
-<hr>
-<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
-<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
-<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
-<p><a href="https://www.123865.com/s/xEXZVv-IBfU3">自用订阅源下载地址</a></p>
-<p><a href="https://yckceo.vip/">源仓库地址</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -2272,5 +2251,26 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>阅读legado</title>
+    <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
+    <content><![CDATA[<p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
+<p>阅读这个app相信经常刷酷安或者看小说的人一定不陌生，这里主要分享一些挺好用的书源。</p>
+<p><a href="https://legado.aoaostar.com/">首先是官方的源</a></p>
+<p>↑↑↑ 用这里的已经挺全面的了，只要源还有效那基本也没啥问题，更新频率也还行。</p>
+<hr>
+<p>然后分享一下我自己用的源，校验过的，一共有四千多个，有些源需要登录账号才能够正常使用，不然会被封号，用的的时候稍微注意一点就行。</p>
+<p><a href="https://www.123912.com/s/xEXZVv-SXxU3">自用书源下载地址</a></p>
+<p>还有一个订阅源，都是我在源仓库里用过的，类别还是很全的，有些我觉得没啥用的就删掉了。有需要的话可以自己去源仓库里面导入。</p>
+<p><a href="https://www.123865.com/s/xEXZVv-IBfU3">自用订阅源下载地址</a></p>
+<p><a href="https://yckceo.vip/">源仓库地址</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
   </entry>
 </search>
