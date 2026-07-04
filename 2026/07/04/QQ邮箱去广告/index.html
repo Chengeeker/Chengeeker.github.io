@@ -202,7 +202,7 @@
 <p>要净化QQ邮箱，最主要的其实还是去广告。如果你是root用户，这并不是一件难事，像<a target="_blank" rel="noopener" href="https://github.com/Xposed-Modules-Repo/com.cxapk.viphelper">辰夕的VIP Helper模块</a>就提供了去广告的功能，哪怕是免root，借助FPA或者npatch之类的lsp管理器也能够使用，但是签名校验就成了一大难题。</p>
 <p>你当然可以把QQ&#x2F;Tim一块修补了，但是必须要提醒的是，如今腾讯系应用的风控今时不同往日，如果触发了封禁，麻烦的还是自己。</p>
 <p>因此，我们需要找到在尽可能不改动apk本身的情况下，去实现“净化”的效果。</p>
-<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能把本地的广告去掉。</p>
+<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能跳过本地的广告。</p>
 <h3 id="2-使用IMAP登录QQ邮箱"><a href="#2-使用IMAP登录QQ邮箱" class="headerlink" title="2. 使用IMAP登录QQ邮箱"></a>2. 使用IMAP登录QQ邮箱</h3><p>看到这里可能会觉得有些奇怪：<br>QQ的邮箱登录QQ邮箱，为什么不直接用QQ授权登录，IMAP不是多此一举吗？</p>
 <blockquote>
 <p>使用IMAP登录和QQ授权登录有着本质区别，这种登录方式并不在QQ邮箱的会员体系内。 </p>
