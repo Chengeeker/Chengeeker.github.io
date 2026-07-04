@@ -164,7 +164,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>一个 Cloudflare 账户</li><li>一个 Github 账户</li><li>一个没有被阻断的域名</li></ol><h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p><p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p><p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p><p><img src="https://img.infinitycm.top/file/20260224114100245.webp"></p><p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p><p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p><p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p><p><img src="https://img.infinitycm.top/file/20260224114316902.webp"></p><p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p><p><img src="https://img.infinitycm.top/file/20260224114347224.webp"></p><p>回到github，添加为<code>D1_DATABASE_ID</code>。</p><h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p><p>KV完全免费不绑卡，单个附件限25MB；</p><p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p><p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p><p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p><p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p><p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p><p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p><h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p><h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>ALLOWED_EMAILS</td><td>允许注册的完整邮箱（支持通配符），用,分隔</td></tr><tr><td></td><td>（例：<a href="mailto:&#x79;&#x6f;&#117;&#114;&#45;&#x6e;&#x61;&#x6d;&#101;&#64;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#114;&#45;&#x6e;&#x61;&#x6d;&#101;&#64;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a>,*@xxx.com）</td></tr><tr><td>JWT_SECRET</td><td>随机长字符串（32字节以上）</td></tr><tr><td>JWT_REFRESH_SECRET</td><td>随机长字符串（32字节以上）</td></tr></tbody></table><h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul><li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li><li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li><li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li><li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li><li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li><li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li><li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li><li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li></ul><p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p><p>最后别忘记去给这个子域名添加一条dns记录。</p><p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p><p>要是不想优选，那就打开小黄云，目标随便填。</p><blockquote><p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p></blockquote><h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p><p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p><p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p><h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p><p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p><h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table><thead><tr><th>密钥</th><th>必需</th><th>描述</th></tr></thead><tbody><tr><td><code>S3_ACCESS_KEY_ID</code></td><td>yes (for S3)</td><td>您的 S3 访问密钥 ID</td></tr><tr><td><code>S3_SECRET_ACCESS_KEY</code></td><td>yes (for S3)</td><td>您的 S3 密钥访问密钥</td></tr><tr><td><code>S3_BUCKET</code></td><td>yes (for S3)</td><td>用于存储备份的 S3 存储桶名称</td></tr><tr><td><code>S3_REGION</code></td><td>yes (for S3)</td><td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td></tr><tr><td><code>S3_ENDPOINT</code></td><td>no</td><td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td></tr></tbody></table><h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table><thead><tr><th>密钥</th><th>必须</th><th>描述</th></tr></thead><tbody><tr><td><code>WEBDAV_URL</code></td><td>yes (for WebDAV)</td><td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td></tr><tr><td><code>WEBDAV_USER</code></td><td>yes (for WebDAV)</td><td>用户名</td></tr><tr><td><code>WEBDAV_PASSWORD</code></td><td>yes (for WebDAV)</td><td>WebDAV 密码</td></tr><tr><td><code>WEBDAV_VENDOR</code></td><td>no</td><td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td></tr><tr><td><code>WEBDAV_BASE_PATH</code></td><td>no</td><td>远程备份的基本路径。默认为 warden-worker</td></tr></tbody></table><h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table><thead><tr><th>密钥</th><th>必须</th><th>描述</th></tr></thead><tbody><tr><td><code>BACKUP_ENCRYPTION_KEY</code></td><td>no</td><td>备份的加密密钥，不填就不加密，填了要记住</td></tr><tr><td><code>BACKUP_RETENTION_DAYS</code></td><td>no</td><td>保留备份的天数。默认为30天</td></tr></tbody></table><p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p><p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p><h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p><blockquote><p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p><p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p><p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p></blockquote><p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p><h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>一个 Cloudflare 账户</li><li>一个 Github 账户</li><li>一个没有被阻断的域名</li></ol><h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p><p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p><p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p><p><img src="https://img.infinitycm.top/file/20260224114100245.webp"></p><p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p><p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p><p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p><p><img src="https://img.infinitycm.top/file/20260224114316902.webp"></p><p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p><p><img src="https://img.infinitycm.top/file/20260224114347224.webp"></p><p>回到github，添加为<code>D1_DATABASE_ID</code>。</p><h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p><p>KV完全免费不绑卡，单个附件限25MB；</p><p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p><p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p><p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p><p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p><p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p><p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p><h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p><h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>ALLOWED_EMAILS</td><td>允许注册的完整邮箱（支持通配符），用,分隔</td></tr><tr><td></td><td>（例：<a href="mailto:&#x79;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#109;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#109;">&#x79;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#109;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#109;</a>,*@xxx.com）</td></tr><tr><td>JWT_SECRET</td><td>随机长字符串（32字节以上）</td></tr><tr><td>JWT_REFRESH_SECRET</td><td>随机长字符串（32字节以上）</td></tr></tbody></table><h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul><li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li><li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li><li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li><li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li><li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li><li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li><li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li><li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li></ul><p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p><p>最后别忘记去给这个子域名添加一条dns记录。</p><p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p><p>要是不想优选，那就打开小黄云，目标随便填。</p><blockquote><p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p></blockquote><h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p><p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p><p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p><h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p><p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p><h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table><thead><tr><th>密钥</th><th>必需</th><th>描述</th></tr></thead><tbody><tr><td><code>S3_ACCESS_KEY_ID</code></td><td>yes (for S3)</td><td>您的 S3 访问密钥 ID</td></tr><tr><td><code>S3_SECRET_ACCESS_KEY</code></td><td>yes (for S3)</td><td>您的 S3 密钥访问密钥</td></tr><tr><td><code>S3_BUCKET</code></td><td>yes (for S3)</td><td>用于存储备份的 S3 存储桶名称</td></tr><tr><td><code>S3_REGION</code></td><td>yes (for S3)</td><td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td></tr><tr><td><code>S3_ENDPOINT</code></td><td>no</td><td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td></tr></tbody></table><h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table><thead><tr><th>密钥</th><th>必须</th><th>描述</th></tr></thead><tbody><tr><td><code>WEBDAV_URL</code></td><td>yes (for WebDAV)</td><td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td></tr><tr><td><code>WEBDAV_USER</code></td><td>yes (for WebDAV)</td><td>用户名</td></tr><tr><td><code>WEBDAV_PASSWORD</code></td><td>yes (for WebDAV)</td><td>WebDAV 密码</td></tr><tr><td><code>WEBDAV_VENDOR</code></td><td>no</td><td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td></tr><tr><td><code>WEBDAV_BASE_PATH</code></td><td>no</td><td>远程备份的基本路径。默认为 warden-worker</td></tr></tbody></table><h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table><thead><tr><th>密钥</th><th>必须</th><th>描述</th></tr></thead><tbody><tr><td><code>BACKUP_ENCRYPTION_KEY</code></td><td>no</td><td>备份的加密密钥，不填就不加密，填了要记住</td></tr><tr><td><code>BACKUP_RETENTION_DAYS</code></td><td>no</td><td>保留备份的天数。默认为30天</td></tr></tbody></table><p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p><p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p><h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p><blockquote><p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p><p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p><p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p></blockquote><p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p><h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>]]></content:encoded>
       
       
       <category domain="https://Chengeeker.github.io/categories/Tutorials/">Tutorials</category>
@@ -444,29 +444,6 @@
     </item>
     
     <item>
-      <title>FPA食用指北</title>
-      <link>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</link>
-      <guid>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</guid>
-      <pubDate>Sat, 04 Jan 2025 16:00:00 GMT</pubDate>
-      
-      <description>因为Android 15暂不支持原lspatch及其分支，所以提供一个opatch作者写的新框架</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p><p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p><hr><h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p><p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p><hr><p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222759.webp"></p><p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222812.webp"></p><p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222804.webp"></p><p>无论选择了哪一个，都会进入到图示的patch界面</p><p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p><p>内置过签方案：按需选择，普通或者增强都行。</p><p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p><p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_225353.webp"></p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_230428.webp"></p><p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p><p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222828.webp"></p><hr><h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p><p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>]]></content:encoded>
-      
-      
-      <category domain="https://Chengeeker.github.io/categories/Tutorials/">Tutorials</category>
-      
-      
-      <category domain="https://Chengeeker.github.io/tags/Xposed/">Xposed</category>
-      
-      
-      <comments>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>点开的微信文件，都去哪了（含QQ）</title>
       <link>https://chengeeker.github.io/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</link>
       <guid>https://chengeeker.github.io/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</guid>
@@ -505,6 +482,29 @@
       
       
       <comments>https://chengeeker.github.io/2025/01/05/%E6%89%8B%E6%9C%BA%E7%94%A8pc%E5%BA%94%E7%94%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>FPA食用指北</title>
+      <link>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</link>
+      <guid>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</guid>
+      <pubDate>Sat, 04 Jan 2025 16:00:00 GMT</pubDate>
+      
+      <description>因为Android 15暂不支持原lspatch及其分支，所以提供一个opatch作者写的新框架</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p><p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p><hr><h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p><p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p><hr><p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222759.webp"></p><p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222812.webp"></p><p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222804.webp"></p><p>无论选择了哪一个，都会进入到图示的patch界面</p><p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p><p>内置过签方案：按需选择，普通或者增强都行。</p><p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p><p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_225353.webp"></p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_230428.webp"></p><p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p><p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p><p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222828.webp"></p><hr><h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p><p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>]]></content:encoded>
+      
+      
+      <category domain="https://Chengeeker.github.io/categories/Tutorials/">Tutorials</category>
+      
+      
+      <category domain="https://Chengeeker.github.io/tags/Xposed/">Xposed</category>
+      
+      
+      <comments>https://chengeeker.github.io/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/#disqus_thread</comments>
       
     </item>
     
@@ -557,25 +557,6 @@
     </item>
     
     <item>
-      <title>I am back</title>
-      <link>https://chengeeker.github.io/2024/12/05/I%20am%20back/</link>
-      <guid>https://chengeeker.github.io/2024/12/05/I%20am%20back/</guid>
-      <pubDate>Wed, 04 Dec 2024 16:00:00 GMT</pubDate>
-      
-      <description>my blog is up</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p><p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p><p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://chengeeker.github.io/2024/12/05/I%20am%20back/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>clash</title>
       <link>https://chengeeker.github.io/2024/12/05/clash/</link>
       <guid>https://chengeeker.github.io/2024/12/05/clash/</guid>
@@ -595,6 +576,25 @@
       
       
       <comments>https://chengeeker.github.io/2024/12/05/clash/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>I am back</title>
+      <link>https://chengeeker.github.io/2024/12/05/I%20am%20back/</link>
+      <guid>https://chengeeker.github.io/2024/12/05/I%20am%20back/</guid>
+      <pubDate>Wed, 04 Dec 2024 16:00:00 GMT</pubDate>
+      
+      <description>my blog is up</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p><p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p><p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://chengeeker.github.io/2024/12/05/I%20am%20back/#disqus_thread</comments>
       
     </item>
     
@@ -667,6 +667,27 @@
     </item>
     
     <item>
+      <title>海外应用（精力有限不再更新）</title>
+      <link>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</link>
+      <guid>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</guid>
+      <pubDate>Wed, 04 Dec 2024 16:00:00 GMT</pubDate>
+      
+      <description>收录了其他开发者做的修改版本以及部分内置版本，仅提供官方入口，不提供下载链接。</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p><ul><li><p>莫奈 M 和非莫奈N 版本　　</p></li><li><p>删除广告　　</p></li><li><p>显示敏感媒体　　</p></li><li><p>没有t.Co缩短链接　　</p></li><li><p>删除分享链接时跟踪参数　　</p></li><li><p>使用户名和简介文本可选　　</p></li><li><p>解锁Premium功能　　</p></li><li><p>添加模组设置　　</p></li><li><p>应用图标和导航栏自定义设置：</p></li><li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p></li><li><p>解锁下载视频，长按预览即可下载：　　</p></li><li><p>Gif 可以以视频的形式下载。　　</p></li><li><p>添加模组设置更多语言支持：　　</p></li><li><p>英文、中文、…</p></li></ul><p>　　</p><p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p><hr><h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p><ul><li>允许使用 Google 帐户登录</li><li>不会强制登录</li><li>从 TikTok 中删除广告</li><li>视频过滤：移除广告(默认开启)，隐藏直播等</li><li>删除下载限制并支持更改默认下载路径 </li><li>移除水印(默认开启)</li><li>为所有视频启用播放速度选项 (并使其保持)</li><li>显示所有视频的进度条</li><li>添加 TikTok settings</li><li>绕过区域限制模拟SIM卡信息</li><li>隐藏视频页底部导航栏上的5个Logo </li><li>支持保持清屏 (隐藏视频控件)</li></ul><p>注意：</p><ol><li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li><li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li><li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li></ol><p>　　</p><p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p><hr><h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p><ul><li>Advertisment Removed　　</li><li>Enable background play　　</li><li>去除广告　　</li><li>功能拓展</li></ul><p>　　</p><p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p><p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p><hr><h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p><ul><li>解锁Telegram Premium本地会员　　</li><li>去除应用内部分使用限制</li></ul><p>　　</p><p>在这里推荐一个自用的NagramX</p><p>支持Ayu的核心功能本地会员，体验比内置tg好</p><p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p><p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://Chengeeker.github.io/categories/Software/">Software</category>
+      
+      
+      
+      <comments>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>运用浏览器功能实现抢课自由</title>
       <link>https://chengeeker.github.io/2024/12/05/%E6%8A%A2%E8%AF%BE/</link>
       <guid>https://chengeeker.github.io/2024/12/05/%E6%8A%A2%E8%AF%BE/</guid>
@@ -686,27 +707,6 @@
       
       
       <comments>https://chengeeker.github.io/2024/12/05/%E6%8A%A2%E8%AF%BE/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>海外应用（精力有限不再更新）</title>
-      <link>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</link>
-      <guid>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</guid>
-      <pubDate>Wed, 04 Dec 2024 16:00:00 GMT</pubDate>
-      
-      <description>收录了其他开发者做的修改版本以及部分内置版本，仅提供官方入口，不提供下载链接。</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p><ul><li><p>莫奈 M 和非莫奈N 版本　　</p></li><li><p>删除广告　　</p></li><li><p>显示敏感媒体　　</p></li><li><p>没有t.Co缩短链接　　</p></li><li><p>删除分享链接时跟踪参数　　</p></li><li><p>使用户名和简介文本可选　　</p></li><li><p>解锁Premium功能　　</p></li><li><p>添加模组设置　　</p></li><li><p>应用图标和导航栏自定义设置：</p></li><li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p></li><li><p>解锁下载视频，长按预览即可下载：　　</p></li><li><p>Gif 可以以视频的形式下载。　　</p></li><li><p>添加模组设置更多语言支持：　　</p></li><li><p>英文、中文、…</p></li></ul><p>　　</p><p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p><hr><h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p><ul><li>允许使用 Google 帐户登录</li><li>不会强制登录</li><li>从 TikTok 中删除广告</li><li>视频过滤：移除广告(默认开启)，隐藏直播等</li><li>删除下载限制并支持更改默认下载路径 </li><li>移除水印(默认开启)</li><li>为所有视频启用播放速度选项 (并使其保持)</li><li>显示所有视频的进度条</li><li>添加 TikTok settings</li><li>绕过区域限制模拟SIM卡信息</li><li>隐藏视频页底部导航栏上的5个Logo </li><li>支持保持清屏 (隐藏视频控件)</li></ul><p>注意：</p><ol><li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li><li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li><li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li></ol><p>　　</p><p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p><hr><h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p><ul><li>Advertisment Removed　　</li><li>Enable background play　　</li><li>去除广告　　</li><li>功能拓展</li></ul><p>　　</p><p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p><p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p><p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p><hr><h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p><ul><li>解锁Telegram Premium本地会员　　</li><li>去除应用内部分使用限制</li></ul><p>　　</p><p>在这里推荐一个自用的NagramX</p><p>支持Ayu的核心功能本地会员，体验比内置tg好</p><p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p><p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>]]></content:encoded>
-      
-      
-      <category domain="https://Chengeeker.github.io/categories/Software/">Software</category>
-      
-      
-      
-      <comments>https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/#disqus_thread</comments>
       
     </item>
     
