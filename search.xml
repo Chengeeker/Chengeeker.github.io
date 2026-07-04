@@ -1,80 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Bettbox</title>
-    <url>/2026/06/18/Bettbox/</url>
-    <content><![CDATA[<h2 id="Bettbox"><a href="#Bettbox" class="headerlink" title="Bettbox"></a>Bettbox</h2><p>flclash的另一个分支版本，感觉比原版更好用一些。</p>
-<p><a href="https://github.com/appshubcc/Bettbox">Github开源地址</a></p>
-<p><a href="https://github.com/appshubcc/Bettbox/releases">Release下载</a></p>
-<p><a href="https://t.me/appshub_chat">telegram群组</a></p>
-<p>Bettbox 是一款使用Mihomo(Clash Meta)内核、基于FlClash早期版本进行重构的多平台代理客户端</p>
-<p>秉承“Better Experience更优体验”的原则，Bettbox在继承原版优秀界面的基础上，深度优化了诸多细节与实用功能&#x2F;逻辑。前台流畅丝滑、后台省电无感，致力于成为体验更好且可长期稳定运行的 Mihomo 客户端</p>
-<hr>
-<h2 id="🛠️-安装与下载"><a href="#🛠️-安装与下载" class="headerlink" title="🛠️ 安装与下载"></a>🛠️ 安装与下载</h2><ul>
-<li><strong>桌面端</strong>: Windows (x64&#x2F;arm64), macOS (Intel&#x2F;Apple Silicon), Linux (x64&#x2F;arm64)</li>
-<li><strong>安卓端</strong>: Android (ARMv8&#x2F; ARMv7&#x2F; x86_64&#x2F; Universal)</li>
-<li><strong>Android TV</strong>: 已支持,可选ARMv7 32位</li>
-<li><strong>Windows7</strong>: 请配合 <a href="https://github.com/i486/VxKex/releases">[VxKex]</a> 使用</li>
-<li><strong>鸿蒙NEXT</strong>: 请配合 <a href="https://harmonyos.cool/android-app">[卓易通]</a> 使用</li>
-</ul>
-<hr>
-<h2 id="🚀-核心特性"><a href="#🚀-核心特性" class="headerlink" title="🚀 核心特性"></a>🚀 核心特性</h2><h3 id="深度体验优化"><a href="#深度体验优化" class="headerlink" title="深度体验优化"></a>深度体验优化</h3><ul>
-<li><strong>开箱即用</strong>：自动化的权限处理与舒适稳定的TUN&amp;VPN体验，预置更加适合中国大陆用户的内核配置，减少繁琐的手动调试&#x2F;配置多为可选项</li>
-<li><strong>精雕细琢</strong>：重新审视打磨每一处功能细节，稳定无感的轻量模式，移动端更加省电、桌面端更低占用、旨在提供更好的Mihomo客户端体验</li>
-</ul>
-<h3 id="安全与稳定性"><a href="#安全与稳定性" class="headerlink" title="安全与稳定性"></a>安全与稳定性</h3><ul>
-<li><strong>安全校验</strong>：遵循Mihomo官方安全建议&#x2F;内核升级紧跟主线版本，桌面端拥有严格的安全校验以及权限控制，有效防范潜在的TOCTOU或非法访问，同时针对常见配置错误增加了优雅的回退机制</li>
-<li><strong>高稳定性</strong>：通过了作者自身和群友长期以来高强度的压力测试与后台使用测试，优化了多处极端场景下的使用稳定性问题</li>
-</ul>
-<h3 id="自由可定制化"><a href="#自由可定制化" class="headerlink" title="自由可定制化"></a>自由可定制化</h3><ul>
-<li><strong>可视化管理</strong>：更加全面且易用的功能配置界面，支持更多参数的可视化操作调整和实时生效</li>
-<li><strong>实用小组件</strong>：提供多种美观实用风格的 Widgets，在首页可以掌控全局流量和当前运行状态</li>
-<li><strong>个性化定制</strong>：丰富的预置色彩主题、自定义图标&#x2F;首页标题，多个界面布局调整，甚至连Urltest都有10种精美动画可供选择，每个人都可以拥有自己独一无二的Bettbox</li>
-</ul>
-<h3 id="多个平台支持"><a href="#多个平台支持" class="headerlink" title="多个平台支持"></a>多个平台支持</h3><ul>
-<li><strong>性能优先级</strong>：支持主流架构，为现代设备额外优化的CPU性能(例如桌面端分级和Android 16K对齐)，针对多平台桌面端 ARM64 设备同样提供了原生适配</li>
-<li><strong>社区包容性</strong>：我们倾听社区用户的想法并且会认真评估，你的声音不会无故被淹没和被无视(认真的ISSUE会被优先对待)</li>
-<li><strong>旧设备关怀</strong>：尽力而为提供针对旧版本系统和硬件的兼容性版本，确保长周期的使用寿命</li>
-</ul>
-<h3 id="开源纯净透明"><a href="#开源纯净透明" class="headerlink" title="开源纯净透明"></a>开源纯净透明</h3><ul>
-<li><strong>全自动 CI&#x2F;CD</strong>：基于 GitHub Actions 的透明构建流程，代码即产物，所见即所得</li>
-<li><strong>纯净无广告</strong>：免费，且完全开源，代码接受全方位审计，无需担心额外的隐私问题</li>
-</ul>
-<hr>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li><p>安装后无法启动？</p>
-<ul>
-<li>安卓端旧设备，请检查是否支持Bettbox的最低系统要求:Android 8.0+</li>
-<li>桌面端旧设备，请检查是否需要下载特定CPU等级的Compatible兼容版本</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-<li><p>Windows常见问题</p>
-<ul>
-<li>管理员权限：Bettbox在安装时已提前处理，无需手动再次授权</li>
-<li>无法开启虚拟网卡：请确保没有冲突的代理软件或服务正在运行</li>
-<li>无法同时开启系统代理和虚拟网卡：预期行为（如果明确自己的需求，则可以通过系统托盘区同时开启）</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-<li><p>无法导入订阅链接</p>
-<ul>
-<li>请务必先尝试重置链接，确保链接正常后再导入</li>
-<li>确保导入的是Clash（Mihomo）格式的订阅链接</li>
-<li>其他问题如持续存在，请提交ISSUE反馈</li>
-</ul>
-</li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>123资源社区</title>
     <url>/2026/01/10/123%E8%B5%84%E6%BA%90%E7%A4%BE%E5%8C%BA/</url>
     <content><![CDATA[<h1 id="123资源社区"><a href="#123资源社区" class="headerlink" title="123资源社区"></a>123资源社区</h1><p>123分享是一个非官方的站点，主要分享123云盘的资源下载。本站不储存、复制、传播、控制编辑任何网盘文件，也不提供下载服务，其链接跳转至各大网盘，文件的有效性和安全性需要您自行判断，如有侵权内容请联系我们。</p>
@@ -158,6 +84,88 @@
       </categories>
   </entry>
   <entry>
+    <title>I am back</title>
+    <url>/2024/12/05/I%20am%20back/</url>
+    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
+<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
+<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Bettbox</title>
+    <url>/2026/06/18/Bettbox/</url>
+    <content><![CDATA[<h2 id="Bettbox"><a href="#Bettbox" class="headerlink" title="Bettbox"></a>Bettbox</h2><p>flclash的另一个分支版本，感觉比原版更好用一些。</p>
+<p><a href="https://github.com/appshubcc/Bettbox">Github开源地址</a></p>
+<p><a href="https://github.com/appshubcc/Bettbox/releases">Release下载</a></p>
+<p><a href="https://t.me/appshub_chat">telegram群组</a></p>
+<p>Bettbox 是一款使用Mihomo(Clash Meta)内核、基于FlClash早期版本进行重构的多平台代理客户端</p>
+<p>秉承“Better Experience更优体验”的原则，Bettbox在继承原版优秀界面的基础上，深度优化了诸多细节与实用功能&#x2F;逻辑。前台流畅丝滑、后台省电无感，致力于成为体验更好且可长期稳定运行的 Mihomo 客户端</p>
+<hr>
+<h2 id="🛠️-安装与下载"><a href="#🛠️-安装与下载" class="headerlink" title="🛠️ 安装与下载"></a>🛠️ 安装与下载</h2><ul>
+<li><strong>桌面端</strong>: Windows (x64&#x2F;arm64), macOS (Intel&#x2F;Apple Silicon), Linux (x64&#x2F;arm64)</li>
+<li><strong>安卓端</strong>: Android (ARMv8&#x2F; ARMv7&#x2F; x86_64&#x2F; Universal)</li>
+<li><strong>Android TV</strong>: 已支持,可选ARMv7 32位</li>
+<li><strong>Windows7</strong>: 请配合 <a href="https://github.com/i486/VxKex/releases">[VxKex]</a> 使用</li>
+<li><strong>鸿蒙NEXT</strong>: 请配合 <a href="https://harmonyos.cool/android-app">[卓易通]</a> 使用</li>
+</ul>
+<hr>
+<h2 id="🚀-核心特性"><a href="#🚀-核心特性" class="headerlink" title="🚀 核心特性"></a>🚀 核心特性</h2><h3 id="深度体验优化"><a href="#深度体验优化" class="headerlink" title="深度体验优化"></a>深度体验优化</h3><ul>
+<li><strong>开箱即用</strong>：自动化的权限处理与舒适稳定的TUN&amp;VPN体验，预置更加适合中国大陆用户的内核配置，减少繁琐的手动调试&#x2F;配置多为可选项</li>
+<li><strong>精雕细琢</strong>：重新审视打磨每一处功能细节，稳定无感的轻量模式，移动端更加省电、桌面端更低占用、旨在提供更好的Mihomo客户端体验</li>
+</ul>
+<h3 id="安全与稳定性"><a href="#安全与稳定性" class="headerlink" title="安全与稳定性"></a>安全与稳定性</h3><ul>
+<li><strong>安全校验</strong>：遵循Mihomo官方安全建议&#x2F;内核升级紧跟主线版本，桌面端拥有严格的安全校验以及权限控制，有效防范潜在的TOCTOU或非法访问，同时针对常见配置错误增加了优雅的回退机制</li>
+<li><strong>高稳定性</strong>：通过了作者自身和群友长期以来高强度的压力测试与后台使用测试，优化了多处极端场景下的使用稳定性问题</li>
+</ul>
+<h3 id="自由可定制化"><a href="#自由可定制化" class="headerlink" title="自由可定制化"></a>自由可定制化</h3><ul>
+<li><strong>可视化管理</strong>：更加全面且易用的功能配置界面，支持更多参数的可视化操作调整和实时生效</li>
+<li><strong>实用小组件</strong>：提供多种美观实用风格的 Widgets，在首页可以掌控全局流量和当前运行状态</li>
+<li><strong>个性化定制</strong>：丰富的预置色彩主题、自定义图标&#x2F;首页标题，多个界面布局调整，甚至连Urltest都有10种精美动画可供选择，每个人都可以拥有自己独一无二的Bettbox</li>
+</ul>
+<h3 id="多个平台支持"><a href="#多个平台支持" class="headerlink" title="多个平台支持"></a>多个平台支持</h3><ul>
+<li><strong>性能优先级</strong>：支持主流架构，为现代设备额外优化的CPU性能(例如桌面端分级和Android 16K对齐)，针对多平台桌面端 ARM64 设备同样提供了原生适配</li>
+<li><strong>社区包容性</strong>：我们倾听社区用户的想法并且会认真评估，你的声音不会无故被淹没和被无视(认真的ISSUE会被优先对待)</li>
+<li><strong>旧设备关怀</strong>：尽力而为提供针对旧版本系统和硬件的兼容性版本，确保长周期的使用寿命</li>
+</ul>
+<h3 id="开源纯净透明"><a href="#开源纯净透明" class="headerlink" title="开源纯净透明"></a>开源纯净透明</h3><ul>
+<li><strong>全自动 CI&#x2F;CD</strong>：基于 GitHub Actions 的透明构建流程，代码即产物，所见即所得</li>
+<li><strong>纯净无广告</strong>：免费，且完全开源，代码接受全方位审计，无需担心额外的隐私问题</li>
+</ul>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p>安装后无法启动？</p>
+<ul>
+<li>安卓端旧设备，请检查是否支持Bettbox的最低系统要求:Android 8.0+</li>
+<li>桌面端旧设备，请检查是否需要下载特定CPU等级的Compatible兼容版本</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+<li><p>Windows常见问题</p>
+<ul>
+<li>管理员权限：Bettbox在安装时已提前处理，无需手动再次授权</li>
+<li>无法开启虚拟网卡：请确保没有冲突的代理软件或服务正在运行</li>
+<li>无法同时开启系统代理和虚拟网卡：预期行为（如果明确自己的需求，则可以通过系统托盘区同时开启）</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+<li><p>无法导入订阅链接</p>
+<ul>
+<li>请务必先尝试重置链接，确保链接正常后再导入</li>
+<li>确保导入的是Clash（Mihomo）格式的订阅链接</li>
+<li>其他问题如持续存在，请提交ISSUE反馈</li>
+</ul>
+</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
     <url>/2026/02/16/bitwarden-Microsoft/</url>
     <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
@@ -219,66 +227,254 @@
       </tags>
   </entry>
   <entry>
-    <title>clash</title>
-    <url>/2024/12/05/clash/</url>
-    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
-<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
-<li>Android 5.0+ (minimum)</li>
-<li>Android 7.0+ (recommend)</li>
-<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
-</ul>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
-<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
-<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
-<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
-<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
-<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
-<li>系统代理和守卫、<code>TUN</code> 模式。</li>
-</ul>
-<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
-<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
-<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
-<li>MacOS intel芯片: x64.dmg</li>
-<li>MacOS apple M芯片: aarch64.dmg</li>
-</ul>
-<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
-<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
-<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
-<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
-<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
-</ul>
-<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
-<li>64位: x64-setup.exe</li>
-<li>32位: x86-setup.exe</li>
-<li>arm64架构: arm64-setup.exe</li>
-</ul>
-<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
-<li>64位: x64_portable.zip</li>
-<li>32位: x86_portable.zip</li>
-<li>arm64架构: arm64_portable.zip</li>
-</ul>
-<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
-<li>64位: x64_fixed_webview2-setup.exe</li>
-<li>32位: x86_fixed_webview2-setup.exe</li>
-<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
-</ul>
-<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
+    <title>净化QQ邮箱客户端的一些思路</title>
+    <url>/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/</url>
+    <content><![CDATA[<h2 id="必要的准备"><a href="#必要的准备" class="headerlink" title="必要的准备"></a>必要的准备</h2><ol>
+<li><strong>一个与QQ邮箱同一账号的Foxmail邮箱（没有的话要去QQ邮箱的账号与安全那里弄一个，不然就可以关闭这篇文章了）</strong></li>
+<li>GKD以及可用的规则（自备） </li>
+<li>QQ邮箱安装包（官版和play版均可） </li>
+<li>一个可用的lsp管理器（可选）</li>
+</ol>
+<h3 id="为什么推荐用Foxmail"><a href="#为什么推荐用Foxmail" class="headerlink" title="为什么推荐用Foxmail"></a>为什么推荐用Foxmail</h3><ol>
+<li>依托国内 QQ 邮件服务器，网络访问稳定无门槛<blockquote>
+<p>底层走腾讯国内邮件节点，不用特殊网络环境收发邮件，对比 Gmail、Outlook 海外邮箱，国内打开、发信、收信速度快，不会出现收不到、发件延迟、登录失败的问题。</p>
+</blockquote>
+</li>
+<li>和原生 QQ 邮箱账号互通，数据完全同步<blockquote>
+<p>Foxmail属于原有QQ邮箱的别名，和原有的QQ邮箱账号共用一套邮箱存储空间、收件箱、已发送、通讯录、文件夹，QQ 邮箱收到的邮件会实时同步到Foxmail，双向实时更新，无需重新注册独立邮箱。</p>
+</blockquote>
+</li>
+<li>独立 Foxmail 邮箱后缀，兼顾隐私与海外通用性<blockquote>
+<p>@foxmail.com和@qq.com绑定同一账号，对外留邮箱时可以用foxmail后缀，避免暴露QQ数字号；海外平台对@foxmail.com的兼容性比@qq.com好一些。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>其实对我来说，即便是官方的QQ邮箱，广告也没有多到令人发指的程度，可能是平时用酷安“自适应”了。</p>
+<p>要净化QQ邮箱，最主要的其实还是去广告。如果你是root用户，这并不是一件难事，像<a href="https://github.com/Xposed-Modules-Repo/com.cxapk.viphelper">辰夕的VIP Helper模块</a>就提供了去广告的功能，哪怕是免root，借助FPA或者npatch之类的lsp管理器也能够使用，但是签名校验就成了一大难题。</p>
+<p>你当然可以把QQ&#x2F;Tim一块修补了，但是必须要提醒的是，如今腾讯系应用的风控今时不同往日，如果触发了封禁，麻烦的还是自己。</p>
+<p>因此，我们需要找到在尽可能不改动apk本身的情况下，去实现“净化”的效果。</p>
+<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能把本地的广告去掉。</p>
+<h3 id="2-使用IMAP登录QQ邮箱"><a href="#2-使用IMAP登录QQ邮箱" class="headerlink" title="2. 使用IMAP登录QQ邮箱"></a>2. 使用IMAP登录QQ邮箱</h3><p>看到这里可能会觉得有些奇怪：<br>QQ的邮箱登录QQ邮箱，为什么不直接用QQ授权登录，IMAP不是多此一举吗？</p>
+<blockquote>
+<p>使用IMAP登录和QQ授权登录有着本质区别，这种登录方式并不在QQ邮箱的会员体系内。 </p>
+</blockquote>
+<blockquote>
+<p>因为foxmail邮箱的特殊性，哪怕平台知道你用的是QQ的邮箱，但平台依旧会将其归类为第三方的IMAP邮箱，也就不会有会员推广之类的信息，界面也精简了很多。</p>
+</blockquote>
+<p>都用IMAP了，我为什么不用像Thunderbird之类的开源第三方邮件客户端，一样也没广告。</p>
+<blockquote>
+<p>QQ邮箱自家的IMAP登录有着第三方客户端无法比拟的优势，就是邮件收发延迟。</p>
+</blockquote>
+<blockquote>
+<p>与Windows端不同，从 Android 7.0 起，第三方 App 后台定时同步任务，系统强制最小执行间隔 15 分钟，就算代码写 1 分钟，系统也会合并、推迟到至少 15 分钟才允许联网同步。（数据源自豆包）</p>
+</blockquote>
+<blockquote>
+<p>经过实测，如果使用IMAP登录QQ邮箱，邮件接收的体验和授权登录是几乎一致的，毕竟客户端和服务器都是QQ邮箱的。</p>
+</blockquote>
+<p><strong>而且用IMAP登录还有两大优势，</strong></p>
+<ol>
+<li><p>Play版和老版本可以正常使用</p>
+<blockquote>
+<p>众所周知，在QQ邮箱更新到7.x.x版本后，会有强制弹窗要求你更新升级到最新版，否则可能无法继续使用QQ邮箱客户端。这是一种基于授权登录才会触发的强制弹窗，IMAP登录并不会出现这种情况。我们可以继续体验老版本和play版的独特优势。</p>
+</blockquote>
+</li>
+<li><p>解决了反编译apk后签名不一致导致的授权问题</p>
+<blockquote>
+<p>无论是免root管理器的修补，还是一些大佬单独做的去广告版apk，都不可避免遇到签名不一致导致的问题。哪怕有些apk做了微信和QQ的登录修复，但也只是治标不治本，和官方原版apk相比还是差了不少。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="⚠️注意⚠️"><a href="#⚠️注意⚠️" class="headerlink" title="⚠️注意⚠️"></a>⚠️注意⚠️</h3><p>在IMAP登录的时候，平台会识别到你的邮箱是QQ邮箱，提示<code>输入的是QQ邮箱账号，是否继续验证？</code>，这个时候要选择<code>手动设置</code>，它会自动配置。不要选验证，不然会跳转到授权验证登录的界面。</p>
+<blockquote>
+<p>如果你的邮箱还是qq.com后缀的会无法进入手动设置，只有<code>取消</code>和<code>验证</code>。</p>
+</blockquote>
+<h3 id="（可选）3-使用Xposed模块去广告"><a href="#（可选）3-使用Xposed模块去广告" class="headerlink" title="（可选）3.使用Xposed模块去广告"></a>（可选）3.使用Xposed模块去广告</h3><p>不过多赘述，QQ邮箱并没有太严格的签名校验，一般不会碰到闪退问题，找到合适的模块在lsp管理器内使用就行。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这看起来有点脱裤子放屁，废话可能也比较多，但这确实是我无意中发现的一种思路。希望这种思路能给大家的玩机路上一点启发。</p>
 ]]></content>
       <categories>
-        <category>Software</category>
+        <category>Tutorials</category>
       </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
   <entry>
-    <title>I am back</title>
-    <url>/2024/12/05/I%20am%20back/</url>
-    <content><![CDATA[<p>After a year, I have redone a personal blog website that I had previously created. This blog website is based on a previous project of mine, so there are not many changes in terms of technical selection and architectural design. However, over the past year, I have also learned many new technologies and tools, so in this remake project, I have added some new elements to make this blog website more complete and robust.</p>
-<p>In the future, I will also consider adding some new features and optimizations to make the entire blog website’s user experience more fluid and friendly.</p>
-<p>In short, this remake of the blog website not only allowed me to revisit my previous project, but also allowed me to learn many new technologies and tools, and integrate these new elements into the project to make this blog website more complete and robust.</p>
+    <title>cloudfare-bitwarden （qaz741wsd856）</title>
+    <url>/2026/02/24/bitwarden-qaz741wsd856/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>一个 Cloudflare 账户</li>
+<li>一个 Github 账户</li>
+<li>一个没有被阻断的域名</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p>
+<p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p>
+<p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p>
+<p><img src="https://img.infinitycm.top/file/20260224114100245.webp"></p>
+<p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p>
+<p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p>
+<p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p>
+<p><img src="https://img.infinitycm.top/file/20260224114316902.webp"></p>
+<p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p>
+<p><img src="https://img.infinitycm.top/file/20260224114347224.webp"></p>
+<p>回到github，添加为<code>D1_DATABASE_ID</code>。</p>
+<h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p>
+<p>KV完全免费不绑卡，单个附件限25MB；</p>
+<p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p>
+<p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p>
+<p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p>
+<p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p>
+<p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p>
+<p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p>
+<h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p>
+<h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALLOWED_EMAILS</td>
+<td>允许注册的完整邮箱（支持通配符），用,分隔</td>
+</tr>
+<tr>
+<td></td>
+<td>（例：<a href="mailto:&#x79;&#x6f;&#x75;&#114;&#x2d;&#110;&#97;&#x6d;&#x65;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#x6f;&#x75;&#114;&#x2d;&#110;&#97;&#x6d;&#x65;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a>,*@xxx.com）</td>
+</tr>
+<tr>
+<td>JWT_SECRET</td>
+<td>随机长字符串（32字节以上）</td>
+</tr>
+<tr>
+<td>JWT_REFRESH_SECRET</td>
+<td>随机长字符串（32字节以上）</td>
+</tr>
+</tbody></table>
+<h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul>
+<li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li>
+<li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li>
+<li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li>
+<li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li>
+<li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li>
+<li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li>
+<li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li>
+<li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li>
+</ul>
+<p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p>
+<p>最后别忘记去给这个子域名添加一条dns记录。</p>
+<p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p>
+<p>要是不想优选，那就打开小黄云，目标随便填。</p>
+<blockquote>
+<p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p>
+</blockquote>
+<h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p>
+<p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p>
+<p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p>
+<h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p>
+<p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p>
+<h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必需</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>S3_ACCESS_KEY_ID</code></td>
+<td>yes (for S3)</td>
+<td>您的 S3 访问密钥 ID</td>
+</tr>
+<tr>
+<td><code>S3_SECRET_ACCESS_KEY</code></td>
+<td>yes (for S3)</td>
+<td>您的 S3 密钥访问密钥</td>
+</tr>
+<tr>
+<td><code>S3_BUCKET</code></td>
+<td>yes (for S3)</td>
+<td>用于存储备份的 S3 存储桶名称</td>
+</tr>
+<tr>
+<td><code>S3_REGION</code></td>
+<td>yes (for S3)</td>
+<td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td>
+</tr>
+<tr>
+<td><code>S3_ENDPOINT</code></td>
+<td>no</td>
+<td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td>
+</tr>
+</tbody></table>
+<h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WEBDAV_URL</code></td>
+<td>yes (for WebDAV)</td>
+<td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td>
+</tr>
+<tr>
+<td><code>WEBDAV_USER</code></td>
+<td>yes (for WebDAV)</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td><code>WEBDAV_PASSWORD</code></td>
+<td>yes (for WebDAV)</td>
+<td>WebDAV 密码</td>
+</tr>
+<tr>
+<td><code>WEBDAV_VENDOR</code></td>
+<td>no</td>
+<td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td>
+</tr>
+<tr>
+<td><code>WEBDAV_BASE_PATH</code></td>
+<td>no</td>
+<td>远程备份的基本路径。默认为 warden-worker</td>
+</tr>
+</tbody></table>
+<h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table>
+<thead>
+<tr>
+<th>密钥</th>
+<th>必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>BACKUP_ENCRYPTION_KEY</code></td>
+<td>no</td>
+<td>备份的加密密钥，不填就不加密，填了要记住</td>
+</tr>
+<tr>
+<td><code>BACKUP_RETENTION_DAYS</code></td>
+<td>no</td>
+<td>保留备份的天数。默认为30天</td>
+</tr>
+</tbody></table>
+<p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p>
+<p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p>
+<h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p>
+<blockquote>
+<p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p>
+<p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p>
+<p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p>
+</blockquote>
+<p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p>
+<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>
 ]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+        <tag>cloudfare</tag>
+      </tags>
   </entry>
   <entry>
     <title>用cloudfare搭建自己的免费机场-edgetunnel</title>
@@ -659,309 +855,57 @@
       </tags>
   </entry>
   <entry>
-    <title>Flclash</title>
-    <url>/2025/05/13/flclash/</url>
-    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
-<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
-<p><a href="https://t.me/FlClash">telegram群组</a></p>
-<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
-<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
-
-<p>on Mobile:</p>
-<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
-
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
-<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
-<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
-<p>☁️ 支持通过WebDAV同步数据</p>
-<p>✨ 支持一键导入订阅, 深色模式</p>
+    <title>clash</title>
+    <url>/2024/12/05/clash/</url>
+    <content><![CDATA[<h2 id="Clash-Meta-for-Android"><a href="#Clash-Meta-for-Android" class="headerlink" title="Clash Meta for Android"></a>Clash Meta for Android</h2><p>A Graphical user interface of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a> for Android</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Feature of <a href="https://github.com/MetaCubeX/Clash.Meta">Clash.Meta</a></p>
+<h3 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h3><ul>
+<li>Android 5.0+ (minimum)</li>
+<li>Android 7.0+ (recommend)</li>
+<li><code>armeabi-v7a</code> , <code>arm64-v8a</code>, <code>x86</code> or <code>x86_64</code> Architecture</li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">https://github.com/MetaCubeX/ClashMetaForAndroid</a></p>
+<h3 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">https://github.com/MetaCubeX/ClashMetaForAndroid/releases</a></p>
+<h2 id="Clash-verge-rev"><a href="#Clash-verge-rev" class="headerlink" title="Clash-verge-rev"></a>Clash-verge-rev</h2><h4 id="基于-Tauri-的-Clash-Meta-GUI"><a href="#基于-Tauri-的-Clash-Meta-GUI" class="headerlink" title="基于 Tauri 的 Clash Meta GUI"></a>基于 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 的 Clash Meta GUI</h4><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a><a href="https://www.clashverge.dev/#_1">特性</a></h3><ul>
+<li>内置<a href="https://github.com/MetaCubeX/mihomo">Clash.Meta(mihomo)</a>内核，并支持切换 <code>Alpha</code> 版本内核。</li>
+<li>简洁美观的用户界面，支持自定义主题颜色、代理组&#x2F;托盘图标以及 <code>CSS Injection</code>。</li>
+<li>配置文件管理和增强（Merge 和 Script），配置文件语法提示。</li>
+<li>系统代理和守卫、<code>TUN</code> 模式。</li>
+</ul>
+<h3 id="Github-1"><a href="#Github-1" class="headerlink" title="Github"></a>Github</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a></p>
+<h3 id="Releases-1"><a href="#Releases-1" class="headerlink" title="Releases"></a>Releases</h3><p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">https://github.com/clash-verge-rev/clash-verge-rev/releases</a></p>
+<h4 id="我应该下载哪个版本？"><a href="#我应该下载哪个版本？" class="headerlink" title="我应该下载哪个版本？"></a>我应该下载哪个版本？</h4><h5 id="MacOS-提示文件损坏或开发者无法验证请查看下面FAQ"><a href="#MacOS-提示文件损坏或开发者无法验证请查看下面FAQ" class="headerlink" title="MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)"></a>MacOS (提示文件损坏或开发者无法验证请查看下面FAQ)</h5><ul>
+<li>MacOS intel芯片: x64.dmg</li>
+<li>MacOS apple M芯片: aarch64.dmg</li>
+</ul>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><ul>
+<li>Linux 64位: amd64.deb&#x2F;amd64.rpm</li>
+<li>Linux 32位: i386.deb&#x2F;i386.rpm</li>
+<li>Linux arm64架构: arm64.deb&#x2F;aarch64.rpm</li>
+<li>Linux armv7架构: armhf.deb&#x2F;armhfp.rpm</li>
+</ul>
+<h5 id="Windows-Win7-用户请查看下面FAQ中的解决方案"><a href="#Windows-Win7-用户请查看下面FAQ中的解决方案" class="headerlink" title="Windows (Win7 用户请查看下面FAQ中的解决方案)"></a>Windows (Win7 用户请查看下面FAQ中的解决方案)</h5><h6 id="正常版本-推荐"><a href="#正常版本-推荐" class="headerlink" title="正常版本(推荐)"></a>正常版本(推荐)</h6><ul>
+<li>64位: x64-setup.exe</li>
+<li>32位: x86-setup.exe</li>
+<li>arm64架构: arm64-setup.exe</li>
+</ul>
+<h6 id="便携版-不推荐使用，无法自动更新"><a href="#便携版-不推荐使用，无法自动更新" class="headerlink" title="便携版(不推荐使用，无法自动更新)"></a>便携版(不推荐使用，无法自动更新)</h6><ul>
+<li>64位: x64_portable.zip</li>
+<li>32位: x86_portable.zip</li>
+<li>arm64架构: arm64_portable.zip</li>
+</ul>
+<h6 id="内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用"><a href="#内置Webview2版-体积较大，仅在企业版系统或Win7无法安装webview2时使用" class="headerlink" title="内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)"></a>内置Webview2版(体积较大，仅在企业版系统或Win7无法安装webview2时使用)</h6><ul>
+<li>64位: x64_fixed_webview2-setup.exe</li>
+<li>32位: x86_fixed_webview2-setup.exe</li>
+<li>arm64架构: arm64_fixed_webview2-setup.exe</li>
+</ul>
+<h2 id="补充-Flclash"><a href="#补充-Flclash" class="headerlink" title="(补充)Flclash"></a>(补充)Flclash</h2><p><a href="https://chengeeker.github.io/2025/05/13/flclash/index.html">详情可点击链接查看</a></p>
 ]]></content>
       <categories>
         <category>Software</category>
       </categories>
       <tags>
         <tag>clash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>净化QQ邮箱客户端的一些思路</title>
-    <url>/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/</url>
-    <content><![CDATA[<h2 id="必要的准备"><a href="#必要的准备" class="headerlink" title="必要的准备"></a>必要的准备</h2><ol>
-<li><strong>一个与QQ邮箱同一账号的Foxmail邮箱（没有的话要去QQ邮箱的账号与安全那里弄一个，不然就可以关闭这篇文章了）</strong></li>
-<li>GKD以及可用的规则（自备） </li>
-<li>QQ邮箱安装包（官版和play版均可） </li>
-<li>一个可用的lsp管理器（可选）</li>
-</ol>
-<h3 id="为什么推荐用Foxmail"><a href="#为什么推荐用Foxmail" class="headerlink" title="为什么推荐用Foxmail"></a>为什么推荐用Foxmail</h3><ol>
-<li>依托国内 QQ 邮件服务器，网络访问稳定无门槛<blockquote>
-<p>底层走腾讯国内邮件节点，不用特殊网络环境收发邮件，对比 Gmail、Outlook 海外邮箱，国内打开、发信、收信速度快，不会出现收不到、发件延迟、登录失败的问题。</p>
-</blockquote>
-</li>
-<li>和原生 QQ 邮箱账号互通，数据完全同步<blockquote>
-<p>Foxmail属于原有QQ邮箱的别名，和原有的QQ邮箱账号共用一套邮箱存储空间、收件箱、已发送、通讯录、文件夹，QQ 邮箱收到的邮件会实时同步到Foxmail，双向实时更新，无需重新注册独立邮箱。</p>
-</blockquote>
-</li>
-<li>独立 Foxmail 邮箱后缀，兼顾隐私与海外通用性<blockquote>
-<p>@foxmail.com和@qq.com绑定同一账号，对外留邮箱时可以用foxmail后缀，避免暴露QQ数字号；海外平台对@foxmail.com的兼容性比@qq.com好一些。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>其实对我来说，即便是官方的QQ邮箱，广告也没有多到令人发指的程度，可能是平时用酷安“自适应”了。</p>
-<p>要净化QQ邮箱，最主要的其实还是去广告。如果你是root用户，这并不是一件难事，像<a href="https://github.com/Xposed-Modules-Repo/com.cxapk.viphelper">辰夕的VIP Helper模块</a>就提供了去广告的功能，哪怕是免root，借助FPA或者npatch之类的lsp管理器也能够使用，但是签名校验就成了一大难题。</p>
-<p>你当然可以把QQ&#x2F;Tim一块修补了，但是必须要提醒的是，如今腾讯系应用的风控今时不同往日，如果触发了封禁，麻烦的还是自己。</p>
-<p>因此，我们需要找到在尽可能不改动apk本身的情况下，去实现“净化”的效果。</p>
-<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能把本地的广告去掉。</p>
-<h3 id="2-使用IMAP登录QQ邮箱"><a href="#2-使用IMAP登录QQ邮箱" class="headerlink" title="2. 使用IMAP登录QQ邮箱"></a>2. 使用IMAP登录QQ邮箱</h3><p>看到这里可能会觉得有些奇怪：<br>QQ的邮箱登录QQ邮箱，为什么不直接用QQ授权登录，IMAP不是多此一举吗？</p>
-<blockquote>
-<p>使用IMAP登录和QQ授权登录有着本质区别，这种登录方式并不在QQ邮箱的会员体系内。 </p>
-</blockquote>
-<blockquote>
-<p>因为foxmail邮箱的特殊性，哪怕平台知道你用的是QQ的邮箱，但平台依旧会将其归类为第三方的IMAP邮箱，也就不会有会员推广之类的信息，界面也精简了很多。</p>
-</blockquote>
-<p>都用IMAP了，我为什么不用像Thunderbird之类的开源第三方邮件客户端，一样也没广告。</p>
-<blockquote>
-<p>QQ邮箱自家的IMAP登录有着第三方客户端无法比拟的优势，就是邮件收发延迟。</p>
-</blockquote>
-<blockquote>
-<p>与Windows端不同，从 Android 7.0 起，第三方 App 后台定时同步任务，系统强制最小执行间隔 15 分钟，就算代码写 1 分钟，系统也会合并、推迟到至少 15 分钟才允许联网同步。（数据源自豆包）</p>
-</blockquote>
-<blockquote>
-<p>经过实测，如果使用IMAP登录QQ邮箱，邮件接收的体验和授权登录是几乎一致的，毕竟客户端和服务器都是QQ邮箱的。</p>
-</blockquote>
-<p><strong>而且用IMAP登录还有两大优势，</strong></p>
-<ol>
-<li><p>Play版和老版本可以正常使用</p>
-<blockquote>
-<p>众所周知，在QQ邮箱更新到7.x.x版本后，会有强制弹窗要求你更新升级到最新版，否则可能无法继续使用QQ邮箱客户端。这是一种基于授权登录才会触发的强制弹窗，IMAP登录并不会出现这种情况。我们可以继续体验老版本和play版的独特优势。</p>
-</blockquote>
-</li>
-<li><p>解决了反编译apk后签名不一致导致的授权问题</p>
-<blockquote>
-<p>无论是免root管理器的修补，还是一些大佬单独做的去广告版apk，都不可避免遇到签名不一致导致的问题。哪怕有些apk做了微信和QQ的登录修复，但也只是治标不治本，和官方原版apk相比还是差了不少。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="⚠️注意⚠️"><a href="#⚠️注意⚠️" class="headerlink" title="⚠️注意⚠️"></a>⚠️注意⚠️</h3><p>在IMAP登录的时候，平台会识别到你的邮箱是QQ邮箱，提示<code>输入的是QQ邮箱账号，是否继续验证？</code>，这个时候要选择<code>手动设置</code>，它会自动配置。不要选验证，不然会跳转到授权验证登录的界面。</p>
-<blockquote>
-<p>如果你的邮箱还是qq.com后缀的会无法进入手动设置，只有<code>取消</code>和<code>验证</code>。</p>
-</blockquote>
-<h3 id="（可选）3-使用Xposed模块去广告"><a href="#（可选）3-使用Xposed模块去广告" class="headerlink" title="（可选）3.使用Xposed模块去广告"></a>（可选）3.使用Xposed模块去广告</h3><p>不过多赘述，QQ邮箱并没有太严格的签名校验，一般不会碰到闪退问题，找到合适的模块在lsp管理器内使用就行。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这看起来有点脱裤子放屁，废话可能也比较多，但这确实是我无意中发现的一种思路。希望这种思路能给大家的玩机路上一点启发。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>cloudfare-bitwarden （qaz741wsd856）</title>
-    <url>/2026/02/24/bitwarden-qaz741wsd856/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>一个 Cloudflare 账户</li>
-<li>一个 Github 账户</li>
-<li>一个没有被阻断的域名</li>
-</ol>
-<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="第一步，设置-Github-项目"><a href="#第一步，设置-Github-项目" class="headerlink" title="第一步，设置 Github 项目"></a>第一步，设置 Github 项目</h3><p>首先fork <a href="https://github.com/qaz741wsd856/warden-worker">项目仓库</a> 到你的账户，进入Action页面，启用Action。</p>
-<p>点击<code>settings</code>- <code>Secrets and variables</code> - <code>Actions</code>，准备添加 <code>Repository secrets</code>，接下来我们一共要添加三个secrets。</p>
-<p>然后进入 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，在浏览器地址栏中复制你的account id</p>
-<p><img src="https://img.infinitycm.top/file/20260224114100245.webp"></p>
-<p>回到github页面，点击<code>New repository secret</code>，名称写<code>CLOUDFLARE_ACCOUNT_ID</code>，值就写刚才复制的id。</p>
-<p>接着访问 <a href="https://dash.cloudflare.com/profile/api-tokens">https://dash.cloudflare.com/profile/api-tokens</a></p>
-<p>选择编辑Worker的模板，然后给它再添加编辑D1和编辑KV的权限，再创建api令牌，回到github页面添加为<code>CLOUDFLARE_API_TOKEN</code>。</p>
-<p><img src="https://img.infinitycm.top/file/20260224114316902.webp"></p>
-<p>最后去Cloudflare控制台的<code>存储与数据库</code> - <code>D1 sql 数据库</code>，创建一个数据库，并复制它的id。</p>
-<p><img src="https://img.infinitycm.top/file/20260224114347224.webp"></p>
-<p>回到github，添加为<code>D1_DATABASE_ID</code>。</p>
-<h4 id="附件支持（可选）"><a href="#附件支持（可选）" class="headerlink" title="附件支持（可选）"></a>附件支持（可选）</h4><p>本项目的附件功能依赖R2或KV，默认会自动创建用于存储附件的KV。</p>
-<p>KV完全免费不绑卡，单个附件限25MB；</p>
-<p>启用R2需要绑卡，本项目因为是用Worker转发，受请求体大小限制，单个附件限100MB。</p>
-<p>虽然Cloudflare提供了慷慨的R2免费额度，但可能产生非预期的扣费，参考Cloudflare R2 pricing，因此该功能默认关闭。</p>
-<p>如果你想启用R2支持，需要先去Cloudflare控制台创建一个R2储存桶，记下它的名称。</p>
-<p>在github仓库中添加一个名为<code>R2_NAME</code>的secret，值就填刚才创建的桶名称。</p>
-<p>如果你完全不需要附件支持，可以在<code>wrangler.toml</code>中删除KV和R2绑定，仍可以正常使用其他功能。</p>
-<p>至此在github上的配置就完毕了，点击上方的<code>Actions</code>选项卡，选到Build工作流点运行即可。</p>
-<h3 id="第二步：建表"><a href="#第二步：建表" class="headerlink" title="第二步：建表"></a>第二步：建表</h3><p>现在Github Actions会自动在数据库为空时建表，无需手动建表。</p>
-<h3 id="第三步：配置环境变量与自定义域名"><a href="#第三步：配置环境变量与自定义域名" class="headerlink" title="第三步：配置环境变量与自定义域名"></a>第三步：配置环境变量与自定义域名</h3><p>当github的Action执行完毕后，你就能在CF的Workers中找到刚才创建的 <code>warden-worker</code>了，进入这个Worker的设置页面，在<code>变量和机密</code>栏添加以下三个密钥：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ALLOWED_EMAILS</td>
-<td>允许注册的完整邮箱（支持通配符），用,分隔</td>
-</tr>
-<tr>
-<td></td>
-<td>（例：<a href="mailto:&#x79;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#109;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#109;">&#x79;&#x6f;&#117;&#114;&#45;&#110;&#x61;&#109;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#109;</a>,*@xxx.com）</td>
-</tr>
-<tr>
-<td>JWT_SECRET</td>
-<td>随机长字符串（32字节以上）</td>
-</tr>
-<tr>
-<td>JWT_REFRESH_SECRET</td>
-<td>随机长字符串（32字节以上）</td>
-</tr>
-</tbody></table>
-<h4 id="可选环境变量"><a href="#可选环境变量" class="headerlink" title="可选环境变量"></a>可选环境变量</h4><ul>
-<li><code>IMPORT_BATCH_SIZE</code>：用于控制导入密码库时，每次批操作的数据条数，默认为30，设为0代表一次批操作导入所有数据（不推荐）；如果你需要导入的库特别大，可以适当调大这个值。</li>
-<li><code>PASSWORD_ITERATIONS</code>: 服务端PBKDF2迭代次数，默认600000，最小600000.</li>
-<li><code>TRASH_AUTO_DELETE_DAYS</code>: 配置回收站中的项目多少天后会被清理，默认为30，设为0代表永不清理。</li>
-<li><code>DISABLE_USER_REGISTRATION</code>: 用于控制是否表明服务器不支持注册，默认为true，设为false可以让客户端显示注册按钮；该选项不影响实际注册功能。</li>
-<li><code>AUTHENTICATOR_DISABLE_TIME_DRIFT</code>: 控制是否允许TOTP的时间±1偏移，默认为true。</li>
-<li><code>ATTACHMENT_MAX_BYTES</code>: 单个附件的大小限制，单位字节，默认不限制，填104857600则代表100MB。</li>
-<li><code>ATTACHMENT_TOTAL_LIMIT_KB</code>: 单个用户的总附件大小限制，单位KB，默认不限制，填1048576代表1GB。</li>
-<li><code>ATTACHMENT_TTL_SECS</code>: 附件的上传下载链接的有效时间，默认五分钟。</li>
-</ul>
-<p>然后在<code>域和路由</code>中添加一个路由，区域选择你的域名，路由写你分给这个Worker的子域名 + <code>/*</code>（如<code>bitwarden.example.com/*</code>）。</p>
-<p>最后别忘记去给这个子域名添加一条dns记录。</p>
-<p>如果你想优选IP，那就不开小黄云，把它CNAME到一个优选过的域名。</p>
-<p>要是不想优选，那就打开小黄云，目标随便填。</p>
-<blockquote>
-<p>建议去域名配置页的 安全性 - 安全规则 里给 &#x2F;identity&#x2F;* 和 &#x2F;api&#x2F;accounts&#x2F;* 添加速率限制规则。</p>
-</blockquote>
-<h3 id="第四步，创建账户并导入数据"><a href="#第四步，创建账户并导入数据" class="headerlink" title="第四步，创建账户并导入数据"></a>第四步，创建账户并导入数据</h3><p>这步其实没啥好说的了，如果已有bitwarden库，在电脑上把它导出为JSON即可。</p>
-<p>前端默认隐藏了注册按钮，可以参考上一步的环境变量开启然后清空缓存，或者直接访问<code>https:// 你的域名 /#/register</code>即可注册。</p>
-<p>注意: 创建账户时用的密码必须记住，没有任何方式能找回。</p>
-<h3 id="（可选）第五步，配置数据库自动备份-S3-Webdav"><a href="#（可选）第五步，配置数据库自动备份-S3-Webdav" class="headerlink" title="（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)"></a>（可选）第五步，配置数据库自动备份(S3&#x2F;Webdav)</h3><p>官方文档：<a href="https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md">https://github.com/qaz741wsd856/warden-worker/blob/main/docs/db-backup-recovery.md</a></p>
-<p>将以下密钥添加到你的 GitHub 仓库 (<code>Settings &gt; Secrets and variables &gt; Actions</code>):</p>
-<h4 id="S3兼容存储-可选"><a href="#S3兼容存储-可选" class="headerlink" title="S3兼容存储 (可选)"></a>S3兼容存储 (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必需</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>S3_ACCESS_KEY_ID</code></td>
-<td>yes (for S3)</td>
-<td>您的 S3 访问密钥 ID</td>
-</tr>
-<tr>
-<td><code>S3_SECRET_ACCESS_KEY</code></td>
-<td>yes (for S3)</td>
-<td>您的 S3 密钥访问密钥</td>
-</tr>
-<tr>
-<td><code>S3_BUCKET</code></td>
-<td>yes (for S3)</td>
-<td>用于存储备份的 S3 存储桶名称</td>
-</tr>
-<tr>
-<td><code>S3_REGION</code></td>
-<td>yes (for S3)</td>
-<td>S3 区域（例如，us-east-1）。不确定时，使用 auto</td>
-</tr>
-<tr>
-<td><code>S3_ENDPOINT</code></td>
-<td>no</td>
-<td>自定义 S3 端点 URL。未设置时默认为 AWS S3。适用于 S3 兼容服务（MinIO、Cloudflare R2、Backblaze B2 等）</td>
-</tr>
-</tbody></table>
-<h4 id="WebDAV-可选"><a href="#WebDAV-可选" class="headerlink" title="WebDAV (可选)"></a>WebDAV (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必须</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>WEBDAV_URL</code></td>
-<td>yes (for WebDAV)</td>
-<td>webdav对应的url，一般是<a href="https://domain.xxx/dav">https://domain.xxx/dav</a></td>
-</tr>
-<tr>
-<td><code>WEBDAV_USER</code></td>
-<td>yes (for WebDAV)</td>
-<td>用户名</td>
-</tr>
-<tr>
-<td><code>WEBDAV_PASSWORD</code></td>
-<td>yes (for WebDAV)</td>
-<td>WebDAV 密码</td>
-</tr>
-<tr>
-<td><code>WEBDAV_VENDOR</code></td>
-<td>no</td>
-<td>rclone 的 WebDAV 供应商（nextcloud、owncloud 或其他 ）。默认为其他</td>
-</tr>
-<tr>
-<td><code>WEBDAV_BASE_PATH</code></td>
-<td>no</td>
-<td>远程备份的基本路径。默认为 warden-worker</td>
-</tr>
-</tbody></table>
-<h4 id="通用配置-可选"><a href="#通用配置-可选" class="headerlink" title="通用配置 (可选)"></a>通用配置 (可选)</h4><table>
-<thead>
-<tr>
-<th>密钥</th>
-<th>必须</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>BACKUP_ENCRYPTION_KEY</code></td>
-<td>no</td>
-<td>备份的加密密钥，不填就不加密，填了要记住</td>
-</tr>
-<tr>
-<td><code>BACKUP_RETENTION_DAYS</code></td>
-<td>no</td>
-<td>保留备份的天数。默认为30天</td>
-</tr>
-</tbody></table>
-<p>Action会分别检查这两种备份的凭据配置情况，如果只需要一种备份方式，可以只填对应的凭据，没填的会自动跳过。</p>
-<p>然后在Action页面中选到<code>Backup D1 Database to S3</code>，手动触发一次，等待它运行完成，然后检查你的S3中是否有备份文件。成功后，每天都会自动备份一次，每个备份默认保存30天。</p>
-<h4 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h4><p>其实 Cloudflare D1 提供了回滚到30天内的任意时刻的功能：<a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel documentation</a></p>
-<blockquote>
-<p>查看当前bookmark<br>DATABASE_NAME换成你在Cloudflare控制台里设置的D1名称<br>wrangler d1 time-travel info DATABASE_NAME</p>
-<p>回退到指定时间 (ISO 8601)<br>wrangler d1 time-travel restore DATABASE_NAME –timestamp&#x3D;2024-01-15T12:00:00Z</p>
-<p>回退到指定bookmark<br>wrangler d1 time-travel restore DATABASE_NAME –bookmark&#x3D;<bookmark_id></p>
-</blockquote>
-<p>通过这个操作，就算库出了问题也能快速回滚，再配上S3备份，是不是感觉这一通操作不那么灵车了？</p>
-<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><p>本项目不是Vaultwarden的兼容层，不保证安全性跟Vaultwarden持平，如果你对安全性有疑虑，请使用其他更热门、经过验证的Bitwarden服务端；如果你发现本项目存在安全性问题，请在github中提交(github仓库中的<code>security</code> - <code>Report a vulnerability</code>)</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>bitwarden</tag>
-        <tag>cloudfare</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
-    <url>/2026/02/07/bitwarden-steam/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
-<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
-<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
-</ol>
-<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://img.infinitycm.top/file/20260207220355907.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220409500.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220433822.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220452262.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220506308.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220518355.webp"></p>
-<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
-<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
-<p><img src="https://img.infinitycm.top/file/20260207220746725.webp"></p>
-<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
-<li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li>
-<li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260207220843594.webp"></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>bitwarden</tag>
       </tags>
   </entry>
   <entry>
@@ -1059,6 +1003,116 @@
         <tag>cloudfare</tag>
         <tag>机场</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
+    <url>/2026/02/07/bitwarden-steam/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
+<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
+<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://img.infinitycm.top/file/20260207220355907.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220409500.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220433822.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220452262.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220506308.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220518355.webp"></p>
+<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
+<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
+<p><img src="https://img.infinitycm.top/file/20260207220746725.webp"></p>
+<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
+<li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li>
+<li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260207220843594.webp"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flclash</title>
+    <url>/2025/05/13/flclash/</url>
+    <content><![CDATA[<h2 id="FlClash"><a href="#FlClash" class="headerlink" title="FlClash"></a>FlClash</h2><p><a href="https://github.com/chen08209/FlClash">Github开源地址</a></p>
+<p><a href="https://github.com/chen08209/FlClash/releases">Release下载</a></p>
+<p><a href="https://t.me/FlClash">telegram群组</a></p>
+<p>基于ClashMeta的多平台代理客户端，简单易用，开源无广告。</p>
+<h4 id="注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点"><a href="#注意，记得在“基本设置-常规-UA”把-UA-改成-clash-verge-1-6-6，不然相同机场的情况下会比-clash-meta-天生少一批节点" class="headerlink" title="注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点"></a>注意，记得在“基本设置-常规-UA”把 UA 改成 clash-verge&#x2F;1.6.6，不然相同机场的情况下会比 clash meta 天生少一批节点</h4><p>on Desktop:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif">
+
+<p>on Mobile:</p>
+<img src="https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif">
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>✈️ 多平台: Android, Windows, macOS and Linux</p>
+<p>💻 自适应多个屏幕尺寸,多种颜色主题可供选择</p>
+<p>💡 基本 Material You 设计, 类Surfboard用户界面</p>
+<p>☁️ 支持通过WebDAV同步数据</p>
+<p>✨ 支持一键导入订阅, 深色模式</p>
+]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FPA食用指北</title>
+    <url>/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
+<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+<hr>
+<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
+<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<hr>
+<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222759.webp"></p>
+<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222812.webp"></p>
+<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222804.webp"></p>
+<p>无论选择了哪一个，都会进入到图示的patch界面</p>
+<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
+<p>内置过签方案：按需选择，普通或者增强都行。</p>
+<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
+<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_225353.webp"></p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_230428.webp"></p>
+<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
+<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222828.webp"></p>
+<hr>
+<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
+<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/12/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>cloudfare-bitwarden （nodewarden）</title>
@@ -1237,24 +1291,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/12/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>免Root内置Xposed模块应用（精力有限不再更新）</title>
     <url>/2024/12/06/%E5%85%8Droot%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h3><p><strong><u>（增加了校验，已不推荐使用）</u></strong></p>
@@ -1395,46 +1431,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何使用官版TikTok</title>
-    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
-    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
-<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
-<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
-<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
-<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
-<p>🌏 解锁运营商限制，使用更多本地功能</p>
-<p>🔓 突破某些区域限制的应用和服务</p>
-<p>🛠️ 解决国际漫游时的兼容性问题</p>
-<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
-<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
-<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
-<p>无需 Root 权限</p>
-<p>不修改系统文件</p>
-<p>不影响系统稳定性</p>
-<p>不会对 SIM 卡造成任何影响</p>
-<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
-<p>支持双卡设备，可分别配置</p>
-<p>一次修改永久生效，重启后保持</p>
-<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
-<p>智能检测设备和 SIM 卡状态</p>
-<p>自动安装所需应用</p>
-<p>简洁优雅的用户界面</p>
-<p>轻量且高效，安装包体积小</p>
-<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
-<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
-<p>部分设备可能不支持修改国家码</p>
-<p>如需还原设置，请使用应用内的还原功能</p>
-<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
-<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
-<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
     <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
@@ -1494,53 +1490,17 @@
       </categories>
   </entry>
   <entry>
-    <title>lspatch及其类似物使用教程</title>
-    <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
-    <content><![CDATA[<h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
-<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
-<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
-<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
-<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
-<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
-<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
-<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
-<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
-<hr>
-<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
-<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
-<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
-<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
-<hr>
-<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
-<h4 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_195947.webp"></p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200000.webp"></p>
-<h4 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h4><h4 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h4><h4 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200009.webp"></p>
-<h4 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h4><h4 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200016.webp"></p>
-<h4 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h4><h4 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h4><h4 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200024.webp"></p>
-<h4 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h4><h4 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h4><h4 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200031.webp"></p>
-<h4 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h4><h4 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200037.webp"></p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200042.webp"></p>
-<h4 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200048.webp"></p>
-<h4 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h4><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200055.webp"></p>
-<h4 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200101.webp"></p>
-<h4 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200107.webp"></p>
-<h4 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200113.webp"></p>
-<h4 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200120.webp"></p>
-<h4 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h4><h4 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200127.webp"></p>
-<h4 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200139.webp"></p>
-<hr>
-<h4 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h4><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">lsp加载器下载链接</a></p>
-<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
-<p><a href="https://www.coolapk.com/">酷安</a></p>
-<h4 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200156.webp"></p>
+    <title>博客食用指北</title>
+    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
+<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
+<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
+<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
+<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
+<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
+<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
+<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
 ]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>Xposed</tag>
-      </tags>
   </entry>
   <entry>
     <title>手机应用平替思路</title>
@@ -1610,62 +1570,6 @@
       <categories>
         <category>Tutorials</category>
       </categories>
-  </entry>
-  <entry>
-    <title>clash怎么用？</title>
-    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
-    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
-<hr>
-<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233502.webp"></p>
-<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233509.webp"></p>
-<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233512.webp"></p>
-<p>配置名起一个自己能认得出来的名字就行</p>
-<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
-<p>自动更新随便填，1440或者30都行。</p>
-<p>填写完成之后点击右上角的保存即可。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233522.webp"></p>
-<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
-<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
-<p>全局代理即全部都走海外网络。直连模式则相反。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233529.webp"></p>
-<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233539.webp"></p>
-<hr>
-<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
-<p>可以先进设置页把语言改成中文。</p>
-<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-48-03.webp"></p>
-<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
-<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-49-48.webp"></p>
-<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
-<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-51-09.webp"></p>
-<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
-<p>默认模式同样是规则模式。</p>
-<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
-<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-53-05.webp"></p>
-<hr>
-<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
-<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235644.webp"></p>
-<p>找到最下面的“访问控制模式”</p>
-<p>允许所有应用——默认规则</p>
-<p>仅允许已选择的应用——白名单模式。</p>
-<p>不允许已选择的应用——黑名单模式。</p>
-<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235647.webp"></p>
-<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235655.webp"></p>
-<p>完成后打开代理即可。</p>
-<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-      </tags>
   </entry>
   <entry>
     <title>手机运行PC应用</title>
@@ -1838,33 +1742,102 @@
       </categories>
   </entry>
   <entry>
-    <title>FPA食用指北</title>
-    <url>/2025/01/05/fpa%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h4 id="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。"><a href="#在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持-Android-15-的-lspatch。" class="headerlink" title="在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。"></a>在介绍FPA之前，先提供一个lspatch的JingMatrix分支版本，可以理解为支持 Android 15 的 lspatch。</h4><p><a href="https://www.123865.com/s/xEXZVv-ma4U3">JingMatrix123云盘下载链接</a></p>
-<p><a href="https://github.com/JingMatrix/LSPatch">JingMatrix的GitHub</a></p>
+    <title>clash怎么用？</title>
+    <url>/2025/01/06/%E6%80%8E%E4%B9%88%E7%94%A8clash/</url>
+    <content><![CDATA[<h4 id="clash-下载介绍"><a href="#clash-下载介绍" class="headerlink" title="clash 下载介绍"></a><em><strong><a href="https://chengeeker.github.io/2024/12/05/clash/index.html">clash 下载介绍</a></strong></em></h4><h4 id="机场购买地址"><a href="#机场购买地址" class="headerlink" title="机场购买地址"></a><em><strong><a href="https://chengeeker.github.io/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/index.html">机场购买地址</a></strong></em></h4><p>如果点不开就在博客内搜。</p>
 <hr>
-<h4 id="然后是FPA的下载地址"><a href="#然后是FPA的下载地址" class="headerlink" title="然后是FPA的下载地址"></a>然后是FPA的下载地址</h4><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">FPA123云盘下载链接</a></p>
-<p><a href="https://t.me/QToolCI">FPA作者的公开频道</a></p>
+<h4 id="首先介绍-Android-端。（先介绍最基础的操作）"><a href="#首先介绍-Android-端。（先介绍最基础的操作）" class="headerlink" title="首先介绍 Android 端。（先介绍最基础的操作）"></a>首先介绍 Android 端。（先介绍最基础的操作）</h4><p>下载好 clash meta for Android，打开。点击“配置”</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233502.webp"></p>
+<p>在配置页面可以看到自己订阅的机场。我们点击右上角的加号导入。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233509.webp"></p>
+<p>这里有两种导入方式。一般来说机场提供的都是URL链接，我们选择URL导入即可。如果是从网上下载的yaml文件就选择第一个“文件导入”。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233512.webp"></p>
+<p>配置名起一个自己能认得出来的名字就行</p>
+<p>URL就把机场提供的链接粘贴上去。（一般来说购买套餐之后机场都会有一个“一键订阅”的选项，里面会有复制订阅链接或者直接导入到clash，选择一个就行）</p>
+<p>自动更新随便填，1440或者30都行。</p>
+<p>填写完成之后点击右上角的保存即可。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233522.webp"></p>
+<p>我们回到主页，启动 clash 。此时代理就已成功运行，网络成功出海。</p>
+<p>默认模式为规则模式，即国内应用网页继续走国内网络，海外的走海外网络。</p>
+<p>全局代理即全部都走海外网络。直连模式则相反。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233529.webp"></p>
+<p>你可以在“代理”栏选择想要更换的海外节点。也可以看到每个节点的延迟。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_233539.webp"></p>
 <hr>
-<p>FPA其实并不是特别难用，如果是有lspatch及其类似物的使用经验的话上手难度几乎为零。FPA可以看作是opatch的延续，支持免后台运行等特性。除了支持 Android 15 之外，和原版不一样的是，这个框架是作者专门给 funbox 写的，也就是说**<u>用在其他模块上可能会不生效，而且只支持本地模式，不支持内置</u>**。所以对于一般的免 root 用户来说，我建议 FPA 和 lspatch 双持。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222759.webp"></p>
-<p>如图为FPA的操作界面。右下角第一个按钮为签名编辑，可以上传自己的签名文件，如果不上传的话默认使用的是 FPA 的签名。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222812.webp"></p>
-<p>右下角第二个键也就是 “+” 键，和传统的 lspatch 是一样的。选择已安装的应用或者apk文件。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222804.webp"></p>
-<p>无论选择了哪一个，都会进入到图示的patch界面</p>
-<p>Hook核心：建议选择LSPlant。这俩的区别我也解释不出来。</p>
-<p>内置过签方案：按需选择，普通或者增强都行。</p>
-<p>重打包签名：注意⚠️，这里是可以选择的。默认使用的是 FPA 自带的签名，如果你是原lspatch的用户想要无痛移植应用，就点击“重打包签名”，选择“LSPatchSign”</p>
-<p>注入文件提供器：建议打开，功能不嫌多，除非出bug。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_225353.webp"></p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_230428.webp"></p>
-<p>执行完 PATCH 之后可以选择直接安装，也可以选择把安装包保存到 download 文件夹里。安装流程并不需要启动 shizuku 。</p>
-<p>安装完成后，我们在主界面点击目标应用，就会进入作用域选择界面。如下图为小红书的作用域。在这里开启对应的 Xposed 模块即可。</p>
-<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_222828.webp"></p>
+<h4 id="接下来是-Windows-。"><a href="#接下来是-Windows-。" class="headerlink" title="接下来是 Windows 。"></a>接下来是 Windows 。</h4><p>我们下载好 clash verge 并打开。</p>
+<p>可以先进设置页把语言改成中文。</p>
+<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-48-03.webp"></p>
+<p>和手机端不同的是，你可以直接把订阅的URL输入“订阅文件链接”内，也可以选择“新建”</p>
+<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-49-48.webp"></p>
+<p>“新建”里分 remote 和 local ，其实和手机是一样的。这里不再赘述。我们填写好对应信息保存即可。</p>
+<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-51-09.webp"></p>
+<p>订阅成功之后，我们可以回到“代理”页，选择自己需要的节点。</p>
+<p>默认模式同样是规则模式。</p>
+<p>Windows版本很多按键都有解释，不难理解，不懂的话查查Google就行。</p>
+<p><img src="https://img.infinitycm.top/file/PixPin_2025-01-05_23-53-05.webp"></p>
 <hr>
-<h4 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a><strong><u>一些注意事项：</u></strong></h4><p>和原版lspatch不一样的是，FPA重打包并不依赖原版安装包，也就是说在更新 FPA 之后，你可以直接选择“选择已安装的应用”走打包流程进行加载器或者应用的更新。</p>
-<p>如果你原来的加载器是 lspatch 的，你也可以直接“选择已安装的应用”走打包流程，FPA会识别并提取原包的签名，不再需要自己去找原版的安装包。这和 lspatch 是不一样的，lspatch不支持二次打包。</p>
+<h4 id="Add-More"><a href="#Add-More" class="headerlink" title="Add More"></a><strong>Add More</strong></h4><p>关于 Android 端，因为有些应用只用规则模式依然会有使用上的问题，或者说部分国内应用也走的海外网络导致使用起来很卡。这时候我们就要用到 clash 的黑白名单机制。</p>
+<p>我们在***<u>关闭代理的情况下</u>***，点击“设置”，选择“网络”</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235644.webp"></p>
+<p>找到最下面的“访问控制模式”</p>
+<p>允许所有应用——默认规则</p>
+<p>仅允许已选择的应用——白名单模式。</p>
+<p>不允许已选择的应用——黑名单模式。</p>
+<p>访问控制应用包列表就是应用清单，自己根据选择的模式勾选需要的应用即可。</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235647.webp"></p>
+<p>如图，我选择的是“不允许勾选的应用使用海外网络”</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20250105_235655.webp"></p>
+<p>完成后打开代理即可。</p>
+<p>其他的设置项并不难理解，按需打开即可。不懂的话查查 Google 或者 YouTube ，一般都有容易理解的教程或者解释。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lspatch及其类似物使用教程</title>
+    <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
+    <content><![CDATA[<h3 id="首先我们要了解lspatch是什么。"><a href="#首先我们要了解lspatch是什么。" class="headerlink" title="首先我们要了解lspatch是什么。"></a><strong>首先我们要了解lspatch是什么。</strong></h3><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
+<p>lspatch兼容大部分Android设备，特别是支持Android 9及其以上版本。它采用从应用内部修改的方案，而传统的Xposed方案则是从外部借助root权限修改。</p>
+<h3 id="特点与优势："><a href="#特点与优势：" class="headerlink" title="特点与优势："></a><strong>特点与优势：</strong></h3><p>lspatch解决了非ROOT设备无法使用模块的痛点，无需解锁BL或获取Root权限，即可使用Xposed模块。它提供了与原版Xposed相同的API，使用YAHFA（或SandHook）进行hook，保证了功能的稳定性和兼容性。lspatch的使用相对简单，即使对于手机操作新手来说，也能轻松上手。</p>
+<h3 id="缺陷与不足："><a href="#缺陷与不足：" class="headerlink" title="缺陷与不足："></a><strong>缺陷与不足：</strong></h3><p>由于lspatch实现Xposed功能是基于修改应用安装包实现的，因此，在安装包出现改动后，安装包的签名会发生变化。这会导致一些对签名验证非常严格的应用无法识别到修补后的应用，会对应用本身的使用体验造成极大的影响（例如提示签名与开放平台不一致，导致无法调用微信，对于没有root的机器来说<strong>无解</strong>）。应用也无法通过应用商店正常更新，无论是更新Xposed模块（ps：本地模式不用）还是更新应用版本，都需要到lspatch内对新版安装包重新修补。</p>
+<p>此外，并不是所有的应用都能够进行修补，例如一些被企业数字加固过的安装包在修补过后会出现闪退等现象。对于不同的修补方式，不同的应用也会存在一些兼容性上的问题，导致某些模块无法正常工作或产生不可预期的行为，存在一定的局限性。</p>
+<p>最后，lspatch只能使用作用域是应用本身的模块，一些作用域是系统本身的模块是无法使用的，因此玩机资源相较于LSPosed会少很多，部分开发者也对免root框架感到不满（出于防止倒卖以及开发考虑的目的），可能会在功能使用上进行较大的限制。</p>
+<h3 id="修补方式的区别："><a href="#修补方式的区别：" class="headerlink" title="修补方式的区别："></a><strong>修补方式的区别：</strong></h3><p><strong>本地模式：</strong>模块作用域可以动态更改，用户可以随时更改生效的模块。在仅更新模块时不需要再走一遍修补流程，直接升级模块即可（更新完模块记得重启一下应用）（更新应用依然要重新修补）。但经修补的应用需要lspatch管理器保持后台运行才能正常启动。这意味着用户需要始终确保lspatch在后台运行，否则修补后的应用会出现闪退等情况，无法正常工作。</p>
+<p><strong>便携模式：</strong>经修补的应用可以在没有管理器的情况下运行（可以不用把lspatch锁后台），修补后的成品安装包也可以直接分享出去，接收者无需进行任何操作就可以使用（网上各种定制包的由来）。但Xposed作用域不能动态管理配置。无论是更新模块还是更新应用都要到lspatch内重新走一遍修补流程。这限制了用户在使用过程中的灵活性和定制性。在目前的大环境下，一些模块并不支持便携&#x2F;内置模式（被开发者抵制），功能限制更多。</p>
+<p>在签名一致的情况下，本地模式可以与便携模式互相转化。</p>
+<hr>
+<h3 id="目前主流的版本："><a href="#目前主流的版本：" class="headerlink" title="目前主流的版本："></a><strong>目前主流的版本：</strong></h3><p><strong>lspatch</strong>：原版，由由LSPosed框架的开发者推出，现已归档停更。快捷安装功能依赖shizuku。</p>
+<p><strong>npatch</strong>：lspatch的改版，有第三方作者对其进行维护，与原版区别不是很大，但不大好用。</p>
+<p><strong>opatch</strong>：lspatch的魔改版本，对原版进行了优化，解决了原版lspatch需要锁后台以保证前台应用正常运行的缺陷（无需锁后台），且脱离了对shizuku的依赖，是目前免root框架最常用的版本。唯一的缺点是启动opatch时会有“原神”的启动动画，对于一些反感原神的用户不太友好。</p>
+<p><strong>onpatch</strong>：opatch的修改版本，在保留opatch的所有功能特性的基础上，仅去除了“原神”的启动动画，对一些内容也进行了微调。</p>
+<hr>
+<h3 id="实机演示："><a href="#实机演示：" class="headerlink" title="实机演示："></a><strong>实机演示：</strong></h3><p>以下演示版本为onpatch，演示应用为微博，Xposed模块为微博猪手</p>
+<h4 id="onpatch主界面"><a href="#onpatch主界面" class="headerlink" title="onpatch主界面"></a><strong>onpatch主界面</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_195947.webp"></p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200000.webp"></p>
+<h4 id="onpatch设置页面（详细注入日志可以关掉）"><a href="#onpatch设置页面（详细注入日志可以关掉）" class="headerlink" title="onpatch设置页面（详细注入日志可以关掉）"></a><strong>onpatch设置页面（详细注入日志可以关掉）</strong></h4><h4 id="onpatch管理页（应用）"><a href="#onpatch管理页（应用）" class="headerlink" title="onpatch管理页（应用）"></a><strong>onpatch管理页（应用）</strong></h4><h4 id="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"><a href="#在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用" class="headerlink" title="在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用"></a><strong>在授权读取应用列表后就可以看到我们目前能被lsp识别到的应用</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200009.webp"></p>
+<h4 id="onpatch管理页（模块）"><a href="#onpatch管理页（模块）" class="headerlink" title="onpatch管理页（模块）"></a><strong>onpatch管理页（模块）</strong></h4><h4 id="在这里可以看到我们设备上已经安装的模块"><a href="#在这里可以看到我们设备上已经安装的模块" class="headerlink" title="在这里可以看到我们设备上已经安装的模块"></a><strong>在这里可以看到我们设备上已经安装的模块</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200016.webp"></p>
+<h4 id="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"><a href="#我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。" class="headerlink" title="我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。"></a><strong>我们在应用管理页点击右下角的加号，在“选择存储目录”中点击“确定”。</strong></h4><h4 id="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"><a href="#这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置" class="headerlink" title="这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置"></a><strong>这一步是用来确认我们修补之后的应用安装包会保存在系统的哪个位置</strong></h4><h4 id="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"><a href="#我们在文件管理器中选择一个用于存放修补后安装包的文件夹" class="headerlink" title="我们在文件管理器中选择一个用于存放修补后安装包的文件夹"></a><strong>我们在文件管理器中选择一个用于存放修补后安装包的文件夹</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200024.webp"></p>
+<h4 id="再次回到应用管理页，点击右下角的加号"><a href="#再次回到应用管理页，点击右下角的加号" class="headerlink" title="**再次回到应用管理页，点击右下角的加号"></a>**再次回到应用管理页，点击右下角的加号</h4><h4 id="如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"><a href="#如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。" class="headerlink" title="**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。"></a>**如果你的设备还没有安装这个应用，或者是打算更新已修补的应用，就选择第一个选项，在手机存储目录里找到你要使用的安装包。</h4><h4 id="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"><a href="#如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。" class="headerlink" title="如果你的设备已经安装了这个应用的原版（注意不是修补版本，因为不能二次修补），那么则选择第二个选项，在提供的应用列表里选择这个应用即可。"></a><strong>如果你的设备已经安装了这个应用的</strong><u>原版（注意不是修补版本，因为不能二次修补）</u>，那么则选择第二个选项，在提供的应用列表里选择这个应用即可。</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200031.webp"></p>
+<h4 id="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"><a href="#进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）" class="headerlink" title="进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）"></a><strong>进入此页面后，我们可以调整修补设置。例如“注入文件提供者”推荐打开（配合MT管理器使用），“输出日志到目录”推荐关闭（如果没有反馈需求的话），覆写版本号按需打开（因为部分应用和模块对版本号有强制要求，除非有降级需求不然一般不开，开了之后应用商店会一直提示更新容易逼死强迫症）</strong></h4><h4 id="本地模式与便携模式的区别在上文有说"><a href="#本地模式与便携模式的区别在上文有说" class="headerlink" title="本地模式与便携模式的区别在上文有说"></a><strong>本地模式与便携模式的区别在上文有说</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200037.webp"></p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200042.webp"></p>
+<h4 id="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"><a href="#本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包" class="headerlink" title="本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包"></a><strong>本地模式下直接点击“开始注入”，此时会输出一个签名不一样的安装包</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200048.webp"></p>
+<h4 id="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"><a href="#如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。" class="headerlink" title="如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。"></a><strong>如图，如果我们一开始已经安装了原版应用，就需要卸载原版应用重新安装修补后的安装包。注意备份重要数据。</strong></h4><p>（如果有核心破解可以忽略，不过都核心破解了谁还用patch）</p>
+<p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200055.webp"></p>
+<h4 id="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"><a href="#我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”" class="headerlink" title="我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”"></a><strong>我们回到应用管理页面，可以看到多了一个应用（显示为“本地加载器模式”，“7”代表修补时lspatch的版本，如果后续lspatch更新的话会出现“优化”选项，点击“优化”就可以同步lspatch的版本），点击刚刚安装的应用，选择“模块作用域”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200101.webp"></p>
+<h4 id="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"><a href="#在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”" class="headerlink" title="在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”"></a><strong>在弹出的模块页面里勾选我们需要使用的Xposed模块，勾选后点击右下角的“✔”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200107.webp"></p>
+<h4 id="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"><a href="#此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）" class="headerlink" title="此时我们在应用设置页面强制停止这个应用，并清理应用缓存（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）"></a><strong>此时我们在应用设置页面强制停止这个应用，并清理应用缓存</strong>（防止出现兼容性问题导致闪退）。完成后进入该应用的设置页面，可以看到模块已成功生效。（一般模块的入口都会在设置页）</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200113.webp"></p>
+<h4 id="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"><a href="#如果你选择的是便携模式（内置模式），那么点击“嵌入模块”" class="headerlink" title="如果你选择的是便携模式（内置模式），那么点击“嵌入模块”"></a><strong>如果你选择的是便携模式（内置模式），那么点击“嵌入模块”</strong></h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200120.webp"></p>
+<h4 id="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"><a href="#如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包" class="headerlink" title="如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包"></a><strong>如果你的模块没有安装，或者想直接打包更高版本的模块，就选择第一个，找到你需要嵌入的Xposed模块安装包</strong></h4><h4 id="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"><a href="#如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”" class="headerlink" title="如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”"></a>如果你已经安装了模块，那么就选择第二个，在弹出的模块列表里勾选你需要注入的模块，勾选后点击右下角的“✔”，点击“开始注入”</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200127.webp"></p>
+<h4 id="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"><a href="#安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作" class="headerlink" title="安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作"></a>安装后就可以看到刚刚安装的应用显示的是“内置模式”，不可对其进行本地模式的操作</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200139.webp"></p>
+<hr>
+<h4 id="内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。"><a href="#内容大致就是这些，上文涉及到的-lsp-加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub-等平台上找到。" class="headerlink" title="内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。"></a>内容大致就是这些，上文涉及到的 lsp 加载器以及模块可以直接在网上搜，绝大部分都能在爱玩机工具箱、酷安、GitHub 等平台上找到。</h4><h3 id="简单提供一些下载链接"><a href="#简单提供一些下载链接" class="headerlink" title="简单提供一些下载链接"></a>简单提供一些下载链接</h3><p><a href="https://www.123912.com/s/xEXZVv-dtxU3">lsp加载器下载链接</a></p>
+<p><a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a></p>
+<p><a href="https://www.coolapk.com/">酷安</a></p>
+<h4 id="希望各位能养成爱动手，善查询，会提问的好习惯！"><a href="#希望各位能养成爱动手，善查询，会提问的好习惯！" class="headerlink" title="希望各位能养成爱动手，善查询，会提问的好习惯！"></a>希望各位能养成爱动手，善查询，会提问的好习惯！</h4><p><img src="https://img.infinitycm.top/file/Screenshot_20260619_200156.webp"></p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -1874,17 +1847,44 @@
       </tags>
   </entry>
   <entry>
-    <title>博客食用指北</title>
-    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
-<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
-<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
-<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
-<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
-<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
-<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
-<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
+    <title>如何使用官版TikTok</title>
+    <url>/2025/04/27/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%98%E7%89%88TikTok/</url>
+    <content><![CDATA[<p>一般情况下，tiktok对地区的限制是很严格的。如果想用最省事的方式刷tiktok，那就去<a href="https://chengeeker.github.io/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/">这里</a>下载修改版的tiktok。</p>
+<p>但也考虑到有些用户不想用修改版，这里提供另一种使用官版tiktok的方法。</p>
+<p>这里使用到的app有：<strong>shizuku、Nrfr <em>(结尾有个人提醒)</em></strong></p>
+<h3 id="Nrfr项目地址"><a href="#Nrfr项目地址" class="headerlink" title="Nrfr项目地址"></a><a href="https://github.com/Ackites/Nrfr?tab=readme-ov-file#-%E7%89%B9%E6%80%A7">Nrfr项目地址</a></h3><p><a href="https://github.com/Ackites/Nrfr/releases">Nrfr下载地址</a></p>
+<p>一款强大的 SIM 卡国家码修改工具，无需 Root 权限即可修改 SIM 卡国家码。本项目完全基于 Android 系统原生 API 实现，不依赖 Xposed、Magisk 等任何第三方框架，仅通过调用系统级接口实现功能。通过修改国家码，你可以：</p>
+<p>🌏 解锁运营商限制，使用更多本地功能</p>
+<p>🔓 突破某些区域限制的应用和服务</p>
+<p>🛠️ 解决国际漫游时的兼容性问题</p>
+<p>🌐 帮助使用海外 SIM 卡获得更好的本地化体验</p>
+<p>⚙️ 解决部分应用识别 SIM 卡地区错误的问题</p>
+<h4 id="✨-特性"><a href="#✨-特性" class="headerlink" title="✨ 特性"></a>✨ 特性</h4><p>🔒 安全可靠</p>
+<p>无需 Root 权限</p>
+<p>不修改系统文件</p>
+<p>不影响系统稳定性</p>
+<p>不会对 SIM 卡造成任何影响</p>
+<h4 id="🔄-功能完善"><a href="#🔄-功能完善" class="headerlink" title="🔄 功能完善"></a>🔄 功能完善</h4><p>支持随时还原修改</p>
+<p>支持双卡设备，可分别配置</p>
+<p>一次修改永久生效，重启后保持</p>
+<h4 id="🚀-简单易用"><a href="#🚀-简单易用" class="headerlink" title="🚀 简单易用"></a>🚀 简单易用</h4><p>一键启动工具</p>
+<p>智能检测设备和 SIM 卡状态</p>
+<p>自动安装所需应用</p>
+<p>简洁优雅的用户界面</p>
+<p>轻量且高效，安装包体积小</p>
+<h4 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h4><p>需要安装并启用 Shizuku</p>
+<p>修改国家码可能会影响运营商服务，请谨慎操作</p>
+<p>部分设备可能不支持修改国家码</p>
+<p>如需还原设置，请使用应用内的还原功能</p>
+<p>设备重启可能会重置国家码，因此请注意应用是否生效。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="首先，激活shizuku"><a href="#首先，激活shizuku" class="headerlink" title="首先，激活shizuku"></a>首先，激活shizuku</h4><h4 id="第二步，打开-Nrfr"><a href="#第二步，打开-Nrfr" class="headerlink" title="第二步，打开 Nrfr"></a>第二步，打开 Nrfr</h4><h4 id="第三步，选择需要修改的-SIM-卡"><a href="#第三步，选择需要修改的-SIM-卡" class="headerlink" title="第三步，选择需要修改的 SIM 卡"></a>第三步，选择需要修改的 SIM 卡</h4><h4 id="第四步，设置目标国家码"><a href="#第四步，设置目标国家码" class="headerlink" title="第四步，设置目标国家码"></a>第四步，设置目标国家码</h4><h4 id="第五步，应用修改"><a href="#第五步，应用修改" class="headerlink" title="第五步，应用修改"></a>第五步，应用修改</h4><h3 id="一些个人提醒"><a href="#一些个人提醒" class="headerlink" title="一些个人提醒"></a>一些个人提醒</h3><p>不知道为什么Nrfr对tiktok的官版并不生效，不管我把国家码改到哪都不行</p>
+<p>这里推荐使用tiktok lite，这个也是官方版本，而且精简轻量</p>
+<p>个人猜测是网页套壳所以能够正常躲掉限制。</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tiktok.lite.go">Tiktok lite 谷歌商店下载链接</a></p>
 ]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
   </entry>
   <entry>
     <title>游戏站上线啦</title>
@@ -1898,6 +1898,41 @@
       </categories>
       <tags>
         <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<h3 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h3><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h4 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h4><p><img src="https://img.infinitycm.top/file/RbKvm.webp"></p>
+<h4 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h4><p><img src="https://img.infinitycm.top/file/Rb7GM.webp"></p>
+<h4 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h4><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://img.infinitycm.top/file/RbfDX.webp"></p>
+<h4 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h4><h4 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h4><h4 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h4><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://img.infinitycm.top/file/RbnAK.webp"></p>
+<h4 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h4><h4 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h4><p><img src="https://img.infinitycm.top/file/Rbp4j.webp"></p>
+<p><img src="https://img.infinitycm.top/file/RbuCA.webp"></p>
+<h4 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h4><h4 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h4><h4 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h4><p><img src="https://img.infinitycm.top/file/Rb5JP.webp"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
       </tags>
   </entry>
   <entry>
@@ -2061,92 +2096,6 @@
       <tags>
         <tag>clash</tag>
         <tag>机场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
-    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
-<ol>
-<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
-</li>
-<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
-</li>
-<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
-</li>
-</ol>
-<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
-<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
-<p>如何查看GitHub注册天数？</p>
-<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
-<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
-<p>用这个日期与今天日期计算天数差即可</p>
-</blockquote>
-<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
-<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://img.infinitycm.top/file/20260322223109079.webp"></p>
-<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
-</ol>
-<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
-<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
-<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
-<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>机场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<h3 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h3><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h4 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h4><p><img src="https://img.infinitycm.top/file/RbKvm.webp"></p>
-<h4 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h4><p><img src="https://img.infinitycm.top/file/Rb7GM.webp"></p>
-<h4 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h4><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://img.infinitycm.top/file/RbfDX.webp"></p>
-<h4 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h4><h4 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h4><h4 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h4><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://img.infinitycm.top/file/RbnAK.webp"></p>
-<h4 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h4><h4 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h4><p><img src="https://img.infinitycm.top/file/Rbp4j.webp"></p>
-<p><img src="https://img.infinitycm.top/file/RbuCA.webp"></p>
-<h4 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h4><h4 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h4><h4 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h4><p><img src="https://img.infinitycm.top/file/Rb5JP.webp"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
       </tags>
   </entry>
   <entry>
@@ -2331,5 +2280,56 @@
       <categories>
         <category>Tutorials</category>
       </categories>
+  </entry>
+  <entry>
+    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
+    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
+<ol>
+<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
+</li>
+<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
+</li>
+<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
+</li>
+</ol>
+<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
+<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
+<p>如何查看GitHub注册天数？</p>
+<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
+<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
+<p>用这个日期与今天日期计算天数差即可</p>
+</blockquote>
+<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
+<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://img.infinitycm.top/file/20260322223109079.webp"></p>
+<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
+</ol>
+<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
+<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
+<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
+<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>机场</tag>
+      </tags>
   </entry>
 </search>
