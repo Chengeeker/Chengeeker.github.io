@@ -1,0 +1,311 @@
+/*
+ Butterfly Liquid Glass
+
+ Post Layout
+
+ Version:
+ v1.0
+
+*/
+
+
+/* =====================================
+   Post Header Glass
+===================================== */
+
+
+#post {
+
+
+    position:relative;
+
+
+
+}
+
+
+
+
+
+#post .post-title {
+
+
+    padding:
+
+
+    40px
+
+    36px;
+
+
+
+    margin-bottom:
+
+
+    30px;
+
+
+
+    border-radius:
+
+
+    var(--lg-radius-xl);
+
+
+
+    background:
+
+
+    var(--lg-surface-1-light)
+
+    !important;
+
+
+
+    backdrop-filter:
+
+
+    blur(
+
+        var(--lg-blur-heavy)
+
+    )
+
+    saturate(180%);
+
+
+
+    -webkit-backdrop-filter:
+
+
+    blur(
+
+        var(--lg-blur-heavy)
+
+    )
+
+    saturate(180%);
+
+
+
+    border:
+
+
+    1px solid
+
+    var(--lg-border-light);
+
+
+
+    box-shadow:
+
+
+    var(--lg-elevation-3);
+
+
+
+}
+
+
+
+
+
+/* =====================================
+   Post Meta
+
+===================================== */
+
+
+#post .post-meta {
+
+
+    opacity:
+
+    .75;
+
+
+
+}
+
+
+
+
+
+/* =====================================
+   Dark Mode
+
+===================================== */
+
+
+[data-theme="dark"]
+
+#post .post-title {
+
+
+    background:
+
+
+    var(--lg-surface-1-dark)
+
+    !important;
+
+
+
+    border-color:
+
+
+    var(--lg-border-dark);
+
+
+
+}
+
+
+
+
+
+/* =====================================
+   Article Reading Surface
+
+   Light Glass
+
+===================================== */
+
+
+#article-container {
+
+
+    position:relative;
+
+
+
+    padding:
+
+
+    36px;
+
+
+
+    border-radius:
+
+
+    var(--lg-radius-xl);
+
+
+
+    background:
+
+
+    rgba(255,255,255,.28);
+
+
+
+    backdrop-filter:
+
+
+    blur(18px)
+
+    saturate(140%);
+
+
+
+    -webkit-backdrop-filter:
+
+
+    blur(18px)
+
+    saturate(140%);
+
+
+
+    border:
+
+
+    1px solid
+
+    rgba(255,255,255,.35);
+
+
+
+    box-shadow:
+
+
+    0
+
+    20px
+
+    60px
+
+    rgba(0,0,0,.06);
+
+
+
+}
+
+
+
+/* =====================================
+   Text Contrast
+===================================== */
+
+
+#article-container p,
+
+
+#article-container li,
+
+
+#article-container blockquote {
+
+
+    line-height:
+
+    1.9;
+
+
+
+}
+
+
+
+
+
+/* =====================================
+   Dark Mode
+
+===================================== */
+
+
+[data-theme="dark"]
+
+#article-container {
+
+
+    background:
+
+
+    rgba(26,27,32,.45);
+
+
+
+    border-color:
+
+
+    rgba(255,255,255,.12);
+
+
+
+    box-shadow:
+
+
+    0
+
+    20
+
+    60px
+
+    rgba(0,0,0,.35);
+
+
+
+}

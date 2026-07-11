@@ -1,0 +1,92 @@
+/*
+ Butterfly Liquid Glass
+ Config Override
+
+ Generated manually
+
+*/
+
+
+/* =================================
+   Global Disable
+================================= */
+
+
+.liquid-disabled
+.liquid-glass {
+
+
+    backdrop-filter:none!important;
+
+
+    -webkit-backdrop-filter:none!important;
+
+
+}
+
+
+
+/* =================================
+   Article Switch
+================================= */
+
+
+.liquid-article-disabled
+#recent-posts .recent-post-item {
+
+
+    background:
+
+    var(--card-bg)!important;
+
+
+    backdrop-filter:none!important;
+
+
+    box-shadow:none!important;
+
+
+}
+
+
+
+/* =================================
+   Sidebar Switch
+================================= */
+
+
+.liquid-sidebar-disabled
+#aside-content .card-widget {
+
+
+    background:
+
+    var(--card-bg)!important;
+
+
+    backdrop-filter:none!important;
+
+
+    box-shadow:none!important;
+
+
+}
+
+
+
+/* =================================
+   Button Switch
+================================= */
+
+
+.liquid-button-disabled
+#rightside button {
+
+
+    backdrop-filter:none!important;
+
+
+    box-shadow:none!important;
+
+
+}

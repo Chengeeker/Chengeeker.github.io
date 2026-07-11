@@ -1,0 +1,209 @@
+/*
+ Butterfly Liquid Glass
+
+ Design System Tokens
+
+ Version:
+ v3.0
+
+ Surface System
+
+*/
+
+
+:root {
+
+
+/* =====================================
+   Surface Colors
+===================================== */
+
+
+/*
+ Light Surface
+*/
+
+
+--lg-surface-0-light:
+
+#f5f5f7;
+
+
+
+--lg-surface-1-light:
+
+rgba(255,255,255,.72);
+
+
+
+--lg-surface-2-light:
+
+rgba(255,255,255,.48);
+
+
+
+--lg-surface-3-light:
+
+rgba(255,255,255,.82);
+
+
+
+
+
+/*
+ Dark Material You Surface
+*/
+
+
+--lg-surface-0-dark:
+
+#101114;
+
+
+
+--lg-surface-1-dark:
+
+rgba(40,42,50,.78);
+
+
+
+--lg-surface-2-dark:
+
+rgba(26,27,32,.72);
+
+
+
+--lg-surface-3-dark:
+
+rgba(60,62,72,.85);
+
+
+
+
+
+/* =====================================
+   Glass Blur
+===================================== */
+
+
+--lg-blur-heavy:
+
+45px;
+
+
+
+--lg-blur-medium:
+
+30px;
+
+
+
+--lg-blur-light:
+
+20px;
+
+
+
+
+
+/* =====================================
+   Radius System
+===================================== */
+
+
+--lg-radius-xl:
+
+32px;
+
+
+
+--lg-radius-lg:
+
+26px;
+
+
+
+--lg-radius-md:
+
+18px;
+
+
+
+--lg-radius-sm:
+
+14px;
+
+
+
+
+
+/* =====================================
+   Elevation
+===================================== */
+
+
+--lg-elevation-1:
+
+
+0 15px 40px rgba(0,0,0,.10);
+
+
+
+--lg-elevation-2:
+
+
+0 20px 55px rgba(0,0,0,.12);
+
+
+
+--lg-elevation-3:
+
+
+0 35px 90px rgba(0,0,0,.15);
+
+
+
+
+
+/* =====================================
+   Border
+===================================== */
+
+
+--lg-border-light:
+
+rgba(255,255,255,.65);
+
+
+
+--lg-border-dark:
+
+rgba(255,255,255,.18);
+
+
+
+
+
+/* =====================================
+   Motion
+===================================== */
+
+
+--lg-motion-fast:
+
+.2s ease;
+
+
+
+--lg-motion-normal:
+
+.35s ease;
+
+
+
+--lg-motion-slow:
+
+.5s ease;
+
+
+}
