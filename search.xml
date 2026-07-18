@@ -165,6 +165,75 @@
 ]]></content>
   </entry>
   <entry>
+    <title>净化QQ邮箱客户端的一些思路</title>
+    <url>/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/</url>
+    <content><![CDATA[<h2 id="必要的准备"><a href="#必要的准备" class="headerlink" title="必要的准备"></a>必要的准备</h2><ol>
+<li><strong>一个与QQ邮箱同一账号的Foxmail邮箱（没有的话要去QQ邮箱的账号与安全那里弄一个，不然就可以关闭这篇文章了）</strong></li>
+<li>GKD以及可用的规则（自备） </li>
+<li>QQ邮箱安装包（官版和play版均可） </li>
+<li>一个可用的lsp管理器（可选）</li>
+</ol>
+<h3 id="为什么推荐用Foxmail"><a href="#为什么推荐用Foxmail" class="headerlink" title="为什么推荐用Foxmail"></a>为什么推荐用Foxmail</h3><ol>
+<li>依托国内 QQ 邮件服务器，网络访问稳定无门槛<blockquote>
+<p>底层走腾讯国内邮件节点，不用特殊网络环境收发邮件，对比 Gmail、Outlook 海外邮箱，国内打开、发信、收信速度快，不会出现收不到、发件延迟、登录失败的问题。</p>
+</blockquote>
+</li>
+<li>和原生 QQ 邮箱账号互通，数据完全同步<blockquote>
+<p>Foxmail属于原有QQ邮箱的别名，和原有的QQ邮箱账号共用一套邮箱存储空间、收件箱、已发送、通讯录、文件夹，QQ 邮箱收到的邮件会实时同步到Foxmail，双向实时更新，无需重新注册独立邮箱。</p>
+</blockquote>
+</li>
+<li>独立 Foxmail 邮箱后缀，兼顾隐私与海外通用性<blockquote>
+<p>@foxmail.com和@qq.com绑定同一账号，对外留邮箱时可以用foxmail后缀，避免暴露QQ数字号；海外平台对@foxmail.com的兼容性比@qq.com好一些。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>其实对我来说，即便是官方的QQ邮箱，广告也没有多到令人发指的程度，可能是平时用酷安“自适应”了。</p>
+<p>要净化QQ邮箱，最主要的其实还是去广告。如果你是root用户，这并不是一件难事，像<a href="https://github.com/Xposed-Modules-Repo/com.cxapk.viphelper">辰夕的VIP Helper模块</a>就提供了去广告的功能，哪怕是免root，借助FPA或者npatch之类的lsp管理器也能够使用，但是签名校验就成了一大难题。</p>
+<p>你当然可以把QQ&#x2F;Tim一块修补了，但是必须要提醒的是，如今腾讯系应用的风控今时不同往日，如果触发了封禁，麻烦的还是自己。</p>
+<p>因此，我们需要找到在尽可能不改动apk本身的情况下，去实现“净化”的效果。</p>
+<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能跳过本地的广告。</p>
+<h3 id="2-使用IMAP登录QQ邮箱"><a href="#2-使用IMAP登录QQ邮箱" class="headerlink" title="2. 使用IMAP登录QQ邮箱"></a>2. 使用IMAP登录QQ邮箱</h3><p>看到这里可能会觉得有些奇怪：<br>QQ的邮箱登录QQ邮箱，为什么不直接用QQ授权登录，IMAP不是多此一举吗？</p>
+<blockquote>
+<p>使用IMAP登录和QQ授权登录有着本质区别，这种登录方式并不在QQ邮箱的会员体系内。 </p>
+</blockquote>
+<blockquote>
+<p>因为foxmail邮箱的特殊性，哪怕平台知道你用的是QQ的邮箱，但平台依旧会将其归类为第三方的IMAP邮箱，也就不会有会员推广之类的信息，界面也精简了很多。</p>
+</blockquote>
+<p>都用IMAP了，我为什么不用像Thunderbird之类的开源第三方邮件客户端，一样也没广告。</p>
+<blockquote>
+<p>QQ邮箱自家的IMAP登录有着第三方客户端无法比拟的优势，就是邮件收发延迟。</p>
+</blockquote>
+<blockquote>
+<p>与Windows端不同，从 Android 7.0 起，第三方 App 后台定时同步任务，系统强制最小执行间隔 15 分钟，就算代码写 1 分钟，系统也会合并、推迟到至少 15 分钟才允许联网同步。（数据源自豆包）</p>
+</blockquote>
+<blockquote>
+<p>经过实测，如果使用IMAP登录QQ邮箱，邮件接收的体验和授权登录是几乎一致的，毕竟客户端和服务器都是QQ邮箱的。</p>
+</blockquote>
+<p><strong>而且用IMAP登录还有两大优势，</strong></p>
+<ol>
+<li><p>Play版和老版本可以正常使用</p>
+<blockquote>
+<p>众所周知，在QQ邮箱更新到7.x.x版本后，会有强制弹窗要求你更新升级到最新版，否则可能无法继续使用QQ邮箱客户端。这是一种基于授权登录才会触发的强制弹窗，IMAP登录并不会出现这种情况。我们可以继续体验老版本和play版的独特优势。</p>
+</blockquote>
+</li>
+<li><p>解决了反编译apk后签名不一致导致的授权问题</p>
+<blockquote>
+<p>无论是免root管理器的修补，还是一些大佬单独做的去广告版apk，都不可避免遇到签名不一致导致的问题。哪怕有些apk做了微信和QQ的登录修复，但也只是治标不治本，和官方原版apk相比还是差了不少。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="⚠️注意⚠️"><a href="#⚠️注意⚠️" class="headerlink" title="⚠️注意⚠️"></a>⚠️注意⚠️</h3><p>在IMAP登录的时候，平台会识别到你的邮箱是QQ邮箱，提示<code>输入的是QQ邮箱账号，是否继续验证？</code>，这个时候要选择<code>手动设置</code>，它会自动配置。不要选验证，不然会跳转到授权验证登录的界面。</p>
+<blockquote>
+<p>如果你的邮箱还是qq.com后缀的会无法进入手动设置，只有<code>取消</code>和<code>验证</code>。</p>
+</blockquote>
+<h3 id="（可选）3-使用Xposed模块去广告"><a href="#（可选）3-使用Xposed模块去广告" class="headerlink" title="（可选）3.使用Xposed模块去广告"></a>（可选）3.使用Xposed模块去广告</h3><p>不过多赘述，QQ邮箱并没有太严格的签名校验，一般不会碰到闪退问题，找到合适的模块在lsp管理器内使用就行。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这看起来有点脱裤子放屁，废话可能也比较多，但这确实是我无意中发现的一种思路。希望这种思路能给大家的玩机路上一点启发。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
     <title>迁移 Microsoft Authenticator 的 2FA 密钥到第三方密码管理器</title>
     <url>/2026/02/16/bitwarden-Microsoft/</url>
     <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
@@ -215,6 +284,36 @@
       </tags>
   </entry>
   <entry>
+    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
+    <url>/2026/02/07/bitwarden-steam/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
+<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
+<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
+</ol>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://img.infinitycm.top/file/20260207220355907.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220409500.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220433822.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220452262.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220506308.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260207220518355.webp"></p>
+<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
+<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
+<p><img src="https://img.infinitycm.top/file/20260207220746725.webp"></p>
+<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
+<li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li>
+<li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260207220843594.webp"></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>bitwarden</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cloudfare-bitwarden （qaz741wsd856）</title>
     <url>/2026/02/24/bitwarden-qaz741wsd856/</url>
     <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
@@ -256,7 +355,7 @@
 </tr>
 <tr>
 <td></td>
-<td>（例：<a href="mailto:&#121;&#x6f;&#117;&#114;&#x2d;&#110;&#97;&#x6d;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#121;&#x6f;&#117;&#114;&#x2d;&#110;&#97;&#x6d;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>,*@xxx.com）</td>
+<td>（例：<a href="mailto:&#121;&#x6f;&#x75;&#114;&#45;&#x6e;&#x61;&#109;&#x65;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#121;&#x6f;&#x75;&#114;&#45;&#x6e;&#x61;&#109;&#x65;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>,*@xxx.com）</td>
 </tr>
 <tr>
 <td>JWT_SECRET</td>
@@ -450,102 +549,99 @@
       </tags>
   </entry>
   <entry>
-    <title>净化QQ邮箱客户端的一些思路</title>
-    <url>/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/</url>
-    <content><![CDATA[<h2 id="必要的准备"><a href="#必要的准备" class="headerlink" title="必要的准备"></a>必要的准备</h2><ol>
-<li><strong>一个与QQ邮箱同一账号的Foxmail邮箱（没有的话要去QQ邮箱的账号与安全那里弄一个，不然就可以关闭这篇文章了）</strong></li>
-<li>GKD以及可用的规则（自备） </li>
-<li>QQ邮箱安装包（官版和play版均可） </li>
-<li>一个可用的lsp管理器（可选）</li>
-</ol>
-<h3 id="为什么推荐用Foxmail"><a href="#为什么推荐用Foxmail" class="headerlink" title="为什么推荐用Foxmail"></a>为什么推荐用Foxmail</h3><ol>
-<li>依托国内 QQ 邮件服务器，网络访问稳定无门槛<blockquote>
-<p>底层走腾讯国内邮件节点，不用特殊网络环境收发邮件，对比 Gmail、Outlook 海外邮箱，国内打开、发信、收信速度快，不会出现收不到、发件延迟、登录失败的问题。</p>
-</blockquote>
-</li>
-<li>和原生 QQ 邮箱账号互通，数据完全同步<blockquote>
-<p>Foxmail属于原有QQ邮箱的别名，和原有的QQ邮箱账号共用一套邮箱存储空间、收件箱、已发送、通讯录、文件夹，QQ 邮箱收到的邮件会实时同步到Foxmail，双向实时更新，无需重新注册独立邮箱。</p>
-</blockquote>
-</li>
-<li>独立 Foxmail 邮箱后缀，兼顾隐私与海外通用性<blockquote>
-<p>@foxmail.com和@qq.com绑定同一账号，对外留邮箱时可以用foxmail后缀，避免暴露QQ数字号；海外平台对@foxmail.com的兼容性比@qq.com好一些。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>其实对我来说，即便是官方的QQ邮箱，广告也没有多到令人发指的程度，可能是平时用酷安“自适应”了。</p>
-<p>要净化QQ邮箱，最主要的其实还是去广告。如果你是root用户，这并不是一件难事，像<a href="https://github.com/Xposed-Modules-Repo/com.cxapk.viphelper">辰夕的VIP Helper模块</a>就提供了去广告的功能，哪怕是免root，借助FPA或者npatch之类的lsp管理器也能够使用，但是签名校验就成了一大难题。</p>
-<p>你当然可以把QQ&#x2F;Tim一块修补了，但是必须要提醒的是，如今腾讯系应用的风控今时不同往日，如果触发了封禁，麻烦的还是自己。</p>
-<p>因此，我们需要找到在尽可能不改动apk本身的情况下，去实现“净化”的效果。</p>
-<h3 id="1-GKD-——-去除本地广告"><a href="#1-GKD-——-去除本地广告" class="headerlink" title="1. GKD —— 去除本地广告"></a>1. GKD —— 去除本地广告</h3><p>这一点不多赘述，广告一部分是本地的一部分是云端的，GKD能跳过本地的广告。</p>
-<h3 id="2-使用IMAP登录QQ邮箱"><a href="#2-使用IMAP登录QQ邮箱" class="headerlink" title="2. 使用IMAP登录QQ邮箱"></a>2. 使用IMAP登录QQ邮箱</h3><p>看到这里可能会觉得有些奇怪：<br>QQ的邮箱登录QQ邮箱，为什么不直接用QQ授权登录，IMAP不是多此一举吗？</p>
-<blockquote>
-<p>使用IMAP登录和QQ授权登录有着本质区别，这种登录方式并不在QQ邮箱的会员体系内。 </p>
-</blockquote>
-<blockquote>
-<p>因为foxmail邮箱的特殊性，哪怕平台知道你用的是QQ的邮箱，但平台依旧会将其归类为第三方的IMAP邮箱，也就不会有会员推广之类的信息，界面也精简了很多。</p>
-</blockquote>
-<p>都用IMAP了，我为什么不用像Thunderbird之类的开源第三方邮件客户端，一样也没广告。</p>
-<blockquote>
-<p>QQ邮箱自家的IMAP登录有着第三方客户端无法比拟的优势，就是邮件收发延迟。</p>
-</blockquote>
-<blockquote>
-<p>与Windows端不同，从 Android 7.0 起，第三方 App 后台定时同步任务，系统强制最小执行间隔 15 分钟，就算代码写 1 分钟，系统也会合并、推迟到至少 15 分钟才允许联网同步。（数据源自豆包）</p>
-</blockquote>
-<blockquote>
-<p>经过实测，如果使用IMAP登录QQ邮箱，邮件接收的体验和授权登录是几乎一致的，毕竟客户端和服务器都是QQ邮箱的。</p>
-</blockquote>
-<p><strong>而且用IMAP登录还有两大优势，</strong></p>
+    <title>用cloudfare搭建自己的免费机场-cfnew</title>
+    <url>/2026/02/28/cloudfare%E6%9C%BA%E5%9C%BA-cfnew/</url>
+    <content><![CDATA[<h4 id="项目地址：https-github-com-byJoey-cfnew"><a href="#项目地址：https-github-com-byJoey-cfnew" class="headerlink" title="项目地址：https://github.com/byJoey/cfnew"></a>项目地址：<a href="https://github.com/byJoey/cfnew">https://github.com/byJoey/cfnew</a></h4><h4 id="视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s"><a href="#视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s"></a>视频教程：<a href="https://www.youtube.com/watch?v=yg0jTNMUFRY&t=686s">https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s</a></h4><h2 id="第一步，搭建-cloudfare-workers-pages-项目"><a href="#第一步，搭建-cloudfare-workers-pages-项目" class="headerlink" title="第一步，搭建 cloudfare workers&#x2F;pages 项目"></a>第一步，搭建 cloudfare workers&#x2F;pages 项目</h2><h3 id="Pages-教程（可不用自定义域名）"><a href="#Pages-教程（可不用自定义域名）" class="headerlink" title="Pages 教程（可不用自定义域名）"></a>Pages 教程（可不用自定义域名）</h3><details>
+<summary><code><strong>「 Pages 部署文字教程 」</strong></code></summary>
+
 <ol>
-<li><p>Play版和老版本可以正常使用</p>
-<blockquote>
-<p>众所周知，在QQ邮箱更新到7.x.x版本后，会有强制弹窗要求你更新升级到最新版，否则可能无法继续使用QQ邮箱客户端。这是一种基于授权登录才会触发的强制弹窗，IMAP登录并不会出现这种情况。我们可以继续体验老版本和play版的独特优势。</p>
-</blockquote>
+<li>进入 cloudfare <code>创建 Pages</code> ，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中，点击<code>保存并部署</code>。</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228123622866.webp"></p>
+<ol start="2">
+<li>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228124126781.webp"></p>
+<ol start="3">
+<li>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228124704040.webp"></p>
+<ol start="4">
+<li>回到刚刚创建的 Pages 项目， 进入该项目，<code>设置</code>-<code>绑定</code>-<code>添加</code>-<code>KV命名空间</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>保存</code>。</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228125036625.webp"></p>
+<ol start="5">
+<li><p>点击<code>设置</code>→<code>运行时</code>，找到<code>兼容性日期</code>，选择 <code>2026-01-20</code>，点击 <code>保存</code>。</p>
 </li>
-<li><p>解决了反编译apk后签名不一致导致的授权问题</p>
-<blockquote>
-<p>无论是免root管理器的修补，还是一些大佬单独做的去广告版apk，都不可避免遇到签名不一致导致的问题。哪怕有些apk做了微信和QQ的登录修复，但也只是治标不治本，和官方原版apk相比还是差了不少。</p>
-</blockquote>
+<li><p>设置已完成。现在点击在页面右上角点击<code>创建部署</code>，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中（即第一步），点击<code>保存并部署</code>。</p>
 </li>
 </ol>
-<h3 id="⚠️注意⚠️"><a href="#⚠️注意⚠️" class="headerlink" title="⚠️注意⚠️"></a>⚠️注意⚠️</h3><p>在IMAP登录的时候，平台会识别到你的邮箱是QQ邮箱，提示<code>输入的是QQ邮箱账号，是否继续验证？</code>，这个时候要选择<code>手动设置</code>，它会自动配置。不要选验证，不然会跳转到授权验证登录的界面。</p>
-<blockquote>
-<p>如果你的邮箱还是qq.com后缀的会无法进入手动设置，只有<code>取消</code>和<code>验证</code>。</p>
-</blockquote>
-<h3 id="（可选）3-使用Xposed模块去广告"><a href="#（可选）3-使用Xposed模块去广告" class="headerlink" title="（可选）3.使用Xposed模块去广告"></a>（可选）3.使用Xposed模块去广告</h3><p>不过多赘述，QQ邮箱并没有太严格的签名校验，一般不会碰到闪退问题，找到合适的模块在lsp管理器内使用就行。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这看起来有点脱裤子放屁，废话可能也比较多，但这确实是我无意中发现的一种思路。希望这种思路能给大家的玩机路上一点启发。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>无需Root将Steam令牌(2FA)迁移到第三方密码管理器</title>
-    <url>/2026/02/07/bitwarden-steam/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>SteamTools（<a href="https://github.com/BeyondDimension/SteamTools/releases">下载地址：https://github.com/BeyondDimension/SteamTools/releases</a>）</li>
-<li>手机SteamApp(已经登录Steam账号<code>**且已移除验证器**</code>)</li>
-<li>支持2FA的第三方密码管理器，如bitwarden（推荐使用<a href="https://github.com/AChep/keyguard-app">keyguard客户端</a>）</li>
+<p><img src="https://img.infinitycm.top/file/20260228123622866.webp"></p>
+<ol start="7">
+<li>点击生成的Pages链接（即项目名.pages.dev），在终端内输入我们第二步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
 </ol>
-<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="获取SteamGuard数据"><a href="#获取SteamGuard数据" class="headerlink" title="获取SteamGuard数据"></a>获取SteamGuard数据</h3><h4 id="SteamTools"><a href="#SteamTools" class="headerlink" title="SteamTools"></a>SteamTools</h4><p><img src="https://img.infinitycm.top/file/20260207220355907.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220409500.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220433822.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220452262.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220506308.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260207220518355.webp"></p>
-<h3 id="Base64转换Base32"><a href="#Base64转换Base32" class="headerlink" title="Base64转换Base32"></a>Base64转换Base32</h3><p><code>上一个步骤复制出来的shared_secret是Base64编码,需要将其转换成Base32,访问这个转换网站即可获得TOTP码</code></p>
-<p><a href="https://the-x.cn/encodings/Base64.aspx">网址：https://the-x.cn/encodings/Base64.aspx</a></p>
-<p><img src="https://img.infinitycm.top/file/20260207220746725.webp"></p>
-<h3 id="导入到第三方密码管理器中"><a href="#导入到第三方密码管理器中" class="headerlink" title="导入到第三方密码管理器中"></a>导入到第三方密码管理器中</h3><ol>
-<li>在第三方密码管理器对应的<code>验证器密钥(TOTP)</code>中输入<code>steam://</code>并复制生成的<code>Base32 TOTP码</code>保存即可看到5位数的Steam令牌</li>
-<li>核对第三方密码管理器显示的令牌是否与steam显示的令牌一致</li>
+<p><img src="https://img.infinitycm.top/file/20260228132414100.webp"></p>
+</details>
+
+<h3 id="Workers-教程（需要自定义域名）"><a href="#Workers-教程（需要自定义域名）" class="headerlink" title="Workers 教程（需要自定义域名）"></a>Workers 教程（需要自定义域名）</h3><details>
+<summary><code><strong>「 Workers 部署文字教程 」</strong></code></summary>
+
+<ol>
+<li><p>进入 cloudfare <code>创建 Workers</code> ，选择<code>从Hello World开始</code>，点击<code>部署</code></p>
+</li>
+<li><p>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></p>
+</li>
 </ol>
-<p><img src="https://img.infinitycm.top/file/20260207220843594.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260228124704040.webp"></p>
+<ol start="3">
+<li>回到刚刚创建的 Workers 项目， 进入该项目，<code>绑定</code>-<code>KV命名空间</code>-<code>添加绑定</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>添加绑定</code>。</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228130259589.webp"></p>
+<p><img src="https://img.infinitycm.top/file/20260228130314547.webp"></p>
+<ol start="4">
+<li>在<code>设置</code>-<code>域和路由</code>禁用自带域</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228130527416.webp"></p>
+<ol start="5">
+<li><p>在<code>设置</code>-<code>域和路由</code>添加自定义域</p>
+</li>
+<li><p>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></p>
+</li>
+<li><p>点击页面右上角的<code>编辑代码</code>，清空原有的内容。打开 <a href="https://github.com/byJoey/cfnew">GitHub 项目</a>，找到<code>少年你相信光吗</code>文件，复制其内容，填入cloudfare项目的<code>编辑代码</code>内，点击<code>部署</code>。</p>
+</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228131405869.webp"></p>
+<ol start="8">
+<li><p>点击<code>设置</code>→<code>运行时</code>，找到<code>兼容性日期</code>，选择 <code>2026-01-20</code>，点击 <code>保存</code>。</p>
+</li>
+<li><p>使用我们添加的域名进入终端，在终端内输入我们第六步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</p>
+</li>
+</ol>
+<p><img src="https://img.infinitycm.top/file/20260228132414100.webp"></p>
+</details>
+
+
+<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>Pages项目无法启用xhttp协议，但不刚需自定义域名。</p>
+<h3 id="设置建议"><a href="#设置建议" class="headerlink" title="设置建议"></a>设置建议</h3><p>不建议修改<code>配置管理</code>的<code>指定地区</code>，按需启用协议，可开启ECH，其他设置不动。</p>
+<h2 id="导入代理客户端"><a href="#导入代理客户端" class="headerlink" title="导入代理客户端"></a>导入代理客户端</h2><p>在订阅中心页面的上面有选择客户端，点击自己使用的客户端后，在<code>选择客户端</code>这个大框底部会出现订阅链接，复制后通过url导入代理软件即可。（手机点击后可一键跳转导入）</p>
+<p><img src="https://img.infinitycm.top/file/20260228125630040.webp"></p>
+<h2 id="额外设置（可选）"><a href="#额外设置（可选）" class="headerlink" title="额外设置（可选）"></a>额外设置（可选）</h2><p>某些情况下，你会发现自己的workers请求数异常高，这可能是因为遇到了别人在爬你的网站（顺手的事）。为了防止免费的额度被瞬间用完，我们可以在cloudfare的域缓存规则上做名单。</p>
+<ol>
+<li>在 cloudfare 进入自己的域管理页</li>
+<li>在左侧侧边栏中点击<code>缓存</code>-<code>Cache Rules</code>-<code>创建规则</code></li>
+<li>按照下图进行填写<br><img src="https://img.infinitycm.top/file/20260303222152038.webp"></li>
+<li><code>边缘 TTL (可选)</code> - <code>忽略缓存控制标头，使用此 TTL</code> - <code>TTL生存时间（必需）</code>改为<code>1天或者其他你喜欢的时间</code></li>
+<li><code>浏览器 TTL (可选)</code> - <code>替代源服务器，使用此 TTL</code> - <code>输入生存时间 (TTL) （必需）</code>改为<code>1天或者其他你喜欢的时间</code></li>
+<li>点击<code>部署</code></li>
+</ol>
+<p>完成设置后，只有成功输入了UUID进入订阅中心，workers才会计算请求数，其他访问都会直接用缓存替代，不消耗请求数，同时订阅中心不会缓存，以保障数据的实时性。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>bitwarden</tag>
+        <tag>cloudfare</tag>
+        <tag>机场</tag>
       </tags>
   </entry>
   <entry>
@@ -917,102 +1013,6 @@
 </blockquote>
 <p>原因：CF IP 的路由质量会随时间变化，优选结果不是永久有效的。</p>
 <p>解决：建议每周重测1-2次，或发现节点明显变慢时重测。</p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>cloudfare</tag>
-        <tag>机场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用cloudfare搭建自己的免费机场-cfnew</title>
-    <url>/2026/02/28/cloudfare%E6%9C%BA%E5%9C%BA-cfnew/</url>
-    <content><![CDATA[<h4 id="项目地址：https-github-com-byJoey-cfnew"><a href="#项目地址：https-github-com-byJoey-cfnew" class="headerlink" title="项目地址：https://github.com/byJoey/cfnew"></a>项目地址：<a href="https://github.com/byJoey/cfnew">https://github.com/byJoey/cfnew</a></h4><h4 id="视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s"><a href="#视频教程：https-www-youtube-com-watch-v-yg0jTNMUFRY-t-686s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s"></a>视频教程：<a href="https://www.youtube.com/watch?v=yg0jTNMUFRY&t=686s">https://www.youtube.com/watch?v=yg0jTNMUFRY&amp;t=686s</a></h4><h2 id="第一步，搭建-cloudfare-workers-pages-项目"><a href="#第一步，搭建-cloudfare-workers-pages-项目" class="headerlink" title="第一步，搭建 cloudfare workers&#x2F;pages 项目"></a>第一步，搭建 cloudfare workers&#x2F;pages 项目</h2><h3 id="Pages-教程（可不用自定义域名）"><a href="#Pages-教程（可不用自定义域名）" class="headerlink" title="Pages 教程（可不用自定义域名）"></a>Pages 教程（可不用自定义域名）</h3><details>
-<summary><code><strong>「 Pages 部署文字教程 」</strong></code></summary>
-
-<ol>
-<li>进入 cloudfare <code>创建 Pages</code> ，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中，点击<code>保存并部署</code>。</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228123622866.webp"></p>
-<ol start="2">
-<li>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228124126781.webp"></p>
-<ol start="3">
-<li>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228124704040.webp"></p>
-<ol start="4">
-<li>回到刚刚创建的 Pages 项目， 进入该项目，<code>设置</code>-<code>绑定</code>-<code>添加</code>-<code>KV命名空间</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>保存</code>。</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228125036625.webp"></p>
-<ol start="5">
-<li><p>点击<code>设置</code>→<code>运行时</code>，找到<code>兼容性日期</code>，选择 <code>2026-01-20</code>，点击 <code>保存</code>。</p>
-</li>
-<li><p>设置已完成。现在点击在页面右上角点击<code>创建部署</code>，把 <a href="https://github.com/byJoey/cfnew/releases">Github release</a> 最新的 <code>Pages.zip</code> 文件上传到生产环境中（即第一步），点击<code>保存并部署</code>。</p>
-</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228123622866.webp"></p>
-<ol start="7">
-<li>点击生成的Pages链接（即项目名.pages.dev），在终端内输入我们第二步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228132414100.webp"></p>
-</details>
-
-<h3 id="Workers-教程（需要自定义域名）"><a href="#Workers-教程（需要自定义域名）" class="headerlink" title="Workers 教程（需要自定义域名）"></a>Workers 教程（需要自定义域名）</h3><details>
-<summary><code><strong>「 Workers 部署文字教程 」</strong></code></summary>
-
-<ol>
-<li><p>进入 cloudfare <code>创建 Workers</code> ，选择<code>从Hello World开始</code>，点击<code>部署</code></p>
-</li>
-<li><p>创建一个KV空间。在cloudfare点击<code>存储与数据库</code>-<code>Workers KV</code>-<code>Create Instance</code></p>
-</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228124704040.webp"></p>
-<ol start="3">
-<li>回到刚刚创建的 Workers 项目， 进入该项目，<code>绑定</code>-<code>KV命名空间</code>-<code>添加绑定</code>，变量名称填写大写的<code>C</code>，命名空间选择刚刚创建的KV空间，点击<code>添加绑定</code>。</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228130259589.webp"></p>
-<p><img src="https://img.infinitycm.top/file/20260228130314547.webp"></p>
-<ol start="4">
-<li>在<code>设置</code>-<code>域和路由</code>禁用自带域</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228130527416.webp"></p>
-<ol start="5">
-<li><p>在<code>设置</code>-<code>域和路由</code>添加自定义域</p>
-</li>
-<li><p>进入该项目，<code>设置</code>-<code>变量与机密</code>-<code>添加</code>，变量名称填写小写的<code>u</code>，值为UUID，在网上找一个生成器生成一个填入即可（注意填入的值不能有回车），点击<code>保存</code>。我用的是<a href="https://1024tools.com/uuid">UUID在线生成器</a></p>
-</li>
-<li><p>点击页面右上角的<code>编辑代码</code>，清空原有的内容。打开 <a href="https://github.com/byJoey/cfnew">GitHub 项目</a>，找到<code>少年你相信光吗</code>文件，复制其内容，填入cloudfare项目的<code>编辑代码</code>内，点击<code>部署</code>。</p>
-</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228131405869.webp"></p>
-<ol start="8">
-<li><p>点击<code>设置</code>→<code>运行时</code>，找到<code>兼容性日期</code>，选择 <code>2026-01-20</code>，点击 <code>保存</code>。</p>
-</li>
-<li><p>使用我们添加的域名进入终端，在终端内输入我们第六步在<code>变量与机密</code>填入的<code>UUID</code>，回车即可。</p>
-</li>
-</ol>
-<p><img src="https://img.infinitycm.top/file/20260228132414100.webp"></p>
-</details>
-
-
-<h3 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h3><p>Pages项目无法启用xhttp协议，但不刚需自定义域名。</p>
-<h3 id="设置建议"><a href="#设置建议" class="headerlink" title="设置建议"></a>设置建议</h3><p>不建议修改<code>配置管理</code>的<code>指定地区</code>，按需启用协议，可开启ECH，其他设置不动。</p>
-<h2 id="导入代理客户端"><a href="#导入代理客户端" class="headerlink" title="导入代理客户端"></a>导入代理客户端</h2><p>在订阅中心页面的上面有选择客户端，点击自己使用的客户端后，在<code>选择客户端</code>这个大框底部会出现订阅链接，复制后通过url导入代理软件即可。（手机点击后可一键跳转导入）</p>
-<p><img src="https://img.infinitycm.top/file/20260228125630040.webp"></p>
-<h2 id="额外设置（可选）"><a href="#额外设置（可选）" class="headerlink" title="额外设置（可选）"></a>额外设置（可选）</h2><p>某些情况下，你会发现自己的workers请求数异常高，这可能是因为遇到了别人在爬你的网站（顺手的事）。为了防止免费的额度被瞬间用完，我们可以在cloudfare的域缓存规则上做名单。</p>
-<ol>
-<li>在 cloudfare 进入自己的域管理页</li>
-<li>在左侧侧边栏中点击<code>缓存</code>-<code>Cache Rules</code>-<code>创建规则</code></li>
-<li>按照下图进行填写<br><img src="https://img.infinitycm.top/file/20260303222152038.webp"></li>
-<li><code>边缘 TTL (可选)</code> - <code>忽略缓存控制标头，使用此 TTL</code> - <code>TTL生存时间（必需）</code>改为<code>1天或者其他你喜欢的时间</code></li>
-<li><code>浏览器 TTL (可选)</code> - <code>替代源服务器，使用此 TTL</code> - <code>输入生存时间 (TTL) （必需）</code>改为<code>1天或者其他你喜欢的时间</code></li>
-<li>点击<code>部署</code></li>
-</ol>
-<p>完成设置后，只有成功输入了UUID进入订阅中心，workers才会计算请求数，其他访问都会直接用缓存替代，不消耗请求数，同时订阅中心不会缓存，以保障数据的实时性。</p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -1458,19 +1458,6 @@
       </categories>
   </entry>
   <entry>
-    <title>博客食用指北</title>
-    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
-<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
-<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
-<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
-<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
-<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
-<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
-<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
-]]></content>
-  </entry>
-  <entry>
     <title>点开的微信文件，都去哪了（含QQ）</title>
     <url>/2025/01/05/%E5%BE%AE%E4%BF%A1%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<p>微信在8.0.30版本之前一直有一个特性，那就是将一个文件转发了几次后，该文件就会占用你几倍的手机空间。直到2022年11月18日，微信官方正式推出8.0.30版本，才修复这一问题。</p>
@@ -1586,6 +1573,19 @@
       </tags>
   </entry>
   <entry>
+    <title>博客食用指北</title>
+    <url>/2025/07/21/%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="关于本站-："><a href="#关于本站-：" class="headerlink" title="关于本站 ："></a>关于本站 ：</h3><p>1.本站为静态博客网站，部署在GitHub上，<code>请确保网络能连接到GitHub以获得更好的浏览体验</code>。<br>2.成本有限，受限于静态网站，<code>建议每次打开/关闭时都清理一下缓存</code>，不然下次刷不到更新的内容。<br>3.如果崩掉了，大概率是我在后台玩火导致网站异常。</p>
+<h3 id="关于文章-："><a href="#关于文章-：" class="headerlink" title="关于文章 ："></a>关于文章 ：</h3><p>文章是具有时效性的，在阅读之前<strong>记得留意文章的最新更新日期</strong> <code>(注意是 Update日期 不是 Create日期 ）</code><br>（有时候我会在后台修改文章的内容，一切以最新版为准）</p>
+<h3 id="关于社区-："><a href="#关于社区-：" class="headerlink" title="关于社区 ："></a>关于社区 ：</h3><p>1.目前主要在Q群营业，telegram辅助，公众号暂缓更新，QQ频道停止维护。需要加我的请前往QQ群。<a href="https://qm.qq.com/q/FzIFQuBnwG">点此快速加入。</a><br>2.telegram频道有且仅有一种进入方式：博客的私人频道邀请链接。<a href="https://t.me/+FA4BSZ0P0uQwZDI1">点此快速加入。</a><br>3.telegram会发布一些博客没有的内容（不适合在国内传播的），一般来说QQ群已经能满足85%的需求。<br>4.请遵循公告要求，<code>请勿把 博客 / QQ群 / telegram频道 里的内容进行任何形式的转发</code>，避免有不必要的麻烦。</p>
+<p>为方便上传&#x2F;下载tg的相关内容，现提供一个存放个人tg文件的123云盘地址。涉外敏感应用资源仅存tg，不存123云盘。</p>
+<p>（有些已经在123云盘里发过的还是在原来的地址，例如Xposed应用。这里存的是其他的）</p>
+<p><a href="https://www.123912.com/s/xEXZVv-DkfU3">https://www.123912.com/s/xEXZVv-DkfU3</a></p>
+<h3 id="关于应用-："><a href="#关于应用-：" class="headerlink" title="关于应用 ："></a>关于应用 ：</h3><p>1.博客内已收录的应用可以直接通过站内搜索直达网盘<br>2.博客内未收录的应用可以前往telegram频道内搜索<br>3.如果都没有可以去Q群问我，但不一定会提供<br>4.频道内分享的应用如果没有锁签名的话(如应用加固、云端校验签名等)，建议改用自己的签名，或者统一用<br><code>MT管理器(最推荐)</code>，<code>fpa</code>，<code>lspatch</code>，<code>元萝卜（免root核心破解）</code>。这样diy安装包会方便很多。有一些应用我已经用MT签名了，你们也可以自己选择原作者的签名或者自己签。</p>
+<h3 id="关于-RSS-订阅"><a href="#关于-RSS-订阅" class="headerlink" title="关于 RSS 订阅"></a>关于 RSS 订阅</h3><p>订阅源 1 :<br><a href="https://chengeeker.github.io/atom.xml">https://chengeeker.github.io/atom.xml</a><br>订阅源 2 :<br><a href="https://chengeeker.github.io/rss2.xml">https://chengeeker.github.io/rss2.xml</a><br>🌜推荐使用Read You进行RSS订阅🌛<br>✨推荐使用网页版获得完整体验✨<br><code>⚠️注意：RSS应用只能搜索到标题和描述，不一定支持搜索正文内容，建议搜索内容用网页版⚠️</code><br><code>⚠️注意：RSS应用要开启全文解析才能同步二次编辑的内容，否则建议重新导入或使用网页版⚠️</code></p>
+]]></content>
+  </entry>
+  <entry>
     <title>lspatch及其类似物使用教程</title>
     <url>/2024/12/05/%E6%80%8E%E4%B9%88%E7%94%A8lspatch/</url>
     <content><![CDATA[<h2 id="lspatch是什么。"><a href="#lspatch是什么。" class="headerlink" title="lspatch是什么。"></a><strong>lspatch是什么。</strong></h2><p>lspatch是一款基于Android的免root框架，由LSPosed框架的开发者推出。它允许用户在不解锁Bootloader（简称bl锁）或获取Root权限的情况下，将Xposed模块内置到App中，从而实现在Android设备上添加新功能、修改系统设置或改变系统外观等个性化操作。</p>
@@ -1632,91 +1632,6 @@
       </categories>
       <tags>
         <tag>Xposed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机场推荐（实时更新）</title>
-    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
-<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线20台设备使用</p>
-<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线8台设备使用</p>
-<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
-<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
-<p>📱 支持同时在线10台设备使用</p>
-<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
-<hr>
-<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
-<p>优惠券码：牛逼机场666</p>
-<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
-<h3 id="周期套餐：-1"><a href="#周期套餐：-1" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
-<p>⚡️全中转线路</p>
-<p>🖥稳定流媒体解锁</p>
-<p>🤖ChatGPT 服务访问解锁</p>
-<p>⏬下载专用节点0.1x</p>
-<p>💻不限制客户端数量</p>
-<p>❗有限的技术支持</p>
-<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
-<p>其余同上</p>
-<h3 id="一次性套餐："><a href="#一次性套餐：" class="headerlink" title="一次性套餐："></a>一次性套餐：</h3><h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
-<p>其余同上</p>
-<p><img src="https://img.infinitycm.top/file/20250107-172240.webp"></p>
-<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
-<hr>
-<h2 id="Kitty-Network"><a href="#Kitty-Network" class="headerlink" title="Kitty Network"></a>Kitty Network</h2><p><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></p>
-<p><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></p>
-<p><a href="https://t.me/kittythenight">Telegram群组链接</a></p>
-<h3 id="周期套餐：-2"><a href="#周期套餐：-2" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-年付套餐：24元（两年36元）"><a href="#1-年付套餐：24元（两年36元）" class="headerlink" title="1.年付套餐：24元（两年36元）"></a>1.年付套餐：24元（两年36元）</h4><p>⏰每月 128G 流量</p>
-<p>地区：US&#x2F;JP&#x2F;SG&#x2F;KR&#x2F;HK……</p>
-<p>解锁 Netflix，Disney+，ChatGPT等</p>
-<p>不限速，不限在线设备数量</p>
-<p>购买后请务必查看教程！！</p>
-<p>年付24元，2元&#x2F;月</p>
-<p>两年付36元，1.5元&#x2F;月</p>
-<h4 id="2-月付套餐：9元"><a href="#2-月付套餐：9元" class="headerlink" title="2.月付套餐：9元"></a>2.月付套餐：9元</h4><p>每月1024G流量</p>
-<p>月付9元</p>
-<p>年付90元，7元&#x2F;月</p>
-<p>其余同上</p>
-<h4 id="3-季付套餐：15元"><a href="#3-季付套餐：15元" class="headerlink" title="3.季付套餐：15元"></a>3.季付套餐：15元</h4><p>每月512G流量</p>
-<p>季付15元，5元&#x2F;月</p>
-<p>年付50元，4元&#x2F;月</p>
-<p>其余同上</p>
-<hr>
-<h2 id="顺畅网络"><a href="#顺畅网络" class="headerlink" title="顺畅网络"></a>顺畅网络</h2><p><a href="https://scwljsq.scl168.club/#/quick?code=9c4jGwLn">点击跳转顺畅网络</a></p>
-<p><a href="https://scwljsq.scl168.club/#/quick?code=9c4jGwLn">点击跳转顺畅网络</a></p>
-<p><a href="https://t.me/+EIklB0RL1Vk2ZDY1">Telegram售后群组</a></p>
-<p><a href="https://t.me/+LOvs6dEeqpExN2E0">Telegram防失联频道</a></p>
-<h3 id="周期套餐：-3"><a href="#周期套餐：-3" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-黄金包年套餐-20-99-年"><a href="#1-黄金包年套餐-20-99-年" class="headerlink" title="1. 黄金包年套餐(20.99&#x2F;年)"></a>1. 黄金包年套餐(20.99&#x2F;年)</h4><p>流量: 每月 128G 流量，每月重置</p>
-<p>设备: 同时多 台设备同时在线</p>
-<p>带宽: 无限速</p>
-<p>线路: 30+高速节点</p>
-<p>节点: 32 个国家&#x2F;地区节点</p>
-<p>额外: 解锁 Netflix、Disney+、HBO、YouTube Premium 等视频流媒体</p>
-<p>额外: 解锁 OpenAI ChatGPT、Google Bard、Midjourney 等 AI 服务网站</p>
-<h4 id="2-白银包年套餐-39-99-年"><a href="#2-白银包年套餐-39-99-年" class="headerlink" title="2.白银包年套餐(39.99&#x2F;年)"></a>2.白银包年套餐(39.99&#x2F;年)</h4><p>每月380G流量</p>
-<p>其余同上</p>
-<h3 id="一次性套餐：-1"><a href="#一次性套餐：-1" class="headerlink" title="一次性套餐："></a>一次性套餐：</h3><h4 id="3-不限时流量-300G-套餐：15-99元"><a href="#3-不限时流量-300G-套餐：15-99元" class="headerlink" title="3.不限时流量 300G 套餐：15.99元"></a>3.不限时流量 300G 套餐：15.99元</h4><h4 id="4-不限时流量-600G-套餐：26元"><a href="#4-不限时流量-600G-套餐：26元" class="headerlink" title="4.不限时流量 600G 套餐：26元"></a>4.不限时流量 600G 套餐：26元</h4><h4 id="5-不限时流量-1200G-套餐：36元"><a href="#5-不限时流量-1200G-套餐：36元" class="headerlink" title="5.不限时流量 1200G 套餐：36元"></a>5.不限时流量 1200G 套餐：36元</h4><h4 id="6-不限时流量-2500G-套餐：75元-推荐"><a href="#6-不限时流量-2500G-套餐：75元-推荐" class="headerlink" title="6.不限时流量 2500G 套餐：75元(推荐)"></a>6.不限时流量 2500G 套餐：75元(推荐)</h4><h4 id="7-不限时流量-5000G-套餐：130元"><a href="#7-不限时流量-5000G-套餐：130元" class="headerlink" title="7.不限时流量 5000G 套餐：130元"></a>7.不限时流量 5000G 套餐：130元</h4>]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-        <tag>机场</tag>
       </tags>
   </entry>
   <entry>
@@ -1786,6 +1701,131 @@
 ]]></content>
       <categories>
         <category>Tutorials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>运用浏览器功能实现抢课自由</title>
+    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
+    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
+<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
+<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
+<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://img.infinitycm.top/file/RbKvm.webp"></p>
+<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://img.infinitycm.top/file/Rb7GM.webp"></p>
+<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
+<p><img src="https://img.infinitycm.top/file/RbfDX.webp"></p>
+<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
+<p><img src="https://img.infinitycm.top/file/RbnAK.webp"></p>
+<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://img.infinitycm.top/file/Rbp4j.webp"></p>
+<p><img src="https://img.infinitycm.top/file/RbuCA.webp"></p>
+<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://img.infinitycm.top/file/Rb5JP.webp"></p>
+<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
+<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
+</li>
+<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
+</li>
+<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
+</li>
+<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
+</li>
+<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>抢课</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>海外应用（精力有限不再更新）</title>
+    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
+<ul>
+<li><p>莫奈 M 和非莫奈N 版本　　</p>
+</li>
+<li><p>删除广告　　</p>
+</li>
+<li><p>显示敏感媒体　　</p>
+</li>
+<li><p>没有t.Co缩短链接　　</p>
+</li>
+<li><p>删除分享链接时跟踪参数　　</p>
+</li>
+<li><p>使用户名和简介文本可选　　</p>
+</li>
+<li><p>解锁Premium功能　　</p>
+</li>
+<li><p>添加模组设置　　</p>
+</li>
+<li><p>应用图标和导航栏自定义设置：</p>
+</li>
+<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
+</li>
+<li><p>解锁下载视频，长按预览即可下载：　　</p>
+</li>
+<li><p>Gif 可以以视频的形式下载。　　</p>
+</li>
+<li><p>添加模组设置更多语言支持：　　</p>
+</li>
+<li><p>英文、中文、…</p>
+</li>
+</ul>
+<p>　　</p>
+<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
+<ul>
+<li>允许使用 Google 帐户登录</li>
+<li>不会强制登录</li>
+<li>从 TikTok 中删除广告</li>
+<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
+<li>删除下载限制并支持更改默认下载路径 </li>
+<li>移除水印(默认开启)</li>
+<li>为所有视频启用播放速度选项 (并使其保持)</li>
+<li>显示所有视频的进度条</li>
+<li>添加 TikTok settings</li>
+<li>绕过区域限制模拟SIM卡信息</li>
+<li>隐藏视频页底部导航栏上的5个Logo </li>
+<li>支持保持清屏 (隐藏视频控件)</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
+<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
+<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
+</ol>
+<p>　　</p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
+<hr>
+<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
+<ul>
+<li>Advertisment Removed　　</li>
+<li>Enable background play　　</li>
+<li>去除广告　　</li>
+<li>功能拓展</li>
+</ul>
+<p>　　</p>
+<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
+<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
+<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
+<hr>
+<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
+<ul>
+<li>解锁Telegram Premium本地会员　　</li>
+<li>去除应用内部分使用限制</li>
+</ul>
+<p>　　</p>
+<p>在这里推荐一个自用的NagramX</p>
+<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
+<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
+<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
+]]></content>
+      <categories>
+        <category>Software</category>
       </categories>
   </entry>
   <entry>
@@ -1969,41 +2009,6 @@
       </categories>
   </entry>
   <entry>
-    <title>运用浏览器功能实现抢课自由</title>
-    <url>/2024/12/05/%E6%8A%A2%E8%AF%BE/</url>
-    <content><![CDATA[<h4 id="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"><a href="#首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！" class="headerlink" title="首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！"></a><strong>首先要声明一点，此方法和正常抢课方式一样，同样会受到教务系统那个服务器的限制，不包中！！！</strong></h4><p>相信大家都没怎么见过选课系统能正常运行的，基本上就是在开抢前一秒，教务系统就登不进去了，页面也极其卡顿。要成功点击“选课”按钮，通常还要准点刷新一次网页，但这一刷一般就是一两分钟，等你重新进入选课界面，喜欢的课早已被抢光。</p>
-<p>下面就介绍一种方法，能够让“选课”按钮提前进入可点击的状态，让你在准时准点能够免刷新网页直接点击选课。</p>
-<p>因为写这篇文章的时候我的专业选修课抢课已经结束了，我也不可能拿实战给各位做演示，万一失败了不仅课没抢成demo也没得做那多尴尬。刚好还有一次公选课抢课准备开始，虽然不用抢全靠积分，但原理是一样的。我就拿公选课的抢课进行演示。</p>
-<h4 id="文末有注意事项，要看完"><a href="#文末有注意事项，要看完" class="headerlink" title="文末有注意事项，要看完"></a><strong>文末有注意事项，要看完</strong></h4><h6 id="我们以标记的创意插画课为例"><a href="#我们以标记的创意插画课为例" class="headerlink" title="我们以标记的创意插画课为例"></a>我们以标记的创意插画课为例</h6><p><img src="https://img.infinitycm.top/file/RbKvm.webp"></p>
-<h6 id="正常情况下，选课按钮是处于禁用状态的，如图所示"><a href="#正常情况下，选课按钮是处于禁用状态的，如图所示" class="headerlink" title="正常情况下，选课按钮是处于禁用状态的，如图所示"></a>正常情况下，选课按钮是处于禁用状态的，如图所示</h6><p><img src="https://img.infinitycm.top/file/Rb7GM.webp"></p>
-<h6 id="此时我们单击鼠标右键，进入网页的“检查”模式"><a href="#此时我们单击鼠标右键，进入网页的“检查”模式" class="headerlink" title="此时我们单击鼠标右键，进入网页的“检查”模式"></a>此时我们单击鼠标右键，进入网页的“检查”模式</h6><p>（一般的浏览器都有这个功能）</p>
-<p><img src="https://img.infinitycm.top/file/RbfDX.webp"></p>
-<h6 id="进入调试器后，点击调试器左上方的箭头进入选取状态"><a href="#进入调试器后，点击调试器左上方的箭头进入选取状态" class="headerlink" title="进入调试器后，点击调试器左上方的箭头进入选取状态"></a>进入调试器后，点击调试器左上方的箭头进入选取状态</h6><h6 id="然后点击你想选择的课程的“选课”按钮"><a href="#然后点击你想选择的课程的“选课”按钮" class="headerlink" title="然后点击你想选择的课程的“选课”按钮"></a>然后点击你想选择的课程的“选课”按钮</h6><h6 id="此时，调试器的会给选中的部分进行标记"><a href="#此时，调试器的会给选中的部分进行标记" class="headerlink" title="此时，调试器的会给选中的部分进行标记"></a>此时，调试器的会给选中的部分进行标记</h6><p>（如图，标记部分为整个button组件）</p>
-<p><img src="https://img.infinitycm.top/file/RbnAK.webp"></p>
-<h6 id="我们双击disable字段进入编辑模式"><a href="#我们双击disable字段进入编辑模式" class="headerlink" title="我们双击disable字段进入编辑模式"></a>我们双击disable字段进入编辑模式</h6><h6 id="并把图示字段删除"><a href="#并把图示字段删除" class="headerlink" title="并把图示字段删除"></a>并把图示字段删除</h6><p><img src="https://img.infinitycm.top/file/Rbp4j.webp"></p>
-<p><img src="https://img.infinitycm.top/file/RbuCA.webp"></p>
-<h6 id="此时我们退出检查模式回到主界面"><a href="#此时我们退出检查模式回到主界面" class="headerlink" title="此时我们退出检查模式回到主界面"></a>此时我们退出检查模式回到主界面</h6><h6 id="再次点击选课，此时“选课”按钮的禁用限制已被解除"><a href="#再次点击选课，此时“选课”按钮的禁用限制已被解除" class="headerlink" title="再次点击选课，此时“选课”按钮的禁用限制已被解除"></a>再次点击选课，此时“选课”按钮的禁用限制已被解除</h6><h6 id="在选课正式开始时，点击选课即可。"><a href="#在选课正式开始时，点击选课即可。" class="headerlink" title="在选课正式开始时，点击选课即可。"></a>在选课正式开始时，点击选课即可。</h6><p><img src="https://img.infinitycm.top/file/Rb5JP.webp"></p>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><ol>
-<li><p>解除禁用限制之后是无法立即选课的，没到时间点击选课会显示选课时间未到，所以卡好时间再选</p>
-</li>
-<li><p>进入选课系统不宜过早，过早进入选课系统会因为临近选课时间大量用户涌入服务器而导致自己的账号被挤出去要重新进，检查模式也保不住你一样会退出去，这个时候你再进选课系统可能就来不及了，<strong>建议提前1分30秒进入选课系统，进入选课系统后再按照上述内容进行操作</strong></p>
-</li>
-<li><p>此操作为修改网页前端数据，不涉及后端，因此修改效果在刷新页面便会失效。<strong>操作完之后别手贱点了刷新</strong>，到时候追悔莫及。</p>
-</li>
-<li><p>点击完选课之后它会加载个十几秒，这个时候你的数据就已经进到服务器了，耐心等待就行了，至于能不能选上就全看你的运气了，有些幸运儿的即便不用上述操作也能正常选课，有时候服务器抽风抽得太逆天了你也一样选不上。</p>
-</li>
-<li><p>本方法知道的人越多，竞争就越大，<strong>建议自己吃独食</strong>。有时候你只是想分享给你的好友，结果下一秒全学院的同学都知道了。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>抢课</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>游戏站上线啦</title>
     <url>/2025/12/22/%E6%B8%B8%E6%88%8F%E7%AB%99%E4%B8%8A%E7%BA%BF/</url>
     <content><![CDATA[<p>历经一个星期的下载上传，我的123云盘游戏站终于建成了。</p>
@@ -2015,6 +2020,57 @@
       </categories>
       <tags>
         <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
+    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
+    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
+<ol>
+<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
+</li>
+<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
+</li>
+<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
+</li>
+</ol>
+<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
+<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
+<p>如何查看GitHub注册天数？</p>
+<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
+<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
+<p>用这个日期与今天日期计算天数差即可</p>
+</blockquote>
+<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
+<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://img.infinitycm.top/file/20260322223109079.webp"></p>
+<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
+</ol>
+<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
+<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
+<li><code>Application Name</code>随便改，这是项目的名字。</li>
+<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
+<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
+<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
+<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
+<li>其他不动，点击<code>Deploy Application</code></li>
+<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
+<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
+<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
+<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>机场</tag>
       </tags>
   </entry>
   <entry>
@@ -2085,6 +2141,91 @@
       </tags>
   </entry>
   <entry>
+    <title>机场推荐（实时更新）</title>
+    <url>/2024/12/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="良心云机场"><a href="#良心云机场" class="headerlink" title="良心云机场"></a>良心云机场</h2><p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<p><strong><em><a href="https://良心云.com/#/register?code=zV77tt9l">点击跳转良心云机场</a></em></strong></p>
+<h3 id="周期套餐："><a href="#周期套餐：" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-100G流量-¥2-00-月付"><a href="#1-100G流量-¥2-00-月付" class="headerlink" title="1.100G流量 ¥2.00 &#x2F; 月付"></a>1.100G流量 ¥2.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="500G流量-¥4-00-月付"><a href="#500G流量-¥4-00-月付" class="headerlink" title="500G流量  ¥4.00 &#x2F; 月付"></a>500G流量  ¥4.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="1000G流量-王牌套餐-¥6-00-月付"><a href="#1000G流量-王牌套餐-¥6-00-月付" class="headerlink" title="1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付"></a>1000G流量(王牌套餐)  ¥6.00 &#x2F; 月付</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线20台设备使用</p>
+<p>⚡️ 高达3Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h3 id="一次性套餐"><a href="#一次性套餐" class="headerlink" title="一次性套餐"></a>一次性套餐</h3><h4 id="一次性1000G流量-¥21-00-一次性"><a href="#一次性1000G流量-¥21-00-一次性" class="headerlink" title="一次性1000G流量   ¥21.00 &#x2F; 一次性"></a>一次性1000G流量   ¥21.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线8台设备使用</p>
+<p>⚡️ 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<h4 id="一次性5000G流量-¥89-00-一次性"><a href="#一次性5000G流量-¥89-00-一次性" class="headerlink" title="一次性5000G流量   ¥89.00 &#x2F; 一次性"></a>一次性5000G流量   ¥89.00 &#x2F; 一次性</h4><p>👌 支持新疆，河南，福建，用户使用，毫无影响</p>
+<p>🌍 全球覆盖，所有节点1.0倍率，无高倍线路</p>
+<p>📱 支持同时在线10台设备使用</p>
+<p>⚡️ 高达2Gbps带宽，晚高峰观看8K 60fps不卡顿</p>
+<hr>
+<h2 id="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"><a href="#牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）" class="headerlink" title="牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）"></a>牛逼机场（个人主力，稳定高速，便宜大碗，十分推荐）</h2><p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p><em><strong><a href="https://6.66jc.top/#/login?code=qSvrbS3i">点击跳转牛逼机场</a></strong></em></p>
+<p>优惠券码：牛逼机场666</p>
+<p>缺点：部分对IP要求极高的网站&#x2F;应用可能会出现开了全局但应用&#x2F;网站的ip识别还在中国的情况，例如Google play商店切换地区，学生认证等等，建议多备一个好一点的机场作为认证备用。cloudfare偶尔会一直过不去。</p>
+<h3 id="周期套餐：-1"><a href="#周期套餐：-1" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-年付套餐：24-9元"><a href="#1-年付套餐：24-9元" class="headerlink" title="1.年付套餐：24.9元"></a><strong>1.年付套餐：24.9元</strong></h4><p>⏰每月 200G 流量</p>
+<p>⚡️全中转线路</p>
+<p>🖥稳定流媒体解锁</p>
+<p>🤖ChatGPT 服务访问解锁</p>
+<p>⏬下载专用节点0.1x</p>
+<p>💻不限制客户端数量</p>
+<p>❗有限的技术支持</p>
+<h4 id="2-月付套餐：7-4元"><a href="#2-月付套餐：7-4元" class="headerlink" title="2.月付套餐：7.4元"></a><strong>2.月付套餐：7.4元</strong></h4><p>每月1000G流量</p>
+<p>其余同上</p>
+<h3 id="一次性套餐："><a href="#一次性套餐：" class="headerlink" title="一次性套餐："></a>一次性套餐：</h3><h4 id="3-不限时200G：13-9元"><a href="#3-不限时200G：13-9元" class="headerlink" title="3.不限时200G：13.9元"></a><strong>3.不限时200G：13.9元</strong></h4><h4 id="4-不限时2000G：35-9元"><a href="#4-不限时2000G：35-9元" class="headerlink" title="4.不限时2000G：35.9元"></a><strong>4.不限时2000G：35.9元</strong></h4><h4 id="5-不限时6000G：75-9元"><a href="#5-不限时6000G：75-9元" class="headerlink" title="5.不限时6000G：75.9元"></a><strong>5.不限时6000G：75.9元</strong></h4><p>一次性流量</p>
+<p>其余同上</p>
+<p><img src="https://img.infinitycm.top/file/20250107-172240.webp"></p>
+<p>放一张 stairspeedtest 的测速图，测速结果仅作参考。</p>
+<hr>
+<h2 id="Kitty-Network"><a href="#Kitty-Network" class="headerlink" title="Kitty Network"></a>Kitty Network</h2><p><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></p>
+<p><a href="https://kitty.sb/#/register?code=3sYY2UiL">点击跳转Kitty Network</a></p>
+<p><a href="https://t.me/kittythenight">Telegram群组链接</a></p>
+<h3 id="周期套餐：-2"><a href="#周期套餐：-2" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-年付套餐：24元（两年36元）"><a href="#1-年付套餐：24元（两年36元）" class="headerlink" title="1.年付套餐：24元（两年36元）"></a>1.年付套餐：24元（两年36元）</h4><p>⏰每月 128G 流量</p>
+<p>地区：US&#x2F;JP&#x2F;SG&#x2F;KR&#x2F;HK……</p>
+<p>解锁 Netflix，Disney+，ChatGPT等</p>
+<p>不限速，不限在线设备数量</p>
+<p>购买后请务必查看教程！！</p>
+<p>年付24元，2元&#x2F;月</p>
+<p>两年付36元，1.5元&#x2F;月</p>
+<h4 id="2-月付套餐：9元"><a href="#2-月付套餐：9元" class="headerlink" title="2.月付套餐：9元"></a>2.月付套餐：9元</h4><p>每月1024G流量</p>
+<p>月付9元</p>
+<p>年付90元，7元&#x2F;月</p>
+<p>其余同上</p>
+<h4 id="3-季付套餐：15元"><a href="#3-季付套餐：15元" class="headerlink" title="3.季付套餐：15元"></a>3.季付套餐：15元</h4><p>每月512G流量</p>
+<p>季付15元，5元&#x2F;月</p>
+<p>年付50元，4元&#x2F;月</p>
+<p>其余同上</p>
+<hr>
+<h2 id="顺畅网络"><a href="#顺畅网络" class="headerlink" title="顺畅网络"></a>顺畅网络</h2><p><a href="https://scwljsq.scl168.club/#/quick?code=9c4jGwLn">点击跳转顺畅网络</a></p>
+<p><a href="https://scwljsq.scl168.club/#/quick?code=9c4jGwLn">点击跳转顺畅网络</a></p>
+<p><a href="https://t.me/+EIklB0RL1Vk2ZDY1">Telegram售后群组</a></p>
+<p><a href="https://t.me/+LOvs6dEeqpExN2E0">Telegram防失联频道</a></p>
+<h3 id="周期套餐：-3"><a href="#周期套餐：-3" class="headerlink" title="周期套餐："></a>周期套餐：</h3><h4 id="1-黄金包年套餐-20-99-年"><a href="#1-黄金包年套餐-20-99-年" class="headerlink" title="1. 黄金包年套餐(20.99&#x2F;年)"></a>1. 黄金包年套餐(20.99&#x2F;年)</h4><p>流量: 每月 128G 流量，每月重置</p>
+<p>设备: 同时多 台设备同时在线</p>
+<p>带宽: 无限速</p>
+<p>线路: 30+高速节点</p>
+<p>节点: 32 个国家&#x2F;地区节点</p>
+<p>额外: 解锁 Netflix、Disney+、HBO、YouTube Premium 等视频流媒体</p>
+<p>额外: 解锁 OpenAI ChatGPT、Google Bard、Midjourney 等 AI 服务网站</p>
+<h4 id="2-白银包年套餐-39-99-年"><a href="#2-白银包年套餐-39-99-年" class="headerlink" title="2.白银包年套餐(39.99&#x2F;年)"></a>2.白银包年套餐(39.99&#x2F;年)</h4><p>每月380G流量</p>
+<p>其余同上</p>
+<h3 id="一次性套餐：-1"><a href="#一次性套餐：-1" class="headerlink" title="一次性套餐："></a>一次性套餐：</h3><h4 id="3-不限时流量-300G-套餐：15-99元"><a href="#3-不限时流量-300G-套餐：15-99元" class="headerlink" title="3.不限时流量 300G 套餐：15.99元"></a>3.不限时流量 300G 套餐：15.99元</h4><h4 id="4-不限时流量-600G-套餐：26元"><a href="#4-不限时流量-600G-套餐：26元" class="headerlink" title="4.不限时流量 600G 套餐：26元"></a>4.不限时流量 600G 套餐：26元</h4><h4 id="5-不限时流量-1200G-套餐：36元"><a href="#5-不限时流量-1200G-套餐：36元" class="headerlink" title="5.不限时流量 1200G 套餐：36元"></a>5.不限时流量 1200G 套餐：36元</h4><h4 id="6-不限时流量-2500G-套餐：75元-推荐"><a href="#6-不限时流量-2500G-套餐：75元-推荐" class="headerlink" title="6.不限时流量 2500G 套餐：75元(推荐)"></a>6.不限时流量 2500G 套餐：75元(推荐)</h4><h4 id="7-不限时流量-5000G-套餐：130元"><a href="#7-不限时流量-5000G-套餐：130元" class="headerlink" title="7.不限时流量 5000G 套餐：130元"></a>7.不限时流量 5000G 套餐：130元</h4>]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>机场</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阅读legado</title>
     <url>/2025/02/26/%E9%98%85%E8%AF%BBLegado/</url>
     <content><![CDATA[<p><a href="https://github.com/gedoor/legado">阅读legado的GitHub地址</a></p>
@@ -2103,147 +2244,6 @@
       </categories>
       <tags>
         <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>海外应用（精力有限不再更新）</title>
-    <url>/2024/12/05/%E6%B5%B7%E5%A4%96%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="X（Twitter）"><a href="#X（Twitter）" class="headerlink" title="X（Twitter）"></a>X（Twitter）</h3><p>特点：　　</p>
-<ul>
-<li><p>莫奈 M 和非莫奈N 版本　　</p>
-</li>
-<li><p>删除广告　　</p>
-</li>
-<li><p>显示敏感媒体　　</p>
-</li>
-<li><p>没有t.Co缩短链接　　</p>
-</li>
-<li><p>删除分享链接时跟踪参数　　</p>
-</li>
-<li><p>使用户名和简介文本可选　　</p>
-</li>
-<li><p>解锁Premium功能　　</p>
-</li>
-<li><p>添加模组设置　　</p>
-</li>
-<li><p>应用图标和导航栏自定义设置：</p>
-</li>
-<li><p>通过 Firefox、via 或其他浏览器输入此地址 (twitter:&#x2F;&#x2F;subscriptions&#x2F;settings&#x2F;extras)跳转进入　　</p>
-</li>
-<li><p>解锁下载视频，长按预览即可下载：　　</p>
-</li>
-<li><p>Gif 可以以视频的形式下载。　　</p>
-</li>
-<li><p>添加模组设置更多语言支持：　　</p>
-</li>
-<li><p>英文、中文、…</p>
-</li>
-</ul>
-<p>　　</p>
-<p><a href="https://t.me/pikopatches">模块作者 telegram 频道链接</a></p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用Twitter了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="TikTok"><a href="#TikTok" class="headerlink" title="TikTok"></a>TikTok</h3><p>特点：</p>
-<ul>
-<li>允许使用 Google 帐户登录</li>
-<li>不会强制登录</li>
-<li>从 TikTok 中删除广告</li>
-<li>视频过滤：移除广告(默认开启)，隐藏直播等</li>
-<li>删除下载限制并支持更改默认下载路径 </li>
-<li>移除水印(默认开启)</li>
-<li>为所有视频启用播放速度选项 (并使其保持)</li>
-<li>显示所有视频的进度条</li>
-<li>添加 TikTok settings</li>
-<li>绕过区域限制模拟SIM卡信息</li>
-<li>隐藏视频页底部导航栏上的5个Logo </li>
-<li>支持保持清屏 (隐藏视频控件)</li>
-</ul>
-<p>注意：</p>
-<ol>
-<li>如果 TikTok 在你的国家地区被禁止或限制，选择一个 Good VPN 连接到美国</li>
-<li>如果 TikTok 在你的国家地区正常，关闭“模拟SIM卡信息”</li>
-<li>如果你的网络正常，但上面显示“无网络连接”，在“设置和隐私”中点击一次“TikTok Settings”</li>
-</ol>
-<p>　　</p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用tk了可以直接去频道里面下载）</p>
-<hr>
-<h3 id="YouTube（Vanced）"><a href="#YouTube（Vanced）" class="headerlink" title="YouTube（Vanced）"></a>YouTube（Vanced）</h3><p>特点：　　</p>
-<ul>
-<li>Advertisment Removed　　</li>
-<li>Enable background play　　</li>
-<li>去除广告　　</li>
-<li>功能拓展</li>
-</ul>
-<p>　　</p>
-<p>注意：请确保你会使用Micro G，如果不会，请查看<a href="https://mp.weixin.qq.com/s?__biz=MzkzMTQ1MDMxNg==&mid=2247484159&idx=1&sn=7c0018028b6803590bc8a3735baf1ea7&chksm=c26b9e5cf51c174aa80993914658f0a7b9841c8232e4c668cff7fee50eaed1dccbe8f8827f0f#rd">推文</a></p>
-<p><a href="https://t.me/TKJIKU">TK 集库 telegram 频道链接</a>　　</p>
-<p><del>123云盘下载链接</del>（敏感资源一直被封，反正都用youtube了可以直接去频道里面下载）　　</p>
-<hr>
-<h3 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h3><p>1TH+ 功能（已停更）：　　</p>
-<ul>
-<li>解锁Telegram Premium本地会员　　</li>
-<li>去除应用内部分使用限制</li>
-</ul>
-<p>　　</p>
-<p>在这里推荐一个自用的NagramX</p>
-<p>支持Ayu的核心功能本地会员，体验比内置tg好</p>
-<p><a href="https://github.com/risin42/NagramX">NagramX官网</a></p>
-<p><a href="https://t.me/NagramX">NagramX官方频道链接</a></p>
-]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用ClawCloud Run搭建自己的免费机场（已失效）</title>
-    <url>/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/</url>
-    <content><![CDATA[<h2 id="爪云跑路了，服务器关闭，本贴作废，仅做纪念"><a href="#爪云跑路了，服务器关闭，本贴作废，仅做纪念" class="headerlink" title="爪云跑路了，服务器关闭，本贴作废，仅做纪念"></a>爪云跑路了，服务器关闭，本贴作废，仅做纪念</h2><h4 id="视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s"><a href="#视频教程：https-www-youtube-com-watch-v-4BuQRBmyYJs-t-569s" class="headerlink" title="视频教程：https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s"></a>视频教程：<a href="https://www.youtube.com/watch?v=4BuQRBmyYJs&t=569s">https://www.youtube.com/watch?v=4BuQRBmyYJs&amp;t=569s</a></h4><h4 id="前置补充"><a href="#前置补充" class="headerlink" title="前置补充"></a>前置补充</h4><p>clash类应用<code>不一定</code>支持这种订阅链接，因此在代理软件的选择上：</p>
-<ol>
-<li><p>Android端推荐使用<a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">nekobox</a></p>
-</li>
-<li><p>Windows、Mac、Linux推荐使用<a href="https://github.com/2dust/v2rayN">v2RayN</a></p>
-</li>
-<li><p>如果嫌麻烦可以全部用<a href="https://karing.app/">Karing</a>（全平台通用）</p>
-</li>
-</ol>
-<h2 id="第一步，注册ClawCloud-Run账号"><a href="#第一步，注册ClawCloud-Run账号" class="headerlink" title="第一步，注册ClawCloud Run账号"></a>第一步，注册ClawCloud Run账号</h2><blockquote>
-<p>注意，最好要有一个注册满180天的GitHub账号（不然没有每月免费的5美元额度）</p>
-<p>如何查看GitHub注册天数？</p>
-<p>在浏览器地址栏输入：<a href="https://api.github.com/users/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D">https://api.github.com/users/你的用户名</a></p>
-<p>找到返回 JSON 中的 created_at 字段，格式为 YYYY-MM-DDTHH:MM:SSZ（UTC 时间）</p>
-<p>用这个日期与今天日期计算天数差即可</p>
-</blockquote>
-<p>注册地址：<a href="https://run.claw.cloud/">https://run.claw.cloud/</a></p>
-<p>在页面左上角选择服务器的地址。（这里建议选US WEST，离国内近，而且人少一些，新加坡服务器人太多了）<br><img src="https://img.infinitycm.top/file/20260322223109079.webp"></p>
-<h2 id="第二步，部署项目"><a href="#第二步，部署项目" class="headerlink" title="第二步，部署项目"></a>第二步，部署项目</h2><h3 id="项目一（vless）"><a href="#项目一（vless）" class="headerlink" title="项目一（vless）"></a>项目一（vless）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/seven</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面可以选择复制单个节点链接导入代理软件，也可以复制聚合链接文本导入全部。</li>
-</ol>
-<h3 id="项目二（Hysteria2）"><a href="#项目二（Hysteria2）" class="headerlink" title="项目二（Hysteria2）"></a>项目二（Hysteria2）</h3><ol>
-<li>点击<code>App Launchpad</code>，点击右上角的<code>Create App</code>。</li>
-<li><code>Application Name</code>随便改，这是项目的名字。</li>
-<li><code>Image Name</code>改成<code>7techlife/sevenhy2</code>。</li>
-<li><code>Usage</code>把CPU和内存都拉到最小。（牺牲点稳定性优先保障流量）</li>
-<li><code>Network</code>的<code>Container Port</code>填写<code>7777</code>，开启<code>Public Access</code>，把后面链接的<code>https</code>前缀改选成<code>udp</code></li>
-<li><code>Advanced Configuration</code>的<code>Environment Variables</code>添加<code>password=自定义密码</code>，防止应用重启导致订阅链接更改。</li>
-<li>其他不动，点击<code>Deploy Application</code></li>
-<li>部署完成后进入项目，在<code>Overview</code>最下面点击Logs。（要等<code>Status</code>是<code>Active</code>再弄）</li>
-<li>在Logs界面复制提供的<code>链接模板</code>，导入代理软件。</li>
-<li>进入项目，在<code>Overview</code>最下面找到<code>Network</code>-<code>Public Address</code>（右边那个），复制下面的udp链接</li>
-<li>在代理软件里把这条订阅链接的<code>地址（或者叫服务器）</code>改成udp链接（并删掉<code>udp://</code>和原链接后面的<code>：端口号</code>），再把<code>端口号</code>设置成udp链接里的端口（不是7777的那个），点击保存即可。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-      </categories>
-      <tags>
-        <tag>机场</tag>
       </tags>
   </entry>
   <entry>
