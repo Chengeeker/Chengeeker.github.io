@@ -1,0 +1,319 @@
+/*
+ Butterfly Liquid Glass
+
+ Universal Page Surface
+
+ Version:
+ v2.3
+
+ Support:
+ - Archive
+ - Post
+ - Shuoshuo
+ - Custom pages
+
+*/
+
+
+/* =====================================
+   Archive Surface
+===================================== */
+
+
+#archive {
+
+
+    position:relative;
+
+
+    padding:30px;
+
+
+    border-radius:
+
+    var(--lg-radius-xl);
+
+
+
+    background:
+
+    var(--lg-surface-1-light);
+
+
+
+    backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    -webkit-backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    border:
+
+    1px solid
+
+    var(--lg-border-light);
+
+
+
+    box-shadow:
+
+    var(--lg-elevation-2);
+
+
+}
+
+
+
+/* =====================================
+   Article Surface
+
+===================================== */
+
+
+#post {
+
+
+    position:relative;
+
+
+    padding:30px;
+
+
+    border-radius:
+
+    var(--lg-radius-xl);
+
+
+
+    background:
+
+    var(--lg-surface-1-light);
+
+
+
+    backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    -webkit-backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    border:
+
+    1px solid
+
+    var(--lg-border-light);
+
+
+
+    box-shadow:
+
+    var(--lg-elevation-2);
+
+
+}
+
+
+
+/* =====================================
+   Shuoshuo Surface
+
+   Custom Type Page
+
+===================================== */
+
+
+.shuoshuo-item {
+
+
+    position:relative;
+
+
+    border-radius:
+
+    var(--lg-radius-xl);
+
+
+
+    background:
+
+    var(--lg-surface-1-light);
+
+
+
+    backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    -webkit-backdrop-filter:
+
+    blur(
+        var(--lg-blur-heavy)
+    )
+
+    saturate(160%);
+
+
+
+    border:
+
+    1px solid
+
+    var(--lg-border-light);
+
+
+
+    box-shadow:
+
+    var(--lg-elevation-2);
+
+
+
+    overflow:hidden;
+
+
+
+}
+
+
+
+/* =====================================
+   Inner Container
+
+===================================== */
+
+
+.shuoshuo-item .container {
+
+
+    background:
+
+    transparent;
+
+
+
+}
+
+
+
+/* =====================================
+   Remove Article Inner Glass
+
+===================================== */
+
+
+#article-container {
+
+
+    background:
+
+    transparent
+    !important;
+
+
+
+    backdrop-filter:
+
+    none
+    !important;
+
+
+
+    -webkit-backdrop-filter:
+
+    none
+    !important;
+
+
+
+    border:
+
+    none
+    !important;
+
+
+
+    box-shadow:
+
+    none
+    !important;
+
+
+}
+
+
+
+/* =====================================
+   Dark Mode
+
+===================================== */
+
+
+[data-theme="dark"]
+
+#archive,
+[data-theme="dark"]
+
+#post,
+[data-theme="dark"]
+
+.shuoshuo-item {
+
+
+    background:
+
+    var(--lg-surface-1-dark);
+
+
+
+    border-color:
+
+    var(--lg-border-dark);
+
+
+
+    box-shadow:
+
+    var(--lg-elevation-dark);
+
+
+
+}
+
+
+
+
+

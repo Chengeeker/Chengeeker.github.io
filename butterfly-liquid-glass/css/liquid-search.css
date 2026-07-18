@@ -1,0 +1,262 @@
+/*
+ Butterfly Liquid Glass
+
+ Search Modal
+
+ Version:
+ v1.0
+*/
+
+
+/* =====================================
+   Search Overlay
+===================================== */
+
+#local-search {
+
+    position: relative;
+
+}
+
+
+
+/* =====================================
+   Search Dialog
+===================================== */
+
+.search-dialog {
+
+    border-radius:
+    var(--lg-radius-xl)
+    !important;
+
+
+    overflow:
+    hidden;
+
+
+    background:
+    var(--lg-surface-1-light)
+    !important;
+
+
+    backdrop-filter:
+    blur(
+        var(--lg-blur-heavy)
+    )
+    saturate(180%);
+
+
+    -webkit-backdrop-filter:
+    blur(
+        var(--lg-blur-heavy)
+    )
+    saturate(180%);
+
+
+    border:
+    1px solid
+    var(--lg-border-light);
+
+
+    box-shadow:
+    var(--lg-elevation-3);
+
+
+}
+
+
+
+/* =====================================
+   Search Content
+===================================== */
+
+
+.search-dialog-content {
+
+
+    background:
+    transparent
+    !important;
+
+
+}
+
+
+
+/* =====================================
+   Search Input
+===================================== */
+
+
+#local-search-input {
+
+
+    border-radius:
+    var(--lg-radius-md);
+
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .25
+    )
+    !important;
+
+
+    backdrop-filter:
+    blur(12px);
+
+
+    -webkit-backdrop-filter:
+    blur(12px);
+
+
+    border:
+    1px solid
+    var(--lg-border-light);
+
+
+
+}
+
+
+
+/* =====================================
+   Search Result
+===================================== */
+
+
+#local-search-results {
+
+
+    margin-top:
+    20px;
+
+
+}
+
+
+
+#local-search-results .local-search-box {
+
+
+    border-radius:
+    var(--lg-radius-md);
+
+
+}
+
+
+
+/* =====================================
+   Result Item
+===================================== */
+
+
+#local-search-results .local-search__hit-item {
+
+
+    border-radius:
+    var(--lg-radius-md);
+
+
+    transition:
+    .25s ease;
+
+
+}
+
+
+
+#local-search-results .local-search__hit-item:hover {
+
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .25
+    );
+
+
+    transform:
+    translateY(-2px);
+
+
+}
+
+
+
+/* =====================================
+   Dark Mode
+===================================== */
+
+
+[data-theme="dark"]
+
+.search-dialog {
+
+
+    background:
+    var(--lg-surface-1-dark)
+    !important;
+
+
+    border-color:
+    var(--lg-border-dark);
+
+
+
+}
+
+
+
+[data-theme="dark"]
+
+#local-search-input {
+
+
+    background:
+    rgba(
+        30,
+        30,
+        35,
+        .45
+    )
+    !important;
+
+
+    border-color:
+    rgba(
+        255,
+        255,
+        255,
+        .12
+    );
+
+
+
+}
+
+
+
+[data-theme="dark"]
+
+#local-search-results
+.local-search__hit-item:hover {
+
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .08
+    );
+
+
+}
