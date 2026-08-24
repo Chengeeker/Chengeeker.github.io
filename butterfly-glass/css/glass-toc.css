@@ -33,25 +33,21 @@
     background:
 
 
-    rgba(255,255,255,.45);
+    rgba(255,255,255,.16);
 
 
 
     backdrop-filter:
 
 
-    blur(25px)
-
-    saturate(160%);
+    none;
 
 
 
     -webkit-backdrop-filter:
 
 
-    blur(25px)
-
-    saturate(160%);
+    none;
 
 
 
@@ -67,7 +63,7 @@
     box-shadow:
 
 
-    var(--lg-elevation-2);
+    var(--lg-shadow-1);
 
 
 

@@ -1,0 +1,449 @@
+/*
+ * Butterfly Liquid Glass
+ * Web Glass System v4.0.1 - Design Tokens
+ *
+ * Shared tokens for the new Web-native Glass Core.
+ *
+ * v4.0.1 changes:
+ * - Stronger Light-mode glass separation
+ * - Dedicated Light-mode edge/highlight system
+ * - Unified Glass radius system
+ * - Better Light/Dark floating-control contrast
+ */
+
+:root {
+
+  /* ---------- Surfaces ---------- */
+
+  /*
+   * Light mode:
+   *
+   * The previous 0.72 surface was too opaque on light backgrounds.
+   * Lower opacity allows the original backdrop to participate in the
+   * glass appearance.
+   */
+  --lg-surface-0-light:
+    #f5f5f7;
+
+  --lg-surface-1-light:
+    rgba(255, 255, 255, 0.48);
+
+  --lg-surface-2-light:
+    rgba(255, 255, 255, 0.40);
+
+  --lg-surface-3-light:
+    rgba(255, 255, 255, 0.72);
+
+
+  /* Dark mode */
+
+  --lg-surface-0-dark:
+    #101114;
+
+  --lg-surface-1-dark:
+    rgba(40, 42, 50, 0.78);
+
+  --lg-surface-2-dark:
+    rgba(26, 27, 32, 0.72);
+
+  --lg-surface-3-dark:
+    rgba(60, 62, 72, 0.85);
+
+  /* ---------- Environment ---------- */
+  --lg-environment-light-base: #f7f8fb;
+  --lg-environment-light-wash: rgba(255, 255, 255, 0.72);
+  --lg-environment-light-blue: rgba(184, 214, 255, 0.22);
+  --lg-environment-light-violet: rgba(218, 201, 255, 0.18);
+  --lg-environment-light-warm: rgba(255, 226, 205, 0.14);
+  --lg-environment-dark-base: #111318;
+  --lg-environment-dark-blue: rgba(86, 126, 255, 0.18);
+  --lg-environment-dark-violet: rgba(183, 116, 255, 0.14);
+  --lg-environment-dark-cyan: rgba(88, 203, 196, 0.08);
+
+
+  /* ---------- Blur ---------- */
+
+  --lg-blur-0:
+    0px;
+
+  --lg-blur-sm:
+    14px;
+
+  --lg-blur-md:
+    24px;
+
+  --lg-blur-lg:
+    34px;
+
+  --lg-blur-xl:
+    44px;
+
+
+  /* ---------- Vibrancy ---------- */
+
+  --lg-saturate-sm:
+    135%;
+
+  --lg-saturate-md:
+    165%;
+
+  --lg-saturate-lg:
+    180%;
+
+
+  /* ---------- Radius ---------- */
+
+  /*
+   * Glass system radius.
+   *
+   * These intentionally do not follow Butterfly's original
+   * rounded-corners values.
+   */
+
+  --lg-radius-sm:
+    14px;
+
+  --lg-radius-md:
+    18px;
+
+  --lg-radius-lg:
+    24px;
+
+  --lg-radius-xl:
+    30px;
+
+
+  /* ---------- Light Border ---------- */
+
+  /*
+   * A white border alone becomes almost invisible on a white
+   * background. Light Glass therefore uses a subtle dark edge
+   * combined with a separate white highlight.
+   */
+
+  --lg-border-light:
+    rgba(40, 42, 48, 0.10);
+
+  --lg-border-light-strong:
+    rgba(40, 42, 48, 0.16);
+
+  --lg-border-light-highlight:
+    rgba(255, 255, 255, 0.72);
+
+
+  /* ---------- Dark Border ---------- */
+
+  --lg-border-dark:
+    rgba(255, 255, 255, 0.16);
+
+  --lg-border-dark-strong:
+    rgba(255, 255, 255, 0.22);
+
+  --lg-border-dark-highlight:
+    rgba(255, 255, 255, 0.12);
+
+
+  /* ---------- Depth ---------- */
+
+  --lg-shadow-1:
+    0 12px 34px rgba(0, 0, 0, 0.10);
+
+  --lg-shadow-2:
+    0 20px 55px rgba(0, 0, 0, 0.13);
+
+  --lg-shadow-3:
+    0 30px 80px rgba(0, 0, 0, 0.16);
+
+
+  --lg-shadow-dark-1:
+    0 14px 40px rgba(0, 0, 0, 0.36);
+
+  --lg-shadow-dark-2:
+    0 24px 70px rgba(0, 0, 0, 0.48);
+
+  --lg-shadow-dark-3:
+    0 34px 95px rgba(0, 0, 0, 0.58);
+
+
+  /* ---------- Optical ---------- */
+
+  --lg-optical-strength:
+    0.72;
+
+  --lg-optical-edge:
+    0.52;
+
+  --lg-optical-highlight:
+    0.64;
+
+  --lg-optical-radius:
+    42%;
+
+  --lg-optical-x:
+    18%;
+
+  --lg-optical-y:
+    12%;
+
+  --lg-optical-tilt:
+    135deg;
+
+
+  /* ---------- Light Glass Highlight ---------- */
+
+  --lg-light-highlight:
+    rgba(255, 255, 255, 0.42);
+
+  --lg-light-highlight-strong:
+    rgba(255, 255, 255, 0.68);
+
+  --lg-light-inner-shadow:
+    rgba(0, 0, 0, 0.055);
+
+
+  /* ---------- Dark Glass Highlight ---------- */
+
+  --lg-dark-highlight:
+    rgba(255, 255, 255, 0.12);
+
+  --lg-dark-highlight-strong:
+    rgba(255, 255, 255, 0.18);
+
+  --lg-dark-inner-shadow:
+    rgba(0, 0, 0, 0.18);
+
+
+  /* ---------- Motion ---------- */
+
+  --lg-duration-fast:
+    160ms;
+
+  --lg-duration-normal:
+    280ms;
+
+  --lg-duration-slow:
+    420ms;
+
+  --lg-ease-standard:
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --lg-ease-emphasized:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+
+  /* ---------- Interaction ---------- */
+
+  --lg-interaction:
+    0;
+
+  --lg-hover-lift:
+    0px;
+
+  --lg-press-scale:
+    1;
+
+
+  /* ---------- Performance ---------- */
+
+  --lg-render-blur:
+    var(--lg-blur-lg);
+
+  --lg-render-saturate:
+    var(--lg-saturate-md);
+
+  --lg-render-optical:
+    1;
+
+  --lg-render-motion:
+    1;
+
+}
+
+
+/* =====================================
+   Semantic Surface Presets
+===================================== */
+
+:root {
+
+  --lg-glass-surface:
+    var(--lg-surface-1-light);
+
+  --lg-glass-border:
+    var(--lg-border-light);
+
+  --lg-glass-shadow:
+    var(--lg-shadow-2);
+
+  --lg-glass-blur:
+    var(--lg-blur-lg);
+
+  --lg-glass-saturate:
+    var(--lg-saturate-md);
+
+}
+
+
+/* =====================================
+   Light Glass Highlight
+===================================== */
+
+:root {
+
+  --lg-glass-highlight:
+    var(--lg-light-highlight);
+
+  --lg-glass-highlight-strong:
+    var(--lg-light-highlight-strong);
+
+  --lg-glass-inner-shadow:
+    var(--lg-light-inner-shadow);
+
+}
+
+
+/* =====================================
+   Dark Glass
+===================================== */
+
+[data-theme="dark"] {
+
+  --lg-glass-surface:
+    var(--lg-surface-1-dark);
+
+  --lg-glass-border:
+    var(--lg-border-dark);
+
+  --lg-glass-shadow:
+    var(--lg-shadow-dark-2);
+
+  --lg-glass-highlight:
+    var(--lg-dark-highlight);
+
+  --lg-glass-highlight-strong:
+    var(--lg-dark-highlight-strong);
+
+  --lg-glass-inner-shadow:
+    var(--lg-dark-inner-shadow);
+
+}
+
+
+/* =====================================
+   Reduced Glass
+===================================== */
+
+html.lg-reduced {
+
+  --lg-render-blur:
+    var(--lg-blur-md);
+
+  --lg-render-saturate:
+    var(--lg-saturate-sm);
+
+  --lg-render-optical:
+    0.55;
+
+  --lg-render-motion:
+    0.75;
+
+}
+
+
+/* =====================================
+   Fallback
+===================================== */
+
+html.lg-fallback {
+
+  --lg-render-blur:
+    var(--lg-blur-0);
+
+  --lg-render-saturate:
+    100%;
+
+  --lg-render-optical:
+    0;
+
+  --lg-render-motion:
+    0;
+
+}
+
+
+/* =====================================
+   Mobile
+===================================== */
+
+@media (max-width: 768px) {
+
+  :root {
+
+    --lg-blur-lg:
+      28px;
+
+    --lg-blur-xl:
+      34px;
+
+    --lg-optical-strength:
+      0.58;
+
+    --lg-optical-edge:
+      0.42;
+
+    --lg-optical-highlight:
+      0.52;
+
+  }
+
+
+  html.lg-mobile-full {
+
+    --lg-render-blur:
+      var(--lg-blur-lg);
+
+    --lg-render-saturate:
+      var(--lg-saturate-md);
+
+  }
+
+
+  html:not(.lg-mobile-full) {
+
+    --lg-render-blur:
+      var(--lg-blur-md);
+
+    --lg-render-saturate:
+      var(--lg-saturate-sm);
+
+    --lg-render-optical:
+      0.62;
+
+  }
+
+}
+
+
+/* =====================================
+   Reduced Motion
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  :root {
+
+    --lg-duration-fast:
+      0ms;
+
+    --lg-duration-normal:
+      0ms;
+
+    --lg-duration-slow:
+      0ms;
+
+    --lg-render-motion:
+      0;
+
+  }
+
+}

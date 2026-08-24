@@ -1,0 +1,190 @@
+/*
+ * Butterfly Liquid Glass
+ * Web Glass System v4.0.1 - Archive
+ *
+ * v4.0.1:
+ * - Explicit Glass radius
+ * - Stronger Light-mode surface separation
+ */
+
+#archive {
+
+  padding:
+    30px;
+
+  border-radius:
+    var(--lg-radius-xl) !important;
+
+}
+
+
+/* =====================================
+   Archive Header
+===================================== */
+
+#archive .article-sort-title {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+}
+
+
+/* =====================================
+   Archive Structure
+===================================== */
+
+#archive .article-sort,
+#archive .article-sort-item,
+#archive .article-sort-item-time,
+#archive .article-sort-item-img {
+
+  position:
+    relative;
+
+}
+
+
+/* =====================================
+   Archive Items
+===================================== */
+
+#archive .article-sort-item {
+
+  transition:
+    color
+    var(--lg-duration-fast)
+    var(--lg-ease-standard);
+
+}
+
+
+/* =====================================
+   Archive Image
+===================================== */
+
+#archive .article-sort-item-img {
+
+  overflow:
+    hidden;
+
+  border-radius:
+    var(--lg-radius-md) !important;
+
+}
+
+
+/* =====================================
+   Archive Timeline Marker
+===================================== */
+
+#archive .article-sort-item::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    8px;
+
+  bottom:
+    8px;
+
+  width:
+    2px;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(45, 46, 52, 0.20);
+
+  opacity:
+    0;
+
+  transition:
+    opacity
+    var(--lg-duration-fast)
+    var(--lg-ease-standard);
+
+}
+
+
+#archive .article-sort-item:hover::before {
+
+  opacity:
+    1;
+
+}
+
+
+/* Dark timeline */
+
+[data-theme="dark"]
+#archive .article-sort-item::before {
+
+  background:
+    rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =====================================
+   Light Archive Surface
+===================================== */
+
+html:not([data-theme="dark"])
+#archive {
+
+  background:
+    rgba(255, 255, 255, 0.48) !important;
+
+}
+
+
+/* =====================================
+   Dark Archive Surface
+===================================== */
+
+[data-theme="dark"]
+#archive {
+
+  background:
+    rgba(40, 42, 50, 0.78) !important;
+
+}
+
+
+/* =====================================
+   Mobile
+===================================== */
+
+@media (max-width: 768px) {
+
+  #archive {
+
+    padding:
+      18px;
+
+    border-radius:
+      var(--lg-radius-lg) !important;
+
+  }
+
+
+  #archive .article-sort-item:hover::before {
+
+    opacity:
+      0;
+
+  }
+
+}

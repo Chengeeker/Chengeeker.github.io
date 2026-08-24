@@ -1,0 +1,60 @@
+/*
+ * Butterfly Liquid Glass
+ * Web Glass System v4.0 - Optical Layer
+ *
+ * CSS-only optical treatment for Phase 1.
+ * True background displacement is intentionally not used yet because it is
+ * not consistently performant across mobile Safari/Chromium.
+ */
+
+.lg-optical,
+#archive,
+#post,
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+#rightside button {
+  --lg-optical-x: 18%;
+  --lg-optical-y: 12%;
+}
+
+/* Pointer-driven optical position is written by glass-runtime.js only when
+   a fine pointer exists. Touch devices keep a stable highlight. */
+@media (hover: hover) and (pointer: fine) {
+  .lg-interactive {
+    --lg-hover-lift: -2px;
+  }
+
+  #recent-posts .recent-post-item:hover {
+    --lg-optical-strength: 0.90;
+    --lg-optical-highlight: 0.70;
+  }
+
+  #rightside button:hover {
+    --lg-optical-strength: 0.82;
+    --lg-optical-highlight: 0.64;
+  }
+}
+
+html.lg-reduced .lg-surface::before,
+html.lg-reduced #archive::before,
+html.lg-reduced #post::before,
+html.lg-reduced #recent-posts .recent-post-item::before,
+html.lg-reduced #aside-content .card-widget::before,
+html.lg-reduced #rightside button::before {
+  opacity: 0.42;
+}
+
+html.lg-fallback .lg-surface::before,
+html.lg-fallback .lg-surface::after,
+html.lg-fallback #archive::before,
+html.lg-fallback #archive::after,
+html.lg-fallback #post::before,
+html.lg-fallback #post::after,
+html.lg-fallback #recent-posts .recent-post-item::before,
+html.lg-fallback #recent-posts .recent-post-item::after,
+html.lg-fallback #aside-content .card-widget::before,
+html.lg-fallback #aside-content .card-widget::after,
+html.lg-fallback #rightside button::before,
+html.lg-fallback #rightside button::after {
+  display: none;
+}

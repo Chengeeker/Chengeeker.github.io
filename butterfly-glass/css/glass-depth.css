@@ -1,0 +1,34 @@
+/*
+ * Butterfly Liquid Glass
+ * Web Glass System v4.0 - Depth
+ */
+
+/* Semantic elevation: the component selects the depth, while the core owns
+   the actual shadow language. */
+#archive,
+#post {
+  --lg-glass-shadow: var(--lg-shadow-2);
+}
+
+#recent-posts .recent-post-item {
+  --lg-glass-shadow: var(--lg-shadow-2);
+}
+
+#aside-content .card-widget {
+  --lg-glass-shadow: var(--lg-shadow-1);
+}
+
+#rightside button {
+  --lg-glass-shadow: var(--lg-shadow-1);
+}
+
+[data-theme="dark"] #archive,
+[data-theme="dark"] #post,
+[data-theme="dark"] #recent-posts .recent-post-item {
+  --lg-glass-shadow: var(--lg-shadow-dark-2);
+}
+
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #rightside button {
+  --lg-glass-shadow: var(--lg-shadow-dark-1);
+}

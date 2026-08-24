@@ -1,319 +1,110 @@
-/*
- Butterfly Liquid Glass
+/* Butterfly Liquid Glass - Page-specific surfaces and controls */
 
- Universal Page Surface
-
- Version:
- v2.3
-
- Support:
- - Archive
- - Post
- - Shuoshuo
- - Custom pages
-
-*/
-
-
-/* =====================================
-   Archive Surface
-===================================== */
-
-
-#archive {
-
-
-    position:relative;
-
-
-    padding:30px;
-
-
-    border-radius:
-
-    var(--lg-radius-xl);
-
-
-
-    background:
-
-    var(--lg-surface-1-light);
-
-
-
-    backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    -webkit-backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    border:
-
-    1px solid
-
-    var(--lg-border-light);
-
-
-
-    box-shadow:
-
-    var(--lg-elevation-2);
-
-
+/* Shuoshuo has no #post wrapper, so each item needs its own page surface. */
+#page.nc #article-container .shuoshuo-item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 35px 30px 30px;
+  border: 1px solid var(--lg-glass-border) !important;
+  border-radius: var(--lg-radius-lg) !important;
+  background: var(--lg-glass-surface) !important;
+  backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+  -webkit-backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+  box-shadow: var(--lg-glass-shadow), inset 0 1px 0 var(--lg-glass-highlight-strong), inset 0 -1px 0 var(--lg-glass-inner-shadow);
+  isolation: isolate;
 }
 
-
-
-/* =====================================
-   Article Surface
-
-===================================== */
-
-
-#post {
-
-
-    position:relative;
-
-
-    padding:30px;
-
-
-    border-radius:
-
-    var(--lg-radius-xl);
-
-
-
-    background:
-
-    var(--lg-surface-1-light);
-
-
-
-    backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    -webkit-backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    border:
-
-    1px solid
-
-    var(--lg-border-light);
-
-
-
-    box-shadow:
-
-    var(--lg-elevation-2);
-
-
+#page.nc #article-container .shuoshuo-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.18), transparent 42%);
+  opacity: calc(0.72 * var(--lg-render-optical));
 }
 
-
-
-/* =====================================
-   Shuoshuo Surface
-
-   Custom Type Page
-
-===================================== */
-
-
-.shuoshuo-item {
-
-
-    position:relative;
-
-
-    border-radius:
-
-    var(--lg-radius-xl);
-
-
-
-    background:
-
-    var(--lg-surface-1-light);
-
-
-
-    backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    -webkit-backdrop-filter:
-
-    blur(
-        var(--lg-blur-heavy)
-    )
-
-    saturate(160%);
-
-
-
-    border:
-
-    1px solid
-
-    var(--lg-border-light);
-
-
-
-    box-shadow:
-
-    var(--lg-elevation-2);
-
-
-
-    overflow:hidden;
-
-
-
+#page.nc #article-container .shuoshuo-date,
+#page.nc #article-container .shuoshuo-comment-btn {
+  color: color-mix(in srgb, currentColor 62%, transparent) !important;
 }
 
-
-
-/* =====================================
-   Inner Container
-
-===================================== */
-
-
-.shuoshuo-item .container {
-
-
-    background:
-
-    transparent;
-
-
-
+#page.nc #article-container .shuoshuo-tag {
+  border-color: var(--lg-border-light) !important;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(35, 36, 42, 0.76);
 }
 
-
-
-/* =====================================
-   Remove Article Inner Glass
-
-===================================== */
-
-
-#article-container {
-
-
-    background:
-
-    transparent
-    !important;
-
-
-
-    backdrop-filter:
-
-    none
-    !important;
-
-
-
-    -webkit-backdrop-filter:
-
-    none
-    !important;
-
-
-
-    border:
-
-    none
-    !important;
-
-
-
-    box-shadow:
-
-    none
-    !important;
-
-
+#page.nc #article-container .shuoshuo-tag:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(25, 26, 30, 0.95);
 }
 
-
-
-/* =====================================
-   Dark Mode
-
-===================================== */
-
-
-[data-theme="dark"]
-
-#archive,
-[data-theme="dark"]
-
-#post,
-[data-theme="dark"]
-
-.shuoshuo-item {
-
-
-    background:
-
-    var(--lg-surface-1-dark);
-
-
-
-    border-color:
-
-    var(--lg-border-dark);
-
-
-
-    box-shadow:
-
-    var(--lg-elevation-dark);
-
-
-
+/* The author card remains a Glass surface; the CTA is a quieter child layer. */
+#aside-content .card-info #card-info-btn {
+  border: 1px solid var(--lg-border-light) !important;
+  border-radius: var(--lg-radius-sm) !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: rgba(28, 29, 33, 0.86) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.40), 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+  transition: background var(--lg-duration-fast) var(--lg-ease-standard), border-color var(--lg-duration-fast) var(--lg-ease-standard), box-shadow var(--lg-duration-fast) var(--lg-ease-standard);
 }
 
+#aside-content .card-info #card-info-btn:hover {
+  background: rgba(255, 255, 255, 0.34) !important;
+  border-color: var(--lg-border-light-strong) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 8px 22px rgba(0, 0, 0, 0.10) !important;
+  transform: none;
+}
 
+#aside-content .card-info .site-data a {
+  border-radius: var(--lg-radius-sm);
+  transition: background var(--lg-duration-fast) var(--lg-ease-standard);
+}
 
+#aside-content .card-info .site-data a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
 
+[data-theme="dark"] #page.nc #article-container .shuoshuo-item {
+  border-color: var(--lg-border-dark) !important;
+  background: var(--lg-surface-1-dark) !important;
+  box-shadow: var(--lg-shadow-dark-2), inset 0 1px 0 rgba(255, 255, 255, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+}
 
+[data-theme="dark"] #page.nc #article-container .shuoshuo-item::before {
+  background: radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.09), transparent 42%);
+}
+
+[data-theme="dark"] #page.nc #article-container .shuoshuo-tag {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+[data-theme="dark"] #page.nc #article-container .shuoshuo-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] #aside-content .card-info #card-info-btn {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.90) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 22px rgba(0, 0, 0, 0.24) !important;
+}
+
+[data-theme="dark"] #aside-content .card-info #card-info-btn:hover {
+  background: rgba(255, 255, 255, 0.13) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+@media (max-width: 768px) {
+  #page.nc #article-container .shuoshuo-item {
+    padding: 25px 20px 20px;
+    border-radius: var(--lg-radius-md) !important;
+  }
+}

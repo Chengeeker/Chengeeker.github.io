@@ -1,0 +1,79 @@
+/*
+ * Butterfly Liquid Glass
+ * Web Glass System v4.0.1 - Responsive / Mobile
+ *
+ * v4.0.1:
+ * - Unified mobile Glass radius
+ * - Preserve stronger Light-mode contrast
+ */
+
+@media (max-width: 768px) {
+
+  #recent-posts .recent-post-item,
+  #aside-content .card-widget,
+  #rightside button {
+
+    border-radius:
+      var(--lg-radius-md) !important;
+
+  }
+
+
+  #archive,
+  #post {
+
+    border-radius:
+      var(--lg-radius-lg) !important;
+
+  }
+
+
+  #recent-posts .recent-post-item {
+
+    box-shadow:
+      var(--lg-shadow-1);
+
+  }
+
+
+  #aside-content .card-widget {
+
+    box-shadow:
+      var(--lg-shadow-1);
+
+  }
+
+
+  #rightside button {
+
+    box-shadow:
+      var(--lg-shadow-1);
+
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  #archive,
+  #post {
+
+    margin-left:
+      8px;
+
+    margin-right:
+      8px;
+
+  }
+
+
+  #archive,
+  #post {
+
+    border-radius:
+      var(--lg-radius-lg) !important;
+
+  }
+
+}

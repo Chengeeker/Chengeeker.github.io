@@ -1,0 +1,60 @@
+/* Butterfly Liquid Glass - Environment */
+
+/* Broad, low-contrast fields give backdrop-filter something to refract. */
+body,
+#web_bg {
+  background-color: var(--lg-environment-light-base) !important;
+  background-image:
+    radial-gradient(ellipse 70% 52% at 10% 4%, var(--lg-environment-light-blue), transparent 72%),
+    radial-gradient(ellipse 62% 58% at 94% 12%, var(--lg-environment-light-violet), transparent 72%),
+    radial-gradient(ellipse 74% 54% at 58% 106%, var(--lg-environment-light-warm), transparent 74%),
+    linear-gradient(145deg, #fcfcfd 0%, var(--lg-environment-light-base) 52%, #eef1f7 100%) !important;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] #web_bg {
+  background-color: var(--lg-environment-dark-base) !important;
+  background-image:
+    radial-gradient(ellipse 68% 52% at 8% 8%, var(--lg-environment-dark-blue), transparent 72%),
+    radial-gradient(ellipse 60% 58% at 94% 16%, var(--lg-environment-dark-violet), transparent 72%),
+    radial-gradient(ellipse 70% 52% at 58% 108%, var(--lg-environment-dark-cyan), transparent 74%),
+    linear-gradient(145deg, #1a1d26 0%, var(--lg-environment-dark-base) 58%, #0d0f13 100%) !important;
+}
+
+body { background-attachment: fixed; }
+
+body::before,
+#web_bg::before {
+  content: "";
+  position: fixed;
+  inset: -16%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 46% 34% at 24% 18%, var(--lg-environment-light-wash), transparent 76%),
+    radial-gradient(ellipse 42% 36% at 78% 28%, rgba(255, 255, 255, 0.34), transparent 76%);
+  filter: blur(52px);
+  opacity: 0.72;
+}
+
+[data-theme="dark"] body::before,
+[data-theme="dark"] #web_bg::before {
+  background:
+    radial-gradient(ellipse 46% 34% at 24% 18%, rgba(255, 255, 255, 0.045), transparent 76%),
+    radial-gradient(ellipse 42% 36% at 78% 28%, rgba(142, 162, 255, 0.05), transparent 76%);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  body,
+  #web_bg { background-attachment: scroll; }
+  body::before,
+  #web_bg::before { inset: -10%; filter: blur(36px); }
+}
+
+@media (prefers-reduced-motion: reduce), (update: slow) {
+  body,
+  #web_bg { background-attachment: scroll; }
+}

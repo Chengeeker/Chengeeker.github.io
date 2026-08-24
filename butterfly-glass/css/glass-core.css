@@ -1,0 +1,155 @@
+/* Butterfly Liquid Glass - Core Surface Primitive */
+
+/* Primary page surfaces and genuinely independent controls only. */
+.lg-surface,
+#archive,
+#post,
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+#rightside button {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--lg-glass-border) !important;
+  border-radius: var(--lg-radius-lg) !important;
+  background: var(--lg-glass-surface) !important;
+  backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+  -webkit-backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+  box-shadow: var(--lg-glass-shadow);
+  isolation: isolate;
+}
+
+html:not([data-theme="dark"]) .lg-surface,
+html:not([data-theme="dark"]) #archive,
+html:not([data-theme="dark"]) #post,
+html:not([data-theme="dark"]) #recent-posts .recent-post-item,
+html:not([data-theme="dark"]) #aside-content .card-widget,
+html:not([data-theme="dark"]) #rightside button {
+  border-color: var(--lg-border-light) !important;
+  box-shadow: var(--lg-glass-shadow), inset 0 1px 0 var(--lg-glass-highlight-strong), inset 0 -1px 0 var(--lg-glass-inner-shadow);
+}
+
+[data-theme="dark"] .lg-surface,
+[data-theme="dark"] #archive,
+[data-theme="dark"] #post,
+[data-theme="dark"] #recent-posts .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #rightside button {
+  border-color: var(--lg-border-dark) !important;
+  box-shadow: var(--lg-glass-shadow), inset 0 1px 0 var(--lg-glass-highlight), inset 0 -1px 0 var(--lg-glass-inner-shadow);
+}
+
+/* Optical layers belong to surfaces, never to transparent children. */
+.lg-surface::before,
+#archive::before,
+#post::before,
+#recent-posts .recent-post-item::before,
+#aside-content .card-widget::before,
+#rightside button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: calc(var(--lg-optical-strength) * var(--lg-render-optical));
+  background:
+    radial-gradient(circle at var(--lg-optical-x) var(--lg-optical-y), rgba(255, 255, 255, calc(0.28 * var(--lg-optical-highlight))), transparent var(--lg-optical-radius)),
+    linear-gradient(var(--lg-optical-tilt), rgba(255, 255, 255, calc(0.14 * var(--lg-optical-edge))), transparent 36%, rgba(255, 255, 255, calc(0.06 * var(--lg-optical-edge))) 78%, transparent);
+}
+
+.lg-surface::after,
+#archive::after,
+#post::after,
+#recent-posts .recent-post-item::after,
+#aside-content .card-widget::after,
+#rightside button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), inset 0 -1px 0 rgba(0, 0, 0, 0.055);
+}
+
+[data-theme="dark"] .lg-surface::after,
+[data-theme="dark"] #archive::after,
+[data-theme="dark"] #post::after,
+[data-theme="dark"] #recent-posts .recent-post-item::after,
+[data-theme="dark"] #aside-content .card-widget::after,
+[data-theme="dark"] #rightside button::after {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* Rightside controls need an explicit icon colour in both themes. */
+html:not([data-theme="dark"]) #rightside button,
+html:not([data-theme="dark"]) #rightside button i {
+  color: rgba(28, 29, 33, 0.90) !important;
+}
+
+html:not([data-theme="dark"]) #rightside button {
+  background: rgba(255, 255, 255, 0.52) !important;
+  border-color: rgba(35, 36, 42, 0.14) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.86), inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] #rightside button,
+[data-theme="dark"] #rightside button i {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+[data-theme="dark"] #rightside button {
+  background: rgba(40, 42, 50, 0.72) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+#recent-posts .recent-post-item,
+#rightside button {
+  transition: transform var(--lg-duration-normal) var(--lg-ease-standard), box-shadow var(--lg-duration-normal) var(--lg-ease-standard), border-color var(--lg-duration-normal) var(--lg-ease-standard), background var(--lg-duration-normal) var(--lg-ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #recent-posts .recent-post-item:hover,
+  #rightside button:hover { transform: translateY(var(--lg-hover-lift)); }
+}
+
+/* The reading container is a transparent content layer, not a second glass. */
+#post #article-container,
+#post #article-container .card-widget,
+#post #article-container .highlight,
+#post #article-container pre {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.lg-disabled .lg-surface,
+html.lg-disabled #archive,
+html.lg-disabled #post,
+html.lg-disabled #recent-posts .recent-post-item,
+html.lg-disabled #aside-content .card-widget,
+html.lg-disabled #rightside button,
+html.lg-fallback .lg-surface,
+html.lg-fallback #archive,
+html.lg-fallback #post,
+html.lg-fallback #recent-posts .recent-post-item,
+html.lg-fallback #aside-content .card-widget,
+html.lg-fallback #rightside button {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.lg-disabled .lg-surface,
+html.lg-disabled #archive,
+html.lg-disabled #post,
+html.lg-disabled #recent-posts .recent-post-item,
+html.lg-disabled #aside-content .card-widget,
+html.lg-disabled #rightside button {
+  background: var(--card-bg, var(--lg-surface-0-light)) !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+  #recent-posts .recent-post-item:hover,
+  #rightside button:hover { transform: none; }
+}
