@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>不可能虫鸣 | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;New-Aplayer (毛玻璃与贴边拖拽增强版)   为 Hexo 博客定制的毛玻璃拟态、贴边吸附与悬浮歌词 APlayer &#x2F; Meting 音乐播放器插件 English Documentation · 中文文档">
+<meta property="og:type" content="website">
+<meta property="og:title" content="不可能虫鸣">
+<meta property="og:url" content="https://chengeeker.github.io/New-Aplayer/README.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;New-Aplayer (毛玻璃与贴边拖拽增强版)   为 Hexo 博客定制的毛玻璃拟态、贴边吸附与悬浮歌词 APlayer &#x2F; Meting 音乐播放器插件 English Documentation · 中文文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.infinitycm.top/file/touxiang.webp">
+<meta property="article:published_time" content="2026-08-26T05:43:08.133Z">
+<meta property="article:modified_time" content="2026-08-26T05:43:08.133Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.infinitycm.top/file/touxiang.webp"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://img.infinitycm.top/file/IMG_20250116_193218.webp"><link rel="canonical" href="https://chengeeker.github.io/New-Aplayer/README.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const start = 6
+              const end = 18
+              const isNight =
+                start < end
+                    ? hour < start || hour >= end
+                    : hour >= start || hour < end
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a9bbe4e6d75b4873b945b365ec660f4f&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '不可能虫鸣',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/butterfly-glass/css/glass-tokens.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-environment.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-core.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-optical.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-depth.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-archive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-post.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-page.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-responsive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-navbar.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-tag.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-toc.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-search.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="不可能虫鸣" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="不可能虫鸣" type="application/rss+xml">
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<link rel="stylesheet" href="/assets/css/APlayer.glass.css" class="aplayer-glass-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+<script>var meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r'</script>
+<script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
+<script src="/assets/js/APlayer.dock.js" class="aplayer-dock-script-marker"></script>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://img.infinitycm.top/file/bizhi.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><link rel="stylesheet" class="aplayer-glass-style-marker" href="/assets/css/APlayer.glass.css"><h1 id="New-Aplayer-毛玻璃与贴边拖拽增强版"><a href="#New-Aplayer-毛玻璃与贴边拖拽增强版" class="headerlink" title="New-Aplayer (毛玻璃与贴边拖拽增强版)"></a>New-Aplayer (毛玻璃与贴边拖拽增强版)</h1><div align="center">
+
+<p><a target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Hexo-5.0+-blue.svg" alt="Hexo"></a><br><a target="_blank" rel="noopener" href="https://aplayer.js.org/"><img src="https://img.shields.io/badge/APlayer-1.10.1-red.svg" alt="APlayer"></a><br><a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS"><img src="https://img.shields.io/badge/MetingJS-1.2.0-green.svg" alt="MetingJS"></a><br><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a></p>
+<p><strong>为 Hexo 博客定制的毛玻璃拟态、贴边吸附与悬浮歌词 APlayer &#x2F; Meting 音乐播放器插件</strong></p>
+<p><a href="./README_EN.md">English Documentation</a> · <a href="./README.md">中文文档</a></p>
+</div>
+
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#-%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7">✨ 功能特性</a></li>
+<li><a href="#-%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81%E4%B8%8E%E9%AA%8C%E8%AF%81">💻 环境支持与验证</a></li>
+<li><a href="#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%E4%B8%8E%E5%AE%89%E8%A3%85">🚀 快速开始与安装</a></li>
+<li><a href="#%EF%B8%8F-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E-_configyml">⚙️ 配置说明 (<code>_config.yml</code>)</a></li>
+<li><a href="#%EF%B8%8F-%E6%A0%87%E7%AD%BE%E7%94%A8%E6%B3%95-tag-plugins">🏷️ 标签用法 (Tag Plugins)</a></li>
+<li><a href="#%EF%B8%8F-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B8%8E-fork-%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97">🛠️ 二次开发与 Fork 定制指南</a><ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">项目目录结构</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81%E6%A8%A1%E5%9D%97%E8%81%8C%E8%B4%A3">核心代码模块职责</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E6%8C%87%E5%BC%95%E6%83%B3%E6%94%B9%E4%BB%80%E4%B9%88%E6%94%B9%E5%93%AA%E4%B8%AA%E6%96%87%E4%BB%B6">修改指引：想改什么、改哪个文件</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BA%E4%B8%8E%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B">构建与本地测试流程</a></li>
+</ul>
+</li>
+<li><a href="#-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-faq">❓ 常见问题 (FAQ)</a></li>
+<li><a href="#-%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE">📄 开源协议</a></li>
+</ul>
+<hr>
+<h2 id="✨-功能特性"><a href="#✨-功能特性" class="headerlink" title="✨ 功能特性"></a>✨ 功能特性</h2><ol>
+<li><strong>毛玻璃拟态风格（Frosted Glass）</strong>：<ul>
+<li>采用多层高斯模糊与半透明自适应背景，搭配细腻微光边框与柔和阴影，与博客浅色&#x2F;深色（Dark Mode）自然融合。</li>
+</ul>
+</li>
+<li><strong>全局悬浮歌词胶囊 HUD</strong>：<ul>
+<li>歌词脱离播放器狭窄底栏，独立置于屏幕中央上方呈胶囊状展示，支持单句高光与双语歌词。</li>
+<li>歌词胶囊支持全屏幕鼠标&#x2F;触屏 <strong>2D 自由拖拽</strong>。</li>
+</ul>
+</li>
+<li><strong>全自由 2D 拖拽 + 精准贴边吸附</strong>：<ul>
+<li><strong>自由 2D 拖拽</strong>：按住播放器可在屏幕任意位置随意拖拽停放，视口边界自动保护。</li>
+<li><strong>严格贴边吸附（8px）</strong>：仅在播放器被完全推到紧贴屏幕边缘（&lt;&#x3D; 8px）或点击专属贴边按钮 <code>|←</code> 时，才折叠为半球 Mini-Orb，彻底杜绝远距离误吸附。</li>
+<li><strong>边缘沿轴滑动</strong>：吸附状态下可沿屏幕边缘上下滑动调节位置；向屏幕内侧拖拽即可顺滑展开。</li>
+<li><strong>状态持久化记忆</strong>：基于 <code>localStorage</code> 自动记录坐标与吸附状态，刷新页面与 PJAX 切页后自动精准恢复。</li>
+</ul>
+</li>
+<li><strong>毫秒级本地缓存加载（Meting Fast-Cache v2）</strong>：<ul>
+<li>自动在本地缓存歌单元数据（API 节点 Hash 绑定与存储配额保护），刷新页面或切页时实现 0 秒毫秒级瞬间渲染，杜绝长时间空白等待。</li>
+</ul>
+</li>
+<li><strong>移动端深度响应式适配</strong>：<ul>
+<li>播放器底栏高度优化为紧凑 56px，默认自动折叠歌单（<code>list_folded: true</code>），避免遮挡移动端阅读区域。</li>
+<li>消除歌词基线裁切，在小屏手机上垂直精准居中。</li>
+</ul>
+</li>
+<li><strong>Meting API 路由修复与标签语法增强</strong>：<ul>
+<li>自动补全 API 参数占位符（<code>:server/:type/:id</code>），避免 404 与歌曲跳过报错（“An audio error has occurred”）。</li>
+<li>标签解析全面兼容 <code>autoplay:false</code>、<code>listfolded:true</code>、<code>fixed:true</code> 等键值与布尔写法。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="💻-环境支持与验证"><a href="#💻-环境支持与验证" class="headerlink" title="💻 环境支持与验证"></a>💻 环境支持与验证</h2><p>本插件已在以下主流生产环境中完成完整集成与兼容性验证：</p>
+<ul>
+<li><strong>Hexo 版本</strong>：Hexo <code>5.x</code> &#x2F; <code>6.x</code> &#x2F; <code>7.x</code></li>
+<li><strong>Node.js 版本</strong>：Node.js <code>16.x</code> &#x2F; <code>18.x</code> &#x2F; <code>20.x</code> &#x2F; <code>22.x</code></li>
+<li><strong>支持主题</strong>：Butterfly（<code>4.x</code> &#x2F; <code>5.x</code>）、Fluid、Anzhiyu、NexT 等主流现代主题</li>
+<li><strong>特性支持</strong>：PJAX 无刷新跳转、深浅色模式自适应切换、移动端触摸手势</li>
+</ul>
+<hr>
+<h2 id="🚀-快速开始与安装"><a href="#🚀-快速开始与安装" class="headerlink" title="🚀 快速开始与安装"></a>🚀 快速开始与安装</h2><p>本项目采用标准的 Hexo 本地源码模块集成方案，预编译好的 CommonJS 运行文件已直接包含在仓库中，开箱即用：</p>
+<h3 id="第一步：克隆源码至博客的-source-目录"><a href="#第一步：克隆源码至博客的-source-目录" class="headerlink" title="第一步：克隆源码至博客的 source 目录"></a>第一步：克隆源码至博客的 <code>source</code> 目录</h3><p>在你的 <strong>Hexo 博客根目录</strong> 下执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Chengeeker/New-Aplayer.git <span class="built_in">source</span>/New-Aplayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二步：在博客根目录关联本地依赖"><a href="#第二步：在博客根目录关联本地依赖" class="headerlink" title="第二步：在博客根目录关联本地依赖"></a>第二步：在博客根目录关联本地依赖</h3><p>在你的 <strong>Hexo 博客根目录</strong> 的 <code>package.json</code> 中配置本地依赖：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo-tag-aplayer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:source/New-Aplayer&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在 <strong>Hexo 博客根目录</strong> 下执行一次安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>安全提示</strong>：请在 <strong>Hexo 博客根目录</strong> 下执行 <code>npm install</code>，避免在 <code>source/New-Aplayer/</code> 内部直接生成额外的 <code>node_modules</code>，以防止 Hexo 错误扫描其内部依赖。仓库已预置编译好的运行时代码，开箱即用。</p>
+</blockquote>
+<hr>
+<h2 id="⚙️-配置说明-config-yml"><a href="#⚙️-配置说明-config-yml" class="headerlink" title="⚙️ 配置说明 (_config.yml)"></a>⚙️ 配置说明 (<code>_config.yml</code>)</h2><p>在 Hexo 站点根目录的 <code>_config.yml</code> 中添加如下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># APlayer &amp; Meting 全局配置</span></span><br><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span>                                  <span class="comment"># 启用 MetingJS 网易云/QQ音乐等平台歌单解析</span></span><br><span class="line">  <span class="attr">meting_api:</span> <span class="string">https://api.injahow.cn/meting/</span>    <span class="comment"># Meting API 节点（此处为公共测试接口，生产建议自建）</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">true</span>                            <span class="comment"># 自动将毛玻璃样式与拖拽引擎注入全站页面</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>                                <span class="comment"># 开启全站固定底栏吸底播放器</span></span><br><span class="line">    <span class="attr">id:</span> <span class="number">13104322073</span>                             <span class="comment"># 歌单 ID / 歌曲 ID</span></span><br><span class="line">    <span class="attr">server:</span> <span class="string">netease</span>                             <span class="comment"># 音乐平台: netease(网易云) / tencent(QQ音乐) / kugou(酷狗)</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">playlist</span>                              <span class="comment"># 类型: playlist(歌单) / song(单曲) / artist(歌手)</span></span><br><span class="line">    <span class="attr">fixed:</span> <span class="literal">true</span>                                 <span class="comment"># 固定在页面底部</span></span><br><span class="line">    <span class="attr">autoplay:</span> <span class="literal">false</span>                             <span class="comment"># 是否自动播放 (由于浏览器策略，默认建议 false)</span></span><br><span class="line">    <span class="attr">order:</span> <span class="string">list</span>                                 <span class="comment"># 播放顺序: list(列表) / random(随机)</span></span><br><span class="line">    <span class="attr">preload:</span> <span class="string">metadata</span>                           <span class="comment"># 预加载策略: metadata / auto / none</span></span><br><span class="line">    <span class="attr">mutex:</span> <span class="literal">true</span>                                 <span class="comment"># 互斥播放: 同时只允许一个播放器发声</span></span><br><span class="line">    <span class="attr">list_folded:</span> <span class="literal">true</span>                           <span class="comment"># 默认折叠歌单列表（推荐 true，防止移动端遮挡）</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️ <strong>关于 Meting API 的说明</strong>：<br><code>https://api.injahow.cn/meting/</code> 仅为公共演示接口，公共接口可能会受到网络波动或服务变动影响。对于长期稳定使用的博客，<strong>建议自行部署 Meting-API 服务</strong>（基于 Vercel、Docker 或自建服务器），并将地址填入 <code>meting_api</code>。</p>
+</blockquote>
+<hr>
+<h2 id="🏷️-标签用法-Tag-Plugins"><a href="#🏷️-标签用法-Tag-Plugins" class="headerlink" title="🏷️ 标签用法 (Tag Plugins)"></a>🏷️ 标签用法 (Tag Plugins)</h2><p>除了全局吸底播放器，你还可以在任意 Markdown 文章中使用标签插入独立播放器：</p>
+<h3 id="1-Meting-平台歌单标签"><a href="#1-Meting-平台歌单标签" class="headerlink" title="1. Meting 平台歌单标签"></a>1. Meting 平台歌单标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;13104322073&quot; &quot;netease&quot; &quot;playlist&quot; &quot;listfolded:true&quot; &quot;autoplay:false&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-标准-APlayer-单曲标签"><a href="#2-标准-APlayer-单曲标签" class="headerlink" title="2. 标准 APlayer 单曲标签"></a>2. 标准 APlayer 单曲标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;歌曲名称&quot; &quot;歌手名&quot; &quot;https://domain.com/music.mp3&quot; &quot;https://domain.com/cover.jpg&quot; &quot;autoplay:false&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🛠️-二次开发与-Fork-定制指南"><a href="#🛠️-二次开发与-Fork-定制指南" class="headerlink" title="🛠️ 二次开发与 Fork 定制指南"></a>🛠️ 二次开发与 Fork 定制指南</h2><p>本项目采用标准的 ES6 + Babel + Hexo Generator 架构，代码结构清晰，任何人 Fork 之后都可以轻松上手进行二次定制。</p>
+<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">New-Aplayer/</span><br><span class="line">├── assets/                       # 核心静态资源库（前端直引资源）</span><br><span class="line">│   ├── APlayer.glass.css         # ★ 毛玻璃样式表（外观定制）</span><br><span class="line">│   └── APlayer.dock.js           # ★ 拖拽、贴边吸附与缓存引擎（交互定制）</span><br><span class="line">├── common/                       # 公共常量与工具函数</span><br><span class="line">│   ├── constant.es               # 常量定义与资源标记 Marker</span><br><span class="line">│   └── util.es                   # 选项提取、安全转义与工具函数</span><br><span class="line">├── lib/                          # 后端渲染引擎（Babel ES6 源码）</span><br><span class="line">│   ├── config.es                 # Hexo 配置解析与静态资源注册器</span><br><span class="line">│   ├── view.es                   # HTML 视图资源注入与 DOM 操作</span><br><span class="line">│   └── tag/                      # Hexo 标签解析器</span><br><span class="line">│       ├── base.es               # 标签基础类</span><br><span class="line">│       ├── player.es             # &#123;% aplayer %&#125; 标签渲染</span><br><span class="line">│       ├── playerLyric.es        # 歌词标签渲染</span><br><span class="line">│       ├── playerList.es         # 播放列表标签渲染</span><br><span class="line">│       └── playerMeting.es       # ★ &#123;% meting %&#125; 标签解析与 API 路由</span><br><span class="line">├── scripts/                      # 构建与测试工具</span><br><span class="line">│   ├── build.js                  # Babel 编译脚本 (ES6 .es -&gt; CommonJS .js)</span><br><span class="line">│   └── test.js                   # 自动化单元与集成测试套件</span><br><span class="line">├── index.es                      # ★ 插件总入口文件 (Hexo 过滤器与全局播放器生成)</span><br><span class="line">├── package.json                  # 项目依赖与编译脚本</span><br><span class="line">├── README.md                     # 中文说明文档</span><br><span class="line">└── README_EN.md                  # 英文说明文档</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="核心代码模块职责"><a href="#核心代码模块职责" class="headerlink" title="核心代码模块职责"></a>核心代码模块职责</h3><ol>
+<li>**<code>assets/APlayer.glass.css</code>**：<ul>
+<li>负责播放器底栏、吸附半球 Mini-Orb、悬浮歌词胶囊 HUD、播放列表卡片的毛玻璃半透明风格、微光边框及媒体查询。</li>
+</ul>
+</li>
+<li>**<code>assets/APlayer.dock.js</code>**：<ul>
+<li>负责鼠标与触摸手势捕获、2D 自由拖拽、8px 边缘吸附判定、边缘滑动、Meting 本地缓存加速与 <code>localStorage</code> 状态持久化。</li>
+</ul>
+</li>
+<li>**<code>lib/config.es</code>**：<ul>
+<li>负责读取站点 <code>_config.yml</code> 中的 <code>aplayer</code> 配置项，向 Hexo 注册静态资产生成管道（使得 <code>assets/</code> 下的 CSS&#x2F;JS 自动生成到博客的 <code>public/assets/</code> 目录中）。</li>
+</ul>
+</li>
+<li>**<code>index.es</code>**：<ul>
+<li>插件主入口，负责在页面 HTML 渲染阶段（<code>after_render:html</code>）注入全局固定播放器 DOM、样式链接及脚本。</li>
+</ul>
+</li>
+<li>**<code>lib/tag/playerMeting.es</code>**：<ul>
+<li>负责解析文章中的 <code>&#123;% meting %&#125;</code> 标签，格式化 API 模板与参数清洗，避免跨域或 404。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="修改指引：想改什么、改哪个文件"><a href="#修改指引：想改什么、改哪个文件" class="headerlink" title="修改指引：想改什么、改哪个文件"></a>修改指引：想改什么、改哪个文件</h3><table>
+<thead>
+<tr>
+<th align="left">定制诉求</th>
+<th align="left">涉及修改的文件</th>
+<th align="left">具体修改位置与说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>修改毛玻璃颜色&#x2F;模糊度&#x2F;透明度</strong></td>
+<td align="left"><code>assets/APlayer.glass.css</code></td>
+<td align="left">修改 <code>:root</code> 变量 <code>--aplayer-glass-bg</code>、<code>--aplayer-glass-blur</code>、<code>--aplayer-glass-border</code> 等。</td>
+</tr>
+<tr>
+<td align="left"><strong>修改贴边半球的尺寸&#x2F;圆角</strong></td>
+<td align="left"><code>assets/APlayer.glass.css</code></td>
+<td align="left">搜索 <code>.aplayer-docked-left</code> 与 <code>.aplayer-docked-right</code>，修改 <code>width: 50px</code>、<code>border-radius: 0 28px 28px 0</code>。</td>
+</tr>
+<tr>
+<td align="left"><strong>调整吸附灵敏度阈值</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">搜索 <code>snapThreshold = 8</code>，调整触发贴边的像素距离。</td>
+</tr>
+<tr>
+<td align="left"><strong>修改贴边按钮图标</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">搜索 <code>injectDockButton()</code> 函数，替换内部的 <code>btn.innerHTML</code> SVG 矢量图形。</td>
+</tr>
+<tr>
+<td align="left"><strong>修改默认是否折叠歌单</strong></td>
+<td align="left"><code>index.es</code> &amp; <code>_config.yml</code></td>
+<td align="left">在 <code>index.es</code> 中修改 <code>data-listfolded</code> 默认值，或在 <code>_config.yml</code> 中设置 <code>list_folded: true</code>。</td>
+</tr>
+<tr>
+<td align="left"><strong>调整 Meting 缓存过期时间</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">搜索 <code>CACHE_EXPIRY_MS</code>（默认为 24 小时）。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="构建与本地测试流程"><a href="#构建与本地测试流程" class="headerlink" title="构建与本地测试流程"></a>构建与本地测试流程</h3><p>如果你对 <code>.es</code> 源代码或 <code>assets/</code> 资源进行了二次开发，按以下步骤进行编译与测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 在 New-Aplayer 目录下运行编译与全套集成测试</span></span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span>/New-Aplayer</span><br><span class="line">npm run build</span><br><span class="line">npm <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 返回 Hexo 博客根目录，清理并重新生成静态文件</span></span><br><span class="line"><span class="built_in">cd</span> ../..</span><br><span class="line">npx hexo clean &amp;&amp; npx hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 启动本地预览服务器</span></span><br><span class="line">npx hexo server -p 4000</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="❓-常见问题-FAQ"><a href="#❓-常见问题-FAQ" class="headerlink" title="❓ 常见问题 (FAQ)"></a>❓ 常见问题 (FAQ)</h2><h4 id="Q1-为什么控制台提示-“An-audio-error-has-occurred-player-will-skip-forward…”？"><a href="#Q1-为什么控制台提示-“An-audio-error-has-occurred-player-will-skip-forward…”？" class="headerlink" title="Q1: 为什么控制台提示 “An audio error has occurred, player will skip forward…”？"></a>Q1: 为什么控制台提示 “An audio error has occurred, player will skip forward…”？</h4><p><strong>A</strong>: 这是由于部分三方 Meting API 未正确配置路由模板或歌曲需要平台会员权限。本项目已内置参数模板补全（<code>:server/:type/:id</code>），请确保 <code>_config.yml</code> 中配置了可用的 <code>meting_api</code> 地址。</p>
+<h4 id="Q2-手机端切换页面或刷新后播放器位置会保持吗？"><a href="#Q2-手机端切换页面或刷新后播放器位置会保持吗？" class="headerlink" title="Q2: 手机端切换页面或刷新后播放器位置会保持吗？"></a>Q2: 手机端切换页面或刷新后播放器位置会保持吗？</h4><p><strong>A</strong>: 会。播放器与贴边半球的坐标及吸附状态均已自动持久化存入浏览器的 <code>localStorage</code>，初次进入页面或通过 PJAX 无刷新切页均会自动恢复保存的位置。</p>
+<h4 id="Q3-为什么修改了-lib-es-代码后-Hexo-博客没有生效？"><a href="#Q3-为什么修改了-lib-es-代码后-Hexo-博客没有生效？" class="headerlink" title="Q3: 为什么修改了 lib/*.es 代码后 Hexo 博客没有生效？"></a>Q3: 为什么修改了 <code>lib/*.es</code> 代码后 Hexo 博客没有生效？</h4><p><strong>A</strong>: 必须在 <code>source/New-Aplayer</code> 目录下运行 <code>npm run build</code>，将 ES6 源码编译为 Node.js 可执行的 CommonJS 文件（<code>.js</code>），然后重新运行 <code>hexo clean &amp;&amp; hexo generate</code>。</p>
+<hr>
+<h2 id="📄-开源协议"><a href="#📄-开源协议" class="headerlink" title="📄 开源协议"></a>📄 开源协议</h2><p>本项目基于 <a href="LICENSE">MIT License</a> 开源，欢迎提交 Issue 与 Pull Request！</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker"><i class="fa-brands fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路"><img src="https://img.infinitycm.top/file/QQmail.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="净化QQ邮箱客户端的一些思路"/></a><div class="content"><a class="title" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路">净化QQ邮箱客户端的一些思路</a><time datetime="2026-07-03T16:00:00.000Z" title="发表于 2026-07-04 00:00:00">2026-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/18/Bettbox/" title="Bettbox"><img src="https://img.infinitycm.top/file/20260618103344961.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bettbox"/></a><div class="content"><a class="title" href="/2026/06/18/Bettbox/" title="Bettbox">Bettbox</a><time datetime="2026-06-17T16:00:00.000Z" title="发表于 2026-06-18 00:00:00">2026-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel"><img src="https://img.infinitycm.top/file/20260228133139199.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用cloudfare搭建自己的免费机场-edgetunnel"/></a><div class="content"><a class="title" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel">用cloudfare搭建自己的免费机场-edgetunnel</a><time datetime="2026-06-08T16:00:00.000Z" title="发表于 2026-06-09 00:00:00">2026-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）"><img src="https://img.infinitycm.top/file/20260224113844738.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cloudfare-bitwarden （nodewarden）"/></a><div class="content"><a class="title" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）">cloudfare-bitwarden （nodewarden）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）"><img src="https://img.infinitycm.top/file/20260322222333753.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用ClawCloud Run搭建自己的免费机场（已失效）"/></a><div class="content"><a class="title" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）">用ClawCloud Run搭建自己的免费机场（已失效）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Software/"><span class="card-category-list-name">Software</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tutorials/"><span class="card-category-list-name">Tutorials</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%AC%E5%91%8A/"><span class="card-category-list-name">公告</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Xposed/" style="font-size: 1.23em; color: #999ea6">Xposed</a> <a href="/tags/%E6%8A%A2%E8%AF%BE/" style="font-size: 1.1em; color: #999">抢课</a> <a href="/tags/%E5%85%AC%E5%91%8A/" style="font-size: 1.1em; color: #999">公告</a> <a href="/tags/cloudfare/" style="font-size: 1.37em; color: #99a4b2">cloudfare</a> <a href="/tags/game/" style="font-size: 1.1em; color: #999">game</a> <a href="/tags/clash/" style="font-size: 1.5em; color: #99a9bf">clash</a> <a href="/tags/%E6%9C%BA%E5%9C%BA/" style="font-size: 1.37em; color: #99a4b2">机场</a> <a href="/tags/%E7%9F%A5%E7%BD%91/" style="font-size: 1.1em; color: #999">知网</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 1.1em; color: #999">阅读</a> <a href="/tags/bitwarden/" style="font-size: 1.37em; color: #99a4b2">bitwarden</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a></div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">31</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">29.3k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-26T05:44:50.979Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By Chen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/butterfly-glass/js/glass-runtime.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div class="aplayer no-destroy aplayer-global-marker" data-id="13104322073" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="list" data-preload="metadata" data-mutex="true" data-listfolded="true" data-theme="var(--aplayer-theme, #6d8cff)"></div>
+</body></html>

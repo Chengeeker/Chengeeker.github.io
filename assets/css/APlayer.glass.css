@@ -1,0 +1,871 @@
+/* ==========================================================================
+   New-Aplayer: iOS Liquid Glass Design System for APlayer & MetingJS
+   High-performance, dependency-free CSS with Apple-grade specular highlights,
+   floating lyrics HUD, and glass card playlist.
+   ========================================================================== */
+
+:root {
+  --aplayer-glass-bg: rgba(255, 255, 255, 0.65);
+  --aplayer-glass-bg-card: rgba(255, 255, 255, 0.76);
+  --aplayer-glass-bg-lrc: rgba(255, 255, 255, 0.70);
+  --aplayer-glass-border: rgba(255, 255, 255, 0.60);
+  --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+  --aplayer-glass-shadow: 0 18px 44px -6px rgba(18, 30, 60, 0.15), 0 6px 14px -2px rgba(18, 30, 60, 0.06);
+  --aplayer-glass-text: #111827;
+  --aplayer-glass-muted: #6b7280;
+  --aplayer-glass-accent: #3b82f6;
+  --aplayer-glass-accent-glow: rgba(59, 130, 246, 0.35);
+  --aplayer-glass-hover: rgba(0, 0, 0, 0.05);
+  --aplayer-glass-active-bg: rgba(59, 130, 246, 0.12);
+  --aplayer-glass-bar-bg: rgba(0, 0, 0, 0.08);
+  --aplayer-glass-bar-loaded: rgba(0, 0, 0, 0.14);
+  --aplayer-glass-scroll-thumb: rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme='dark'], html.dark, body.dark {
+  --aplayer-glass-bg: rgba(20, 26, 38, 0.74);
+  --aplayer-glass-bg-card: rgba(24, 31, 46, 0.84);
+  --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.78);
+  --aplayer-glass-border: rgba(255, 255, 255, 0.14);
+  --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.24), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
+  --aplayer-glass-shadow: 0 22px 50px -6px rgba(0, 0, 0, 0.55), 0 8px 18px -2px rgba(0, 0, 0, 0.35);
+  --aplayer-glass-text: #f9fafb;
+  --aplayer-glass-muted: #9ca3af;
+  --aplayer-glass-accent: #60a5fa;
+  --aplayer-glass-accent-glow: rgba(96, 165, 250, 0.4);
+  --aplayer-glass-hover: rgba(255, 255, 255, 0.08);
+  --aplayer-glass-active-bg: rgba(96, 165, 250, 0.18);
+  --aplayer-glass-bar-bg: rgba(255, 255, 255, 0.12);
+  --aplayer-glass-bar-loaded: rgba(255, 255, 255, 0.22);
+  --aplayer-glass-scroll-thumb: rgba(255, 255, 255, 0.22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --aplayer-glass-bg: rgba(20, 26, 38, 0.74);
+    --aplayer-glass-bg-card: rgba(24, 31, 46, 0.84);
+    --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.78);
+    --aplayer-glass-border: rgba(255, 255, 255, 0.14);
+    --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.24), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
+    --aplayer-glass-shadow: 0 22px 50px -6px rgba(0, 0, 0, 0.55), 0 8px 18px -2px rgba(0, 0, 0, 0.35);
+    --aplayer-glass-text: #f9fafb;
+    --aplayer-glass-muted: #9ca3af;
+    --aplayer-glass-accent: #60a5fa;
+    --aplayer-glass-accent-glow: rgba(96, 165, 250, 0.4);
+    --aplayer-glass-hover: rgba(255, 255, 255, 0.08);
+    --aplayer-glass-active-bg: rgba(96, 165, 250, 0.18);
+    --aplayer-glass-bar-bg: rgba(255, 255, 255, 0.12);
+    --aplayer-glass-bar-loaded: rgba(255, 255, 255, 0.22);
+    --aplayer-glass-scroll-thumb: rgba(255, 255, 255, 0.22);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Base & In-Page Tag Container Glass Styles
+   -------------------------------------------------------------------------- */
+.aplayer:not(.aplayer-fixed),
+.aplayer.aplayer-glass:not(.aplayer-fixed),
+.aplayer.aplayer-tag-marker,
+.aplayer.meting-tag-marker {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--aplayer-glass-text);
+  background: var(--aplayer-glass-bg);
+  border: 1px solid var(--aplayer-glass-border);
+  border-radius: 20px;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular);
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%);
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%);
+}
+
+/* --------------------------------------------------------------------------
+   2. Fixed-Bottom Global Music Player Container & Body
+   -------------------------------------------------------------------------- */
+.aplayer.aplayer-fixed:not(.aplayer-docked-left):not(.aplayer-docked-right):not(.aplayer-custom-pos) {
+  position: fixed !important;
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  left: max(16px, env(safe-area-inset-left)) !important;
+  top: auto !important;
+  right: auto !important;
+  width: min(440px, calc(100vw - 32px)) !important;
+  max-width: min(440px, calc(100vw - 32px)) !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  transform: none !important;
+  overflow: visible !important;
+  z-index: 1001 !important;
+  pointer-events: none !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-custom-pos,
+.aplayer.aplayer-fixed.aplayer-dragging {
+  position: fixed !important;
+  bottom: auto !important;
+  right: auto !important;
+  width: min(440px, calc(100vw - 32px)) !important;
+  max-width: min(440px, calc(100vw - 32px)) !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  transform: none !important;
+  overflow: visible !important;
+  z-index: 1001 !important;
+  pointer-events: none !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow:not(.aplayer-docked-left):not(.aplayer-docked-right) {
+  width: min(440px, calc(100vw - 32px)) !important;
+  max-width: min(440px, calc(100vw - 32px)) !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+.aplayer.aplayer-fixed:not(.aplayer-docked-left):not(.aplayer-docked-right) .aplayer-body,
+.aplayer.aplayer-fixed.aplayer-narrow:not(.aplayer-docked-left):not(.aplayer-docked-right) .aplayer-body {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 66px !important;
+  margin: 0 !important;
+  padding: 0 14px 0 0 !important;
+  background: var(--aplayer-glass-bg) !important;
+  border: 1px solid var(--aplayer-glass-border) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  pointer-events: auto !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+}
+
+.aplayer.aplayer-fixed:not(.aplayer-docked-left):not(.aplayer-docked-right) .aplayer-info,
+.aplayer.aplayer-fixed.aplayer-narrow:not(.aplayer-docked-left):not(.aplayer-docked-right) .aplayer-info {
+  display: block !important;
+  margin-left: 66px !important;
+  padding: 11px 8px 0 10px !important;
+  height: 66px !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  background: transparent !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Album Cover (Pic) Fix & Card Elevation
+   -------------------------------------------------------------------------- */
+.aplayer .aplayer-pic {
+  position: relative;
+  float: left;
+  width: 52px !important;
+  height: 52px !important;
+  margin: 7px 0 7px 7px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+}
+
+.aplayer .aplayer-pic:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important;
+}
+
+.aplayer .aplayer-pic .aplayer-button {
+  position: absolute;
+  width: 28px !important;
+  height: 28px !important;
+  top: 50% !important;
+  left: 50% !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 50% !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.aplayer .aplayer-pic .aplayer-button:hover {
+  background: rgba(0, 0, 0, 0.65) !important;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
+.aplayer .aplayer-pic .aplayer-play {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.aplayer .aplayer-pic .aplayer-play svg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-42%, -50%) !important;
+  height: 16px !important;
+  width: 16px !important;
+  fill: #fff !important;
+}
+
+.aplayer .aplayer-pic .aplayer-pause {
+  width: 28px !important;
+  height: 28px !important;
+  opacity: 0.85 !important;
+}
+
+.aplayer .aplayer-pic .aplayer-pause svg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  height: 14px !important;
+  width: 14px !important;
+  fill: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Floating Glass Card Playlist (Expanded List)
+   -------------------------------------------------------------------------- */
+.aplayer.aplayer-fixed .aplayer-list {
+  position: absolute !important;
+  bottom: 76px !important;
+  left: 0 !important;
+  right: auto !important;
+  width: min(440px, calc(100vw - 32px)) !important;
+  max-height: 300px !important;
+  margin: 0 !important;
+  background: var(--aplayer-glass-bg-card) !important;
+  border: 1px solid var(--aplayer-glass-border) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(190%) contrast(102%) !important;
+  backdrop-filter: blur(32px) saturate(190%) contrast(102%) !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+  z-index: 1002 !important;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.28s ease !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-list.aplayer-list-hide {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transform: translateY(12px) scale(0.96) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-list:not(.aplayer-list-hide) {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.aplayer .aplayer-list ol {
+  max-height: 280px !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  list-style: none !important;
+  overflow-y: auto !important;
+}
+
+.aplayer .aplayer-list ol::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.aplayer .aplayer-list ol::-webkit-scrollbar-thumb {
+  border-radius: 4px !important;
+  background: var(--aplayer-glass-scroll-thumb) !important;
+}
+
+.aplayer .aplayer-list ol li {
+  position: relative !important;
+  height: 38px !important;
+  line-height: 38px !important;
+  padding: 0 12px 0 18px !important;
+  margin: 3px 0 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  color: var(--aplayer-glass-text) !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease !important;
+  overflow: hidden !important;
+}
+
+.aplayer .aplayer-list ol li:hover {
+  background: var(--aplayer-glass-hover) !important;
+  transform: translateX(2px);
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+  background: var(--aplayer-glass-active-bg) !important;
+  font-weight: 600 !important;
+  color: var(--aplayer-glass-accent) !important;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur {
+  display: inline-block !important;
+  background: var(--aplayer-glass-accent) !important;
+  border-radius: 3px !important;
+  width: 3px !important;
+  height: 18px !important;
+  position: absolute !important;
+  left: 6px !important;
+  top: 10px !important;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-index {
+  color: var(--aplayer-glass-muted) !important;
+  margin-right: 10px !important;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-author {
+  color: var(--aplayer-glass-muted) !important;
+  float: right !important;
+  font-size: 12px !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Screen-Centered Floating Lyrics Capsule HUD
+   -------------------------------------------------------------------------- */
+.aplayer.aplayer-fixed .aplayer-lrc {
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: min(640px, calc(100vw - 32px)) !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  margin: 0 !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  background: var(--aplayer-glass-bg-lrc) !important;
+  border: 1px solid var(--aplayer-glass-border) !important;
+  border-radius: 9999px !important;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  pointer-events: auto !important;
+  cursor: grab !important;
+  touch-action: none !important;
+  z-index: 1000 !important;
+  display: block !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc:not(.aplayer-lrc-custom-pos):not(.aplayer-lrc-dragging) {
+  position: fixed !important;
+  bottom: 96px !important;
+  left: 50% !important;
+  top: auto !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc.aplayer-lrc-custom-pos,
+.aplayer.aplayer-fixed .aplayer-lrc.aplayer-lrc-dragging {
+  position: fixed !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc.aplayer-lrc-dragging {
+  cursor: grabbing !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  box-shadow: 0 20px 40px -6px rgba(0, 0, 0, 0.35) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc:before,
+.aplayer.aplayer-fixed .aplayer-lrc:after {
+  display: none !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc.aplayer-lrc-hide {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc:not(.aplayer-lrc-hide) {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc .aplayer-lrc-contents {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc p {
+  display: none !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  color: var(--aplayer-glass-muted) !important;
+  line-height: 38px !important;
+  height: 38px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc:not(.aplayer-lrc-hide) p.aplayer-lrc-current,
+.aplayer.aplayer-fixed .aplayer-lrc:not(.aplayer-lrc-hide) p:first-child:last-child {
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--aplayer-glass-text) !important;
+  opacity: 1 !important;
+  line-height: 38px !important;
+  min-height: 38px !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Hide the cramped lrc line inside bottom-bar */
+.aplayer.aplayer-fixed .aplayer-info .aplayer-lrc {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Typography, Micro-interactions & Progress Controller
+   -------------------------------------------------------------------------- */
+.aplayer .aplayer-title {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: var(--aplayer-glass-text) !important;
+}
+
+.aplayer .aplayer-author {
+  font-size: 11.5px !important;
+  color: var(--aplayer-glass-muted) !important;
+  opacity: 0.85 !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  color: var(--aplayer-glass-muted) !important;
+  font-size: 11px !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.aplayer .aplayer-icon {
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer !important;
+  opacity: 0.75 !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease !important;
+}
+
+.aplayer .aplayer-icon path {
+  fill: var(--aplayer-glass-text) !important;
+}
+
+.aplayer .aplayer-icon:hover {
+  opacity: 1 !important;
+  transform: scale(1.15) !important;
+}
+
+.aplayer .aplayer-icon:active {
+  transform: scale(0.9) !important;
+}
+
+/* Progress bar */
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  margin: 0 0 0 6px !important;
+  padding: 6px 0 !important;
+  cursor: pointer !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  height: 4px !important;
+  border-radius: 4px !important;
+  background: var(--aplayer-glass-bar-bg) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
+  height: 4px !important;
+  border-radius: 4px !important;
+  background: var(--aplayer-glass-bar-loaded) !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  height: 4px !important;
+  border-radius: 4px !important;
+  background: var(--aplayer-glass-accent) !important;
+  box-shadow: 0 0 8px var(--aplayer-glass-accent-glow) !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  margin-top: -4px !important;
+  margin-right: -6px !important;
+  background: #ffffff !important;
+  border: 2px solid var(--aplayer-glass-accent) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  transform: scale(0) !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap:hover .aplayer-bar .aplayer-played .aplayer-thumb {
+  transform: scale(1) !important;
+}
+
+/* Volume bar */
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar {
+  background: var(--aplayer-glass-bar-bg) !important;
+  border-radius: 4px !important;
+  width: 5px !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume {
+  background: var(--aplayer-glass-accent) !important;
+  border-radius: 4px !important;
+  width: 5px !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Free Dragging & iOS Liquid Glass Edge Docking (Hemisphere / Disc Mini-Orb)
+   -------------------------------------------------------------------------- */
+.aplayer.aplayer-fixed.aplayer-dragging,
+.aplayer.aplayer-fixed.aplayer-dragging .aplayer-body {
+  transition: none !important;
+  cursor: grabbing !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  box-shadow: 0 28px 60px -8px rgba(0, 0, 0, 0.4), 0 12px 24px -4px rgba(0, 0, 0, 0.25) !important;
+  transform: scale(1.02) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc.aplayer-lrc-dragging {
+  transition: none !important;
+  cursor: grabbing !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  box-shadow: 0 20px 40px -6px rgba(0, 0, 0, 0.35) !important;
+  transform: scale(1.03) !important;
+}
+
+/* Left-Edge Docked Hemisphere */
+.aplayer.aplayer-fixed.aplayer-docked-left,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left {
+  position: fixed !important;
+  left: 0 !important;
+  right: auto !important;
+  width: 50px !important;
+  max-width: 50px !important;
+  height: 56px !important;
+  border-radius: 0 28px 28px 0 !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  touch-action: none !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.3s ease !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-left:not([style*="top"]),
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left:not([style*="top"]) {
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  top: auto !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-left .aplayer-body,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left .aplayer-body {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  display: block !important;
+  width: 50px !important;
+  max-width: 50px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 28px 28px 0 !important;
+  border: 1px solid var(--aplayer-glass-border) !important;
+  border-left: none !important;
+  background: var(--aplayer-glass-bg) !important;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-left:hover .aplayer-body,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left:hover .aplayer-body {
+  transform: translateX(4px) scale(1.06) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32), inset 0 1px 1.5px rgba(255, 255, 255, 0.6) !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-left .aplayer-pic,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left .aplayer-pic {
+  width: 42px !important;
+  height: 42px !important;
+  margin: 6px 0 6px 4px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-left .aplayer-info,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left .aplayer-info,
+.aplayer.aplayer-fixed.aplayer-docked-left .aplayer-list,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-left .aplayer-list {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Right-Edge Docked Hemisphere */
+.aplayer.aplayer-fixed.aplayer-docked-right,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right {
+  position: fixed !important;
+  right: 0 !important;
+  left: auto !important;
+  width: 50px !important;
+  max-width: 50px !important;
+  height: 56px !important;
+  border-radius: 28px 0 0 28px !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  touch-action: none !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.3s ease !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-right:not([style*="top"]),
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right:not([style*="top"]) {
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  top: auto !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-right .aplayer-body,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right .aplayer-body {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  display: block !important;
+  width: 50px !important;
+  max-width: 50px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 28px 0 0 28px !important;
+  border: 1px solid var(--aplayer-glass-border) !important;
+  border-right: none !important;
+  background: var(--aplayer-glass-bg) !important;
+  box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-right:hover .aplayer-body,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right:hover .aplayer-body {
+  transform: translateX(-4px) scale(1.06) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32), inset 0 1px 1.5px rgba(255, 255, 255, 0.6) !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-right .aplayer-pic,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right .aplayer-pic {
+  width: 42px !important;
+  height: 42px !important;
+  margin: 6px 4px 6px 4px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-docked-right .aplayer-info,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right .aplayer-info,
+.aplayer.aplayer-fixed.aplayer-docked-right .aplayer-list,
+.aplayer.aplayer-fixed.aplayer-narrow.aplayer-docked-right .aplayer-list {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Rotating Vinyl Disc Animation when Playing in Docked Mode */
+@keyframes aplayer-disc-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.aplayer.aplayer-playing.aplayer-docked-left .aplayer-pic,
+.aplayer.aplayer-playing.aplayer-docked-right .aplayer-pic {
+  animation: aplayer-disc-spin 14s linear infinite !important;
+}
+
+/* Dedicated Dock / Collapse Icon Button in Controller */
+.aplayer .aplayer-icon.aplayer-icon-dock {
+  margin-left: 2px !important;
+  opacity: 0.7 !important;
+}
+
+.aplayer .aplayer-icon.aplayer-icon-dock:hover {
+  opacity: 1 !important;
+  transform: scale(1.18) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Mobile & Small Screen Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .aplayer.aplayer-fixed:not(.aplayer-docked-left):not(.aplayer-docked-right) {
+    bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100vw - 20px) !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-body {
+    height: 56px !important;
+    border-radius: 16px !important;
+    padding-right: 8px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-pic {
+    width: 44px !important;
+    height: 44px !important;
+    margin: 6px 0 6px 6px !important;
+    border-radius: 11px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-pic .aplayer-play {
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 -11px -11px 0 !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-pic .aplayer-play svg {
+    height: 14px !important;
+    width: 14px !important;
+    top: 3px !important;
+    left: 3px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-info {
+    margin-left: 56px !important;
+    height: 56px !important;
+    padding: 7px 4px 0 6px !important;
+  }
+
+  .aplayer .aplayer-music {
+    font-size: 12.5px !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+    font-size: 10px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    bottom: 74px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: calc(100vw - 32px) !important;
+    border-radius: 9999px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc p {
+    font-size: 13px !important;
+    line-height: 34px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc p.aplayer-lrc-current {
+    font-size: 13.5px !important;
+    line-height: 34px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    font-weight: 600 !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-list {
+    bottom: 66px !important;
+    max-height: 240px !important;
+    width: calc(100vw - 20px) !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-list ol {
+    max-height: 230px !important;
+  }
+}
+

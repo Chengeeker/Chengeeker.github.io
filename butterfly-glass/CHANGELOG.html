@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>不可能虫鸣 | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;ChangelogAll notable changes to Hexo Butterfly Glass are documented here. [2.0.0] - 2026-08-24Version 2.0 is a stru">
+<meta property="og:type" content="website">
+<meta property="og:title" content="不可能虫鸣">
+<meta property="og:url" content="https://chengeeker.github.io/butterfly-glass/CHANGELOG.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;ChangelogAll notable changes to Hexo Butterfly Glass are documented here. [2.0.0] - 2026-08-24Version 2.0 is a stru">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.infinitycm.top/file/touxiang.webp">
+<meta property="article:published_time" content="2026-08-24T15:50:05.089Z">
+<meta property="article:modified_time" content="2026-08-24T15:50:05.089Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.infinitycm.top/file/touxiang.webp"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://img.infinitycm.top/file/IMG_20250116_193218.webp"><link rel="canonical" href="https://chengeeker.github.io/butterfly-glass/CHANGELOG.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const start = 6
+              const end = 18
+              const isNight =
+                start < end
+                    ? hour < start || hour >= end
+                    : hour >= start || hour < end
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a9bbe4e6d75b4873b945b365ec660f4f&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '不可能虫鸣',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/butterfly-glass/css/glass-tokens.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-environment.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-core.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-optical.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-depth.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-archive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-post.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-page.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-responsive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-navbar.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-tag.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-toc.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-search.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="不可能虫鸣" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="不可能虫鸣" type="application/rss+xml">
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<link rel="stylesheet" href="/assets/css/APlayer.glass.css" class="aplayer-glass-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+<script>var meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r'</script>
+<script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
+<script src="/assets/js/APlayer.dock.js" class="aplayer-dock-script-marker"></script>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://img.infinitycm.top/file/bizhi.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><link rel="stylesheet" class="aplayer-glass-style-marker" href="/assets/css/APlayer.glass.css"><h1 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h1><p>All notable changes to Hexo Butterfly Glass are documented here.</p>
+<h2 id="2-0-0-2026-08-24"><a href="#2-0-0-2026-08-24" class="headerlink" title="[2.0.0] - 2026-08-24"></a>[2.0.0] - 2026-08-24</h2><p>Version 2.0 is a structural and visual upgrade from the 1.1 release. It moves the project from a collection of component overrides to a modular Glass System with an explicit environment, surface hierarchy, runtime states, and responsive performance rules.</p>
+<h3 id="Highlights"><a href="#Highlights" class="headerlink" title="Highlights"></a>Highlights</h3><ul>
+<li>Introduced a real CSS Glass Environment behind the UI surfaces.</li>
+<li>Rebuilt the Light and Dark material parameters independently.</li>
+<li>Established a clear <code>Environment → Primary Surface → Content</code> hierarchy.</li>
+<li>Removed unnecessary nested Glass and repeated <code>backdrop-filter</code> contexts.</li>
+<li>Added a dedicated page layer for Shuoshuo and author-card controls.</li>
+<li>Added bilingual documentation with Chinese as the default README.</li>
+<li>Removed obsolete 1.1-era files from the repository root.</li>
+</ul>
+<h3 id="Visual-System"><a href="#Visual-System" class="headerlink" title="Visual System"></a>Visual System</h3><ul>
+<li>Added <code>glass-tokens.css</code> as the central design-token layer.</li>
+<li>Added dedicated Light &#x2F; Dark surface, border, highlight, shadow, radius, and motion variables.</li>
+<li>Added <code>glass-environment.css</code> with broad, low-saturation ambient fields.</li>
+<li>Bound the environment to the actual Butterfly 5.7.0 <code>body</code> background container.</li>
+<li>Added a unified radius system from small controls to large page surfaces.</li>
+<li>Preserved optical highlights and depth while reducing unnecessary visual noise.</li>
+</ul>
+<h3 id="Surface-Hierarchy"><a href="#Surface-Hierarchy" class="headerlink" title="Surface Hierarchy"></a>Surface Hierarchy</h3><ul>
+<li>Made <code>#post</code> the primary article Glass Surface.</li>
+<li>Changed <code>#article-container</code> into a transparent content layer.</li>
+<li>Disabled nested <code>backdrop-filter</code> for article content, code blocks, and internal content surfaces.</li>
+<li>Kept Archive, recent-post cards, sidebar cards, and floating controls as independent surfaces only where appropriate.</li>
+<li>Added Glass surfaces for dynamically rendered <code>.shuoshuo-item</code> blocks, which are not wrapped by <code>#post</code>.</li>
+</ul>
+<h3 id="Article-Controls"><a href="#Article-Controls" class="headerlink" title="Article Controls"></a>Article Controls</h3><ul>
+<li>Split article tags from Share.js controls.</li>
+<li>Added support for Butterfly’s actual <code>.post-meta__tags</code> selector.</li>
+<li>Reduced the strong gradients, inset highlights, and shadows used by the 1.1 tag&#x2F;share treatment.</li>
+<li>WeChat, QQ, and other share controls now use quiet translucent fills with edge highlights.</li>
+<li>Dark-mode tags and share controls no longer look like heavily illuminated plastic buttons.</li>
+</ul>
+<h3 id="Author-Card-and-Floating-Controls"><a href="#Author-Card-and-Floating-Controls" class="headerlink" title="Author Card and Floating Controls"></a>Author Card and Floating Controls</h3><ul>
+<li>Reworked the homepage Follow Me button into a theme-aware Glass child control.</li>
+<li>Added Light-mode dark icon&#x2F;text contrast.</li>
+<li>Added Dark-mode light icon&#x2F;text contrast.</li>
+<li>Preserved the author card as a primary surface while keeping its button as a quieter child layer.</li>
+<li>Unified floating control radius, border, shadow, and icon treatment.</li>
+</ul>
+<h3 id="Runtime-and-Performance"><a href="#Runtime-and-Performance" class="headerlink" title="Runtime and Performance"></a>Runtime and Performance</h3><ul>
+<li>Fixed the runtime asset path to <code>/butterfly-glass/js/glass-runtime.js</code>.</li>
+<li>Added consistent <code>lg-*</code> runtime state classes alongside compatibility classes.</li>
+<li>Added explicit <code>lg-disabled</code> handling.</li>
+<li>Added mobile Full Glass state handling through <code>lg-mobile-full</code>.</li>
+<li>Preserved automatic Reduced Glass on mobile by default.</li>
+<li>Preserved <code>prefers-reduced-motion</code> handling.</li>
+<li>Kept pointer-driven optical updates limited to fine-pointer devices.</li>
+</ul>
+<h3 id="Compatibility-and-Maintenance"><a href="#Compatibility-and-Maintenance" class="headerlink" title="Compatibility and Maintenance"></a>Compatibility and Maintenance</h3><ul>
+<li><p>Fixed the incorrect <code>glass-navbar.css.css</code> injection path.</p>
+</li>
+<li><p>Replaced obsolete variable references in the search module.</p>
+</li>
+<li><p>Kept <code>glass-tokens.css</code> as the first required stylesheet.</p>
+</li>
+<li><p>Kept the project directory name fixed as <code>butterfly-glass/</code>.</p>
+</li>
+<li><p>Did not modify Butterfly theme source files.</p>
+</li>
+<li><p>Removed obsolete files from the repository root:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">css/glass-ambient.css</span><br><span class="line">css/glass-background.css</span><br><span class="line">css/glass-config.css</span><br><span class="line">css/glass-variable.css</span><br><span class="line">css/glass.css</span><br><span class="line">js/glass-config.js</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><ul>
+<li>Hexo 8.1.2 build passed.</li>
+<li>Butterfly 5.7.0 build passed.</li>
+<li>Checked Home, Archive, Article, Shuoshuo, and custom pages.</li>
+<li>Checked Light and Dark themes.</li>
+<li>Checked Desktop and Mobile layouts.</li>
+<li>Confirmed article content does not create nested Glass surfaces.</li>
+<li>Confirmed dynamically rendered Shuoshuo items receive the new Glass surface.</li>
+</ul>
+<h2 id="1-1-0"><a href="#1-1-0" class="headerlink" title="[1.1.0]"></a>[1.1.0]</h2><p>The 1.1 release established the first Liquid Glass direction for Butterfly, including early component-level glass overrides, floating navigation, tag styling, search styling, and initial runtime&#x2F;configuration experiments.</p>
+<p>Version 2.0 keeps the visual direction but replaces the old scattered override approach with a more maintainable modular system.</p>
+<h2 id="Upgrade-Guide-1-1-→-2-0"><a href="#Upgrade-Guide-1-1-→-2-0" class="headerlink" title="Upgrade Guide: 1.1 → 2.0"></a>Upgrade Guide: 1.1 → 2.0</h2><ol>
+<li><p>Replace the old <code>css/</code> and <code>js/</code> files with the v2.0 files.</p>
+</li>
+<li><p>Ensure <code>glass-tokens.css</code> is loaded first.</p>
+</li>
+<li><p>Add <code>glass-page.css</code> to the injection order.</p>
+</li>
+<li><p>Use <code>/butterfly-glass/js/glass-runtime.js</code> as the runtime path.</p>
+</li>
+<li><p>Remove references to the deleted legacy files.</p>
+</li>
+<li><p>Keep the installation directory named <code>butterfly-glass/</code>.</p>
+</li>
+<li><p>Clear Hexo’s generated output before checking the new version:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+</ol>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker"><i class="fa-brands fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路"><img src="https://img.infinitycm.top/file/QQmail.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="净化QQ邮箱客户端的一些思路"/></a><div class="content"><a class="title" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路">净化QQ邮箱客户端的一些思路</a><time datetime="2026-07-03T16:00:00.000Z" title="发表于 2026-07-04 00:00:00">2026-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/18/Bettbox/" title="Bettbox"><img src="https://img.infinitycm.top/file/20260618103344961.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bettbox"/></a><div class="content"><a class="title" href="/2026/06/18/Bettbox/" title="Bettbox">Bettbox</a><time datetime="2026-06-17T16:00:00.000Z" title="发表于 2026-06-18 00:00:00">2026-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel"><img src="https://img.infinitycm.top/file/20260228133139199.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用cloudfare搭建自己的免费机场-edgetunnel"/></a><div class="content"><a class="title" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel">用cloudfare搭建自己的免费机场-edgetunnel</a><time datetime="2026-06-08T16:00:00.000Z" title="发表于 2026-06-09 00:00:00">2026-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）"><img src="https://img.infinitycm.top/file/20260224113844738.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cloudfare-bitwarden （nodewarden）"/></a><div class="content"><a class="title" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）">cloudfare-bitwarden （nodewarden）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）"><img src="https://img.infinitycm.top/file/20260322222333753.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用ClawCloud Run搭建自己的免费机场（已失效）"/></a><div class="content"><a class="title" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）">用ClawCloud Run搭建自己的免费机场（已失效）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Software/"><span class="card-category-list-name">Software</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tutorials/"><span class="card-category-list-name">Tutorials</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%AC%E5%91%8A/"><span class="card-category-list-name">公告</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Xposed/" style="font-size: 1.23em; color: #999ea6">Xposed</a> <a href="/tags/%E6%8A%A2%E8%AF%BE/" style="font-size: 1.1em; color: #999">抢课</a> <a href="/tags/%E5%85%AC%E5%91%8A/" style="font-size: 1.1em; color: #999">公告</a> <a href="/tags/cloudfare/" style="font-size: 1.37em; color: #99a4b2">cloudfare</a> <a href="/tags/game/" style="font-size: 1.1em; color: #999">game</a> <a href="/tags/clash/" style="font-size: 1.5em; color: #99a9bf">clash</a> <a href="/tags/%E6%9C%BA%E5%9C%BA/" style="font-size: 1.37em; color: #99a4b2">机场</a> <a href="/tags/%E7%9F%A5%E7%BD%91/" style="font-size: 1.1em; color: #999">知网</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 1.1em; color: #999">阅读</a> <a href="/tags/bitwarden/" style="font-size: 1.37em; color: #99a4b2">bitwarden</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a></div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">31</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">29.3k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-26T05:44:50.979Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By Chen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/butterfly-glass/js/glass-runtime.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div class="aplayer no-destroy aplayer-global-marker" data-id="13104322073" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="list" data-preload="metadata" data-mutex="true" data-listfolded="true" data-theme="var(--aplayer-theme, #6d8cff)"></div>
+</body></html>

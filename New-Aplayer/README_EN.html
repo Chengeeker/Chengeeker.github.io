@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>不可能虫鸣 | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;New-Aplayer (Frosted Glass &amp; Docking Edition)   A Frosted-Glass APlayer &#x2F; Meting Plugin for Hexo with Drag">
+<meta property="og:type" content="website">
+<meta property="og:title" content="不可能虫鸣">
+<meta property="og:url" content="https://chengeeker.github.io/New-Aplayer/README_EN.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="var meting_api&#x3D;&#39;https:&#x2F;&#x2F;api.injahow.cn&#x2F;meting&#x2F;?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;New-Aplayer (Frosted Glass &amp; Docking Edition)   A Frosted-Glass APlayer &#x2F; Meting Plugin for Hexo with Drag">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.infinitycm.top/file/touxiang.webp">
+<meta property="article:published_time" content="2026-08-26T05:43:08.133Z">
+<meta property="article:modified_time" content="2026-08-26T05:43:08.133Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.infinitycm.top/file/touxiang.webp"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://img.infinitycm.top/file/IMG_20250116_193218.webp"><link rel="canonical" href="https://chengeeker.github.io/New-Aplayer/README_EN.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const start = 6
+              const end = 18
+              const isNight =
+                start < end
+                    ? hour < start || hour >= end
+                    : hour >= start || hour < end
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a9bbe4e6d75b4873b945b365ec660f4f&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '不可能虫鸣',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/butterfly-glass/css/glass-tokens.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-environment.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-core.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-optical.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-depth.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-archive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-post.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-page.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-responsive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-navbar.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-tag.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-toc.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-search.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="不可能虫鸣" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="不可能虫鸣" type="application/rss+xml">
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<link rel="stylesheet" href="/assets/css/APlayer.glass.css" class="aplayer-glass-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+<script>var meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r'</script>
+<script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
+<script src="/assets/js/APlayer.dock.js" class="aplayer-dock-script-marker"></script>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://img.infinitycm.top/file/bizhi.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><link rel="stylesheet" class="aplayer-glass-style-marker" href="/assets/css/APlayer.glass.css"><h1 id="New-Aplayer-Frosted-Glass-Docking-Edition"><a href="#New-Aplayer-Frosted-Glass-Docking-Edition" class="headerlink" title="New-Aplayer (Frosted Glass &amp; Docking Edition)"></a>New-Aplayer (Frosted Glass &amp; Docking Edition)</h1><div align="center">
+
+<p><a target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Hexo-5.0+-blue.svg" alt="Hexo"></a><br><a target="_blank" rel="noopener" href="https://aplayer.js.org/"><img src="https://img.shields.io/badge/APlayer-1.10.1-red.svg" alt="APlayer"></a><br><a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS"><img src="https://img.shields.io/badge/MetingJS-1.2.0-green.svg" alt="MetingJS"></a><br><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a></p>
+<p><strong>A Frosted-Glass APlayer &#x2F; Meting Plugin for Hexo with Draggable Edge Snapping &amp; Lyrics HUD</strong></p>
+<p><a href="./README_EN.md">English Documentation</a> · <a href="./README.md">中文文档</a></p>
+</div>
+
+<hr>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="#-key-features">✨ Key Features</a></li>
+<li><a href="#-environment-support--verification">💻 Environment Support &amp; Verification</a></li>
+<li><a href="#-quick-start--installation">🚀 Quick Start &amp; Installation</a></li>
+<li><a href="#%EF%B8%8F-configuration-_configyml">⚙️ Configuration (<code>_config.yml</code>)</a></li>
+<li><a href="#%EF%B8%8F-tag-usage-markdown-posts">🏷️ Tag Usage (Markdown Posts)</a></li>
+<li><a href="#%EF%B8%8F-developer--fork-guide">🛠️ Developer &amp; Fork Guide</a><ul>
+<li><a href="#directory-architecture">Directory Architecture</a></li>
+<li><a href="#module-responsibilities">Module Responsibilities</a></li>
+<li><a href="#customization-cheat-sheet-where-and-what-to-edit">Customization Cheat Sheet: Where and What to Edit</a></li>
+<li><a href="#build--local-testing-pipeline">Build &amp; Local Testing Pipeline</a></li>
+</ul>
+</li>
+<li><a href="#-faq">❓ FAQ</a></li>
+<li><a href="#-license">📄 License</a></li>
+</ul>
+<hr>
+<h2 id="✨-Key-Features"><a href="#✨-Key-Features" class="headerlink" title="✨ Key Features"></a>✨ Key Features</h2><ol>
+<li><strong>Frosted Glass Aesthetics</strong>:<ul>
+<li>Multi-layer Gaussian blur with semi-transparent adaptive backgrounds, subtle highlight borders, and soft fluid shadows that blend smoothly with both Light and Dark themes.</li>
+</ul>
+</li>
+<li><strong>Screen-Centered Floating Lyrics Capsule HUD</strong>:<ul>
+<li>Detached from the cramped bottom bar and rendered as a floating frosted pill at screen center with highlighted typography.</li>
+<li>Fully supports <strong>free 2D mouse and touch dragging</strong> anywhere across the screen.</li>
+</ul>
+</li>
+<li><strong>Free 2D Dragging &amp; Strict Edge Snapping (8px)</strong>:<ul>
+<li><strong>Free 2D Dragging</strong>: Drag the player card anywhere freely with automatic viewport boundary protection.</li>
+<li><strong>Strict Edge Snapping (8px)</strong>: Only collapses into the semi-circular Mini-Orb when physically pushed flush against the screen edge (&lt;&#x3D; 8px) or clicking the dedicated dock button <code>|←</code>, preventing accidental premature snapping from a distance.</li>
+<li><strong>Edge Vertical Sliding</strong>: Slide the docked Mini-Orb up and down freely along the edge; pull inward toward screen center to smoothly expand.</li>
+<li><strong>State Persistence &amp; Restoration</strong>: Saves dock coordinates and state in <code>localStorage</code>, automatically restoring position upon initial load, refresh, and PJAX transitions.</li>
+</ul>
+</li>
+<li><strong>Millisecond-Level Local Caching (Meting Fast-Cache v2)</strong>:<ul>
+<li>Automatically caches playlist metadata in <code>localStorage</code> with API key hashing and quota overflow protection, eliminating network latency and rendering the player instantly in 0 milliseconds upon page refreshes and navigation.</li>
+</ul>
+</li>
+<li><strong>Mobile Responsive Optimization</strong>:<ul>
+<li>Bottom bar compacted to 56px height, with playlist folded by default (<code>list_folded: true</code>) to prevent covering mobile reading space.</li>
+<li>Zero lyrics clipping with precise vertical centering on smartphone screens.</li>
+</ul>
+</li>
+<li><strong>Meting API Proxy Route Fix &amp; Tag Syntax Enhancements</strong>:<ul>
+<li>Automatically handles query parameter template injection (<code>?server=:server&amp;type=:type&amp;id=:id&amp;r=:r</code>), eliminating 404s and playback skipping issues (“An audio error has occurred”).</li>
+<li>Full tag parser compatibility with <code>autoplay:false</code>, <code>listfolded:true</code>, <code>fixed:true</code>, etc.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="💻-Environment-Support-Verification"><a href="#💻-Environment-Support-Verification" class="headerlink" title="💻 Environment Support &amp; Verification"></a>💻 Environment Support &amp; Verification</h2><p>This plugin has been integrated and verified across modern production environments:</p>
+<ul>
+<li><strong>Hexo Version</strong>: Hexo <code>5.x</code> &#x2F; <code>6.x</code> &#x2F; <code>7.x</code></li>
+<li><strong>Node.js Version</strong>: Node.js <code>16.x</code> &#x2F; <code>18.x</code> &#x2F; <code>20.x</code> &#x2F; <code>22.x</code></li>
+<li><strong>Theme Compatibility</strong>: Butterfly (<code>4.x</code> &#x2F; <code>5.x</code>), Fluid, Anzhiyu, NexT, and other modern Hexo themes</li>
+<li><strong>Features Tested</strong>: PJAX transitions, Light&#x2F;Dark mode auto-switching, and Mobile touch dragging</li>
+</ul>
+<hr>
+<h2 id="🚀-Quick-Start-Installation"><a href="#🚀-Quick-Start-Installation" class="headerlink" title="🚀 Quick Start &amp; Installation"></a>🚀 Quick Start &amp; Installation</h2><p>This project adopts a standardized Hexo local source module integration approach. Pre-compiled CommonJS runtime files are included directly in the repository:</p>
+<h3 id="Step-1-Clone-source-into-your-blog’s-source-folder"><a href="#Step-1-Clone-source-into-your-blog’s-source-folder" class="headerlink" title="Step 1: Clone source into your blog’s source folder"></a>Step 1: Clone source into your blog’s <code>source</code> folder</h3><p>Run the following in your <strong>Hexo blog root</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Chengeeker/New-Aplayer.git <span class="built_in">source</span>/New-Aplayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-2-Link-Local-Dependency-in-Root-package-json"><a href="#Step-2-Link-Local-Dependency-in-Root-package-json" class="headerlink" title="Step 2: Link Local Dependency in Root package.json"></a>Step 2: Link Local Dependency in Root <code>package.json</code></h3><p>Edit the root <code>package.json</code> of your <strong>Hexo blog</strong>, adding the local file dependency:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo-tag-aplayer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:source/New-Aplayer&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>Then install the dependency link from your <strong>Hexo blog root</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Note</strong>: Always run <code>npm install</code> from the <strong>Hexo blog root</strong>, rather than inside <code>source/New-Aplayer/</code>, to prevent Hexo from mistakenly scanning nested <code>node_modules</code> inside the source directory.</p>
+</blockquote>
+<hr>
+<h2 id="⚙️-Configuration-config-yml"><a href="#⚙️-Configuration-config-yml" class="headerlink" title="⚙️ Configuration (_config.yml)"></a>⚙️ Configuration (<code>_config.yml</code>)</h2><p>Add the following configuration to your Hexo root <code>_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># APlayer &amp; Meting Global Settings</span></span><br><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span>                                  <span class="comment"># Enable MetingJS for NetEase/QQ/Kugou music</span></span><br><span class="line">  <span class="attr">meting_api:</span> <span class="string">https://api.injahow.cn/meting/</span>    <span class="comment"># Meting API URL (public demo endpoint)</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">true</span>                            <span class="comment"># Auto inject frosted glass assets into pages</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>                                <span class="comment"># Enable global fixed bottom player</span></span><br><span class="line">    <span class="attr">id:</span> <span class="number">13104322073</span>                             <span class="comment"># Playlist / Song ID</span></span><br><span class="line">    <span class="attr">server:</span> <span class="string">netease</span>                             <span class="comment"># Music server: netease / tencent / kugou</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">playlist</span>                              <span class="comment"># Type: playlist / song / artist</span></span><br><span class="line">    <span class="attr">fixed:</span> <span class="literal">true</span>                                 <span class="comment"># Fixed to bottom of screen</span></span><br><span class="line">    <span class="attr">autoplay:</span> <span class="literal">false</span>                             <span class="comment"># Autoplay (recommended: false)</span></span><br><span class="line">    <span class="attr">order:</span> <span class="string">list</span>                                 <span class="comment"># Order: list / random</span></span><br><span class="line">    <span class="attr">preload:</span> <span class="string">metadata</span>                           <span class="comment"># Preload: metadata / auto / none</span></span><br><span class="line">    <span class="attr">mutex:</span> <span class="literal">true</span>                                 <span class="comment"># Single audio playback mutex</span></span><br><span class="line">    <span class="attr">list_folded:</span> <span class="literal">true</span>                           <span class="comment"># Fold playlist by default (recommended for mobile)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️ <strong>Note on Meting API</strong>:<br><code>https://api.injahow.cn/meting/</code> is provided as a public demo endpoint. Public endpoints may be subject to network latency or rate limits. For production and long-term stability, <strong>it is recommended to self-host a Meting-API instance</strong> (via Docker, Vercel, or personal server) and configure its URL in <code>meting_api</code>.</p>
+</blockquote>
+<hr>
+<h2 id="🏷️-Tag-Usage-Markdown-Posts"><a href="#🏷️-Tag-Usage-Markdown-Posts" class="headerlink" title="🏷️ Tag Usage (Markdown Posts)"></a>🏷️ Tag Usage (Markdown Posts)</h2><h3 id="1-Meting-Playlist-Tag"><a href="#1-Meting-Playlist-Tag" class="headerlink" title="1. Meting Playlist Tag"></a>1. Meting Playlist Tag</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;13104322073&quot; &quot;netease&quot; &quot;playlist&quot; &quot;listfolded:true&quot; &quot;autoplay:false&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Standard-APlayer-Song-Tag"><a href="#2-Standard-APlayer-Song-Tag" class="headerlink" title="2. Standard APlayer Song Tag"></a>2. Standard APlayer Song Tag</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;Song Title&quot; &quot;Artist&quot; &quot;https://domain.com/music.mp3&quot; &quot;https://domain.com/cover.jpg&quot; &quot;autoplay:false&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🛠️-Developer-Fork-Guide"><a href="#🛠️-Developer-Fork-Guide" class="headerlink" title="🛠️ Developer &amp; Fork Guide"></a>🛠️ Developer &amp; Fork Guide</h2><p>This project is built on an ES6 + Babel + Hexo Generator architecture.</p>
+<h3 id="Directory-Architecture"><a href="#Directory-Architecture" class="headerlink" title="Directory Architecture"></a>Directory Architecture</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">New-Aplayer/</span><br><span class="line">├── assets/                       # Core frontend static assets</span><br><span class="line">│   ├── APlayer.glass.css         # ★ Frosted glass styling (visual customizations)</span><br><span class="line">│   └── APlayer.dock.js           # ★ Dragging, edge docking &amp; caching engine (interaction logic)</span><br><span class="line">├── common/                       # Shared constants and utility functions</span><br><span class="line">│   ├── constant.es               # Markers and constant definitions</span><br><span class="line">│   └── util.es                   # Option extractors, safe HTML escaping &amp; helpers</span><br><span class="line">├── lib/                          # Hexo backend rendering engine (ES6 source)</span><br><span class="line">│   ├── config.es                 # Config parser and asset generator registrar</span><br><span class="line">│   ├── view.es                   # View manipulator and DOM injector</span><br><span class="line">│   └── tag/                      # Hexo tag parsers</span><br><span class="line">│       ├── base.es               # Base tag class</span><br><span class="line">│       ├── player.es             # &#123;% aplayer %&#125; tag parser</span><br><span class="line">│       ├── playerLyric.es        # Lyric tag parser</span><br><span class="line">│       ├── playerList.es         # Playlist tag parser</span><br><span class="line">│       └── playerMeting.es       # ★ &#123;% meting %&#125; tag parser &amp; API routing</span><br><span class="line">├── scripts/                      # Build and testing tools</span><br><span class="line">│   ├── build.js                  # Babel compiler (transpiles .es to .js)</span><br><span class="line">│   └── test.js                   # Automated unit and integration test suite</span><br><span class="line">├── index.es                      # ★ Plugin entrypoint &amp; global player markup generator</span><br><span class="line">├── package.json                  # Dependencies &amp; build scripts</span><br><span class="line">├── README.md                     # Chinese documentation</span><br><span class="line">└── README_EN.md                  # English documentation</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Module-Responsibilities"><a href="#Module-Responsibilities" class="headerlink" title="Module Responsibilities"></a>Module Responsibilities</h3><ol>
+<li><strong><code>assets/APlayer.glass.css</code></strong>:<ul>
+<li>Manages frosted glass visual styling, border highlights, Mini-Orb docked hemisphere layout, lyrics HUD capsule, and responsive media queries.</li>
+</ul>
+</li>
+<li><strong><code>assets/APlayer.dock.js</code></strong>:<ul>
+<li>Handles standard Pointer Events for PC &amp; mobile touch, 2D free dragging, 8px strict edge snapping calculations, edge vertical sliding, Meting caching acceleration, and <code>localStorage</code> persistence.</li>
+</ul>
+</li>
+<li><strong><code>lib/config.es</code></strong>:<ul>
+<li>Parses site <code>_config.yml</code>, registers asset generation pipeline with Hexo so that files in <code>assets/</code> automatically deploy into <code>public/assets/</code>.</li>
+</ul>
+</li>
+<li><strong><code>index.es</code></strong>:<ul>
+<li>Hooks into Hexo’s <code>after_render:html</code> and <code>after_post_render</code> filters, injects global fixed player markup, CSS stylesheets, and JS script tags safely.</li>
+</ul>
+</li>
+<li><strong><code>lib/tag/playerMeting.es</code></strong>:<ul>
+<li>Parses Markdown <code>&#123;% meting %&#125;</code> tags, cleans parameters, and formats API endpoint query templates.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="Customization-Cheat-Sheet-Where-and-What-to-Edit"><a href="#Customization-Cheat-Sheet-Where-and-What-to-Edit" class="headerlink" title="Customization Cheat Sheet: Where and What to Edit"></a>Customization Cheat Sheet: Where and What to Edit</h3><table>
+<thead>
+<tr>
+<th align="left">Customization Goal</th>
+<th align="left">Files to Edit</th>
+<th align="left">Instructions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Glass Color &#x2F; Blur &#x2F; Transparency</strong></td>
+<td align="left"><code>assets/APlayer.glass.css</code></td>
+<td align="left">Edit <code>:root</code> variables: <code>--aplayer-glass-bg</code>, <code>--aplayer-glass-blur</code>, <code>--aplayer-glass-border</code>.</td>
+</tr>
+<tr>
+<td align="left"><strong>Mini-Orb Dimensions &#x2F; Corner Radius</strong></td>
+<td align="left"><code>assets/APlayer.glass.css</code></td>
+<td align="left">Find <code>.aplayer-docked-left</code> &amp; <code>.aplayer-docked-right</code>, adjust <code>width: 50px</code> and <code>border-radius</code>.</td>
+</tr>
+<tr>
+<td align="left"><strong>Edge Snapping Threshold Distance</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">Find <code>snapThreshold = 8</code> and adjust pixel trigger range.</td>
+</tr>
+<tr>
+<td align="left"><strong>Custom Dock Icon</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">Find <code>injectDockButton()</code>, customize the SVG inner markup.</td>
+</tr>
+<tr>
+<td align="left"><strong>Default Playlist Fold &#x2F; Unfold</strong></td>
+<td align="left"><code>index.es</code> &amp; <code>_config.yml</code></td>
+<td align="left">Set <code>list_folded: true</code> in <code>_config.yml</code> or change default check in <code>index.es</code>.</td>
+</tr>
+<tr>
+<td align="left"><strong>Meting Cache Expiration Duration</strong></td>
+<td align="left"><code>assets/APlayer.dock.js</code></td>
+<td align="left">Search <code>CACHE_EXPIRY_MS</code> (default is 24 hours).</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Build-Local-Testing-Pipeline"><a href="#Build-Local-Testing-Pipeline" class="headerlink" title="Build &amp; Local Testing Pipeline"></a>Build &amp; Local Testing Pipeline</h3><p>After modifying any <code>.es</code> source file or asset, compile and test with the following commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. Run Babel transpiler and full test suite inside New-Aplayer</span></span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span>/New-Aplayer</span><br><span class="line">npm run build</span><br><span class="line">npm <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Clean and regenerate Hexo static files</span></span><br><span class="line"><span class="built_in">cd</span> ../..</span><br><span class="line">npx hexo clean &amp;&amp; npx hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Start local development server</span></span><br><span class="line">npx hexo server -p 4000</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="❓-FAQ"><a href="#❓-FAQ" class="headerlink" title="❓ FAQ"></a>❓ FAQ</h2><h4 id="Q1-Why-does-the-console-show-“An-audio-error-has-occurred-player-will-skip-forward…”"><a href="#Q1-Why-does-the-console-show-“An-audio-error-has-occurred-player-will-skip-forward…”" class="headerlink" title="Q1: Why does the console show “An audio error has occurred, player will skip forward…”?"></a>Q1: Why does the console show “An audio error has occurred, player will skip forward…”?</h4><p><strong>A</strong>: This occurs when third-party Meting APIs lack query templates or require VIP credentials. This plugin automatically appends <code>:server/:type/:id</code>, ensuring proper queries. Verify your <code>_config.yml</code> points to an active <code>meting_api</code>.</p>
+<h4 id="Q2-Does-the-player-remember-its-position-on-mobile-after-page-transitions"><a href="#Q2-Does-the-player-remember-its-position-on-mobile-after-page-transitions" class="headerlink" title="Q2: Does the player remember its position on mobile after page transitions?"></a>Q2: Does the player remember its position on mobile after page transitions?</h4><p><strong>A</strong>: Yes. Position coordinates and docking state are stored in <code>localStorage</code> and automatically restored upon initialization and PJAX page loads.</p>
+<h4 id="Q3-Why-didn’t-my-edits-in-lib-es-take-effect"><a href="#Q3-Why-didn’t-my-edits-in-lib-es-take-effect" class="headerlink" title="Q3: Why didn’t my edits in lib/*.es take effect?"></a>Q3: Why didn’t my edits in <code>lib/*.es</code> take effect?</h4><p><strong>A</strong>: You must run <code>npm run build</code> in <code>source/New-Aplayer</code> to transpile ES6 <code>.es</code> files into CommonJS <code>.js</code> files before generating Hexo.</p>
+<hr>
+<h2 id="📄-License"><a href="#📄-License" class="headerlink" title="📄 License"></a>📄 License</h2><p>Open-sourced under the <a href="LICENSE">MIT License</a>.</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker"><i class="fa-brands fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路"><img src="https://img.infinitycm.top/file/QQmail.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="净化QQ邮箱客户端的一些思路"/></a><div class="content"><a class="title" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路">净化QQ邮箱客户端的一些思路</a><time datetime="2026-07-03T16:00:00.000Z" title="发表于 2026-07-04 00:00:00">2026-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/18/Bettbox/" title="Bettbox"><img src="https://img.infinitycm.top/file/20260618103344961.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bettbox"/></a><div class="content"><a class="title" href="/2026/06/18/Bettbox/" title="Bettbox">Bettbox</a><time datetime="2026-06-17T16:00:00.000Z" title="发表于 2026-06-18 00:00:00">2026-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel"><img src="https://img.infinitycm.top/file/20260228133139199.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用cloudfare搭建自己的免费机场-edgetunnel"/></a><div class="content"><a class="title" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel">用cloudfare搭建自己的免费机场-edgetunnel</a><time datetime="2026-06-08T16:00:00.000Z" title="发表于 2026-06-09 00:00:00">2026-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）"><img src="https://img.infinitycm.top/file/20260224113844738.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cloudfare-bitwarden （nodewarden）"/></a><div class="content"><a class="title" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）">cloudfare-bitwarden （nodewarden）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）"><img src="https://img.infinitycm.top/file/20260322222333753.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用ClawCloud Run搭建自己的免费机场（已失效）"/></a><div class="content"><a class="title" href="/2026/03/22/%E7%88%AA%E4%BA%91%E6%9C%BA%E5%9C%BA/" title="用ClawCloud Run搭建自己的免费机场（已失效）">用ClawCloud Run搭建自己的免费机场（已失效）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Software/"><span class="card-category-list-name">Software</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tutorials/"><span class="card-category-list-name">Tutorials</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%AC%E5%91%8A/"><span class="card-category-list-name">公告</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Xposed/" style="font-size: 1.23em; color: #999ea6">Xposed</a> <a href="/tags/%E6%8A%A2%E8%AF%BE/" style="font-size: 1.1em; color: #999">抢课</a> <a href="/tags/%E5%85%AC%E5%91%8A/" style="font-size: 1.1em; color: #999">公告</a> <a href="/tags/cloudfare/" style="font-size: 1.37em; color: #99a4b2">cloudfare</a> <a href="/tags/game/" style="font-size: 1.1em; color: #999">game</a> <a href="/tags/clash/" style="font-size: 1.5em; color: #99a9bf">clash</a> <a href="/tags/%E6%9C%BA%E5%9C%BA/" style="font-size: 1.37em; color: #99a4b2">机场</a> <a href="/tags/%E7%9F%A5%E7%BD%91/" style="font-size: 1.1em; color: #999">知网</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 1.1em; color: #999">阅读</a> <a href="/tags/bitwarden/" style="font-size: 1.37em; color: #99a4b2">bitwarden</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a></div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">31</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">29.3k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-26T05:44:50.979Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By Chen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/butterfly-glass/js/glass-runtime.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div class="aplayer no-destroy aplayer-global-marker" data-id="13104322073" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="list" data-preload="metadata" data-mutex="true" data-listfolded="true" data-theme="var(--aplayer-theme, #6d8cff)"></div>
+</body></html>
