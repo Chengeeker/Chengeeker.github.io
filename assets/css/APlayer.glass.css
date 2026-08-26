@@ -154,6 +154,7 @@ html[data-theme='dark'], html.dark, body.dark {
   overflow: hidden !important;
   box-sizing: border-box !important;
   pointer-events: auto !important;
+  touch-action: none !important;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
 }
 
@@ -394,9 +395,9 @@ html[data-theme='dark'], html.dark, body.dark {
 
 .aplayer.aplayer-fixed .aplayer-lrc:not(.aplayer-lrc-custom-pos):not(.aplayer-lrc-dragging) {
   position: fixed !important;
-  bottom: 96px !important;
+  top: max(80px, calc(env(safe-area-inset-top, 0px) + 68px)) !important;
+  bottom: auto !important;
   left: 50% !important;
-  top: auto !important;
   right: auto !important;
   transform: translateX(-50%) !important;
 }
@@ -829,11 +830,23 @@ html[data-theme='dark'], html.dark, body.dark {
     font-size: 10px !important;
   }
 
+  .aplayer .aplayer-icon.aplayer-icon-dock {
+    display: inline-block !important;
+    opacity: 0.75 !important;
+    vertical-align: middle !important;
+  }
+
+  .aplayer .aplayer-icon.aplayer-icon-dock svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
   .aplayer.aplayer-fixed .aplayer-lrc {
-    bottom: 74px !important;
-    height: 34px !important;
-    min-height: 34px !important;
-    max-height: 34px !important;
+    top: max(72px, calc(env(safe-area-inset-top, 0px) + 60px)) !important;
+    bottom: auto !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
     padding: 0 16px !important;
     box-sizing: border-box !important;
     width: auto !important;
@@ -843,18 +856,18 @@ html[data-theme='dark'], html.dark, body.dark {
 
   .aplayer.aplayer-fixed .aplayer-lrc p {
     font-size: 13px !important;
-    line-height: 34px !important;
-    height: 34px !important;
-    min-height: 34px !important;
+    line-height: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .aplayer.aplayer-fixed .aplayer-lrc p.aplayer-lrc-current {
     font-size: 13.5px !important;
-    line-height: 34px !important;
-    height: 34px !important;
-    min-height: 34px !important;
+    line-height: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
     font-weight: 600 !important;
   }
 
