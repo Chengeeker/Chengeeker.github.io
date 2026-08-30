@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Review：一款现代化信息流客户端 | 不可能虫鸣</title><meta name="author" content="Chen"><meta name="copyright" content="Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍 Review 的设计理念、技术架构、核心功能与 Android 客户端实现思路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Review：一款现代化信息流客户端">
+<meta property="og:url" content="https://chengeeker.github.io/2026/08/30/Review/index.html">
+<meta property="og:site_name" content="不可能虫鸣">
+<meta property="og:description" content="介绍 Review 的设计理念、技术架构、核心功能与 Android 客户端实现思路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.infinitycm.top/file/IMG_20260830_115350.webp">
+<meta property="article:published_time" content="2026-08-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-29T16:00:00.000Z">
+<meta property="article:author" content="Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.infinitycm.top/file/IMG_20260830_115350.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Review：一款现代化信息流客户端",
+  "url": "https://chengeeker.github.io/2026/08/30/Review/",
+  "image": "https://img.infinitycm.top/file/IMG_20260830_115350.webp",
+  "datePublished": "2026-08-29T16:00:00.000Z",
+  "dateModified": "2026-08-29T16:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Chen",
+      "url": "https://Chengeeker.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://img.infinitycm.top/file/IMG_20250116_193218.webp"><link rel="canonical" href="https://chengeeker.github.io/2026/08/30/Review/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const start = 6
+              const end = 18
+              const isNight =
+                start < end
+                    ? hour < start || hour >= end
+                    : hour >= start || hour < end
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a9bbe4e6d75b4873b945b365ec660f4f&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Review：一款现代化信息流客户端',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/butterfly-glass/css/glass-tokens.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-environment.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-core.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-optical.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-depth.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-archive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-post.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-page.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-responsive.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-navbar.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-tag.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-toc.css"><link rel="stylesheet" href="/butterfly-glass/css/glass-search.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="不可能虫鸣" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="不可能虫鸣" type="application/rss+xml">
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<link rel="stylesheet" href="/assets/css/APlayer.glass.css" class="aplayer-glass-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+<script>var meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r'</script>
+<script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
+<script src="/assets/js/APlayer.dock.js" class="aplayer-dock-script-marker"></script>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://img.infinitycm.top/file/IMG_20260830_115350.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">不可能虫鸣</span></a><a class="nav-page-title" href="/"><span class="site-name">Review：一款现代化信息流客户端</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa-solid fa-clock"></i><span> 发布历史</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://game.infinitycm.top"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏栈</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Review：一款现代化信息流客户端</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-29T16:00:00.000Z" title="发表于 2026-08-30 00:00:00">2026-08-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-29T16:00:00.000Z" title="更新于 2026-08-30 00:00:00">2026-08-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tutorials/">Tutorials</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><link rel="stylesheet" class="aplayer-glass-style-marker" href="/assets/css/APlayer.glass.css"><h1 id="Review：用-Flutter-打造一款现代化信息流客户端"><a href="#Review：用-Flutter-打造一款现代化信息流客户端" class="headerlink" title="Review：用 Flutter 打造一款现代化信息流客户端"></a>Review：用 Flutter 打造一款现代化信息流客户端</h1><p>最近完成了一款名为 <strong>Review</strong> 的 Android 客户端项目。</p>
+<p>它的出发点其实很简单：我希望把一个成熟信息流平台的核心内容消费体验重新设计一遍，在保留时间线、分组、搜索、评论、媒体浏览等基础能力的同时，把界面做得更加简洁，把交互做得更加细腻，并尽可能利用 Android 原生能力提升整体体验。</p>
+<p>项目目前基于 Flutter 开发，采用 Material 3 设计体系，并针对 Android 移动端进行了较多原生能力适配。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Chengeeker/Review">Github 项目地址 : https://github.com/Chengeeker/Review</a></p>
+<h2 id="一、项目简介"><a href="#一、项目简介" class="headerlink" title="一、项目简介"></a>一、项目简介</h2><p>Review 是一个面向 Android 的第三方信息流客户端。</p>
+<p>与传统信息流应用相比，这个项目更强调三个方面：</p>
+<ul>
+<li><strong>内容展示尽可能纯粹</strong></li>
+<li><strong>界面和交互高度可定制</strong></li>
+<li><strong>Flutter 与 Android 原生能力结合</strong></li>
+</ul>
+<p>项目使用 Flutter 3.x &#x2F; Dart 3.x 开发，状态管理采用 Riverpod，整体 UI 建立在 Material 3 之上。</p>
+<p>目前主要面向 Android <code>arm64-v8a</code> 架构，项目配置的最低 Android SDK 为 24，目标 SDK 为 35。GitHub 仓库目前采用 MIT License。</p>
+<h2 id="二、为什么要重新做一个客户端？"><a href="#二、为什么要重新做一个客户端？" class="headerlink" title="二、为什么要重新做一个客户端？"></a>二、为什么要重新做一个客户端？</h2><p>这个项目并不是单纯为了“换一个界面”。</p>
+<p>在实际使用信息流产品的过程中，我发现很多体验问题并不一定来自功能不足，而是来自信息密度、视觉层级和交互细节。</p>
+<p>例如：</p>
+<ul>
+<li>内容和推荐内容混杂时，很难快速找到自己真正关注的信息；</li>
+<li>卡片样式通常缺少足够的自定义空间；</li>
+<li>图片、长图、动态图片和视频之间的浏览体验并不统一；</li>
+<li>搜索、热榜、用户主页等功能往往被分散在不同入口；</li>
+<li>一些细节交互，例如点击反馈、页面转场、列表滚动和图片缩放，会直接影响使用时的“顺滑感”。</li>
+</ul>
+<p>因此，Review 更像是一次围绕“信息流客户端应该是什么样”的重新设计。</p>
+<h2 id="三、核心技术栈"><a href="#三、核心技术栈" class="headerlink" title="三、核心技术栈"></a>三、核心技术栈</h2><p>项目整体技术栈比较直接：</p>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Flutter</td>
+<td>跨平台 UI 与业务开发框架</td>
+</tr>
+<tr>
+<td>Dart</td>
+<td>主要开发语言</td>
+</tr>
+<tr>
+<td>Material 3</td>
+<td>UI 设计体系</td>
+</tr>
+<tr>
+<td>Riverpod</td>
+<td>状态管理</td>
+</tr>
+<tr>
+<td>Dio</td>
+<td>网络请求与拦截</td>
+</tr>
+<tr>
+<td>WebView &#x2F; CookieManager</td>
+<td>登录会话与网页环境衔接</td>
+</tr>
+<tr>
+<td>SharedPreferences</td>
+<td>本地配置持久化</td>
+</tr>
+<tr>
+<td>Extended Image</td>
+<td>高清图片、长图与手势浏览</td>
+</tr>
+<tr>
+<td>video_player</td>
+<td>视频及动态媒体播放</td>
+</tr>
+<tr>
+<td>WebDAV</td>
+<td>可选的配置备份与恢复</td>
+</tr>
+<tr>
+<td>Android 原生 API</td>
+<td>权限、定位、媒体库、Cookie 等系统能力</td>
+</tr>
+</tbody></table>
+<p>项目的代码结构也按照功能和职责进行了拆分：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">lib/</span><br><span class="line">├── core/</span><br><span class="line">│   ├── api/</span><br><span class="line">│   ├── auth/</span><br><span class="line">│   ├── constants/</span><br><span class="line">│   ├── storage/</span><br><span class="line">│   ├── theme/</span><br><span class="line">│   └── utils/</span><br><span class="line">├── features/</span><br><span class="line">│   ├── auth/</span><br><span class="line">│   ├── compose/</span><br><span class="line">│   ├── detail/</span><br><span class="line">│   ├── feed/</span><br><span class="line">│   ├── home/</span><br><span class="line">│   ├── profile/</span><br><span class="line">│   ├── search/</span><br><span class="line">│   └── settings/</span><br></pre></td></tr></table></figure>
+
+<p>这样的结构可以把网络层、认证、存储、主题以及具体业务页面尽量解耦，后续继续扩展功能时也比较容易定位代码。</p>
+<h2 id="四、信息流与分组系统"><a href="#四、信息流与分组系统" class="headerlink" title="四、信息流与分组系统"></a>四、信息流与分组系统</h2><p>Review 最核心的部分仍然是信息流。</p>
+<p>项目针对不同类型的信息流进行了独立的数据路由处理，例如：</p>
+<ul>
+<li>主时间线；</li>
+<li>用户自定义分组；</li>
+<li>特定关注分组；</li>
+<li>公共热门内容；</li>
+<li>同城内容；</li>
+<li>多种搜索结果流。</li>
+</ul>
+<p>其中一个比较重要的设计思路，是尽可能让不同内容来源使用独立的数据处理逻辑，而不是简单地把所有内容混合到一个列表里。</p>
+<p>对于分组系统，客户端会读取用户已有的分组，并在本地建立对应的展示和排序关系。用户还可以通过分组管理页面调整个人分组、默认分组以及热门频道。</p>
+<p>顶部时间线标题本身也可以作为交互入口。点击后会展开分组面板，通过网格方式快速切换不同内容流。</p>
+<h2 id="五、Material-3-与个性化设计"><a href="#五、Material-3-与个性化设计" class="headerlink" title="五、Material 3 与个性化设计"></a>五、Material 3 与个性化设计</h2><p>Review 的视觉设计大量采用 Material 3，同时加入了一些更加偏向现代 Android 客户端的表现形式。</p>
+<h3 id="1-动态取色"><a href="#1-动态取色" class="headerlink" title="1. 动态取色"></a>1. 动态取色</h3><p>项目支持 Android 12+ 的系统动态取色，可以根据系统壁纸生成主题颜色。</p>
+<p>同时也提供多组预设主题，并支持深色、浅色以及 OLED 纯黑模式。</p>
+<h3 id="2-信息卡片自由调整"><a href="#2-信息卡片自由调整" class="headerlink" title="2. 信息卡片自由调整"></a>2. 信息卡片自由调整</h3><p>用户可以调整：</p>
+<ul>
+<li>卡片圆角与布局；</li>
+<li>字体大小；</li>
+<li>行高；</li>
+<li>时间显示方式；</li>
+<li>图片布局；</li>
+<li>图片圆角；</li>
+<li>链接颜色；</li>
+<li>发布设备信息；</li>
+<li>内容附加信息；</li>
+<li>菜单按钮位置。</li>
+</ul>
+<p>这些配置会统一通过状态管理层驱动，从而保证列表和详情页面保持一致。</p>
+<h3 id="3-悬浮胶囊导航"><a href="#3-悬浮胶囊导航" class="headerlink" title="3. 悬浮胶囊导航"></a>3. 悬浮胶囊导航</h3><p>底部导航采用了偏 Material 3 Expressive 的悬浮胶囊形式。</p>
+<p>它并不是简单地把传统 BottomNavigationBar 改个圆角，而是把导航栏作为一个独立的视觉层处理，并结合 SafeArea、阴影、圆角裁剪等方式，让它与内容区域保持更明确的层级关系。</p>
+<h2 id="六、图片、长图与动态媒体"><a href="#六、图片、长图与动态媒体" class="headerlink" title="六、图片、长图与动态媒体"></a>六、图片、长图与动态媒体</h2><p>媒体浏览是这个项目投入比较多精力的一部分。</p>
+<h3 id="高清图片画廊"><a href="#高清图片画廊" class="headerlink" title="高清图片画廊"></a>高清图片画廊</h3><p>点击图片后进入独立全屏画廊。</p>
+<p>画廊支持：</p>
+<ul>
+<li>双指缩放；</li>
+<li>双击阶梯缩放；</li>
+<li>图片拖拽；</li>
+<li>长图浏览；</li>
+<li>原图保存；</li>
+<li>多图连续浏览。</li>
+</ul>
+<p>页面转场没有使用过于复杂的几何动画，而是采用更稳定的淡入淡出方式，以减少图片尺寸变化造成的视觉跳变。</p>
+<h3 id="长图优化"><a href="#长图优化" class="headerlink" title="长图优化"></a>长图优化</h3><p>对于高度明显大于宽度的长图，客户端会自动采用顶部对齐，并提高缩放上限。</p>
+<p>同时，整个屏幕区域都可以响应手势，即使图片本身只占屏幕中央的一部分，用户依然可以在周围区域进行缩放和拖动。</p>
+<p>双击缩放则采用动画控制器配合缓动曲线，在不同倍率之间平滑过渡。</p>
+<h3 id="动态图片"><a href="#动态图片" class="headerlink" title="动态图片"></a>动态图片</h3><p>项目还针对动态图片数据进行了专门解析。</p>
+<p>如果媒体数据同时包含静态封面和视频部分，客户端可以识别其动态媒体属性，在画廊中进行循环播放，并支持分别保存静态图片、动态媒体或全部内容。</p>
+<h2 id="七、搜索与热榜"><a href="#七、搜索与热榜" class="headerlink" title="七、搜索与热榜"></a>七、搜索与热榜</h2><p>搜索系统被设计成一个相对独立的功能模块。</p>
+<p>搜索入口可以直接从主要信息流页面进入，输入关键词后会展示实时联想内容。</p>
+<p>如果关键词对应用户，还可以直接展示用户卡片，并跳转到对应个人主页。</p>
+<p>搜索结果则进一步划分为多个维度，例如：</p>
+<ul>
+<li>综合；</li>
+<li>实时；</li>
+<li>用户；</li>
+<li>图片；</li>
+<li>视频；</li>
+<li>关注；</li>
+<li>热门；</li>
+<li>评论；</li>
+<li>话题；</li>
+<li>地点；</li>
+<li>商品等。</li>
+</ul>
+<p>不同排序方式也采用不同的计算逻辑。</p>
+<p>例如综合排序会综合互动数据和内容信息进行排序，而实时排序更加注重发布时间。</p>
+<p>此外，项目还提供独立的热榜大厅，并按照不同内容领域进行分类。</p>
+<h2 id="八、个人主页与媒体内容"><a href="#八、个人主页与媒体内容" class="headerlink" title="八、个人主页与媒体内容"></a>八、个人主页与媒体内容</h2><p>个人主页采用三栏式结构：</p>
+<ul>
+<li>内容；</li>
+<li>相册；</li>
+<li>视频。</li>
+</ul>
+<p>其中图片和动态媒体会按照不同类型进行归类。</p>
+<p>视频页面则使用两列瀑布流卡片展示封面、时长、摘要以及作者信息。</p>
+<p>为了改善重复进入个人主页时的等待时间，项目内部还加入了内存级缓存以及后台预取机制，在合适的情况下提前准备下一页内容和视频资源。</p>
+<h2 id="九、评论与内容互动"><a href="#九、评论与内容互动" class="headerlink" title="九、评论与内容互动"></a>九、评论与内容互动</h2><p>详情页提供完整的评论区域。</p>
+<p>主要包括：</p>
+<ul>
+<li>一级评论；</li>
+<li>二级回复；</li>
+<li>评论输入；</li>
+<li>表情输入；</li>
+<li>回复；</li>
+<li>复制；</li>
+<li>图片预览。</li>
+</ul>
+<p>评论中的图片数据会经过独立校验，避免把普通网页链接、搜索卡片或其他非图片内容错误地当成图片处理。</p>
+<p>对于真正的图片附件，则直接使用原生图片组件展示，并可以进入统一的高清画廊。</p>
+<h2 id="十、编辑与发布"><a href="#十、编辑与发布" class="headerlink" title="十、编辑与发布"></a>十、编辑与发布</h2><p>客户端提供独立的内容编辑页面。</p>
+<p>目前支持：</p>
+<ul>
+<li>多图选择；</li>
+<li>图片预览；</li>
+<li>单张图片删除；</li>
+<li>表情输入；</li>
+<li>字数统计；</li>
+<li>定位信息；</li>
+<li>发布设备信息；</li>
+<li>内容编辑。</li>
+</ul>
+<p>图片选择采用系统相册，并支持一次选择多张图片。</p>
+<p>编辑页面的布局也进行了专门优化，例如把附加信息入口放在顶部，把定位和字数统计放在输入区域附近，把主要发送操作放到底部右侧。</p>
+<h2 id="十一、网络层设计"><a href="#十一、网络层设计" class="headerlink" title="十一、网络层设计"></a>十一、网络层设计</h2><p>网络请求由统一的客户端进行管理。</p>
+<p>主要职责包括：</p>
+<ul>
+<li>请求头统一处理；</li>
+<li>会话信息管理；</li>
+<li>身份状态检测；</li>
+<li>请求错误拦截；</li>
+<li>鉴权失效处理；</li>
+<li>必要时的有限重试；</li>
+<li>不同数据接口的独立封装。</li>
+</ul>
+<p>一个比较重要的设计是防止鉴权失败导致无限重试。</p>
+<p>当请求出现特定鉴权错误时，网络拦截器只允许有限次数的重新验证。如果再次失败，就直接把错误交给上层，而不会递归重试。</p>
+<p>这样可以避免网络异常或者会话失效时出现请求风暴。</p>
+<h2 id="十二、本地数据与隐私设计"><a href="#十二、本地数据与隐私设计" class="headerlink" title="十二、本地数据与隐私设计"></a>十二、本地数据与隐私设计</h2><p>项目涉及账号会话和个性化配置，因此本地数据管理是一个需要特别注意的部分。</p>
+<p>项目目前采用本地持久化保存必要的配置，并对可导出的数据设置明确白名单。</p>
+<p>对于配置备份，只允许导出主题、字体、布局、分组排序、搜索历史、浏览历史等非敏感配置。</p>
+<p>账号 Cookie、Access Token、WebDAV 密码等敏感凭据不会进入普通配置导出文件。</p>
+<p>这意味着即使用户把普通配置备份文件交给其他设备使用，也不会因为备份文件本身而直接暴露完整账号会话。</p>
+<h2 id="十三、WebDAV-跨设备备份"><a href="#十三、WebDAV-跨设备备份" class="headerlink" title="十三、WebDAV 跨设备备份"></a>十三、WebDAV 跨设备备份</h2><p>除了本地存储之外，Review 还提供可选的 WebDAV 备份能力。</p>
+<p>用户可以使用兼容标准 WebDAV 协议的服务，例如个人服务器、私有云或其他 WebDAV 存储。</p>
+<p>主要用于保存：</p>
+<ul>
+<li>主题配置；</li>
+<li>字体与布局；</li>
+<li>分组设置；</li>
+<li>时间显示规则；</li>
+<li>图片和视频存储路径；</li>
+<li>搜索历史；</li>
+<li>浏览历史等。</li>
+</ul>
+<p>备份采用 JSON 结构保存，并支持最新备份以及历史备份。</p>
+<p>整个功能的设计目标并不是建立新的云服务，而是利用用户已有的 WebDAV 存储完成跨设备迁移。</p>
+<h2 id="十四、项目构建"><a href="#十四、项目构建" class="headerlink" title="十四、项目构建"></a>十四、项目构建</h2><p>当前项目主要面向 Android <code>arm64-v8a</code>。</p>
+<p>环境要求：</p>
+<ul>
+<li>Flutter SDK &gt;&#x3D; 3.19.0</li>
+<li>Dart SDK &gt;&#x3D; 3.3.0</li>
+<li>JDK 17</li>
+<li>Android Gradle Plugin 8.x</li>
+</ul>
+<p>获取依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub get</span><br></pre></td></tr></table></figure>
+
+<p>运行测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>构建 Release APK：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build apk --release --target-platform android-arm64 --android-skip-build-dependency-validation</span><br></pre></td></tr></table></figure>
+
+<p>构建完成后可以得到对应架构的 Release 安装包。</p>
+<h2 id="十五、开源与项目定位"><a href="#十五、开源与项目定位" class="headerlink" title="十五、开源与项目定位"></a>十五、开源与项目定位</h2><p>Review 目前以开源项目的形式发布。</p>
+<p>项目的主要目的，是记录一次完整的 Flutter Android 客户端开发实践，同时探索现代 Android UI、信息流交互、媒体浏览、网络层设计以及本地数据管理等问题。</p>
+<p>它并不是为了替代任何官方客户端，也不试图重新实现一个完整的平台生态。</p>
+<p>更准确地说，它是一次围绕<strong>第三方客户端设计、Flutter 工程实践以及 Android 原生能力结合</strong>的实验。</p>
+<p>如果你也对 Flutter、Material 3、Android 客户端开发或者信息流产品设计感兴趣，可以直接查看项目源码：</p>
+<p><strong>GitHub：</strong> <a target="_blank" rel="noopener" href="https://github.com/Chengeeker/Review">https://github.com/Chengeeker/Review</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Review 从一开始就不是一个单纯的 UI Demo。</p>
+<p>从信息流路由，到状态管理；从图片画廊，到长图手势；从 Material 3 动态主题，到 Android 原生媒体存储；从网络鉴权，到本地配置备份，这个项目实际上涵盖了一个完整移动客户端中相当多的工程问题。</p>
+<p>对我来说，这个项目最大的价值并不是最终做出了多少功能，而是在开发过程中不断验证一个问题：</p>
+<p><strong>如果把一个成熟的信息流产品重新从客户端角度设计一遍，怎样才能让它变得更加简单、顺滑和可控？</strong></p>
+<p>这也是 Review 后续继续迭代的方向。</p>
+<p>最后，感谢 <a target="_blank" rel="noopener" href="https://github.com/Zelayan/share">https://github.com/Zelayan/share</a> 这个开源项目，重现了一个经典的开源客户端，节省了我大量的开发时间，同时也感谢Share、See等前辈的付出，提供了功能设计的思路。</p>
+</article><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://img.infinitycm.top/file/IMG_20260830_115350.webp" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://mp.weixin.qq.com/s/O5jzeMnp2JzfvNo2j1DMfg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/Chengeeker/picgo/img/20260209091750066.webp" alt="公众号打赏"/></a><div class="post-qr-code-desc">公众号打赏</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路"><img class="cover" src="https://img.infinitycm.top/file/QQmail.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">净化QQ邮箱客户端的一些思路</div></div><div class="info-2"><div class="info-item-1">最近的一些发现</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.infinitycm.top/file/touxiang.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chen</div><div class="author-info-description">Everlasting Love</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Chengeeker"><i class="fa-brands fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Life is like an ocean, only those with strong will can reach the other side</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Review%EF%BC%9A%E7%94%A8-Flutter-%E6%89%93%E9%80%A0%E4%B8%80%E6%AC%BE%E7%8E%B0%E4%BB%A3%E5%8C%96%E4%BF%A1%E6%81%AF%E6%B5%81%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">1.</span> <span class="toc-text">Review：用 Flutter 打造一款现代化信息流客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">一、项目简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E6%96%B0%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">二、为什么要重新做一个客户端？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-number">1.3.</span> <span class="toc-text">三、核心技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BF%A1%E6%81%AF%E6%B5%81%E4%B8%8E%E5%88%86%E7%BB%84%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.</span> <span class="toc-text">四、信息流与分组系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81Material-3-%E4%B8%8E%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">五、Material 3 与个性化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8A%A8%E6%80%81%E5%8F%96%E8%89%B2"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 动态取色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%A1%E6%81%AF%E5%8D%A1%E7%89%87%E8%87%AA%E7%94%B1%E8%B0%83%E6%95%B4"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 信息卡片自由调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%82%AC%E6%B5%AE%E8%83%B6%E5%9B%8A%E5%AF%BC%E8%88%AA"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 悬浮胶囊导航</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%9B%BE%E7%89%87%E3%80%81%E9%95%BF%E5%9B%BE%E4%B8%8E%E5%8A%A8%E6%80%81%E5%AA%92%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">六、图片、长图与动态媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E7%94%BB%E5%BB%8A"><span class="toc-number">1.6.1.</span> <span class="toc-text">高清图片画廊</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E5%9B%BE%E4%BC%98%E5%8C%96"><span class="toc-number">1.6.2.</span> <span class="toc-text">长图优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87"><span class="toc-number">1.6.3.</span> <span class="toc-text">动态图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%90%9C%E7%B4%A2%E4%B8%8E%E7%83%AD%E6%A6%9C"><span class="toc-number">1.7.</span> <span class="toc-text">七、搜索与热榜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E4%B8%8E%E5%AA%92%E4%BD%93%E5%86%85%E5%AE%B9"><span class="toc-number">1.8.</span> <span class="toc-text">八、个人主页与媒体内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E8%AF%84%E8%AE%BA%E4%B8%8E%E5%86%85%E5%AE%B9%E4%BA%92%E5%8A%A8"><span class="toc-number">1.9.</span> <span class="toc-text">九、评论与内容互动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E7%BC%96%E8%BE%91%E4%B8%8E%E5%8F%91%E5%B8%83"><span class="toc-number">1.10.</span> <span class="toc-text">十、编辑与发布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.11.</span> <span class="toc-text">十一、网络层设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E4%B8%8E%E9%9A%90%E7%A7%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.12.</span> <span class="toc-text">十二、本地数据与隐私设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81WebDAV-%E8%B7%A8%E8%AE%BE%E5%A4%87%E5%A4%87%E4%BB%BD"><span class="toc-number">1.13.</span> <span class="toc-text">十三、WebDAV 跨设备备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA"><span class="toc-number">1.14.</span> <span class="toc-text">十四、项目构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E3%80%81%E5%BC%80%E6%BA%90%E4%B8%8E%E9%A1%B9%E7%9B%AE%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.15.</span> <span class="toc-text">十五、开源与项目定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">1.16.</span> <span class="toc-text">结语</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/08/30/Review/" title="Review：一款现代化信息流客户端"><img src="https://img.infinitycm.top/file/IMG_20260830_115350.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Review：一款现代化信息流客户端"/></a><div class="content"><a class="title" href="/2026/08/30/Review/" title="Review：一款现代化信息流客户端">Review：一款现代化信息流客户端</a><time datetime="2026-08-29T16:00:00.000Z" title="发表于 2026-08-30 00:00:00">2026-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路"><img src="https://img.infinitycm.top/file/QQmail.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="净化QQ邮箱客户端的一些思路"/></a><div class="content"><a class="title" href="/2026/07/04/QQ%E9%82%AE%E7%AE%B1%E5%8E%BB%E5%B9%BF%E5%91%8A/" title="净化QQ邮箱客户端的一些思路">净化QQ邮箱客户端的一些思路</a><time datetime="2026-07-03T16:00:00.000Z" title="发表于 2026-07-04 00:00:00">2026-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/18/Bettbox/" title="Bettbox"><img src="https://img.infinitycm.top/file/20260618103344961.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bettbox"/></a><div class="content"><a class="title" href="/2026/06/18/Bettbox/" title="Bettbox">Bettbox</a><time datetime="2026-06-17T16:00:00.000Z" title="发表于 2026-06-18 00:00:00">2026-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel"><img src="https://img.infinitycm.top/file/20260228133139199.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用cloudfare搭建自己的免费机场-edgetunnel"/></a><div class="content"><a class="title" href="/2026/06/09/cloudfare%E6%9C%BA%E5%9C%BA-edgetunnel/" title="用cloudfare搭建自己的免费机场-edgetunnel">用cloudfare搭建自己的免费机场-edgetunnel</a><time datetime="2026-06-08T16:00:00.000Z" title="发表于 2026-06-09 00:00:00">2026-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）"><img src="https://img.infinitycm.top/file/20260224113844738.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cloudfare-bitwarden （nodewarden）"/></a><div class="content"><a class="title" href="/2026/03/22/nodewarden/" title="cloudfare-bitwarden （nodewarden）">cloudfare-bitwarden （nodewarden）</a><time datetime="2026-03-21T16:00:00.000Z" title="发表于 2026-03-22 00:00:00">2026-03-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By Chen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div><div class="footer_custom_text">与其被定义，不如自定义</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/butterfly-glass/js/glass-runtime.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div class="aplayer no-destroy aplayer-global-marker" data-id="13104322073" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-order="list" data-preload="metadata" data-mutex="true" data-listfolded="true" data-theme="var(--aplayer-theme, #6d8cff)"></div>
+</body></html>
