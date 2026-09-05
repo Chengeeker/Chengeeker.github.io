@@ -147,7 +147,12 @@
 
 /* Dropdown menus are independent floating surfaces, not part of the navbar fill. */
 #nav .menus_items .menus_item_child {
-  overflow: hidden;
+  /*
+   * Butterfly's native dropdown uses a transparent ::before bridge above
+   * the menu. Keep it reachable so the pointer can travel from the parent
+   * item to the floating surface without closing the menu.
+   */
+  overflow: visible;
   min-width: 168px;
   border: 1px solid var(--lg-glass-border) !important;
   border-radius: var(--lg-radius-md) !important;
