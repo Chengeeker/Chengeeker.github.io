@@ -151,8 +151,11 @@
    * Butterfly's native dropdown uses a transparent ::before bridge above
    * the menu. Keep it reachable so the pointer can travel from the parent
    * item to the floating surface without closing the menu.
-   */
+  */
   overflow: visible;
+  left: 50%;
+  right: auto;
+  translate: -50% 0;
   min-width: 168px;
   border: 1px solid var(--lg-glass-border) !important;
   border-radius: var(--lg-radius-md) !important;
@@ -163,9 +166,20 @@
   isolation: isolate;
 }
 
+#nav .menus_items .menus_item_child li,
+#nav .menus_items .menus_item_child li:hover {
+  display: block;
+  width: 100%;
+  background: transparent !important;
+  border-radius: var(--lg-radius-sm) !important;
+}
+
 #nav .menus_items .menus_item_child a {
   display: block;
+  width: calc(100% - 8px) !important;
+  box-sizing: border-box;
   margin: 4px;
+  padding: 8px 12px !important;
   border-radius: var(--lg-radius-sm);
   background: transparent !important;
   color: rgba(28, 29, 33, 0.86) !important;
