@@ -145,6 +145,56 @@
 
 }
 
+/* Dropdown menus are independent floating surfaces, not part of the navbar fill. */
+#nav .menus_items .menus_item_child {
+  overflow: hidden;
+  min-width: 168px;
+  border: 1px solid var(--lg-glass-border) !important;
+  border-radius: var(--lg-radius-md) !important;
+  background: var(--lg-surface-2-light) !important;
+  backdrop-filter: blur(var(--lg-blur-md)) saturate(var(--lg-saturate-md));
+  -webkit-backdrop-filter: blur(var(--lg-blur-md)) saturate(var(--lg-saturate-md));
+  box-shadow: var(--lg-shadow-1), inset 0 1px 0 var(--lg-glass-highlight);
+  isolation: isolate;
+}
+
+#nav .menus_items .menus_item_child a {
+  display: block;
+  margin: 4px;
+  border-radius: var(--lg-radius-sm);
+  background: transparent !important;
+  color: rgba(28, 29, 33, 0.86) !important;
+  opacity: 1 !important;
+  transition: background var(--lg-duration-fast) var(--lg-ease-standard), color var(--lg-duration-fast) var(--lg-ease-standard);
+}
+
+#nav .menus_items .menus_item_child a:hover {
+  background: rgba(255, 255, 255, 0.30) !important;
+  color: rgba(20, 21, 25, 0.98) !important;
+}
+
+[data-theme="dark"] #nav .menus_items .menus_item_child {
+  border-color: var(--lg-border-dark) !important;
+  background: var(--lg-surface-2-dark) !important;
+  box-shadow: var(--lg-shadow-dark-1), inset 0 1px 0 var(--lg-dark-highlight);
+}
+
+[data-theme="dark"] #nav .menus_items .menus_item_child a {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+[data-theme="dark"] #nav .menus_items .menus_item_child a:hover {
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: rgba(255, 255, 255, 0.98) !important;
+}
+
+html.lg-disabled #nav .menus_items .menus_item_child,
+html.lg-fallback #nav .menus_items .menus_item_child {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none;
+}
+
 
 
 

@@ -88,6 +88,7 @@ console.log('\n4. Testing escapeHtml utility...');
 const { escapeHtml } = require('../common/util');
 assert.strictEqual(escapeHtml('<script>alert("XSS")</script>'), '&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;');
 assert.strictEqual(escapeHtml('Normal text & "quotes"'), 'Normal text &amp; &quot;quotes&quot;');
+assert.strictEqual(escapeHtml('[00:01.00] <hello> & "world"'), '[00:01.00] &lt;hello&gt; &amp; &quot;world&quot;');
 console.log('   ✓ escapeHtml safely escapes HTML special characters');
 
 // 5. Lyric & List Tag Tests

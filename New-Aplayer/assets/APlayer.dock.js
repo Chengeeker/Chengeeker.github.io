@@ -1,5 +1,5 @@
 /**
- * New-Aplayer: Frosted Glass Draggable & Edge Docking Engine
+ * New-Aplayer: Transparent Liquid Glass Draggable & Edge Docking Engine
  * Supports pointer/touch 2D free dragging, strict 8px edge contact snapping,
  * top-floating draggable lyrics HUD, Meting fast-cache, and state persistence.
  */
@@ -13,6 +13,7 @@
     posX: null,
     posY: null
   };
+  var hasSavedState = false;
 
   try {
     var saved = localStorage.getItem(STORAGE_KEY);
@@ -20,6 +21,7 @@
       var parsed = JSON.parse(saved);
       if (parsed && typeof parsed === 'object') {
         state = Object.assign(state, parsed);
+        hasSavedState = true;
       }
     }
   } catch (e) {}
@@ -32,7 +34,8 @@
     var player = getPlayer();
     if (!player) return;
     state.isDocked = true;
-    state.dockSide = side || state.dockSide || 'left';
+    var nextSide = side || state.dockSide || 'left';
+    state.dockSide = nextSide === 'right' ? 'right' : 'left';
     if (typeof posY === 'number') {
       state.posY = posY;
     }
@@ -117,7 +120,7 @@
           }
         }
       }
-      return window.aplayers[0];
+      if (window.aplayers.length === 1) return window.aplayers[0];
     }
     return null;
   }
@@ -131,6 +134,7 @@
     btn.type = 'button';
     btn.className = 'aplayer-icon aplayer-icon-dock';
     btn.title = '贴边收起/展开 (可自由拖拽吸附)';
+    btn.setAttribute('aria-label', '贴边收起或展开播放器');
     btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3 4c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1s1-.45 1-1V5c0-.55-.45-1-1-1zm5.71 7.29l3.59-3.59a.996.996 0 1 1 1.41 1.41L11.41 11H20c.55 0 1 .45 1 1s-.45 1-1 1h-8.59l2.3 2.29a.996.996 0 1 1-1.41 1.41l-3.59-3.59a.996.996 0 0 1 0-1.42z"/></svg>';
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -147,7 +151,7 @@
   }
 
   function isInteractiveTarget(target) {
-    return Boolean(target.closest('button, .aplayer-icon, .aplayer-bar-wrap, .aplayer-volume-bar-wrap, ol, li, a, input'));
+    return Boolean(target && target.closest && target.closest('button, .aplayer-icon, .aplayer-bar-wrap, .aplayer-volume-bar-wrap, ol, li, a, input'));
   }
 
   function attachBodyDrag(player, body) {
@@ -273,49 +277,50 @@
       }
     };
 
-    // Standard Pointer Events
-    body.addEventListener('pointerdown', function(e) {
-      if (onDown(e.clientX, e.clientY, e.pointerId, e.target)) {
-        try { body.setPointerCapture(e.pointerId); } catch (err) {}
-      }
-    });
-
-    body.addEventListener('pointermove', function(e) {
-      onMove(e.clientX, e.clientY, e.pointerId);
-    });
-
-    var handlePEnd = function(e) {
-      try { body.releasePointerCapture(e.pointerId); } catch (err) {}
-      onEnd(e.pointerId);
-    };
-
-    body.addEventListener('pointerup', handlePEnd);
-    body.addEventListener('pointercancel', handlePEnd);
-
-    // Touch Event Fallback for Mobile WebViews / Touch Browsers
-    body.addEventListener('touchstart', function(e) {
-      if (e.touches && e.touches.length === 1) {
-        var t = e.touches[0];
-        onDown(t.clientX, t.clientY, null, e.target);
-      }
-    }, { passive: true });
-
-    body.addEventListener('touchmove', function(e) {
-      if (drag.active && e.touches && e.touches.length === 1) {
-        var t = e.touches[0];
-        onMove(t.clientX, t.clientY, null);
-        if (drag.hasMoved) {
-          e.preventDefault();
+    if (window.PointerEvent) {
+      body.addEventListener('pointerdown', function(e) {
+        if (onDown(e.clientX, e.clientY, e.pointerId, e.target)) {
+          try { body.setPointerCapture(e.pointerId); } catch (err) {}
         }
-      }
-    }, { passive: false });
+      });
 
-    body.addEventListener('touchend', function() {
-      onEnd(null);
-    });
-    body.addEventListener('touchcancel', function() {
-      onEnd(null);
-    });
+      body.addEventListener('pointermove', function(e) {
+        onMove(e.clientX, e.clientY, e.pointerId);
+      });
+
+      var handlePEnd = function(e) {
+        try { body.releasePointerCapture(e.pointerId); } catch (err) {}
+        onEnd(e.pointerId);
+      };
+
+      body.addEventListener('pointerup', handlePEnd);
+      body.addEventListener('pointercancel', handlePEnd);
+    } else {
+      // Touch Event Fallback for older Mobile WebViews / Touch Browsers
+      body.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length === 1) {
+          var t = e.touches[0];
+          onDown(t.clientX, t.clientY, null, e.target);
+        }
+      }, { passive: true });
+
+      body.addEventListener('touchmove', function(e) {
+        if (drag.active && e.touches && e.touches.length === 1) {
+          var t = e.touches[0];
+          onMove(t.clientX, t.clientY, null);
+          if (drag.hasMoved) {
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+
+      body.addEventListener('touchend', function() {
+        onEnd(null);
+      });
+      body.addEventListener('touchcancel', function() {
+        onEnd(null);
+      });
+    }
   }
 
   function attachLrcDrag(lrc) {
@@ -385,48 +390,50 @@
       }
     };
 
-    lrc.addEventListener('pointerdown', function(e) {
-      if (onDown(e.clientX, e.clientY, e.pointerId)) {
-        try { lrc.setPointerCapture(e.pointerId); } catch (err) {}
-      }
-    });
-
-    lrc.addEventListener('pointermove', function(e) {
-      onMove(e.clientX, e.clientY, e.pointerId);
-    });
-
-    var handleLrcPEnd = function(e) {
-      try { lrc.releasePointerCapture(e.pointerId); } catch (err) {}
-      onEnd(e.pointerId);
-    };
-
-    lrc.addEventListener('pointerup', handleLrcPEnd);
-    lrc.addEventListener('pointercancel', handleLrcPEnd);
-
-    // Touch events for lyrics capsule
-    lrc.addEventListener('touchstart', function(e) {
-      if (e.touches && e.touches.length === 1) {
-        var t = e.touches[0];
-        onDown(t.clientX, t.clientY, null);
-      }
-    }, { passive: true });
-
-    lrc.addEventListener('touchmove', function(e) {
-      if (lrcDrag.active && e.touches && e.touches.length === 1) {
-        var t = e.touches[0];
-        onMove(t.clientX, t.clientY, null);
-        if (lrcDrag.hasMoved) {
-          e.preventDefault();
+    if (window.PointerEvent) {
+      lrc.addEventListener('pointerdown', function(e) {
+        if (onDown(e.clientX, e.clientY, e.pointerId)) {
+          try { lrc.setPointerCapture(e.pointerId); } catch (err) {}
         }
-      }
-    }, { passive: false });
+      });
 
-    lrc.addEventListener('touchend', function() {
-      onEnd(null);
-    });
-    lrc.addEventListener('touchcancel', function() {
-      onEnd(null);
-    });
+      lrc.addEventListener('pointermove', function(e) {
+        onMove(e.clientX, e.clientY, e.pointerId);
+      });
+
+      var handleLrcPEnd = function(e) {
+        try { lrc.releasePointerCapture(e.pointerId); } catch (err) {}
+        onEnd(e.pointerId);
+      };
+
+      lrc.addEventListener('pointerup', handleLrcPEnd);
+      lrc.addEventListener('pointercancel', handleLrcPEnd);
+    } else {
+      // Touch events for older lyrics WebViews
+      lrc.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length === 1) {
+          var t = e.touches[0];
+          onDown(t.clientX, t.clientY, null);
+        }
+      }, { passive: true });
+
+      lrc.addEventListener('touchmove', function(e) {
+        if (lrcDrag.active && e.touches && e.touches.length === 1) {
+          var t = e.touches[0];
+          onMove(t.clientX, t.clientY, null);
+          if (lrcDrag.hasMoved) {
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+
+      lrc.addEventListener('touchend', function() {
+        onEnd(null);
+      });
+      lrc.addEventListener('touchcancel', function() {
+        onEnd(null);
+      });
+    }
   }
 
   function syncPlayerState() {
@@ -476,6 +483,10 @@
 
     if (player.dataset.dockPosRestored !== 'true') {
       player.dataset.dockPosRestored = 'true';
+      if (!hasSavedState && player.dataset.docked === 'true') {
+        state.isDocked = true;
+        state.dockSide = player.dataset.dockSide === 'right' ? 'right' : 'left';
+      }
       if (state.isDocked) {
         dockPlayer(state.dockSide, state.posY);
       } else if (state.posX !== null && state.posY !== null) {
@@ -498,18 +509,41 @@
   }
 
   function safeSetCache(key, val) {
+    var serialized;
     try {
-      localStorage.setItem(key, JSON.stringify(val));
+      serialized = JSON.stringify(val);
+    } catch (err) {
+      return;
+    }
+
+    try {
+      localStorage.setItem(key, serialized);
+      return;
     } catch (err) {
       try {
+        var candidates = [];
+        var now = Date.now();
         for (var i = localStorage.length - 1; i >= 0; i--) {
           var k = localStorage.key(i);
-          if (k && k.indexOf('meting_cache_') === 0) {
-            localStorage.removeItem(k);
+          if (k && k.indexOf(METING_CACHE_PREFIX) === 0) {
+            var raw = localStorage.getItem(k);
+            var parsed = null;
+            try { parsed = JSON.parse(raw); } catch (parseError) {}
+            if (!parsed || !parsed.time || now - parsed.time >= CACHE_EXPIRY_MS) {
+              localStorage.removeItem(k);
+              continue;
+            }
+            candidates.push({key: k, time: parsed.time});
           }
         }
-        localStorage.setItem(key, JSON.stringify(val));
-      } catch (e2) {}
+        candidates.sort(function(a, b) { return a.time - b.time; });
+        if (candidates.length) {
+          localStorage.removeItem(candidates[0].key);
+        }
+        localStorage.setItem(key, serialized);
+      } catch (e2) {
+        // Storage may be disabled or full; playback can still use the network.
+      }
     }
   }
 
@@ -581,7 +615,7 @@
         window.aplayers.push(ap);
         targetEl._aplayer = ap;
 
-        setTimeout(syncPlayerState, 50);
+        scheduleSetup(50);
       };
 
       if (cached && Array.isArray(cached) && cached.length) {
@@ -616,31 +650,76 @@
     syncPlayerState();
   }
 
-  var observer = new MutationObserver(function() {
-    syncPlayerState();
+  var setupFrame = null;
+  var setupTimer = null;
+
+  function scheduleSetup(delay) {
+    if (delay) {
+      window.setTimeout(function() {
+        scheduleSetup();
+      }, delay);
+      return;
+    }
+
+    if (setupFrame !== null || setupTimer !== null) return;
+
+    var run = function() {
+      setupFrame = null;
+      setupTimer = null;
+      setup();
+    };
+
+    if (window.requestAnimationFrame) {
+      setupFrame = window.requestAnimationFrame(run);
+    } else {
+      setupTimer = window.setTimeout(run, 50);
+    }
+  }
+
+  function mutationNeedsSync(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (node.matches && node.matches('.aplayer, .aplayer-body, .aplayer-list, .aplayer-lrc')) return true;
+    return Boolean(node.querySelector && node.querySelector('.aplayer, .aplayer-body, .aplayer-list, .aplayer-lrc'));
+  }
+
+  var observer = new MutationObserver(function(mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var addedNodes = mutations[i].addedNodes;
+      for (var j = 0; j < addedNodes.length; j++) {
+        if (mutationNeedsSync(addedNodes[j])) {
+          scheduleSetup();
+          return;
+        }
+      }
+    }
   });
-  if (document.body) {
+
+  function observeBody() {
+    if (!document.body || observer._attached) return;
     observer.observe(document.body, { childList: true, subtree: true });
+    observer._attached = true;
+  }
+
+  if (document.body) {
+    observeBody();
   } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      observer.observe(document.body, { childList: true, subtree: true });
-    });
+    document.addEventListener('DOMContentLoaded', observeBody, {once: true});
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setup);
+    document.addEventListener('DOMContentLoaded', function() {
+      scheduleSetup();
+    }, {once: true});
   } else {
-    setup();
+    scheduleSetup();
   }
 
   window.addEventListener('load', function() {
-    setTimeout(setup, 100);
-    setTimeout(setup, 500);
-    setTimeout(setup, 1200);
+    scheduleSetup(300);
+    scheduleSetup(900);
   });
 
   document.addEventListener('pjax:complete', function() {
-    setTimeout(setup, 100);
-    setTimeout(setup, 500);
+    scheduleSetup(250);
   });
 })();

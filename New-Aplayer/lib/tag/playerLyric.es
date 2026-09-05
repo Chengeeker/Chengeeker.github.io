@@ -1,6 +1,6 @@
 import {BaseTag} from "./base"
 import {APLAYER_TAG_MARKER, PLAYER_TAG_OPTION} from "../../common/constant"
-import {throwError, extractOptionValue} from "../../common/util"
+import {throwError, extractOptionValue, escapeHtml} from "../../common/util"
 
 export default class APlayerLyricTag extends BaseTag {
   constructor(hexo, args, pid, lyrics) {
@@ -48,7 +48,7 @@ export default class APlayerLyricTag extends BaseTag {
     let {title, author, url, narrow, pic,
       autoplay, width} = this.settings
     return `<div id="${this.id}" class="aplayer ${APLAYER_TAG_MARKER}" style="margin-bottom: 20px;${width}">
-				<pre class="aplayer-lrc-content">${this.lyrics}</pre>
+				<pre class="aplayer-lrc-content">${escapeHtml(this.lyrics)}</pre>
 			</div>
 			<script>
 				var ap = new APlayer({

@@ -2,7 +2,7 @@ import * as fs from 'hexo-fs'
 import * as path from 'path'
 import {BaseTag} from "./base"
 import {PLAYER_TAG_OPTION, APLAYER_TAG_MARKER} from "../../common/constant"
-import {throwError, extractOptionValue} from "../../common/util"
+import {throwError, extractOptionValue, escapeHtml} from "../../common/util"
 
 export default class APlayerTag extends BaseTag {
     constructor(hexo, args, pid) {
@@ -66,7 +66,7 @@ export default class APlayerTag extends BaseTag {
         }
         return `
         <div id="${this.id}" class="aplayer ${APLAYER_TAG_MARKER}" style="margin-bottom: 20px;${width}">
-            <pre class="aplayer-lrc-content">${content}</pre>
+            <pre class="aplayer-lrc-content">${escapeHtml(content)}</pre>
         </div>
         <script>
           var ap = new APlayer({

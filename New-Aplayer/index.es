@@ -38,7 +38,7 @@ const formatMetingApi = api => {
 }
 
 const METING_SCRIPT_LITERAL = config.get('meting_api')
-  ? `<script>var meting_api='${formatMetingApi(config.get('meting_api'))}'</script><script class="${METING_SECONDARY_SCRIPT_MARKER}" src="${config.get('meting_script')}"></script>`
+  ? `<script>var meting_api=${JSON.stringify(formatMetingApi(config.get('meting_api')))}</script><script class="${METING_SECONDARY_SCRIPT_MARKER}" src="${config.get('meting_script')}"></script>`
   : `<script class="${METING_SECONDARY_SCRIPT_MARKER}" src="${config.get('meting_script')}"></script>`
 let filterEmitted = {after_render: false, after_post_render: false}
 
@@ -59,8 +59,9 @@ config.get('assets').forEach(asset => {
 })
 
 const globalPlayer = config.get('global')
+const globalDockSide = globalPlayer && (globalPlayer.dock_side || globalPlayer.dockSide) === 'right' ? 'right' : 'left'
 const globalPlayerLiteral = (globalPlayer && globalPlayer.enable !== false)
-  ? `<div class="aplayer no-destroy" data-id="${escapeHtml(globalPlayer.id || '')}" data-server="${escapeHtml(globalPlayer.server || '')}" data-type="${escapeHtml(globalPlayer.type || 'playlist')}" data-fixed="${globalPlayer.fixed !== false}" data-autoplay="${globalPlayer.autoplay === true}" data-order="${escapeHtml(globalPlayer.order || 'list')}" data-preload="${escapeHtml(globalPlayer.preload || 'auto')}" data-mutex="${globalPlayer.mutex !== false}" data-listfolded="${globalPlayer.listfolded !== false && globalPlayer.list_folded !== false && globalPlayer.listFolded !== false}" data-theme="${escapeHtml(globalPlayer.theme || 'var(--aplayer-theme, #6d8cff)')}"${globalPlayer.lrctype ? ` data-lrctype="${escapeHtml(globalPlayer.lrctype)}"` : ''}${globalPlayer.volume ? ` data-volume="${escapeHtml(globalPlayer.volume)}"` : ''}${globalPlayer.api ? ` data-api="${escapeHtml(formatMetingApi(globalPlayer.api))}"` : ''}></div>`
+  ? `<div class="aplayer no-destroy" data-id="${escapeHtml(globalPlayer.id || '')}" data-server="${escapeHtml(globalPlayer.server || '')}" data-type="${escapeHtml(globalPlayer.type || 'playlist')}" data-fixed="${globalPlayer.fixed !== false}" data-docked="${globalPlayer.docked !== false}" data-dock-side="${globalDockSide}" data-lyrics="${globalPlayer.lyrics === true}" data-autoplay="${globalPlayer.autoplay === true}" data-order="${escapeHtml(globalPlayer.order || 'list')}" data-preload="${escapeHtml(globalPlayer.preload || 'auto')}" data-mutex="${globalPlayer.mutex !== false}" data-listfolded="${globalPlayer.listfolded !== false && globalPlayer.list_folded !== false && globalPlayer.listFolded !== false}" data-theme="${escapeHtml(globalPlayer.theme || 'var(--aplayer-theme, #6d8cff)')}"${globalPlayer.lrctype !== undefined && globalPlayer.lrctype !== null ? ` data-lrctype="${escapeHtml(globalPlayer.lrctype)}"` : ''}${globalPlayer.volume !== undefined && globalPlayer.volume !== null ? ` data-volume="${escapeHtml(globalPlayer.volume)}"` : ''}${globalPlayer.api ? ` data-api="${escapeHtml(formatMetingApi(globalPlayer.api))}"` : ''}></div>`
   : ''
 
 const hasPlayerMarkup = view => Boolean(globalPlayerLiteral) || view.hasTagMarker(APLAYER_TAG_MARKER) || view.hasTagMarker(METING_TAG_MARKER) || /<(?:meting-js|div)[^>]+(?:class=["'][^"']*aplayer|data-id=)/i.test(view.content)
@@ -86,7 +87,7 @@ hexo.extend.filter.register('after_render:html', function(raw, info) {
     // Inject Meting script
     if (config.get('meting') && (Boolean(globalPlayerLiteral) || view.hasTagMarker(METING_TAG_MARKER) || /<meting-js\b|data-server=/i.test(view.content)) && !view.assetAlreadyInjected(METING_SCRIPT_MARKER)) {
       if (config.get('meting_api')) {
-        view.injectAsset( `<script>var meting_api='${formatMetingApi(config.get('meting_api'))}'</script>`)
+        view.injectAsset(`<script>var meting_api=${JSON.stringify(formatMetingApi(config.get('meting_api')))}</script>`)
       }
       view.injectAsset(util.htmlTag('script', {src: config.get('meting_script'), class: METING_SCRIPT_MARKER}, ''))
     }
@@ -136,7 +137,7 @@ hexo.extend.tag.register('aplayer', function(args) {
     console.error(e);
     return  `
 			<script>
-				console.error("${e}");
+				console.error(${JSON.stringify(String(e))});
 			</script>`;
   }
 })
@@ -150,7 +151,7 @@ hexo.extend.tag.register('aplayerlrc', function(args, content) {
     console.error(e);
     return  `
 			<script>
-				console.error("${e}");
+				console.error(${JSON.stringify(String(e))});
 			</script>`
   }
 }, {ends: true})
@@ -165,7 +166,7 @@ hexo.extend.tag.register('aplayerlist', function(args, content) {
     console.error(e)
     return  `
 			<script>
-				console.error("${e}");
+				console.error(${JSON.stringify(String(e))});
 			</script>`
   }
 }, {ends: true})
@@ -183,7 +184,7 @@ hexo.extend.tag.register('meting', function(args) {
     console.error(e)
     return `
 			<script>
-				console.error("${e}");
+				console.error(${JSON.stringify(String(e))});
 			</script>`
   }
 })

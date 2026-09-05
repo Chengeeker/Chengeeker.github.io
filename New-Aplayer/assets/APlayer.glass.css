@@ -5,14 +5,14 @@
    ========================================================================== */
 
 :root {
-  --aplayer-glass-bg: rgba(255, 255, 255, 0.65);
-  --aplayer-glass-bg-card: rgba(255, 255, 255, 0.76);
-  --aplayer-glass-bg-lrc: rgba(255, 255, 255, 0.70);
-  --aplayer-glass-border: rgba(255, 255, 255, 0.60);
+  --aplayer-glass-bg: rgba(255, 255, 255, 0.36);
+  --aplayer-glass-bg-card: rgba(255, 255, 255, 0.50);
+  --aplayer-glass-bg-lrc: rgba(255, 255, 255, 0.42);
+  --aplayer-glass-border: rgba(255, 255, 255, 0.66);
   --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.90), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
   --aplayer-glass-shadow: 0 18px 44px -6px rgba(18, 30, 60, 0.15), 0 6px 14px -2px rgba(18, 30, 60, 0.06);
   --aplayer-glass-text: #111827;
-  --aplayer-glass-muted: #6b7280;
+  --aplayer-glass-muted: #465064;
   --aplayer-glass-accent: #3b82f6;
   --aplayer-glass-accent-glow: rgba(59, 130, 246, 0.35);
   --aplayer-glass-hover: rgba(0, 0, 0, 0.05);
@@ -20,17 +20,21 @@
   --aplayer-glass-bar-bg: rgba(0, 0, 0, 0.08);
   --aplayer-glass-bar-loaded: rgba(0, 0, 0, 0.14);
   --aplayer-glass-scroll-thumb: rgba(0, 0, 0, 0.18);
+  --aplayer-glass-filter: blur(20px) saturate(170%) contrast(105%);
+  --aplayer-glass-fixed-filter: blur(22px) saturate(175%) contrast(105%);
+  --aplayer-glass-list-filter: blur(18px) saturate(165%) contrast(105%);
+  --aplayer-glass-lrc-filter: blur(18px) saturate(165%) contrast(105%);
 }
 
 html[data-theme='dark'], html.dark, body.dark {
-  --aplayer-glass-bg: rgba(20, 26, 38, 0.74);
-  --aplayer-glass-bg-card: rgba(24, 31, 46, 0.84);
-  --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.78);
-  --aplayer-glass-border: rgba(255, 255, 255, 0.14);
+  --aplayer-glass-bg: rgba(20, 26, 38, 0.50);
+  --aplayer-glass-bg-card: rgba(24, 31, 46, 0.62);
+  --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.55);
+  --aplayer-glass-border: rgba(255, 255, 255, 0.22);
   --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.24), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
   --aplayer-glass-shadow: 0 22px 50px -6px rgba(0, 0, 0, 0.55), 0 8px 18px -2px rgba(0, 0, 0, 0.35);
   --aplayer-glass-text: #f9fafb;
-  --aplayer-glass-muted: #9ca3af;
+  --aplayer-glass-muted: #d0d7e2;
   --aplayer-glass-accent: #60a5fa;
   --aplayer-glass-accent-glow: rgba(96, 165, 250, 0.4);
   --aplayer-glass-hover: rgba(255, 255, 255, 0.08);
@@ -42,22 +46,26 @@ html[data-theme='dark'], html.dark, body.dark {
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --aplayer-glass-bg: rgba(20, 26, 38, 0.74);
-    --aplayer-glass-bg-card: rgba(24, 31, 46, 0.84);
-    --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.78);
-    --aplayer-glass-border: rgba(255, 255, 255, 0.14);
+    --aplayer-glass-bg: rgba(20, 26, 38, 0.50);
+    --aplayer-glass-bg-card: rgba(24, 31, 46, 0.62);
+    --aplayer-glass-bg-lrc: rgba(18, 23, 34, 0.55);
+    --aplayer-glass-border: rgba(255, 255, 255, 0.22);
     --aplayer-glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.24), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
     --aplayer-glass-shadow: 0 22px 50px -6px rgba(0, 0, 0, 0.55), 0 8px 18px -2px rgba(0, 0, 0, 0.35);
     --aplayer-glass-text: #f9fafb;
-    --aplayer-glass-muted: #9ca3af;
+    --aplayer-glass-muted: #d0d7e2;
     --aplayer-glass-accent: #60a5fa;
     --aplayer-glass-accent-glow: rgba(96, 165, 250, 0.4);
     --aplayer-glass-hover: rgba(255, 255, 255, 0.08);
     --aplayer-glass-active-bg: rgba(96, 165, 250, 0.18);
     --aplayer-glass-bar-bg: rgba(255, 255, 255, 0.12);
     --aplayer-glass-bar-loaded: rgba(255, 255, 255, 0.22);
-    --aplayer-glass-scroll-thumb: rgba(255, 255, 255, 0.22);
-  }
+  --aplayer-glass-scroll-thumb: rgba(255, 255, 255, 0.22);
+    --aplayer-glass-filter: blur(20px) saturate(170%) contrast(105%);
+    --aplayer-glass-fixed-filter: blur(22px) saturate(175%) contrast(105%);
+    --aplayer-glass-list-filter: blur(18px) saturate(165%) contrast(105%);
+    --aplayer-glass-lrc-filter: blur(18px) saturate(165%) contrast(105%);
+}
 }
 
 /* --------------------------------------------------------------------------
@@ -73,8 +81,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border: 1px solid var(--aplayer-glass-border);
   border-radius: 20px;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular);
-  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%);
-  backdrop-filter: blur(28px) saturate(190%) contrast(102%);
+  -webkit-backdrop-filter: var(--aplayer-glass-filter);
+  backdrop-filter: var(--aplayer-glass-filter);
 }
 
 /* --------------------------------------------------------------------------
@@ -149,8 +157,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border: 1px solid var(--aplayer-glass-border) !important;
   border-radius: 20px !important;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
-  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  -webkit-backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
+  backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
   pointer-events: auto !important;
@@ -275,8 +283,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border: 1px solid var(--aplayer-glass-border) !important;
   border-radius: 20px !important;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(190%) contrast(102%) !important;
-  backdrop-filter: blur(32px) saturate(190%) contrast(102%) !important;
+  -webkit-backdrop-filter: var(--aplayer-glass-list-filter) !important;
+  backdrop-filter: var(--aplayer-glass-list-filter) !important;
   overflow: hidden !important;
   pointer-events: auto !important;
   z-index: 1002 !important;
@@ -381,8 +389,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border: 1px solid var(--aplayer-glass-border) !important;
   border-radius: 9999px !important;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
-  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  -webkit-backdrop-filter: var(--aplayer-glass-lrc-filter) !important;
+  backdrop-filter: var(--aplayer-glass-lrc-filter) !important;
   pointer-events: auto !important;
   cursor: grab !important;
   touch-action: none !important;
@@ -641,8 +649,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border-left: none !important;
   background: var(--aplayer-glass-bg) !important;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
-  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  -webkit-backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
+  backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
   cursor: pointer !important;
   overflow: hidden !important;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
@@ -720,8 +728,8 @@ html[data-theme='dark'], html.dark, body.dark {
   border-right: none !important;
   background: var(--aplayer-glass-bg) !important;
   box-shadow: var(--aplayer-glass-shadow), var(--aplayer-glass-specular) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
-  backdrop-filter: blur(28px) saturate(190%) contrast(102%) !important;
+  -webkit-backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
+  backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
   cursor: pointer !important;
   overflow: hidden !important;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
@@ -781,10 +789,16 @@ html[data-theme='dark'], html.dark, body.dark {
 @media (max-width: 600px) {
   .aplayer.aplayer-fixed:not(.aplayer-docked-left):not(.aplayer-docked-right) {
     bottom: max(10px, env(safe-area-inset-bottom)) !important;
-    left: 10px !important;
-    right: 10px !important;
-    width: calc(100vw - 20px) !important;
-    max-width: calc(100vw - 20px) !important;
+    left: max(10px, env(safe-area-inset-left)) !important;
+    right: max(10px, env(safe-area-inset-right)) !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .aplayer.aplayer-fixed {
+    --aplayer-glass-fixed-filter: blur(16px) saturate(160%) contrast(105%);
+    --aplayer-glass-list-filter: blur(14px) saturate(155%) contrast(105%);
+    --aplayer-glass-lrc-filter: blur(16px) saturate(160%) contrast(105%);
   }
 
   .aplayer.aplayer-fixed .aplayer-body {
@@ -882,3 +896,119 @@ html[data-theme='dark'], html.dark, body.dark {
   }
 }
 
+/* --------------------------------------------------------------------------
+   9. Transparent Liquid Glass Surface
+
+   Keep the material itself transparent and calm. The reference project uses
+   a runtime shader for refraction, but strong CSS highlight layers create
+   visible color bands on the lyric capsule. This web implementation therefore
+   keeps only backdrop sampling, translucency and a restrained surface tint.
+   -------------------------------------------------------------------------- */
+.aplayer:not(.aplayer-fixed),
+.aplayer.aplayer-fixed .aplayer-body,
+.aplayer.aplayer-fixed .aplayer-list,
+.aplayer.aplayer-fixed .aplayer-lrc {
+  isolation: isolate !important;
+}
+
+.aplayer:not(.aplayer-fixed) {
+  position: relative !important;
+}
+
+.aplayer:not(.aplayer-fixed) > *,
+.aplayer.aplayer-fixed .aplayer-body > *,
+.aplayer.aplayer-fixed .aplayer-list > *,
+.aplayer.aplayer-fixed .aplayer-lrc > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.aplayer:not(.aplayer-fixed),
+.aplayer.aplayer-fixed .aplayer-body,
+.aplayer.aplayer-fixed .aplayer-list {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%),
+    var(--aplayer-glass-bg) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 42%),
+    var(--aplayer-glass-bg-lrc) !important;
+}
+
+/* Keep the liquid surface clear enough to reveal the page behind it. */
+.aplayer:not(.aplayer-fixed) {
+  -webkit-backdrop-filter: var(--aplayer-glass-filter) !important;
+  backdrop-filter: var(--aplayer-glass-filter) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-body {
+  -webkit-backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
+  backdrop-filter: var(--aplayer-glass-fixed-filter) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-list {
+  -webkit-backdrop-filter: var(--aplayer-glass-list-filter) !important;
+  backdrop-filter: var(--aplayer-glass-list-filter) !important;
+}
+
+/* The lyric capsule stays optically clean: no colored highlight layer. */
+.aplayer.aplayer-fixed .aplayer-lrc::before,
+.aplayer.aplayer-fixed .aplayer-lrc::after {
+  display: none !important;
+  content: none !important;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .aplayer:not(.aplayer-fixed),
+  .aplayer.aplayer-fixed .aplayer-body,
+  .aplayer.aplayer-fixed .aplayer-list,
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    background-color: var(--aplayer-glass-bg) !important;
+  }
+}
+
+/* Global-player preference: keep the lyrics HUD opt-in. */
+.aplayer.aplayer-fixed[data-lyrics="false"] .aplayer-lrc {
+  display: none !important;
+}
+
+/* Keyboard focus and system accessibility preferences. */
+.aplayer button:focus-visible,
+.aplayer .aplayer-icon:focus-visible {
+  outline: 2px solid var(--aplayer-glass-accent) !important;
+  outline-offset: 2px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aplayer,
+  .aplayer *,
+  .aplayer::before,
+  .aplayer::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .aplayer:not(.aplayer-fixed),
+  .aplayer.aplayer-fixed .aplayer-body,
+  .aplayer.aplayer-fixed .aplayer-list,
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .aplayer:not(.aplayer-fixed),
+  .aplayer.aplayer-fixed .aplayer-body,
+  .aplayer.aplayer-fixed .aplayer-list {
+    background: var(--aplayer-glass-bg) !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    background: var(--aplayer-glass-bg-lrc) !important;
+  }
+}

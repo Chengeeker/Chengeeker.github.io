@@ -77,3 +77,56 @@
   }
 
 }
+
+/* The mobile drawer is one independent Glass Surface. */
+@media (max-width: 768px) {
+  #sidebar #sidebar-menus {
+    overflow-x: hidden;
+    border-left: 1px solid var(--lg-glass-border) !important;
+    border-radius: var(--lg-radius-xl) 0 0 var(--lg-radius-xl) !important;
+    background: var(--lg-glass-surface) !important;
+    backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+    -webkit-backdrop-filter: blur(var(--lg-render-blur)) saturate(var(--lg-render-saturate));
+    box-shadow: var(--lg-glass-shadow), inset 1px 0 0 var(--lg-glass-highlight-strong);
+    isolation: isolate;
+  }
+
+  #sidebar #sidebar-menus .menus_items {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme="dark"]) #sidebar #sidebar-menus {
+    border-left-color: var(--lg-border-light) !important;
+    box-shadow: var(--lg-shadow-2), inset 1px 0 0 var(--lg-border-light-highlight);
+  }
+
+  html:not([data-theme="dark"]) #sidebar #sidebar-menus .site-page {
+    color: rgba(28, 29, 33, 0.86) !important;
+  }
+
+  [data-theme="dark"] #sidebar #sidebar-menus {
+    border-left-color: var(--lg-border-dark) !important;
+    background: var(--lg-surface-1-dark) !important;
+    box-shadow: var(--lg-shadow-dark-2), inset 1px 0 0 var(--lg-dark-highlight-strong);
+  }
+
+  [data-theme="dark"] #sidebar #sidebar-menus .site-page {
+    color: rgba(255, 255, 255, 0.88) !important;
+  }
+
+  #sidebar #menu-mask {
+    background: rgba(10, 13, 20, 0.42) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  html.lg-disabled #sidebar #sidebar-menus,
+  html.lg-fallback #sidebar #sidebar-menus {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--card-bg, var(--lg-surface-0-light)) !important;
+    box-shadow: none;
+  }
+}

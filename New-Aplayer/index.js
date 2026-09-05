@@ -64,7 +64,7 @@ var formatMetingApi = function formatMetingApi(api) {
   return api.includes(':server') ? api : api.replace(/\/?$/, '/') + '?server=:server&type=:type&id=:id&r=:r';
 };
 
-var METING_SCRIPT_LITERAL = config.get('meting_api') ? '<script>var meting_api=\'' + formatMetingApi(config.get('meting_api')) + '\'</script><script class="' + _constant.METING_SECONDARY_SCRIPT_MARKER + '" src="' + config.get('meting_script') + '"></script>' : '<script class="' + _constant.METING_SECONDARY_SCRIPT_MARKER + '" src="' + config.get('meting_script') + '"></script>';
+var METING_SCRIPT_LITERAL = config.get('meting_api') ? '<script>var meting_api=' + JSON.stringify(formatMetingApi(config.get('meting_api'))) + '</script><script class="' + _constant.METING_SECONDARY_SCRIPT_MARKER + '" src="' + config.get('meting_script') + '"></script>' : '<script class="' + _constant.METING_SECONDARY_SCRIPT_MARKER + '" src="' + config.get('meting_script') + '"></script>';
 var filterEmitted = { after_render: false, after_post_render: false };
 
 config.get('assets').forEach(function (asset) {
@@ -88,7 +88,8 @@ config.get('assets').forEach(function (asset) {
 });
 
 var globalPlayer = config.get('global');
-var globalPlayerLiteral = globalPlayer && globalPlayer.enable !== false ? '<div class="aplayer no-destroy" data-id="' + (0, _util.escapeHtml)(globalPlayer.id || '') + '" data-server="' + (0, _util.escapeHtml)(globalPlayer.server || '') + '" data-type="' + (0, _util.escapeHtml)(globalPlayer.type || 'playlist') + '" data-fixed="' + (globalPlayer.fixed !== false) + '" data-autoplay="' + (globalPlayer.autoplay === true) + '" data-order="' + (0, _util.escapeHtml)(globalPlayer.order || 'list') + '" data-preload="' + (0, _util.escapeHtml)(globalPlayer.preload || 'auto') + '" data-mutex="' + (globalPlayer.mutex !== false) + '" data-listfolded="' + (globalPlayer.listfolded !== false && globalPlayer.list_folded !== false && globalPlayer.listFolded !== false) + '" data-theme="' + (0, _util.escapeHtml)(globalPlayer.theme || 'var(--aplayer-theme, #6d8cff)') + '"' + (globalPlayer.lrctype ? ' data-lrctype="' + (0, _util.escapeHtml)(globalPlayer.lrctype) + '"' : '') + (globalPlayer.volume ? ' data-volume="' + (0, _util.escapeHtml)(globalPlayer.volume) + '"' : '') + (globalPlayer.api ? ' data-api="' + (0, _util.escapeHtml)(formatMetingApi(globalPlayer.api)) + '"' : '') + '></div>' : '';
+var globalDockSide = globalPlayer && (globalPlayer.dock_side || globalPlayer.dockSide) === 'right' ? 'right' : 'left';
+var globalPlayerLiteral = globalPlayer && globalPlayer.enable !== false ? '<div class="aplayer no-destroy" data-id="' + (0, _util.escapeHtml)(globalPlayer.id || '') + '" data-server="' + (0, _util.escapeHtml)(globalPlayer.server || '') + '" data-type="' + (0, _util.escapeHtml)(globalPlayer.type || 'playlist') + '" data-fixed="' + (globalPlayer.fixed !== false) + '" data-docked="' + (globalPlayer.docked !== false) + '" data-dock-side="' + globalDockSide + '" data-lyrics="' + (globalPlayer.lyrics === true) + '" data-autoplay="' + (globalPlayer.autoplay === true) + '" data-order="' + (0, _util.escapeHtml)(globalPlayer.order || 'list') + '" data-preload="' + (0, _util.escapeHtml)(globalPlayer.preload || 'auto') + '" data-mutex="' + (globalPlayer.mutex !== false) + '" data-listfolded="' + (globalPlayer.listfolded !== false && globalPlayer.list_folded !== false && globalPlayer.listFolded !== false) + '" data-theme="' + (0, _util.escapeHtml)(globalPlayer.theme || 'var(--aplayer-theme, #6d8cff)') + '"' + (globalPlayer.lrctype !== undefined && globalPlayer.lrctype !== null ? ' data-lrctype="' + (0, _util.escapeHtml)(globalPlayer.lrctype) + '"' : '') + (globalPlayer.volume !== undefined && globalPlayer.volume !== null ? ' data-volume="' + (0, _util.escapeHtml)(globalPlayer.volume) + '"' : '') + (globalPlayer.api ? ' data-api="' + (0, _util.escapeHtml)(formatMetingApi(globalPlayer.api)) + '"' : '') + '></div>' : '';
 
 var hasPlayerMarkup = function hasPlayerMarkup(view) {
   return Boolean(globalPlayerLiteral) || view.hasTagMarker(_constant.APLAYER_TAG_MARKER) || view.hasTagMarker(_constant.METING_TAG_MARKER) || /<(?:meting-js|div)[^>]+(?:class=["'][^"']*aplayer|data-id=)/i.test(view.content);
@@ -114,7 +115,7 @@ hexo.extend.filter.register('after_render:html', function (raw, info) {
     // Inject Meting script
     if (config.get('meting') && (Boolean(globalPlayerLiteral) || view.hasTagMarker(_constant.METING_TAG_MARKER) || /<meting-js\b|data-server=/i.test(view.content)) && !view.assetAlreadyInjected(_constant.METING_SCRIPT_MARKER)) {
       if (config.get('meting_api')) {
-        view.injectAsset('<script>var meting_api=\'' + formatMetingApi(config.get('meting_api')) + '\'</script>');
+        view.injectAsset('<script>var meting_api=' + JSON.stringify(formatMetingApi(config.get('meting_api'))) + '</script>');
       }
       view.injectAsset(util.htmlTag('script', { src: config.get('meting_script'), class: _constant.METING_SCRIPT_MARKER }, ''));
     }
@@ -159,7 +160,7 @@ hexo.extend.tag.register('aplayer', function (args) {
     return output;
   } catch (e) {
     console.error(e);
-    return '\n\t\t\t<script>\n\t\t\t\tconsole.error("' + e + '");\n\t\t\t</script>';
+    return '\n\t\t\t<script>\n\t\t\t\tconsole.error(' + JSON.stringify(String(e)) + ');\n\t\t\t</script>';
   }
 });
 
@@ -170,7 +171,7 @@ hexo.extend.tag.register('aplayerlrc', function (args, content) {
     return output;
   } catch (e) {
     console.error(e);
-    return '\n\t\t\t<script>\n\t\t\t\tconsole.error("' + e + '");\n\t\t\t</script>';
+    return '\n\t\t\t<script>\n\t\t\t\tconsole.error(' + JSON.stringify(String(e)) + ');\n\t\t\t</script>';
   }
 }, { ends: true });
 
@@ -181,7 +182,7 @@ hexo.extend.tag.register('aplayerlist', function (args, content) {
     return output;
   } catch (e) {
     console.error(e);
-    return '\n\t\t\t<script>\n\t\t\t\tconsole.error("' + e + '");\n\t\t\t</script>';
+    return '\n\t\t\t<script>\n\t\t\t\tconsole.error(' + JSON.stringify(String(e)) + ');\n\t\t\t</script>';
   }
 }, { ends: true });
 
@@ -195,7 +196,7 @@ hexo.extend.tag.register('meting', function (args) {
     return output;
   } catch (e) {
     console.error(e);
-    return '\n\t\t\t<script>\n\t\t\t\tconsole.error("' + e + '");\n\t\t\t</script>';
+    return '\n\t\t\t<script>\n\t\t\t\tconsole.error(' + JSON.stringify(String(e)) + ');\n\t\t\t</script>';
   }
 });
 
