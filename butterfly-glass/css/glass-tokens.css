@@ -1,14 +1,15 @@
 /*
  * Butterfly Liquid Glass
- * Web Glass System v4.0.1 - Design Tokens
+ * Web Glass System v4.0.2 - Design Tokens
  *
  * Shared tokens for the new Web-native Glass Core.
  *
- * v4.0.1 changes:
+ * v4.0.2 changes:
  * - Stronger Light-mode glass separation
  * - Dedicated Light-mode edge/highlight system
  * - Unified Glass radius system
  * - Better Light/Dark floating-control contrast
+ * - Figma-inspired optical targets for progressive Liquid Glass enhancement
  */
 
 :root {
@@ -188,6 +189,60 @@
   --lg-optical-tilt:
     135deg;
 
+  /* ---------- Liquid Glass Optical Targets ---------- */
+
+  /*
+   * These values describe the intended optical material. CSS has no native
+   * refraction property, so glass-liquid.css uses them for the supported
+   * edge/highlight layer while an optional SVG displacement filter provides
+   * a restrained desktop approximation.
+   */
+
+  --lg-liquid-light-angle:
+    45deg;
+
+  --lg-liquid-light-intensity:
+    0.40;
+
+  --lg-liquid-refraction:
+    30%;
+
+  --lg-liquid-depth:
+    20px;
+
+  --lg-liquid-dispersion:
+    8%;
+
+  --lg-liquid-splay:
+    55%;
+
+  --lg-liquid-frost:
+    4%;
+
+  --lg-liquid-blur:
+    10px;
+
+  --lg-liquid-saturate:
+    145%;
+
+  --lg-liquid-highlight-alpha:
+    0.09;
+
+  --lg-liquid-edge-light:
+    rgba(255, 255, 255, 0.46);
+
+  --lg-liquid-edge-shadow:
+    rgba(18, 20, 28, 0.10);
+
+  --lg-liquid-dispersion-cyan:
+    rgba(118, 205, 255, 0.045);
+
+  --lg-liquid-dispersion-magenta:
+    rgba(255, 148, 188, 0.035);
+
+  --lg-liquid-specular:
+    rgba(255, 255, 255, 0.16);
+
 
   /* ---------- Light Glass Highlight ---------- */
 
@@ -326,6 +381,27 @@
   --lg-glass-inner-shadow:
     var(--lg-dark-inner-shadow);
 
+  --lg-liquid-light-intensity:
+    0.34;
+
+  --lg-liquid-highlight-alpha:
+    0.045;
+
+  --lg-liquid-edge-light:
+    rgba(255, 255, 255, 0.18);
+
+  --lg-liquid-edge-shadow:
+    rgba(0, 0, 0, 0.26);
+
+  --lg-liquid-dispersion-cyan:
+    rgba(118, 205, 255, 0.055);
+
+  --lg-liquid-dispersion-magenta:
+    rgba(255, 148, 188, 0.045);
+
+  --lg-liquid-specular:
+    rgba(255, 255, 255, 0.08);
+
 }
 
 
@@ -393,6 +469,28 @@ html.lg-fallback {
 
     --lg-optical-highlight:
       0.52;
+
+    --lg-liquid-light-intensity:
+      0.26;
+
+    --lg-liquid-highlight-alpha:
+      0.06;
+
+    --lg-liquid-blur:
+      7px;
+
+    --lg-liquid-saturate:
+      130%;
+
+  }
+
+  [data-theme="dark"] {
+
+    --lg-liquid-light-intensity:
+      0.24;
+
+    --lg-liquid-highlight-alpha:
+      0.04;
 
   }
 

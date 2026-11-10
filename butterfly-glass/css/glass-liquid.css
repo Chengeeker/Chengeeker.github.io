@@ -1,0 +1,148 @@
+/*
+ * Butterfly Liquid Glass
+ * Optical Glass Enhancement - v2.2.0
+ *
+ * This module adds a restrained optical layer inspired by Figma's
+ * Light Angle / Intensity / Refraction / Depth / Dispersion / Splay / Frost
+ * vocabulary. It does not create another surface hierarchy.
+ *
+ * The optional SVG displacement filter is limited to full desktop mode.
+ * When a browser cannot use an external SVG filter on backdrop-filter, the
+ * declaration is ignored and the existing CSS blur remains the fallback.
+ */
+
+/* ---------- Progressive desktop refraction ---------- */
+
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #nav,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) .lg-surface,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #archive,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #post,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #recent-posts .recent-post-item,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #aside-content .card-widget,
+html.lg-full:not(.lg-mobile):not(.lg-reduced):not(.lg-fallback):not(.lg-disabled) #page.nc #article-container .shuoshuo-item {
+  /*
+   * Filter Effects applies this filter to the backdrop image. It does not
+   * filter the element's own text/content, so headings remain crisp.
+   */
+  backdrop-filter:
+    url("/butterfly-glass/glass-refraction.svg#lg-liquid-refraction")
+    blur(var(--lg-liquid-blur))
+    saturate(var(--lg-liquid-saturate));
+
+  -webkit-backdrop-filter:
+    url("/butterfly-glass/glass-refraction.svg#lg-liquid-refraction")
+    blur(var(--lg-liquid-blur))
+    saturate(var(--lg-liquid-saturate));
+}
+
+/* ---------- Quiet edge depth ---------- */
+
+html:not([data-theme="dark"]) .lg-surface,
+html:not([data-theme="dark"]) #archive,
+html:not([data-theme="dark"]) #post,
+html:not([data-theme="dark"]) #recent-posts .recent-post-item,
+html:not([data-theme="dark"]) #aside-content .card-widget,
+html:not([data-theme="dark"]) #sidebar #sidebar-menus,
+html:not([data-theme="dark"]) #page.nc #article-container .shuoshuo-item,
+[data-theme="dark"] .lg-surface,
+[data-theme="dark"] #archive,
+[data-theme="dark"] #post,
+[data-theme="dark"] #recent-posts .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #sidebar #sidebar-menus,
+[data-theme="dark"] #page.nc #article-container .shuoshuo-item {
+  box-shadow:
+    var(--lg-glass-shadow),
+    inset 0 1px 0 var(--lg-liquid-edge-light),
+    inset 1px 0 0 var(--lg-liquid-dispersion-cyan),
+    inset -1px 0 0 var(--lg-liquid-dispersion-magenta),
+    inset 0 -1px 0 var(--lg-liquid-edge-shadow);
+}
+
+/* ---------- Specular surface light ---------- */
+
+html:not([data-theme="dark"]) .lg-surface::before,
+html:not([data-theme="dark"]) #archive::before,
+html:not([data-theme="dark"]) #post::before,
+html:not([data-theme="dark"]) #recent-posts .recent-post-item::before,
+html:not([data-theme="dark"]) #aside-content .card-widget::before,
+html:not([data-theme="dark"]) #sidebar #sidebar-menus::before,
+html:not([data-theme="dark"]) #page.nc #article-container .shuoshuo-item::before,
+[data-theme="dark"] .lg-surface::before,
+[data-theme="dark"] #archive::before,
+[data-theme="dark"] #post::before,
+[data-theme="dark"] #recent-posts .recent-post-item::before,
+[data-theme="dark"] #aside-content .card-widget::before,
+[data-theme="dark"] #sidebar #sidebar-menus::before,
+[data-theme="dark"] #page.nc #article-container .shuoshuo-item::before {
+  background:
+    radial-gradient(
+      circle at var(--lg-optical-x) var(--lg-optical-y),
+      rgba(255, 255, 255, var(--lg-liquid-highlight-alpha)) 0,
+      transparent var(--lg-liquid-splay)
+    ),
+    linear-gradient(
+      var(--lg-liquid-light-angle),
+      var(--lg-liquid-specular) 0,
+      transparent var(--lg-liquid-depth),
+      transparent calc(100% - var(--lg-liquid-depth)),
+      rgba(255, 255, 255, 0.018) 100%
+    );
+}
+
+/* The SVG filter is intentionally never used on touch devices by default. */
+@media (max-width: 768px) {
+  .lg-surface::before,
+  #archive::before,
+  #post::before,
+  #recent-posts .recent-post-item::before,
+  #aside-content .card-widget::before,
+  #sidebar #sidebar-menus::before,
+  #page.nc #article-container .shuoshuo-item::before {
+    background:
+      radial-gradient(
+        circle at var(--lg-optical-x) var(--lg-optical-y),
+        rgba(255, 255, 255, var(--lg-liquid-highlight-alpha)) 0,
+        transparent var(--lg-liquid-splay)
+      );
+  }
+}
+
+/* Keep reduced/fallback states quiet and predictable. */
+
+html.lg-reduced .lg-surface::before,
+html.lg-reduced #archive::before,
+html.lg-reduced #post::before,
+html.lg-reduced #recent-posts .recent-post-item::before,
+html.lg-reduced #aside-content .card-widget::before,
+html.lg-reduced #sidebar #sidebar-menus::before,
+html.lg-reduced #page.nc #article-container .shuoshuo-item::before {
+  opacity: 0.42;
+}
+
+html.lg-fallback .lg-surface,
+html.lg-fallback #archive,
+html.lg-fallback #post,
+html.lg-fallback #recent-posts .recent-post-item,
+html.lg-fallback #aside-content .card-widget,
+html.lg-fallback #sidebar #sidebar-menus,
+html.lg-fallback #page.nc #article-container .shuoshuo-item {
+  box-shadow: none;
+}
+
+html.lg-fallback .lg-surface::before,
+html.lg-fallback #archive::before,
+html.lg-fallback #post::before,
+html.lg-fallback #recent-posts .recent-post-item::before,
+html.lg-fallback #aside-content .card-widget::before,
+html.lg-fallback #sidebar #sidebar-menus::before,
+html.lg-fallback #page.nc #article-container .shuoshuo-item::before,
+html.lg-disabled .lg-surface::before,
+html.lg-disabled #archive::before,
+html.lg-disabled #post::before,
+html.lg-disabled #recent-posts .recent-post-item::before,
+html.lg-disabled #aside-content .card-widget::before,
+html.lg-disabled #sidebar #sidebar-menus::before,
+html.lg-disabled #page.nc #article-container .shuoshuo-item::before {
+  display: none;
+}

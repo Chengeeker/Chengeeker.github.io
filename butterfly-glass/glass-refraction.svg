@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Butterfly Liquid Glass - restrained desktop backdrop refraction.
+  The low-frequency noise and small displacement scale are intentional:
+  this is a progressive approximation, not a full WebGL material.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <filter id="lg-liquid-refraction"
+          x="-10%" y="-10%" width="120%" height="120%"
+          color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise"
+                  baseFrequency="0.012 0.018"
+                  numOctaves="1"
+                  seed="17"
+                  result="lgNoise"/>
+    <feGaussianBlur in="lgNoise" stdDeviation="1.4" result="lgSoftNoise"/>
+    <feDisplacementMap in="SourceGraphic"
+                       in2="lgSoftNoise"
+                       scale="8"
+                       xChannelSelector="R"
+                       yChannelSelector="G"/>
+  </filter>
+</svg>
