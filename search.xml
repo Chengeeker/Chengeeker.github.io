@@ -2962,4 +2962,121 @@
         <category>Tutorials</category>
       </categories>
   </entry>
+  <entry>
+    <title>用 Cloudflare 搭建自己的节点管理面板-forkedgetunnel</title>
+    <url>/2026/11/15/cloudfare%E6%9C%BA%E5%9C%BA-forkedgetunnel/</url>
+    <content><![CDATA[<p>之前写过一篇 edgetunnel 的部署教程。后来我基于这个项目做了自己的修改，加入了管理面板、在线优选、本地测速入口和 Windows 部署工具，整理成了 forkedgetunnel。这篇文章介绍目前版本的功能和部署方法。</p>
+<h4 id="项目地址：https-github-com-Chengeeker-forkedgetunnel"><a href="#项目地址：https-github-com-Chengeeker-forkedgetunnel" class="headerlink" title="项目地址：https://github.com/Chengeeker/forkedgetunnel"></a>项目地址：<a href="https://github.com/Chengeeker/forkedgetunnel">https://github.com/Chengeeker/forkedgetunnel</a></h4><h4 id="上游项目：https-github-com-cmliu-edgetunnel"><a href="#上游项目：https-github-com-cmliu-edgetunnel" class="headerlink" title="上游项目：https://github.com/cmliu/edgetunnel"></a>上游项目：<a href="https://github.com/cmliu/edgetunnel">https://github.com/cmliu/edgetunnel</a></h4><blockquote>
+<p>本文按当前项目 README 整理，Cloudflare 界面可能更新，遇到菜单位置变化时以控制台和<a href="https://github.com/Chengeeker/forkedgetunnel">项目文档</a>为准。</p>
+</blockquote>
+<h2 id="💡-这个项目有什么功能"><a href="#💡-这个项目有什么功能" class="headerlink" title="💡 这个项目有什么功能"></a>💡 这个项目有什么功能</h2><ul>
+<li>Worker、登录页和管理面板放在同一个仓库中部署。</li>
+<li>支持 VLESS、Trojan、Shadowsocks 节点和订阅生成，可配置 ProxyIP 和链式代理。</li>
+<li>支持在线导入 IP、域名和网段，进行 HTTPS 初筛、批量测速和结果导入。</li>
+<li>Windows 可安装 CFData-WEB 本地优选工具，也可以通过本地 mihomo 控制接口测试节点延迟。</li>
+<li>可选的 VPN Gate 链式订阅默认关闭，适用于支持相应配置的 mihomo &#x2F; Clash Meta 客户端。</li>
+</ul>
+<p>网络表现会受到运营商、客户端、Cloudflare 和外部服务的影响，优选结果也会随时间变化。</p>
+<h2 id="⚙️-部署前准备"><a href="#⚙️-部署前准备" class="headerlink" title="⚙️ 部署前准备"></a>⚙️ 部署前准备</h2><p>准备好 Cloudflare 账号和 GitHub 账号，再将 <a href="https://github.com/Chengeeker/forkedgetunnel">forkedgetunnel</a> Fork 到自己的 GitHub。需要自定义域名的话，还要准备一个自己能管理 DNS 的域名。</p>
+<p>下面介绍 Pages 连接 GitHub 的方式。Windows 用户也可以直接看后面的“一键部署”。两种方式的 KV 配置不同，按各自步骤填写即可。</p>
+<h2 id="🛠-Pages-GitHub-部署"><a href="#🛠-Pages-GitHub-部署" class="headerlink" title="🛠 Pages + GitHub 部署"></a>🛠 Pages + GitHub 部署</h2><h3 id="1-获取账号-ID-和-KV-Token"><a href="#1-获取账号-ID-和-KV-Token" class="headerlink" title="1. 获取账号 ID 和 KV Token"></a>1. 获取账号 ID 和 KV Token</h3><ol>
+<li>打开 <a href="https://dash.cloudflare.com/">Cloudflare 控制台</a>，选择目标账号，在 <strong>Workers &amp; Pages → 账号详情</strong> 中复制 <strong>Account ID</strong>。不要复制域名的 Zone ID。</li>
+<li>在 <a href="https://dash.cloudflare.com/profile/api-tokens">API 令牌页面</a>创建令牌，选择目标账号，添加 <strong>Workers KV Storage → Edit（Workers KV 存储 → 编辑）</strong> 权限。</li>
+<li>创建后复制令牌完整值，后面要作为加密变量保存。令牌和管理员密码不要上传到 GitHub，也不要发给别人。</li>
+</ol>
+<p>新版界面的具体点击位置可参考 <a href="https://github.com/Chengeeker/forkedgetunnel#kv-api-token">README 的 Token 教程</a>。Token 需要属于 Pages 所在账号，并有该账号的 KV 权限。</p>
+<h3 id="2-创建-Pages-项目"><a href="#2-创建-Pages-项目" class="headerlink" title="2. 创建 Pages 项目"></a>2. 创建 Pages 项目</h3><ol>
+<li>在 <strong>Workers &amp; Pages</strong> 中创建 Pages 项目，选择连接 Git，授权并选择自己 Fork 的仓库。</li>
+<li>生产分支选 <code>main</code>，框架选 <code>None</code>，根目录使用仓库根目录。使用 V2 或更新的构建系统和 Node.js 20 及以上版本。</li>
+<li>构建设置填写：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>填写内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>构建命令</td>
+<td><code>node scripts/prepare-pages.cjs</code></td>
+</tr>
+<tr>
+<td>构建输出目录</td>
+<td><code>dist</code></td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li>在首次保存和部署之前，为生产环境添加下面四个变量：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>填写内容</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ADMIN</code></td>
+<td>自己设置的后台密码</td>
+<td>建议加密</td>
+</tr>
+<tr>
+<td><code>CLOUDFLARE_ACCOUNT_ID</code></td>
+<td>前面复制的账号 ID</td>
+<td>普通文本</td>
+</tr>
+<tr>
+<td><code>CLOUDFLARE_API_TOKEN</code></td>
+<td>前面创建的 KV Token 完整值</td>
+<td>加密 &#x2F; Secret</td>
+</tr>
+<tr>
+<td><code>KV_NAMESPACE_NAME</code></td>
+<td>固定的存储名称，例如 <code>forkedgetunnel-myproject-production-KV</code></td>
+<td>普通文本</td>
+</tr>
+</tbody></table>
+<p>存储名称由自己填写，首次不需要提前创建。以后更新项目或更换域名时继续使用同一个名称。<strong>如果已经有需要保留的 KV 数据，用 <code>KV_NAMESPACE_ID</code> 填原命名空间 ID，替代 <code>KV_NAMESPACE_NAME</code>。</strong> 两者同时填写时 ID 优先。</p>
+<ol start="5">
+<li>检查完成后点击保存并部署，等待构建成功。程序会在首次通过鉴权读取后台配置时创建或复用 KV。已有原生 <code>KV</code> 绑定时优先使用原绑定。</li>
+<li>需要自定义域名时，在 Pages 项目的 <strong>自定义域</strong> 中添加，例如 <code>proxy.example.com</code>，按控制台提示配置 DNS，并等待证书生效。</li>
+<li>打开 <code>https://你的部署域名/admin</code>，输入 <code>ADMIN</code> 密码。修改一项设置并保存，重新打开页面，确认配置仍然存在。</li>
+</ol>
+<p>如果已有项目以前只填了 <code>ADMIN</code>，补齐上述账号 ID、Token 和存储名称或 ID 后，还需要触发一次新部署。不要把普通文本变量命名为 <code>KV</code> 来代替原生绑定。详细步骤见<a href="https://github.com/Chengeeker/forkedgetunnel#existing-pages-recovery">已有项目补救说明</a>。</p>
+<h2 id="🪟-Windows-一键部署"><a href="#🪟-Windows-一键部署" class="headerlink" title="🪟 Windows 一键部署"></a>🪟 Windows 一键部署</h2><ol>
+<li>下载 <a href="https://github.com/Chengeeker/forkedgetunnel/releases/download/pages-deploy-v1.0.1/Pages-Deploy-Windows.zip">Pages-Deploy-Windows.zip</a>，完整解压后双击 <code>redeploy-pages.cmd</code>。</li>
+<li>输入 <code>1</code> 创建新项目，输入 <code>2</code> 再次部署已有项目。项目名填写 Cloudflare 控制台中的名称，不带网址。</li>
+<li>首次使用按提示填写账号 ID 和部署 Token。初次创建需要 <strong>Cloudflare Pages 编辑</strong>和 <strong>Workers KV Storage 编辑</strong>权限，并按提示填写 GitHub 仓库、分支和后台密码。GitHub 仓库需要提前在 Cloudflare 完成授权。</li>
+<li>初次部署会创建或复用 KV 并添加原生绑定。再次部署时脚本备份配置、保留原 KV，解除自定义域名关联后删除并重建项目，再恢复域名。检查屏幕显示的目标后，在最后一步直接回车确认。</li>
+</ol>
+<blockquote>
+<p>再次部署期间服务会中断，旧部署历史和部署挂钩不会保留，域名证书可能需要等待。不要提前手动删除原项目或 KV。已有加密变量无法从 Cloudflare 读回，需要提供原值或使用本机已保存的备份。</p>
+</blockquote>
+<p>脚本说明、权限和中断恢复方法见 <a href="https://github.com/Chengeeker/forkedgetunnel/blob/main/docs/pages-redeploy.md">Windows 部署教程</a>。</p>
+<h2 id="🔑-首次使用和订阅"><a href="#🔑-首次使用和订阅" class="headerlink" title="🔑 首次使用和订阅"></a>🔑 首次使用和订阅</h2><p>进入 <code>/admin</code> 后检查协议、传输方式和订阅设置，再通过“获取节点链接”复制适合客户端的订阅。保存设置后，还要在客户端更新订阅。</p>
+<p>需要使用自己整理的地址时，将优选订阅模式切换为 <strong>自定义订阅（支持汇聚订阅）</strong>，检查“自定义优选地址”并保存。随机优选模式不会按这份自定义列表下发节点。客户端也需要支持你选择的协议、传输方式和 ECH 等参数。</p>
+<p>订阅转换可能使用外部转换服务，节点连接参数会交给该服务处理，使用前请确认来源可信。</p>
+<h2 id="🚀-优选-IP-和域名"><a href="#🚀-优选-IP-和域名" class="headerlink" title="🚀 优选 IP 和域名"></a>🚀 优选 IP 和域名</h2><h3 id="在线优选"><a href="#在线优选" class="headerlink" title="在线优选"></a>在线优选</h3><p>在管理面板打开“在线优选 IP”，选择“自定义 IP &#x2F; 域名”，每行输入一个地址，例如 <code>example.com:443#备注</code>。也支持 IP、CIDR 和地址区间。点击 <strong>HTTPS 初筛</strong>，再对结果执行 <strong>一键测速</strong>，勾选需要的结果并点击 <strong>导入到优选列表</strong>。</p>
+<p>导入后还需要在管理面板检查列表、选择自定义订阅模式并保存，然后在客户端更新订阅。在线服务测得的数值反映当时的测试路径，不能直接等同于实际代理连接的速度和稳定性。</p>
+<h3 id="Windows-本地优选"><a href="#Windows-本地优选" class="headerlink" title="Windows 本地优选"></a>Windows 本地优选</h3><p>下载 <a href="https://github.com/Chengeeker/forkedgetunnel/releases/download/local-cfdata-v1.0.0/CFData-Local-Windows-1.0.0.zip">CFData 本地优选包</a>，解压并运行 <code>install.cmd</code>。安装后可以从面板的“本地优选IP”入口打开本机页面。完成测速后，将结果<strong>手动复制</strong>到面板中的自定义优选地址，保存并更新订阅。</p>
+<p>项目还提供“本地 Clash 实测”，需要本机运行 mihomo 并配置 external-controller 接口及允许的网页来源。它用于检测节点延迟，与在线下载测速是不同的测试。不要将本机控制接口开放到公网。</p>
+<h2 id="❓常见问题"><a href="#❓常见问题" class="headerlink" title="❓常见问题"></a>❓常见问题</h2><p><strong>首页显示 404</strong>：未设置 <code>URL</code> 时属于预期行为，后台入口是 <code>/admin</code>。</p>
+<p><strong>提示没有配置持久化存储</strong>：检查生产环境是否配置了原生 <code>KV</code>，或者手动部署所需的账号 ID、加密 Token、存储名称 &#x2F; ID 是否齐全。补充变量后需要新部署。</p>
+<p><strong>保存失败或出现 503</strong>：查看错误文字，核对 Token 权限、账号和有效期。不要为了排错删除原 KV，避免丢失配置。</p>
+<p><strong>优选结果已导入但订阅没有变化</strong>：确认切换到自定义订阅模式、保存设置，并在客户端更新订阅。</p>
+<p><strong>收到 CPU 超限通知</strong>：Cloudflare 免费套餐对单次 Worker 调用有 CPU 时间限制。检查项目的 Functions Metrics 和日志，区分 CPU 超限、请求数量和其他错误。项目优化可以减少部分开销，实际效果仍取决于请求和使用情况。<a href="https://developers.cloudflare.com/workers/platform/limits/#cpu-time">Cloudflare 限制说明</a></p>
+<h2 id="📌-更新和项目来源"><a href="#📌-更新和项目来源" class="headerlink" title="📌 更新和项目来源"></a>📌 更新和项目来源</h2><p>Pages 连接的是自己的 GitHub 仓库。同步代码后，检查 Cloudflare 的新部署是否成功，再在客户端更新订阅。保留原来的 KV 名称或 ID，避免误用新的空存储。</p>
+<p>forkedgetunnel 基于 <a href="https://github.com/cmliu/edgetunnel">cmliu&#x2F;edgetunnel</a> 修改，Worker 与网页代码使用 GPL-2.0。功能说明、更新记录和许可证以 <a href="https://github.com/Chengeeker/forkedgetunnel">项目仓库</a>为准。</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>cloudfare</tag>
+        <tag>机场</tag>
+        <tag>forkedgetunnel</tag>
+      </tags>
+  </entry>
 </search>
